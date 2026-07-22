@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /**
-   * AOS — scroll animations
+   * AOS - scroll animations
    */
   if (window.AOS) {
     AOS.init({
@@ -106,21 +106,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /**
-   * PureCounter — animated stat counters
+   * PureCounter - animated stat counters
    */
   if (window.PureCounter) {
     new PureCounter();
   }
 
   /**
-   * GLightbox — image/photo popups (wire up once real photography is added)
+   * GLightbox - image/photo popups (wire up once real photography is added)
    */
   if (window.GLightbox) {
     GLightbox({ selector: ".glightbox" });
   }
 
   /**
-   * Swiper — image placeholder / gallery sliders (".gallery-swiper")
+   * Swiper - image placeholder / gallery sliders (".gallery-swiper")
    */
   if (window.Swiper) {
     document.querySelectorAll(".gallery-swiper").forEach((el) => {
@@ -156,14 +156,34 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /**
-   * Contact form — basic client-side handling (mailto fallback, no backend wired up yet)
+   * Updates hub - category filter
+   */
+  const filterRow = document.querySelector(".filter-row");
+  if (filterRow) {
+    const buttons = filterRow.querySelectorAll("button");
+    const posts = document.querySelectorAll(".post-card");
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buttons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const cat = btn.getAttribute("data-filter");
+        posts.forEach((post) => {
+          const show = cat === "all" || post.getAttribute("data-category") === cat;
+          post.style.display = show ? "" : "none";
+        });
+      });
+    });
+  }
+
+  /**
+   * Contact form - basic client-side handling (mailto fallback, no backend wired up yet)
    */
   const contactForm = document.querySelector("#contactForm");
   if (contactForm) {
     contactForm.addEventListener("submit", (event) => {
       event.preventDefault();
       const status = contactForm.querySelector(".form-note");
-      if (status) status.textContent = "Thanks — this form isn't wired to a backend yet, please email or call us directly.";
+      if (status) status.textContent = "Thanks, this form isn't wired to a backend yet, please email or call us directly.";
     });
   }
 });
