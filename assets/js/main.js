@@ -35,6 +35,23 @@ document.addEventListener("DOMContentLoaded", () => {
   function initHeader() {
     setActiveNavLink();
     initMobileNav();
+    initHeaderScroll();
+  }
+
+  /**
+   * Header - transparent at top, solid once the page scrolls
+   */
+  function initHeaderScroll() {
+    const siteHeader = document.querySelector(".header");
+    if (!siteHeader) return;
+    if (document.querySelector(".hero")) {
+      siteHeader.classList.add("on-light");
+    }
+    const toggleScrolled = () => {
+      siteHeader.classList.toggle("scrolled", window.scrollY > 40);
+    };
+    toggleScrolled();
+    document.addEventListener("scroll", toggleScrolled);
   }
 
   /**
