@@ -1,8 +1,23 @@
 (function ($) {
     "use strict";
 
-    // Load shared footer into #footer-container
+    // Load shared header & footer
+    $('#header-container').load('header.html', function () {
+        setActiveNavLink();
+    });
     $('#footer-container').load('footer.html');
+    
+    // Set active nav link based on current page
+    function setActiveNavLink() {
+        var current = window.location.pathname.split('/').pop() || 'index.html';
+        $('#navbarCollapse .navbar-nav a').each(function () {
+            var href = $(this).attr('href');
+            if (href === current) {
+                $(this).addClass('active');
+                $(this).closest('.nav-item').addClass('active');
+            }
+        });
+    }
 
     // Spinner
     var spinner = function () {
