@@ -1,6 +1,9 @@
 (function ($) {
     "use strict";
 
+    // Load shared footer into #footer-container
+    $('#footer-container').load('footer.html');
+
     // Spinner
     var spinner = function () {
         setTimeout(function () {
