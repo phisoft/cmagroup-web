@@ -511,6 +511,105 @@
 /*** Service End ***/
 
 
+/*** Strategic Partners Start ***/
+.partners {
+    background: var(--bs-light);
+}
+
+.partners .partner-card {
+    border-radius: 10px;
+    background: var(--bs-white);
+    overflow: hidden;
+    transition: 0.5s;
+    border: 1px solid rgba(0, 0, 0, .06);
+}
+
+.partners .partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    border-color: var(--bs-primary);
+}
+
+.partners .partner-img {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.partners .partner-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.5s;
+}
+
+.partners .partner-card:hover .partner-img img {
+    transform: scale(1.08);
+}
+
+.partners .partner-body {
+    padding: 26px 26px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.partners .partner-kicker {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 30px;
+    margin-bottom: 14px;
+}
+
+.partners .kicker-coworking {
+    background: rgba(56, 182, 255, .12);
+    color: #1c7ed6;
+}
+
+.partners .kicker-academy {
+    background: rgba(255, 54, 100, .12);
+    color: var(--accent-pink, #e0315a);
+}
+
+.partners .kicker-cma {
+    background: rgba(1, 95, 201, .12);
+    color: var(--bs-primary);
+}
+
+.partners .partner-body h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--bs-dark);
+    margin-bottom: 10px;
+}
+
+.partners .partner-body p {
+    color: var(--bs-body-color);
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.partners .badge-hrdc {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #e0315a;
+    border: 1px solid #e0315a;
+    padding: 5px 14px;
+    border-radius: 30px;
+    margin-bottom: 18px;
+}
+
+/*** Strategic Partners End ***/
+
+
 /*** Blog Start ***/
 .blog .blog-item {
     border-radius: 10px;
