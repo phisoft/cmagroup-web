@@ -11,6 +11,14 @@
     color: #004aad;
 }
 
+.bg-primary-1 {
+    background-color: #38b6ff;
+}
+
+.bg-secondary {
+    background-color: #004aad;
+}
+
 .display-1 {
     font-size: 25px;
 }
@@ -363,7 +371,7 @@
 .bg-breadcrumb {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(0, 74, 173, 0.9), rgba(0, 0, 0, 0.2)), url(../img/bg-breadcrumb.jpg);
+    background: linear-gradient(rgba(0, 74, 173, 0.9), rgba(0, 0, 0, 0.2)), url(../img/group-discussion.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
