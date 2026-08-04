@@ -1,209 +1,633 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CMA & Co. (Accounting & Business Services)</title>
-<meta name="description" content="Accounting, business advisory and company secretarial services from CMA &amp; Co., backed by a network of strategic partners for training, coworking and employee benefits. Based in Kota Kinabalu, Sabah.">
-<link rel="canonical" href="https://www.cmagroup.my/">
 
-<!-- Favicon -->
-<link href="assets/img/logo-badge.png" rel="icon">
+    <head>
+        <meta charset="utf-8">
+        <title>CMA & Co. (Accounting & Business Services)</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
 
-<!-- Vendor CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-<!-- Template CSS -->
-<link href="assets/css/main.css" rel="stylesheet">
-</head>
-<body>
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-<div id="preloader"></div>
 
-<div id="header-container"></div><!-- include header.html -->
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-<main id="top">
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg" role="img" aria-label="The CMA Consultancy Group advisory team"></div>
-    <div class="wrap">
-      <div class="hero-content">
-        <span class="eyebrow">Kota Kinabalu · Sabah</span>
-        <h1>Wealth, guarded and <em>grown</em> with distinction</h1>
-        <p>Accounting, business advisory and company secretarial services for Sabah&rsquo;s business owners, delivered by CMA &amp; Co. and backed by a network of strategic partners for training, coworking and employee benefits.</p>
-        <div class="hero-ctas">
-          <a href="contact.html" class="btn btn-solid">Get a free quote</a>
-          <a href="services.html" class="btn btn-ghost">View services</a>
+        <!-- Hide carousel arrow UI but keep scrolling -->
+        <style>
+            .header-carousel .owl-nav {
+                display: none !important;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+        <!-- Spinner End -->
 
-  <!-- IN A GLANCE -->
-  <section class="glance">
-    <div class="glance-stats" data-aos="fade-right">
-      <span class="eyebrow">In a glance</span>
-      <div class="glance-grid">
-        <div class="glance-item"><b data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter">0</b><span>Years of combined expertise</span></div>
-        <div class="glance-item"><b data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter">0</b><span>Strategic partners under one roof</span></div>
-        <div class="glance-item"><b>2024</b><span>HRD Corp registered training partner</span></div>
-        <div class="glance-item"><b data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter">0</b><span>Wealth modules under CMA Academy Asia</span></div>
-      </div>
-    </div>
-    <div class="glance-photo" data-aos="fade-left">
-      <div class="glance-photo-inner">
-        <h2>Creating clarity for Sabah&rsquo;s business owners</h2>
-        <p>We put clients at the centre of what we do, accounting and advisory tailored to your business, not the other way around.</p>
-        <a href="about.html" class="glance-link">Who we are <i class="bi bi-chevron-right"></i></a>
-      </div>
-    </div>
-  </section>
+        <!-- Header Start -->
+        <div id="header-container"></div>
+        <!-- Header End -->
 
-  <!-- WHAT WE DO -->
-  <section class="services" id="services">
-    <div class="wrap">
-      <div class="section-head-row" data-aos="fade-up">
-        <div>
-          <h2>What We Do</h2>
-          <p>CMA &amp; Co., accounting and business services.</p>
+
+        <!-- Carousel Start -->
+        <div class="header-carousel owl-carousel">
+            <div class="header-carousel-item" style="background: url('img/cma-header.png') center center no-repeat; background-size: contain;">
+                <!-- <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-12 animated fadeInLeft">
+                                <div class="text-sm-center text-md-start">
+                                    <h1 class="display-1 text-white mb-4">Accounting & Business Services You Can Trust</h1>
+                                    <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="header-carousel-item" style="background: url('img/cma-header.png') center center no-repeat; background-size: contain;">
+                <!-- <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row gy-4 gy-lg-0 gx-0 gx-lg-5 align-items-center">
+                            <div class="col-lg-5 animated fadeInLeft">
+                                <div class="calrousel-img">
+                                    <img src="img/carousel-2.png" class="img-fluid w-100" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 animated fadeInRight">
+                                <div class="text-sm-center text-md-end">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4">Welcome To CMA & Co.</h4>
+                                    <h1 class="display-1 text-white mb-4">Empowerment Hub. Individual & Corporate Consultation, Training & Coaching.</h1>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
         </div>
-        <a href="services.html" class="view-all">View all <i class="bi bi-chevron-right"></i></a>
-      </div>
-      <div class="cards services-grid">
-        <article class="card" data-aos="fade-up">
-          <div class="card-img"><img src="assets/img/consultation.jpg" alt="Business advisory & consultation" loading="lazy"></div>
-          <div class="card-body">
-            <span class="kicker">Advisory</span>
-            <h3>Business advisory &amp; consultation</h3>
-            <p>Strategic guidance on structure, growth and decision-making, so you're never running the numbers alone.</p>
-            <a href="services.html#business-advisory" class="card-link">Learn more <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="card" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-img"><img src="assets/img/accountant-desk.jpg" alt="Digital accounting solutions" loading="lazy"></div>
-          <div class="card-body">
-            <span class="kicker">Clarity</span>
-            <h3>Digital accounting solutions</h3>
-            <p>Cloud bookkeeping on Bukku, with monthly reports you can actually read.</p>
-            <a href="services.html#accounting" class="card-link">Learn more <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="card" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-img"><img src="assets/img/handshake.jpg" alt="Company secretarial solutions" loading="lazy"></div>
-          <div class="card-body">
-            <span class="kicker">Foundations</span>
-            <h3>Company secretarial solutions</h3>
-            <p>Incorporation and ongoing SSM compliance, handled end to end.</p>
-            <a href="services.html#company-setup" class="card-link">Learn more <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="card" data-aos="fade-up" data-aos-delay="300">
-          <div class="card-img"><img src="assets/img/policy-review.jpg" alt="Compliance & reporting" loading="lazy"></div>
-          <div class="card-body">
-            <span class="kicker">Compliance</span>
-            <h3>Compliance &amp; reporting</h3>
-            <p>Statutory filings and reporting obligations kept current, so deadlines never catch you off guard.</p>
-            <a href="services.html" class="card-link">Learn more <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </article>
-        <!-- <article class="card" data-aos="fade-up" data-aos-delay="400">
-          <div class="card-img"><img src="assets/img/whiteboard-workshop.jpg" alt="Accounting & finance coaching & training" loading="lazy"></div>
-          <div class="card-body">
-            <span class="kicker">Growth</span>
-            <h3>Accounting &amp; finance coaching &amp; training</h3>
-            <p>Practical financial literacy for your team, delivered through CMA Academy Asia.</p>
-            <a href="academy.html" class="card-link">Learn more <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </article> -->
-      </div>
-    </div>
-  </section>
+        <!-- Carousel End -->
 
-  <!-- STRATEGIC PARTNERS -->
-  <section class="pillars" id="strategic-partners">
-    <div class="wrap">
-      <div class="section-head" data-aos="fade-up">
-        <span class="eyebrow">Beyond CMA &amp; Co.</span>
-        <h2>Our Strategic Partners</h2>
-      </div>
-      <div class="pillar-grid">
-        <div class="pillar" data-aos="fade-up">
-          <div class="img-ph"><img src="assets/img/office-reception.jpg" alt="CMA KK Coworking Space" loading="lazy"></div>
-          <div class="pillar-body">
-            <h3>CMA KK Coworking Space</h3>
-            <p>A collaborative workspace in Kota Kinabalu for entrepreneurs, freelancers and growing teams.</p>
-            <!-- placeholder link: swap for CMA KK Coworking Space's real site once available -->
-            <a href="contact.html" class="btn btn-outline btn-sm" style="margin-top:14px">Learn more</a>
-          </div>
+        <!-- About Start -->
+        <div class="container-fluid bg-light about py-5">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="about-item-content bg-white rounded p-5 h-100">
+                            <h4 class="text-primary">About Our Company</h4>
+                            <h1 class="display-4 mb-4">High Range of Exploring Protection</h1>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt debitis sint tempora. Corporis consequatur illo blanditiis voluptates aperiam quos aliquam totam aliquid rem explicabo,
+                            </p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae praesentium recusandae eligendi modi hic
+                            </p>
+                            <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>We can save your money.</p>
+                            <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Production or trading of good</p>
+                            <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Our life insurance is flexible</p>
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Information</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="bg-white rounded p-5 h-100">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-12">
+                                    <div class="rounded bg-light">
+                                        <img src="img/about-1.png" class="img-fluid rounded w-100" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="counter-item bg-light rounded p-3 h-100">
+                                        <div class="counter-counting">
+                                            <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">129</span>
+                                            <span class="h1 fw-bold text-primary">+</span>
+                                        </div>
+                                        <h4 class="mb-0 text-dark">Insurance Policies</h4>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="counter-item bg-light rounded p-3 h-100">
+                                        <div class="counter-counting">
+                                            <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">99</span>
+                                            <span class="h1 fw-bold text-primary">+</span>
+                                        </div>
+                                        <h4 class="mb-0 text-dark">Awards WON</h4>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="counter-item bg-light rounded p-3 h-100">
+                                        <div class="counter-counting">
+                                            <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">556</span>
+                                            <span class="h1 fw-bold text-primary">+</span>
+                                        </div>
+                                        <h4 class="mb-0 text-dark">Skilled Agents</h4>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="counter-item bg-light rounded p-3 h-100">
+                                        <div class="counter-counting">
+                                            <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">967</span>
+                                            <span class="h1 fw-bold text-primary">+</span>
+                                        </div>
+                                        <h4 class="mb-0 text-dark">Team Members</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="pillar accent-pink" data-aos="fade-up" data-aos-delay="100">
-          <div class="img-ph"><img src="assets/img/workshop.jpg" alt="CMA Academy Asia" loading="lazy"></div>
-          <div class="pillar-body">
-            <h3>CMA Academy Asia</h3>
-            <p>Corporate training and financial wellness programs, including the HRD Corp claimable Money Mastery Makeover.</p>
-            <span class="badge">HRD CORP CLAIMABLE</span><br>
-            <a href="academy.html" class="btn btn-outline btn-sm" style="margin-top:14px">Explore the academy</a>
-          </div>
+        <!-- About End -->
+
+        <!-- What We Do Start -->
+        <div class="container-fluid service py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">What We Do</h4>
+                    <h1 class="display-4 mb-4">Business Advisory & Accounting Solutions</h1>
+                    <p class="mb-0">End-to-end business solutions covering advisory, digital accounting, company secretarial, compliance, and finance coaching to keep your business on track.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp d-flex" data-wow-delay="0.2s">
+                        <div class="service-item h-100 w-100">
+                            <div class="service-img">
+                                <img src="../assets/img/consultation.jpg" class="img-fluid rounded-top w-100" alt="Business advisory & consultation">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-comments fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <span class="text-primary small text-uppercase fw-bold">Advisory</span>
+                                <a href="service.html#business-advisory" class="d-inline-block h4 mb-3">Business advisory & consultation</a>
+                                    <p class="mb-4">Strategic guidance on structure, growth and decision-making, so you're never running the numbers alone.</p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4 align-self-center" href="service.html#business-advisory">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp d-flex" data-wow-delay="0.4s">
+                        <div class="service-item h-100 w-100">
+                            <div class="service-img">
+                                <img src="../assets/img/accountant-desk.jpg" class="img-fluid rounded-top w-100" alt="Digital accounting solutions">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-laptop fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <span class="text-primary small text-uppercase fw-bold">Clarity</span>
+                                <a href="service.html#accounting" class="d-inline-block h4 mb-3">Digital accounting solutions</a>
+                                    <p class="mb-4">Cloud bookkeeping on Bukku, with monthly reports you can actually read.</p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4 align-self-center" href="service.html#accounting">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp d-flex" data-wow-delay="0.6s">
+                        <div class="service-item h-100 w-100">
+                            <div class="service-img">
+                                <img src="../assets/img/handshake.jpg" class="img-fluid rounded-top w-100" alt="Company secretarial solutions">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-building fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <span class="text-primary small text-uppercase fw-bold">Foundations</span>
+                                <a href="service.html#company-setup" class="d-inline-block h4 mb-3">Company secretarial solutions</a>
+                                    <p class="mb-4">Incorporation and ongoing SSM compliance, handled end to end.</p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4 align-self-center" href="service.html#company-setup">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp d-flex" data-wow-delay="0.2s">
+                        <div class="service-item h-100 w-100">
+                            <div class="service-img">
+                                <img src="../assets/img/policy-review.jpg" class="img-fluid rounded-top w-100" alt="Compliance & reporting">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-file-alt fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <span class="text-primary small text-uppercase fw-bold">Compliance</span>
+                                <a href="service.html" class="d-inline-block h4 mb-3">Compliance & reporting</a>
+                                    <p class="mb-4">Statutory filings and reporting obligations kept current, so deadlines never catch you off guard.</p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4 align-self-center" href="service.html">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp d-flex" data-wow-delay="0.4s">
+                        <div class="service-item h-100 w-100">
+                            <div class="service-img">
+                                <img src="../assets/img/whiteboard-workshop.jpg" class="img-fluid rounded-top w-100" alt="Accounting & finance coaching & training">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-chalkboard-teacher fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <span class="text-primary small text-uppercase fw-bold">Growth</span>
+                                <a href="academy.html" class="d-inline-block h4 mb-3">Accounting & finance coaching & training</a>
+                                    <p class="mb-4">Practical financial literacy for your team, delivered through CMA Academy Asia.</p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4 align-self-center" href="academy.html">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="pillar" data-aos="fade-up" data-aos-delay="200">
-          <div class="img-ph"><img src="assets/img/accountant-desk.jpg" alt="CMA & Co Digital Business Solutions" loading="lazy"></div>
-          <div class="pillar-body">
-            <h3>CMA &amp; Co Digital Business Solutions</h3>
-            <p>Cloud accounting and HR systems on Bukku, implemented and supported for your team.</p>
-            <!-- placeholder link: swap for the real digital solutions site once available -->
-            <a href="contact.html" class="btn btn-outline btn-sm" style="margin-top:14px">Learn more</a>
-          </div>
+        <!-- What We Do End -->
+
+        <!-- Strategic Partners Start -->
+        <div class="container-fluid partners py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Connected for Success</h4>
+                    <h1 class="display-4 mb-4">Our Strategic Partners</h1>
+                    <p class="mb-0">Together with our trusted partners, we provide a complete range of business support services under one connected ecosystem.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp d-flex" data-wow-delay="0.2s">
+                        <div class="partner-card h-100 w-100">
+                            <div class="partner-img">
+                                <img src="../assets/img/office-reception.jpg" alt="CMA KK Coworking Space" class="img-fluid w-100">
+                            </div>
+                            <div class="partner-body">
+                                <h3>CMA KK Coworking Space</h3>
+                                <p>A collaborative workspace in Kota Kinabalu for entrepreneurs, freelancers and growing teams.</p>
+                                <a href="academy.html" class="btn btn-primary rounded-pill py-2 px-4 mt-auto align-self-center">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp d-flex" data-wow-delay="0.4s">
+                        <div class="partner-card h-100 w-100">
+                            <div class="partner-img">
+                                <img src="../assets/img/workshop.jpg" alt="CMA Academy Asia" class="img-fluid w-100">
+                            </div>
+                            <div class="partner-body">
+                                <span class="partner-kicker kicker-academy">HRP Corp Claimable</span>
+                                <h3>CMA Academy Asia</h3>
+                                <p>Corporate training and financial wellness programs, including the HRD Corp claimable Money Mastery Makeover.</p>
+                                <a href="academy.html" class="btn btn-primary rounded-pill py-2 px-4 mt-auto align-self-center">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp d-flex" data-wow-delay="0.6s">
+                        <div class="partner-card h-100 w-100">
+                            <div class="partner-img">
+                                <img src="../assets/img/group-discussion.jpg" alt="CMA & Co" class="img-fluid w-100">
+                            </div>
+                            <div class="partner-body">
+                                <h3>CMA & Co.</h3>
+                                <p>Accounting, business advisory and company secretarial services delivered by CMA & Co. and backed by a network of strategic partners.</p>
+                                <a href="academy.html" class="btn btn-primary rounded-pill py-2 px-4 mt-auto align-self-center">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-        <div class="pillar accent-blue" data-aos="fade-up" data-aos-delay="300">
-          <div class="img-ph"><img src="assets/img/consultation.jpg" alt="Corporate Employee Benefit Solution" loading="lazy"></div>
-          <div class="pillar-body">
-            <h3>Corporate Employee Benefit Solution</h3>
-            <p>Group insurance and Takaful benefits for your workforce, arranged with AIA Malaysia and AIA Public Takaful.</p>
-            <!-- placeholder link: swap for a dedicated employee benefits page once available -->
-            <a href="contact.html" class="btn btn-outline btn-sm" style="margin-top:14px">Talk to us</a>
-          </div>
+        <!-- Strategic Partners End -->
+
+        <!-- SME Services Start -->
+        <div class="container-fluid sme-services py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">SME Services</h4>
+                    <h1 class="display-4 mb-4">Everything Your SME Needs</h1>
+                    <p class="mb-0">From incorporation to digital transformation — practical, affordable services built for small and medium businesses in Sabah.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+
+                    <div class="col-md-6 col-lg-3 wow fadeInUp d-flex" data-wow-delay="0.2s">
+                        <div class="sme-card h-100 w-100">
+                            <div class="sme-icon">
+                                <i class="fa fa-building"></i>
+                            </div>
+                            <div class="sme-body">
+                                <h3>Company Setup & Incorporation</h3>
+                                <a href="service.html#company-setup" class="btn btn-outline-primary rounded-pill py-2 px-4 mt-auto align-self-center">View Service</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 wow fadeInUp d-flex" data-wow-delay="0.4s">
+                        <div class="sme-card h-100 w-100">
+                            <div class="sme-icon">
+                                <i class="fa fa-comments"></i>
+                            </div>
+                            <div class="sme-body">
+                                <h3>Business Advisory Services</h3>
+                                <a href="service.html#business-advisory" class="btn btn-outline-primary rounded-pill py-2 px-4 mt-auto align-self-center">View Service</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 wow fadeInUp d-flex" data-wow-delay="0.6s">
+                        <div class="sme-card h-100 w-100">
+                            <div class="sme-icon">
+                                <i class="fa fa-laptop"></i>
+                            </div>
+                            <div class="sme-body">
+                                <h3>Accounting</h3>
+                                <a href="service.html#accounting" class="btn btn-outline-primary rounded-pill py-2 px-4 mt-auto align-self-center">View Service</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 wow fadeInUp d-flex" data-wow-delay="0.8s">
+                        <div class="sme-card h-100 w-100">
+                            <div class="sme-icon">
+                                <i class="fa fa-rocket"></i>
+                            </div>
+                            <div class="sme-body">
+                                <h3>Business Digitalisation</h3>
+                                <a href="service.html" class="btn btn-outline-primary rounded-pill py-2 px-4 mt-auto align-self-center">View Service</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+        <!-- SME Services End -->
 
-  <!-- CONTACT CTA -->
-  <section class="contact" id="contact">
-    <div class="wrap" data-aos="fade-up">
-      <span class="eyebrow">Get in touch</span>
-      <h2>Let&rsquo;s talk about your numbers</h2>
-      <div class="ornament" aria-hidden="true"><span></span></div>
-      <div class="contact-lines">
-        <strong>KK Times Square, Signature Office</strong><br>
-        Unit P1/L-69-6 &amp; L-70-6, Level 6, Block L, Off Coastal Highway, 88100 Kota Kinabalu, Sabah<br>
-        <strong>+6012-947 9219</strong> &nbsp;·&nbsp; cmagroupkk@gmail.com
-      </div>
-      <a href="contact.html" class="btn btn-solid">Book a consultation</a>
-    </div>
-  </section>
-</main>
+        <!-- Corporate Solutions Start -->
+        <div class="container-fluid sme-services py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Corporate Solutions</h4>
+                    <h1 class="display-4 mb-4">Specialised Services for Larger Organisations</h1>
+                    <p class="mb-0">Strategic advisory and governance support for corporations navigating complex regulatory, cross-border and risk environments.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
 
-<div id="footer-container"></div><!-- include footer.html -->
+                    <div class="col-md-6 col-lg-3 wow fadeInUp d-flex" data-wow-delay="0.2s">
+                        <div class="sme-card h-100 w-100">
+                            <div class="sme-icon">
+                                <i class="fa fa-briefcase"></i>
+                            </div>
+                            <div class="sme-body">
+                                <h3>Corporate Advisory</h3>
+                                <a href="service.html" class="btn btn-outline-primary rounded-pill py-2 px-4 mt-auto align-self-center">View Service</a>
+                            </div>
+                        </div>
+                    </div>
 
-<a href="#top" class="scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></a>
+                    <div class="col-md-6 col-lg-3 wow fadeInUp d-flex" data-wow-delay="0.4s">
+                        <div class="sme-card h-100 w-100">
+                            <div class="sme-icon">
+                                <i class="fa fa-shield-alt"></i>
+                            </div>
+                            <div class="sme-body">
+                                <h3>Risk Advisory</h3>
+                                <a href="service.html" class="btn btn-outline-primary rounded-pill py-2 px-4 mt-auto align-self-center">View Service</a>
+                            </div>
+                        </div>
+                    </div>
 
-<!-- Vendor JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>
+                    <div class="col-md-6 col-lg-3 wow fadeInUp d-flex" data-wow-delay="0.6s">
+                        <div class="sme-card h-100 w-100">
+                            <div class="sme-icon">
+                                <i class="fa fa-globe"></i>
+                            </div>
+                            <div class="sme-body">
+                                <h3>Global Business Solutions</h3>
+                                <a href="service.html" class="btn btn-outline-primary rounded-pill py-2 px-4 mt-auto align-self-center">View Service</a>
+                            </div>
+                        </div>
+                    </div>
 
-<!-- Template JS -->
-<script src="assets/js/main.js"></script>
+                    <div class="col-md-6 col-lg-3 wow fadeInUp d-flex" data-wow-delay="0.8s">
+                        <div class="sme-card h-100 w-100">
+                            <div class="sme-icon">
+                                <i class="fa fa-graduation-cap"></i>
+                            </div>
+                            <div class="sme-body">
+                                <h3>Compliance Training</h3>
+                                <a href="service.html" class="btn btn-outline-primary rounded-pill py-2 px-4 mt-auto align-self-center">View Service</a>
+                            </div>
+                        </div>
+                    </div>
 
-</body>
+                </div>
+            </div>
+        </div>
+        <!-- Corporate Solutions End -->
+
+        <!-- Blog Start -->
+        <div class="container-fluid blog bg-light py-5" style="display: none;">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">From Blog</h4>
+                    <h1 class="display-4 mb-4">News And Updates</h1>
+                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                    </p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-1.png" class="img-fluid rounded-top w-100" alt="">
+                                <div class="blog-categiry py-2 px-4">
+                                    <span>Business</span>
+                                </div>
+                            </div>
+                            <div class="blog-content p-4">
+                                <div class="blog-comment d-flex justify-content-between mb-3">
+                                    <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
+                                    <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
+                                    <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
+                                </div>
+                                <a href="#" class="h4 d-inline-block mb-3">Which allows you to pay down insurance bills</a>
+                                <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
+                                <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-2.png" class="img-fluid rounded-top w-100" alt="">
+                                <div class="blog-categiry py-2 px-4">
+                                    <span>Business</span>
+                                </div>
+                            </div>
+                            <div class="blog-content p-4">
+                                <div class="blog-comment d-flex justify-content-between mb-3">
+                                    <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
+                                    <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
+                                    <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
+                                </div>
+                                <a href="#" class="h4 d-inline-block mb-3">Leverage agile frameworks to provide</a>
+                                <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
+                                <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-3.png" class="img-fluid rounded-top w-100" alt="">
+                                <div class="blog-categiry py-2 px-4">
+                                    <span>Business</span>
+                                </div>
+                            </div>
+                            <div class="blog-content p-4">
+                                <div class="blog-comment d-flex justify-content-between mb-3">
+                                    <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
+                                    <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
+                                    <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
+                                </div>
+                                <a href="#" class="h4 d-inline-block mb-3">Leverage agile frameworks to provide</a>
+                                <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
+                                <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+        <!-- Team Start -->
+        <div class="container-fluid team py-5" style="display: none;">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Team</h4>
+                    <h1 class="display-4 mb-4">Meet Our Expert Team Members</h1>
+                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-1.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <div class="team-icon">
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="team-title p-4">
+                                <h4 class="mb-0">David James</h4>
+                                <p class="mb-0">Profession</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-2.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <div class="team-icon">
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="team-title p-4">
+                                <h4 class="mb-0">David James</h4>
+                                <p class="mb-0">Profession</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-3.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <div class="team-icon">
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="team-title p-4">
+                                <h4 class="mb-0">David James</h4>
+                                <p class="mb-0">Profession</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-4.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <div class="team-icon">
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="team-title p-4">
+                                <h4 class="mb-0">David James</h4>
+                                <p class="mb-0">Profession</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
+
+
+        <!-- Footer Start -->
+        <div id="footer-container"></div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
 </html>
