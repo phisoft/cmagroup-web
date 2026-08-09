@@ -683,6 +683,46 @@
                 font-size: 12px;
                 margin-top: 5px;
             }
+            .training-category-card .tc-list li:nth-child(n+4) {
+                display: none;
+            }
+            .training-category-card.expanded .tc-list li:nth-child(n+4) {
+                display: flex;
+            }
+            .training-category-card .tc-footer {
+                text-align: center;
+                margin-top: 18px;
+                padding-top: 18px;
+                border-top: 1px dashed rgba(0, 0, 0, .08);
+            }
+            .tc-toggle-btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                border-radius: 30px;
+                padding: 9px 28px;
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: .3px;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                border: none;
+                color: var(--bs-white);
+                box-shadow: 0 6px 18px rgba(56, 182, 255, .3);
+                transition: .5s;
+                cursor: pointer;
+            }
+            .tc-toggle-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 28px rgba(56, 182, 255, .45);
+            }
+            .tc-toggle-btn i {
+                font-size: 12px;
+                transition: .4s;
+            }
+            .tc-toggle-btn:hover i {
+                transform: translateY(2px);
+            }
             .training-note-card {
                 background: linear-gradient(135deg, rgba(56, 182, 255, .15) 0%, rgba(56, 182, 255, .05) 100%);
                 border: 1px solid rgba(56, 182, 255, .3);
@@ -1219,6 +1259,11 @@
                                 <li><i class="fas fa-angle-right"></i>From Bookkeeping To Reporting Of Full Set Of Accounts In The E-Invoicing Era</li>
                                 <li><i class="fas fa-angle-right"></i>Accounting Level 1: From Bookkeeping To Reporting Full Set Of Accounts</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
@@ -1235,6 +1280,11 @@
                                 <li><i class="fas fa-angle-right"></i>HR Documentation and Record Management: Best Practices for Compliance and Efficiency</li>
                                 <li><i class="fas fa-angle-right"></i>Introduction to Emotional Intelligence in the Workplace</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
@@ -1253,6 +1303,11 @@
                                 <li><i class="fas fa-angle-right"></i>Wealth Distribution Blueprint: Building your legacy through estate planning</li>
                                 <li><i class="fas fa-angle-right"></i>Women and Wealth: Empowering women through financial literacy</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.8s">
@@ -1269,6 +1324,11 @@
                                 <li><i class="fas fa-angle-right"></i>Business Setup Masterclass: From concept to creation</li>
                                 <li><i class="fas fa-angle-right"></i>Finance For Non-Finance for Professionals/ Executives</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="1s">
@@ -1287,6 +1347,11 @@
                                 <li><i class="fas fa-angle-right"></i>Customer Service Success: Essential skills for delivering exceptional service</li>
                                 <li><i class="fas fa-angle-right"></i>Presenting With Impact: Techniques for captivating your audience</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="1.2s">
@@ -1303,6 +1368,11 @@
                                 <li><i class="fas fa-angle-right"></i>The Digital Marketing Bootcamp: Intensive training for online marketers</li>
                                 <li><i class="fas fa-angle-right"></i>The Power of Personal Branding: Creating influence and impact</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="1.4s">
@@ -1316,6 +1386,11 @@
                                 <li><i class="fas fa-angle-right"></i>Cracking the Workplace Code: Understanding personality differences</li>
                                 <li><i class="fas fa-angle-right"></i>Leadership Excellence: Empowering leaders, empowering teams</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="1.6s">
@@ -1330,6 +1405,11 @@
                                 <li><i class="fas fa-angle-right"></i>Microsoft Word (Basic to Advanced)</li>
                                 <li><i class="fas fa-angle-right"></i>Power BI</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1764,6 +1844,17 @@
                 var slide = container.querySelector('.gallery-slide');
                 if (!slide) return;
                 container.scrollBy({ left: direction * slide.offsetWidth, behavior: 'smooth' });
+            }
+
+            function toggleTrainingList(btn) {
+                var card = btn.closest('.training-category-card');
+                card.classList.toggle('expanded');
+                var isExpanded = card.classList.contains('expanded');
+                if (isExpanded) {
+                    btn.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+                } else {
+                    btn.innerHTML = 'View All <i class="fas fa-chevron-down"></i>';
+                }
             }
 
             document.addEventListener('DOMContentLoaded', buildTrainingGalleries);
