@@ -125,6 +125,230 @@
                 font-size: 14.5px;
             }
 
+            /*** Workspace Detail Section ***/
+            .cw-workspace-info {
+                background: linear-gradient(135deg, rgba(56, 182, 255, .14) 0%, rgba(56, 182, 255, .04) 60%, rgba(255, 255, 255, .9) 100%);
+                border: 1px solid rgba(56, 182, 255, .3);
+                border-radius: 20px;
+                padding: 40px 35px;
+                height: 100%;
+                transition: .5s;
+                position: relative;
+                overflow: hidden;
+            }
+            .cw-workspace-info::before {
+                content: '';
+                position: absolute;
+                top: -70px;
+                right: -70px;
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .12);
+            }
+            .cw-workspace-info::after {
+                content: '';
+                position: absolute;
+                bottom: -90px;
+                left: -90px;
+                width: 220px;
+                height: 220px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .06);
+            }
+            .cw-workspace-info:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 18px 45px rgba(56, 182, 255, .3);
+                border-color: #38b6ff;
+            }
+            .cw-workspace-info .ws-icon {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                box-shadow: 0 10px 25px rgba(56, 182, 255, .45);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 28px;
+                margin-bottom: 20px;
+                position: relative;
+                z-index: 1;
+                transition: .5s;
+            }
+            .cw-workspace-info:hover .ws-icon {
+                transform: scale(1.08) rotate(8deg);
+            }
+            .cw-workspace-info h3 {
+                color: #0a2a4a;
+                position: relative;
+                z-index: 1;
+                font-weight: 700;
+                font-size: 24px;
+            }
+            .cw-workspace-info h3::after {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 3px;
+                border-radius: 3px;
+                background: linear-gradient(90deg, #38b6ff, rgba(56, 182, 255, .2));
+                margin: 12px 0 0;
+            }
+            .cw-workspace-info .ws-desc {
+                position: relative;
+                z-index: 1;
+                color: #475569;
+            }
+            .capacity-badge {
+                display: inline-block;
+                background: rgba(56, 182, 255, .12);
+                color: #0561a5;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: .5px;
+                text-transform: uppercase;
+                padding: 6px 14px;
+                border-radius: 30px;
+                border: 1px solid rgba(56, 182, 255, .3);
+                margin: 12px 0 14px;
+                position: relative;
+                z-index: 1;
+            }
+            .special-offer-badge {
+                display: inline-block;
+                background: rgba(255, 54, 100, .12);
+                color: #e0315a;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: .5px;
+                text-transform: uppercase;
+                padding: 6px 14px;
+                border-radius: 30px;
+                border: 1px solid rgba(255, 54, 100, .3);
+                margin-bottom: 14px;
+                margin-left: 8px;
+                position: relative;
+                z-index: 1;
+            }
+            .price-list {
+                list-style: none;
+                padding: 0;
+                margin: 0 0 12px;
+                position: relative;
+                z-index: 1;
+            }
+            .price-list li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
+                padding: 8px 0;
+                border-bottom: 1px dashed rgba(0, 0, 0, .08);
+                font-size: 14.5px;
+                color: #004aad;
+            }
+            .price-list li:last-child {
+                border-bottom: 0;
+            }
+            .price-list .price-label {
+                color: #475569;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .price-list .price-label i {
+                color: var(--bs-primary);
+                font-size: 13px;
+                width: 18px;
+            }
+            .price-list .price-amount {
+                font-weight: 700;
+                color: #0a2a4a;
+                white-space: nowrap;
+                font-size: 16px;
+            }
+            .price-note {
+                font-size: 12.5px;
+                color: #6c757d;
+                position: relative;
+                z-index: 1;
+                margin-bottom: 16px;
+                font-style: italic;
+            }
+            .amenity-title {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 13px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: #0a2a4a;
+                margin-bottom: 10px;
+                position: relative;
+                z-index: 1;
+            }
+            .amenity-title i {
+                color: var(--bs-primary);
+                font-size: 14px;
+            }
+            .amenity-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                position: relative;
+                z-index: 1;
+            }
+            .amenity-list li {
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                padding: 5px 0;
+                font-size: 14px;
+                color: #475569;
+            }
+            .amenity-list li i {
+                color: #25d366;
+                font-size: 13px;
+                margin-top: 4px;
+                flex-shrink: 0;
+            }
+            .ws-gallery {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .ws-gallery a {
+                display: block;
+                border-radius: 10px;
+                overflow: hidden;
+                position: relative;
+                height: 320px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+                transition: .5s;
+            }
+            .ws-gallery a:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 18px 40px rgba(56, 182, 255, .3);
+            }
+            .ws-gallery img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                transition: .5s;
+            }
+            .ws-gallery a:hover img {
+                transform: scale(1.08);
+            }
+            @media (max-width: 575px) {
+                .ws-gallery a {
+                    height: 220px;
+                }
+            }
+
             /*** Membership Card ***/
             .membership-card {
                 border-radius: 16px;
@@ -425,20 +649,6 @@
                     <p class="mb-0">From short-term rentals to long-term memberships, we offer a variety of workspace solutions to suit your business.</p>
                 </div>
                 <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="space-card">
-                            <div class="sc-icon"><i class="fas fa-chair"></i></div>
-                            <h3 class="mb-3">Hot Desk</h3>
-                            <p class="mb-0">Flexible seating in our open workspace area. Perfect for freelancers and remote workers who need a productive environment without a long-term commitment.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="space-card">
-                            <div class="sc-icon"><i class="fas fa-door-open"></i></div>
-                            <h3 class="mb-3">Private Office</h3>
-                            <p class="mb-0">Fully furnished private offices for teams who need dedicated, secure space. Ideal for startups and growing companies looking for a professional base.</p>
-                        </div>
-                    </div>
                     <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
                         <div class="space-card">
                             <div class="sc-icon"><i class="fas fa-chalkboard-teacher"></i></div>
@@ -492,6 +702,95 @@
             </div>
         </div>
         <!-- Spaces & Services End -->
+
+
+        <!-- Hot Desk Detail Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="ws-gallery">
+                            <a href="../assets/img/cma-working/hotdesk-1.png" data-lightbox="hotdesk-gallery" data-title="Hot Desk">
+                                <img src="../assets/img/cma-working/hotdesk-1.png" alt="Hot Desk" loading="lazy">
+                            </a>
+                            <a href="../assets/img/cma-working/hotdesk-2.png" data-lightbox="hotdesk-gallery" data-title="Hot Desk">
+                                <img src="../assets/img/cma-working/hotdesk-2.png" alt="Hot Desk" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="cw-workspace-info">
+                            <div class="ws-icon"><i class="fas fa-chair"></i></div>
+                            <h3 class="mb-2">Hot Desk (Open Space)</h3>
+                            <span class="capacity-badge"><i class="fas fa-users me-1"></i>15 People Capacity</span>
+                            <p class="ws-desc mb-4">Flexible seating in our open workspace area. Perfect for freelancers and remote workers who need a productive environment without a long-term commitment.</p>
+                            <ul class="price-list">
+                                <li><span class="price-label"><i class="fas fa-sun"></i>Daily</span><span class="price-amount">RM40</span></li>
+                                <li><span class="price-label"><i class="fas fa-calendar-week"></i>Weekly</span><span class="price-amount">RM200</span></li>
+                                <li><span class="price-label"><i class="fas fa-calendar-alt"></i>Monthly</span><span class="price-amount">RM750</span></li>
+                            </ul>
+                            <p class="price-note">Daily usage 8 hours · Price is per person (pax)</p>
+                            <div class="amenity-title"><i class="fas fa-check-circle"></i>Inclusive Amenities</div>
+                            <ul class="amenity-list">
+                                <li><i class="fas fa-check"></i>High Speed Internet</li>
+                                <li><i class="fas fa-check"></i>Locker Usage</li>
+                                <li><i class="fas fa-check"></i>Shower Usage</li>
+                                <li><i class="fas fa-check"></i>Call To Fixed Line Number</li>
+                                <li><i class="fas fa-check"></i>10 Pages Of B&W Printing</li>
+                                <li><i class="fas fa-check"></i>Coway Water Filter</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hot Desk Detail End -->
+
+
+        <!-- Private Office Detail Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="cw-workspace-info">
+                            <div class="ws-icon"><i class="fas fa-door-open"></i></div>
+                            <h3 class="mb-2">Private Office</h3>
+                            <div class="mb-2" style="position: relative; z-index: 1;">
+                                <span class="capacity-badge"><i class="fas fa-users me-1"></i>2 People Capacity</span>
+                                <span class="special-offer-badge"><i class="fas fa-tags me-1"></i>Special Offer RM1200 Monthly</span>
+                            </div>
+                            <p class="ws-desc mb-4">Fully furnished private offices for teams who need dedicated, secure space. Ideal for startups and growing companies looking for a professional base.</p>
+                            <ul class="price-list">
+                                <li><span class="price-label"><i class="fas fa-sun"></i>Daily</span><span class="price-amount">RM50</span></li>
+                                <li><span class="price-label"><i class="fas fa-calendar-week"></i>Weekly</span><span class="price-amount">RM250</span></li>
+                                <li><span class="price-label"><i class="fas fa-calendar-alt"></i>Monthly</span><span class="price-amount">RM1200</span></li>
+                            </ul>
+                            <p class="price-note">Daily usage 8 hours · Price is per person (pax) except for monthly rates</p>
+                            <div class="amenity-title"><i class="fas fa-check-circle"></i>Inclusive Amenities</div>
+                            <ul class="amenity-list">
+                                <li><i class="fas fa-check"></i>High Speed Internet</li>
+                                <li><i class="fas fa-check"></i>Locker Usage</li>
+                                <li><i class="fas fa-check"></i>Shower Usage</li>
+                                <li><i class="fas fa-check"></i>Call To Fixed Line Number</li>
+                                <li><i class="fas fa-check"></i>10 Pages Of B&W Printing</li>
+                                <li><i class="fas fa-check"></i>Coway Water Filter</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="ws-gallery">
+                            <a href="../assets/img/cma-working/privateoffice-1.png" data-lightbox="privateoffice-gallery" data-title="Private Office">
+                                <img src="../assets/img/cma-working/privateoffice-1.png" alt="Private Office" loading="lazy">
+                            </a>
+                            <a href="../assets/img/cma-working/privateoffice-2.png" data-lightbox="privateoffice-gallery" data-title="Private Office">
+                                <img src="../assets/img/cma-working/privateoffice-2.png" alt="Private Office" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Private Office Detail End -->
 
 
         <!-- Why Choose Us Start -->
