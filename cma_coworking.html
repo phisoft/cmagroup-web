@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CMA KK Coworking Space - Rent Hot Desk, Private Office, Meeting Room & More</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <style>
+            /*** Button styling to match cma_academy.html ***/
+            .btn.btn-primary {
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                border: none;
+                color: var(--bs-white);
+                box-shadow: 0 6px 18px rgba(56, 182, 255, .3);
+                transition: .5s;
+            }
+            .btn.btn-primary:hover {
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                transform: translateY(-2px);
+                box-shadow: 0 10px 28px rgba(56, 182, 255, .45);
+            }
+
+            /*** Coworking Hero ***/
+            .cw-hero {
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            .cw-hero img {
+                width: 100%;
+                height: 450px;
+                object-fit: cover;
+            }
+
+            /*** Space Card ***/
+            .space-card {
+                background: var(--bs-white);
+                border-radius: 10px;
+                border: 1px solid rgba(0, 0, 0, .06);
+                padding: 30px;
+                height: 100%;
+                text-align: center;
+                transition: .5s;
+                position: relative;
+                overflow: hidden;
+            }
+            .space-card::before {
+                content: '';
+                position: absolute;
+                top: -70px;
+                right: -70px;
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .1);
+            }
+            .space-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 18px 45px rgba(56, 182, 255, .25);
+                border-color: #38b6ff;
+            }
+            .space-card .sc-icon {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                box-shadow: 0 10px 25px rgba(56, 182, 255, .4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 26px;
+                margin: 0 auto 20px;
+                position: relative;
+                z-index: 1;
+                transition: .5s;
+            }
+            .space-card:hover .sc-icon {
+                transform: scale(1.08) rotate(8deg);
+            }
+            .space-card h3 {
+                color: #0a2a4a;
+                position: relative;
+                z-index: 1;
+                font-weight: 700;
+                font-size: 20px;
+            }
+            .space-card h3::after {
+                content: '';
+                display: block;
+                width: 40px;
+                height: 3px;
+                border-radius: 3px;
+                background: linear-gradient(90deg, #38b6ff, rgba(56, 182, 255, .2));
+                margin: 10px auto 0;
+            }
+            .space-card p {
+                color: #475569;
+                position: relative;
+                z-index: 1;
+                margin-bottom: 0;
+                font-size: 14.5px;
+            }
+
+            /*** Membership Card ***/
+            .membership-card {
+                border-radius: 16px;
+                background: linear-gradient(135deg, #0a2a4a 0%, #0561a5 100%);
+                border: 1px solid rgba(255, 255, 255, .08);
+                padding: 40px 30px;
+                height: 100%;
+                text-align: center;
+                transition: .5s;
+                position: relative;
+                overflow: hidden;
+            }
+            .membership-card::before {
+                content: '';
+                position: absolute;
+                top: -60px;
+                right: -60px;
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .15);
+            }
+            .membership-card::after {
+                content: '';
+                position: absolute;
+                bottom: -80px;
+                left: -80px;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, .04);
+            }
+            .membership-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 15px 40px rgba(2, 76, 130, .35);
+            }
+            .membership-card .mc-icon {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, .12);
+                color: #7fd4ff;
+                border: 1px solid rgba(255, 255, 255, .2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 28px;
+                margin: 0 auto 20px;
+                position: relative;
+                z-index: 1;
+            }
+            .membership-card h3 {
+                color: var(--bs-white);
+                position: relative;
+                z-index: 1;
+                font-weight: 700;
+                font-size: 20px;
+            }
+            .membership-card p {
+                color: rgba(255, 255, 255, .82);
+                position: relative;
+                z-index: 1;
+                font-size: 14.5px;
+            }
+
+            /*** Inquiry Form Card ***/
+            .inquiry-form-card {
+                background: var(--bs-white);
+                border-radius: 10px;
+                border: 1px solid rgba(0, 0, 0, .06);
+                padding: 40px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+            }
+            .wa-note {
+                background: rgba(37, 211, 102, .1);
+                border: 1px solid rgba(37, 211, 102, .3);
+                border-radius: 10px;
+                padding: 16px 20px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .wa-note i {
+                color: #25d366;
+                font-size: 28px;
+            }
+
+            /*** Feature highlight strip ***/
+            .cw-feature {
+                display: flex;
+                gap: 16px;
+                margin-bottom: 24px;
+            }
+            .cw-feature .cf-icon {
+                flex-shrink: 0;
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+                background: rgba(56, 182, 255, .12);
+                color: var(--bs-primary);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+            }
+
+            /*** Google Reviews ***/
+            .review-scroll {
+                display: flex;
+                gap: 24px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                padding-bottom: 16px;
+                scrollbar-width: thin;
+                scrollbar-color: var(--bs-primary) rgba(0, 0, 0, .08);
+            }
+            .review-scroll::-webkit-scrollbar {
+                height: 6px;
+            }
+            .review-scroll::-webkit-scrollbar-track {
+                background: rgba(0, 0, 0, .08);
+                border-radius: 10px;
+            }
+            .review-scroll::-webkit-scrollbar-thumb {
+                background: var(--bs-primary);
+                border-radius: 10px;
+            }
+            .review-scroll-item {
+                flex: 0 0 calc(33.333% - 16px);
+                min-width: 280px;
+                scroll-snap-align: start;
+            }
+            .review-card {
+                background: var(--bs-white);
+                border-radius: 10px;
+                border: 1px solid rgba(0, 0, 0, .06);
+                padding: 30px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                transition: .5s;
+            }
+            .review-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+                border-color: var(--bs-primary);
+            }
+            .review-card .review-header {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                margin-bottom: 14px;
+            }
+            .review-card .review-avatar {
+                flex-shrink: 0;
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                font-size: 18px;
+            }
+            .review-card .review-name {
+                font-weight: 700;
+                color: #0a2a4a;
+                margin-bottom: 2px;
+                font-size: 15px;
+            }
+            .review-card .review-meta {
+                font-size: 12px;
+                color: #6c757d;
+            }
+            .review-card .review-stars {
+                color: #fbbc05;
+                font-size: 14px;
+                margin-bottom: 12px;
+                letter-spacing: 2px;
+            }
+            .review-card .review-text {
+                color: #475569;
+                font-size: 14.5px;
+                line-height: 1.7;
+                flex-grow: 1;
+                margin-bottom: 16px;
+            }
+            .review-card .review-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--bs-primary);
+                transition: .4s;
+            }
+            .review-card .review-link:hover {
+                color: #0a6fb8;
+                gap: 10px;
+            }
+            .review-card .review-link i {
+                font-size: 11px;
+            }
+            .review-controls {
+                display: flex;
+                justify-content: center;
+                gap: 12px;
+                margin-top: 24px;
+            }
+            .review-nav-btn {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: var(--bs-white);
+                border: 1px solid rgba(0, 0, 0, .08);
+                color: var(--bs-primary);
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: .5s;
+                cursor: pointer;
+            }
+            .review-nav-btn:hover {
+                background: var(--bs-primary);
+                border-color: var(--bs-primary);
+                color: var(--bs-white);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+            }
+            @media (max-width: 991px) {
+                .review-scroll-item {
+                    flex: 0 0 calc(50% - 12px);
+                }
+            }
+            @media (max-width: 575px) {
+                .review-scroll-item {
+                    flex: 0 0 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Header Start -->
+        <div id="header-container"></div>
+        <!-- Header End -->
+
+
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">CMA KK Coworking Space</h4> 
+            </div>
+        </div>
+        <!-- Header End -->
+
+
+        <!-- About CMA KK Coworking Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-xl-10 col-xxl-8 text-center">
+                        <h4 class="text-primary">CMA KK Coworking Space</h4>
+                        <h1 class="display-4 mb-4">A Collaborative Workspace in Kota Kinabalu</h1>
+                        <p class="mb-4 text-start">Located at KK Times Square Office, our coworking space is designed for entrepreneurs, freelancers, startups, and growing teams. Whether you need a hot desk for the day, a private office for your team, or a training space for your next workshop — we have flexible solutions to fit your needs.</p>
+                        <p class="mb-0 text-start">With modern amenities, high-speed internet, meeting rooms, and a supportive community, CMA KK Coworking Space is more than just a place to work — it's a space to grow your business.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-5 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="col-xl-10 col-xxl-8">
+                        <div class="cw-hero">
+                            <img src="../assets/img/office-reception.jpg" alt="CMA KK Coworking Space">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About CMA KK Coworking End -->
+
+
+        <!-- Spaces & Services Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Spaces & Services</h4>
+                    <h1 class="display-4 mb-4">Flexible Solutions For Every Need</h1>
+                    <p class="mb-0">From short-term rentals to long-term memberships, we offer a variety of workspace solutions to suit your business.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="space-card">
+                            <div class="sc-icon"><i class="fas fa-chair"></i></div>
+                            <h3 class="mb-3">Hot Desk</h3>
+                            <p class="mb-0">Flexible seating in our open workspace area. Perfect for freelancers and remote workers who need a productive environment without a long-term commitment.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="space-card">
+                            <div class="sc-icon"><i class="fas fa-door-open"></i></div>
+                            <h3 class="mb-3">Private Office</h3>
+                            <p class="mb-0">Fully furnished private offices for teams who need dedicated, secure space. Ideal for startups and growing companies looking for a professional base.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="space-card">
+                            <div class="sc-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <h3 class="mb-3">Training Space</h3>
+                            <p class="mb-0">A versatile space designed for corporate training, workshops, and seminars. Equipped with presentation facilities to support engaging learning sessions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="space-card">
+                            <div class="sc-icon"><i class="fas fa-users"></i></div>
+                            <h3 class="mb-3">Meeting Room</h3>
+                            <p class="mb-0">Professional meeting rooms for client discussions, team huddles, or board meetings. Bookable by the hour or for half-day / full-day sessions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1s">
+                        <div class="space-card">
+                            <div class="sc-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                            <h3 class="mb-3">Training Open Space</h3>
+                            <p class="mb-0">A spacious open area for larger training sessions, team-building activities, and group workshops. Perfect for interactive and hands-on learning.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.2s">
+                        <div class="space-card">
+                            <div class="sc-icon"><i class="fas fa-briefcase"></i></div>
+                            <h3 class="mb-3">Virtual Office Solutions</h3>
+                            <p class="mb-0">Establish a professional business presence with our virtual office package — including a prime business address, mail handling, and meeting room access.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.4s">
+                        <div class="space-card">
+                            <div class="sc-icon"><i class="fas fa-user-tie"></i></div>
+                            <h3 class="mb-3">Interview Venue</h3>
+                            <p class="mb-0">Conduct professional interviews in a comfortable, private setting. Ideal for HR teams and recruiters who need a neutral venue for candidate sessions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.6s">
+                        <div class="space-card">
+                            <div class="sc-icon"><i class="fas fa-utensils"></i></div>
+                            <h3 class="mb-3">Caterings</h3>
+                            <p class="mb-0">Enhance your event or training session with our catering services. From light refreshments to full meals, we can arrange food for your booking.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.8s">
+                        <div class="membership-card">
+                            <div class="mc-icon"><i class="fas fa-id-card"></i></div>
+                            <h3 class="mb-3">Membership</h3>
+                            <p class="mb-0">Join our coworking community with flexible membership plans. Enjoy access to hot desks, meeting rooms, and networking opportunities with like-minded professionals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Spaces & Services End -->
+
+
+        <!-- Why Choose Us Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <h4 class="text-primary">Why Choose Us</h4>
+                        <h1 class="display-4 mb-0">Work Smarter At CMA KK</h1>
+                        <hr>
+                        <p class="mb-4">Located in the heart of Kota Kinabalu at KK Times Square, our coworking space gives you everything you need to focus, collaborate, and grow.</p>
+                        <div class="cw-feature">
+                            <div class="cf-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h6 class="mb-1 text-dark">Prime Location</h6>
+                                <p class="text-muted mb-0">Conveniently located at KK Times Square Office with easy access to amenities and transport.</p>
+                            </div>
+                        </div>
+                        <div class="cw-feature">
+                            <div class="cf-icon"><i class="fas fa-wifi"></i></div>
+                            <div>
+                                <h6 class="mb-1 text-dark">High-Speed Internet</h6>
+                                <p class="text-muted mb-0">Reliable fast internet to keep you connected and productive throughout your workday.</p>
+                            </div>
+                        </div>
+                        <div class="cw-feature">
+                            <div class="cf-icon"><i class="fas fa-coffee"></i></div>
+                            <div>
+                                <h6 class="mb-1 text-dark">Modern Amenities</h6>
+                                <p class="text-muted mb-0">Fully furnished spaces, meeting rooms, pantry, and professional support staff.</p>
+                            </div>
+                        </div>
+                        <div class="cw-feature">
+                            <div class="cf-icon"><i class="fas fa-handshake"></i></div>
+                            <div>
+                                <h6 class="mb-1 text-dark">Business Community</h6>
+                                <p class="text-muted mb-0">Network and collaborate with entrepreneurs, freelancers, and growing teams.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="cw-hero">
+                            <img src="../assets/img/meeting-room.jpg" alt="CMA KK Meeting Room">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Why Choose Us End -->
+
+
+        <!-- Google Reviews Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Google Reviews</h4>
+                    <h1 class="display-4 mb-4">What Our Clients Say</h1>
+                    <p class="mb-0">Don't just take our word for it — here's what our community says about CMA KK Coworking Space.</p>
+                </div>
+                <div class="review-scroll" id="review-scroll">
+                    <div class="review-scroll-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar">H</div>
+                                <div>
+                                    <div class="review-name">Hashima Hasbullah Yahya</div>
+                                    <div class="review-meta">Local Guide · 10 reviews · 13 photos · 3 weeks ago</div>
+                                </div>
+                            </div>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">I made the perfect decision to rent the private room here to sit for my law exams. Location is superb, ample parking space, situated next to Imago mall. The office is clean, quiet, comfortable, and the charges is unbelievable! No power outages and network problem here ensuring smooth online exam for me. Oh the view is magnificent, facing the golf course of Sutera Harbour. This is a place I strongly recommend.</p>
+                            <a href="https://share.google/2FnG2zpjkCyplRce6" target="_blank" rel="noopener" class="review-link">View Google Review <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="review-scroll-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar">A</div>
+                                <div>
+                                    <div class="review-name">Aaron Chong Tsun Vui</div>
+                                    <div class="review-meta">3 reviews · 3 photos · 2 months ago</div>
+                                </div>
+                            </div>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">Good place for meeting and gathering. Maybe suggest to put tinted on the window. But overall is really good 👍</p>
+                            <a href="https://share.google/eQ7mXvSMTHMS5IHYP" target="_blank" rel="noopener" class="review-link">View Google Review <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="review-scroll-item wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar">K</div>
+                                <div>
+                                    <div class="review-name">Khunying Chua</div>
+                                    <div class="review-meta">6 reviews · 2 months ago</div>
+                                </div>
+                            </div>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">CMA KK Co-Working Space provides a great environment for meetings, training, and work. The meeting/seminar room is spacious and comfortably fits more than 15 people, making it very suitable for corporate meetings, seminars, and training sessions.</p>
+                            <a href="https://share.google/3ZFMTKIjN9lCAeFbq" target="_blank" rel="noopener" class="review-link">View Google Review <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="review-scroll-item wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar">N</div>
+                                <div>
+                                    <div class="review-name">Nadya Farahlyna</div>
+                                    <div class="review-meta">2 reviews · 6 photos · 3 months ago</div>
+                                </div>
+                            </div>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">It is a very comfortable space! I found the environment to be incredibly welcoming and well-designed, making it easy to settle in and get to work. Highly recommended for anyone looking for a productive yet relaxed atmosphere.</p>
+                            <a href="https://share.google/QysR0RHfbUisDaDey" target="_blank" rel="noopener" class="review-link">View Google Review <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="review-scroll-item wow fadeInUp" data-wow-delay="1s">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar">G</div>
+                                <div>
+                                    <div class="review-name">Geraldine K. Asuncion</div>
+                                    <div class="review-meta">6 reviews · 6 photos · a year ago</div>
+                                </div>
+                            </div>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">Place is fairly easy to locate. Training space and amenities very well maintained and quite user-friendly, neat, clean and tidy.</p>
+                            <a href="https://share.google/atJHkyl6hZqL4g9Eu" target="_blank" rel="noopener" class="review-link">View Google Review <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="review-scroll-item wow fadeInUp" data-wow-delay="1.2s">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar">C</div>
+                                <div>
+                                    <div class="review-name">Chok Sien Hiew</div>
+                                    <div class="review-meta">Local Guide · 85 reviews · 66 photos · a year ago</div>
+                                </div>
+                            </div>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">Nice, quiet, clean and well managed co working space. I needed to start early at 6:30am and they were willing to accommodate. Internet speed is fast and also reliable. Thumbs up and recommended.</p>
+                            <a href="https://share.google/9UddrWPxJ14IexU4N" target="_blank" rel="noopener" class="review-link">View Google Review <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="review-scroll-item wow fadeInUp" data-wow-delay="1.4s">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar">I</div>
+                                <div>
+                                    <div class="review-name">Ino</div>
+                                    <div class="review-meta">Local Guide · 153 reviews · 1001 photos · a year ago</div>
+                                </div>
+                            </div>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">Great place for co-space & training facilities. Price start from RM40 for the hot desk including the facilities. They rent out meeting rooms and classroom also.</p>
+                            <a href="https://share.google/ZXT7xDsldUvxZekJx" target="_blank" rel="noopener" class="review-link">View Google Review <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="review-scroll-item wow fadeInUp" data-wow-delay="1.6s">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-avatar">R</div>
+                                <div>
+                                    <div class="review-name">rahmah shafee</div>
+                                    <div class="review-meta">Local Guide · 12 reviews · 13 photos · 10 months ago</div>
+                                </div>
+                            </div>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">Good location, clean and complete amenities. Ms Linda is very kind and accommodating, thank you for assisting us</p>
+                            <a href="https://share.google/B2dqBhqZUt6lJlScg" target="_blank" rel="noopener" class="review-link">View Google Review <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-controls">
+                    <button class="review-nav-btn" onclick="scrollReviews(-1)" aria-label="Previous reviews">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="review-nav-btn" onclick="scrollReviews(1)" aria-label="Next reviews">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="text-center mt-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <a href="https://search.google.com/local/reviews?placeid=ChIJWdjc4ttpOzIRNXNyGX1E5rw" target="_blank" rel="noopener" class="btn btn-primary rounded-pill py-3 px-5">
+                        <i class="fab fa-google me-2"></i>View All Google Reviews
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Google Reviews End -->
+
+
+        <!-- Booking Inquiry Form Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Booking Inquiry</h4>
+                    <h1 class="display-4 mb-4">Reserve Your Space</h1>
+                    <p class="mb-0">Fill in the form below and we will respond via WhatsApp to confirm availability and discuss your booking.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-10 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="inquiry-form-card">
+                            <div class="row g-4">
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="cw-name" placeholder="Name / Company">
+                                        <label for="cw-name">Name / Company *</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="cw-contact" placeholder="Contact">
+                                        <label for="cw-contact">Contact *</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="cw-email" placeholder="Email">
+                                        <label for="cw-email">Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="cw-business" placeholder="Nature of Business">
+                                        <label for="cw-business">Nature of Business *</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="cw-purpose" aria-label="Purpose for rent">
+                                            <option value="" selected disabled>Select purpose</option>
+                                            <option value="Hot Desk">Hot Desk</option>
+                                            <option value="Private Office">Private Office</option>
+                                            <option value="Training Space">Training Space</option>
+                                            <option value="Meeting Room">Meeting Room</option>
+                                            <option value="Training Open Space">Training Open Space</option>
+                                            <option value="Virtual Office Solutions">Virtual Office Solutions</option>
+                                            <option value="Interview Venue">Interview Venue</option>
+                                            <option value="Caterings">Caterings</option>
+                                            <option value="Membership">Membership</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <label for="cw-purpose">The Purpose For Rent *</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="cw-date" placeholder="Date of Booking">
+                                        <label for="cw-date">Date of Booking *</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Additional notes or requirements" id="cw-notes" style="height: 120px"></textarea>
+                                        <label for="cw-notes">Additional Notes / Requirements</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="wa-note mb-4">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <p class="mb-0">Your inquiry will be sent directly to our team via WhatsApp. We typically respond within one business day.</p>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" onclick="sendWhatsAppInquiry()">
+                                        <i class="fab fa-whatsapp me-2"></i>Send Inquiry via WhatsApp
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Booking Inquiry Form End -->
+
+
+        <!-- Footer Start -->
+        <div id="footer-container"></div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+        <!-- Google Review Scroll -->
+        <script>
+            function scrollReviews(direction) {
+                var container = document.getElementById('review-scroll');
+                var scrollAmount = container.querySelector('.review-scroll-item').offsetWidth + 24;
+                container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+            }
+        </script>
+
+        <!-- WhatsApp Inquiry -->
+        <script>
+            function sendWhatsAppInquiry() {
+                var name = document.getElementById('cw-name').value.trim();
+                var contact = document.getElementById('cw-contact').value.trim();
+                var email = document.getElementById('cw-email').value.trim();
+                var business = document.getElementById('cw-business').value.trim();
+                var purpose = document.getElementById('cw-purpose').value;
+                var date = document.getElementById('cw-date').value.trim();
+                var notes = document.getElementById('cw-notes').value.trim();
+
+                if (!name || !contact || !business || !purpose || !date) {
+                    alert('Please fill in all required fields (*) before sending.');
+                    return;
+                }
+
+                var message = '*CMA KK COWORKING SPACE - BOOKING INQUIRY*%0A';
+                message += '%0A';
+                message += '*Name / Company:* ' + encodeURIComponent(name) + '%0A';
+                message += '*Contact:* ' + encodeURIComponent(contact) + '%0A';
+                if (email) { message += '*Email:* ' + encodeURIComponent(email) + '%0A'; }
+                message += '*Nature of Business:* ' + encodeURIComponent(business) + '%0A';
+                message += '*Purpose For Rent:* ' + encodeURIComponent(purpose) + '%0A';
+                message += '*Date of Booking:* ' + encodeURIComponent(date) + '%0A';
+                if (notes) { message += '*Notes:* ' + encodeURIComponent(notes); }
+
+                window.open('https://wa.me/60129479219?text=' + message, '_blank');
+            }
+        </script>
+    </body>
+
+</html>
