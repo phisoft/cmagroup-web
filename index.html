@@ -34,6 +34,33 @@
             .header-carousel .owl-nav {
                 display: none !important;
             }
+
+            /* Button styling to match cma_academy.html */
+            .btn.btn-primary {
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                border: none;
+                color: var(--bs-white);
+                box-shadow: 0 6px 18px rgba(56, 182, 255, .3);
+                transition: .5s;
+            }
+
+            .btn.btn-primary:hover {
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                transform: translateY(-2px);
+                box-shadow: 0 10px 28px rgba(56, 182, 255, .45);
+            }
+
+            /* Keep gradient look on service card hover (override shared css) */
+            .service .service-item:hover .service-content .service-content-inner .btn.btn-primary {
+                color: var(--bs-white);
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+            }
+
+            .service .service-item:hover .service-content .service-content-inner .btn.btn-primary:hover {
+                color: var(--bs-white);
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+            }
         </style>
     </head>
 
