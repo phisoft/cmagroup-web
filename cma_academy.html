@@ -47,29 +47,153 @@
                 display: inline-block;
             }
             .vision-mission-card {
-                border-radius: 10px;
-                background: var(--bs-white);
-                border: 1px solid rgba(0, 0, 0, .06);
-                padding: 40px 30px;
+                border-radius: 20px;
+                background: linear-gradient(135deg, rgba(56, 182, 255, .14) 0%, rgba(56, 182, 255, .04) 60%, rgba(255, 255, 255, .9) 100%);
+                border: 1px solid rgba(56, 182, 255, .3);
+                padding: 45px 35px;
                 height: 100%;
                 transition: .5s;
+                position: relative;
+                overflow: hidden;
+            }
+            .vision-mission-card::before {
+                content: '';
+                position: absolute;
+                top: -70px;
+                right: -70px;
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .12);
+            }
+            .vision-mission-card::after {
+                content: '';
+                position: absolute;
+                bottom: -90px;
+                left: -90px;
+                width: 220px;
+                height: 220px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .06);
             }
             .vision-mission-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
-                border-color: var(--bs-primary);
+                transform: translateY(-8px);
+                box-shadow: 0 18px 45px rgba(56, 182, 255, .3);
+                border-color: #38b6ff;
             }
             .vision-mission-card .vm-icon {
+                width: 75px;
+                height: 75px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                box-shadow: 0 10px 25px rgba(56, 182, 255, .45);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 30px;
+                margin: 0 auto 22px;
+                position: relative;
+                z-index: 1;
+                transition: .5s;
+            }
+            .vision-mission-card:hover .vm-icon {
+                transform: scale(1.08) rotate(8deg);
+            }
+            .vision-mission-card h3 {
+                color: #0a2a4a;
+                position: relative;
+                z-index: 1;
+                font-weight: 700;
+            }
+            .vision-mission-card h3::after {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 3px;
+                border-radius: 3px;
+                background: linear-gradient(90deg, #38b6ff, rgba(56, 182, 255, .2));
+                margin: 12px auto 0;
+            }
+            .vision-mission-card p {
+                color: #475569;
+                position: relative;
+                z-index: 1;
+            }
+            .vision-mission-card .vm-tag {
+                position: absolute;
+                top: 18px;
+                left: 18px;
+                background: rgba(56, 182, 255, .12);
+                color: #0561a5;
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                padding: 6px 14px;
+                border-radius: 30px;
+                border: 1px solid rgba(56, 182, 255, .3);
+                z-index: 1;
+            }
+            .commitment-card {
+                border-radius: 16px;
+                background: linear-gradient(135deg, #0a2a4a 0%, #0561a5 100%);
+                border: 1px solid rgba(255, 255, 255, .08);
+                padding: 45px 35px;
+                height: 100%;
+                text-align: center;
+                transition: .5s;
+                position: relative;
+                overflow: hidden;
+            }
+            .commitment-card::before {
+                content: '';
+                position: absolute;
+                top: -60px;
+                right: -60px;
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .15);
+            }
+            .commitment-card::after {
+                content: '';
+                position: absolute;
+                bottom: -80px;
+                left: -80px;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, .04);
+            }
+            .commitment-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 15px 40px rgba(2, 76, 130, .35);
+            }
+            .commitment-card .cc-icon {
                 width: 70px;
                 height: 70px;
                 border-radius: 50%;
-                background: var(--bs-primary);
-                color: var(--bs-white);
+                background: rgba(255, 255, 255, .12);
+                color: #7fd4ff;
+                border: 1px solid rgba(255, 255, 255, .2);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-size: 28px;
-                margin: 0 auto 20px;
+                margin: 0 auto 22px;
+                position: relative;
+                z-index: 1;
+            }
+            .commitment-card h3 {
+                color: var(--bs-white);
+                position: relative;
+                z-index: 1;
+            }
+            .commitment-card p {
+                color: rgba(255, 255, 255, .82);
+                position: relative;
+                z-index: 1;
             }
             .advantage-item {
                 display: flex;
@@ -103,6 +227,103 @@
             }
             .training-gallery-img:hover img {
                 transform: scale(1.1);
+            }
+            .training-gallery-block {
+                margin-bottom: 50px;
+            }
+            .training-gallery-title {
+                font-size: 24px;
+                font-weight: 700;
+                color: #0a2a4a;
+                position: relative;
+                padding-left: 18px;
+            }
+            .training-gallery-title::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 4px;
+                bottom: 4px;
+                width: 5px;
+                border-radius: 5px;
+                background: linear-gradient(180deg, #38b6ff, #0a6fb8);
+            }
+            .gallery-swipe {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .gallery-swipe::-webkit-scrollbar {
+                display: none;
+            }
+            .gallery-slide {
+                flex: 0 0 100%;
+                scroll-snap-align: start;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+                padding: 4px;
+            }
+            .gallery-slide a {
+                display: block;
+                border-radius: 10px;
+                overflow: hidden;
+                position: relative;
+                height: 220px;
+            }
+            .gallery-slide a img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: .5s;
+            }
+            .gallery-slide a:hover img {
+                transform: scale(1.1);
+            }
+            .gallery-nav-btn {
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                background: var(--bs-white);
+                border: 1px solid rgba(0, 0, 0, .08);
+                color: var(--bs-primary);
+                font-size: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: .5s;
+                cursor: pointer;
+                flex-shrink: 0;
+            }
+            .gallery-nav-btn:hover {
+                background: var(--bs-primary);
+                border-color: var(--bs-primary);
+                color: var(--bs-white);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+            }
+            @media (max-width: 767px) {
+                .gallery-slide {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 10px;
+                }
+                .gallery-slide a {
+                    height: 135px;
+                }
+            }
+            @media (max-width: 575px) {
+                .gallery-slide {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 10px;
+                }
+                .gallery-slide a {
+                    height: 125px;
+                }
+                .training-gallery-title {
+                    font-size: 19px;
+                }
             }
             .testimonial-card {
                 background: var(--bs-white);
@@ -400,7 +621,7 @@
                 padding: 8px 0;
                 border-bottom: 1px solid rgba(0, 0, 0, .04);
                 font-size: 14px;
-                color: var(--bs-secondary);
+                color: #004aad;
             }
             .ld-partner-list li:last-child {
                 border-bottom: 0;
@@ -451,7 +672,7 @@
                 gap: 8px;
                 padding: 7px 0;
                 font-size: 14px;
-                color: var(--bs-secondary);
+                color: #004aad;
                 border-bottom: 1px dotted rgba(0, 0, 0, .05);
             }
             .training-category-card .tc-list li:last-child {
@@ -462,19 +683,84 @@
                 font-size: 12px;
                 margin-top: 5px;
             }
+            .training-category-card .tc-list li:nth-child(n+4) {
+                display: none;
+            }
+            .training-category-card.expanded .tc-list li:nth-child(n+4) {
+                display: flex;
+            }
+            .training-category-card .tc-footer {
+                text-align: center;
+                margin-top: 18px;
+                padding-top: 18px;
+                border-top: 1px dashed rgba(0, 0, 0, .08);
+            }
+            .tc-toggle-btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                border-radius: 30px;
+                padding: 9px 28px;
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: .3px;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                border: none;
+                color: var(--bs-white);
+                box-shadow: 0 6px 18px rgba(56, 182, 255, .3);
+                transition: .5s;
+                cursor: pointer;
+            }
+            .tc-toggle-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 28px rgba(56, 182, 255, .45);
+            }
+            .tc-toggle-btn i {
+                font-size: 12px;
+                transition: .4s;
+            }
+            .tc-toggle-btn:hover i {
+                transform: translateY(2px);
+            }
             .training-note-card {
-                background: rgba(56, 182, 255, .08);
-                border: 1px solid rgba(56, 182, 255, .25);
-                border-radius: 10px;
-                padding: 20px 24px;
+                background: linear-gradient(135deg, rgba(56, 182, 255, .15) 0%, rgba(56, 182, 255, .05) 100%);
+                border: 1px solid rgba(56, 182, 255, .3);
+                border-radius: 16px;
+                padding: 22px 28px;
                 display: flex;
                 align-items: center;
-                gap: 14px;
+                gap: 16px;
+                box-shadow: 0 8px 25px rgba(56, 182, 255, .12);
+                transition: .5s;
             }
-            .training-note-card i {
-                color: var(--bs-primary);
-                font-size: 26px;
+            .training-note-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 12px 30px rgba(56, 182, 255, .22);
+                border-color: #38b6ff;
+            }
+            .training-note-card .note-icon {
                 flex-shrink: 0;
+                width: 46px;
+                height: 46px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                box-shadow: 0 6px 15px rgba(56, 182, 255, .35);
+            }
+            .training-note-card .note-text {
+                font-size: 15px;
+                font-weight: 600;
+                color: #0a2a4a;
+                line-height: 1.6;
+                margin: 0;
+            }
+            .training-note-card .note-text strong {
+                color: #0561a5;
             }
         </style>
     </head>
@@ -506,18 +792,13 @@
         <!-- About CMA Academy Asia Start -->
         <div class="container-fluid py-5">
             <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="academy-about-img">
-                            <img src="../assets/img/whiteboard-workshop.jpg" alt="CMA Academy Asia Training">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-xl-10 col-xxl-8 text-center">
                         <h4 class="text-primary">About CMA Academy Asia</h4>
                         <h1 class="display-4 mb-4">Founded 2021, Reimagined 2025</h1>
-                        <p class="mb-4">Founded in 2021, CMA Academy Asia was built on the belief that corporate training should be as engaging as it is informative. As we transitioned to CMA Academy Asia Sdn. Bhd. in 2025, we took the opportunity to move beyond our traditional roots. While we remain deeply committed to our core expertise in accounting and finance, we have grown to meet the demands of a changing workforce. Today, our reach spans across sales and marketing, leadership, communication, personal development, and compliance, with a renewed focus on human resources and sales communication.</p>
-                        <p class="mb-4">We've always felt that the best way to learn is by doing. That's why we take technical or complex subjects and turn them into accessible, hands-on experiences. By weaving behavioral tools like DISC, MBTI, and NLP into our simulations and gamified learning, we help participants truly connect with the material. Whether we are working with a government-linked organization or a team in hospitality, engineering, or education, our goal is to make sure every learner walks away with practical skills they can use immediately.</p>
-                        <p class="mb-4">Our team of certified trainers is dedicated to more than just ticking boxes. We are here to support the long-term growth of your people and the lasting success of your organization. At CMA Academy Asia, we believe that when you empower a workforce with the right mix of technical knowledge and communication skills, the impact is measurable and profound.</p>
+                        <p class="mb-4 text-start">Founded in 2021, CMA Academy Asia was built on the belief that corporate training should be as engaging as it is informative. As we transitioned to CMA Academy Asia Sdn. Bhd. in 2025, we took the opportunity to move beyond our traditional roots. While we remain deeply committed to our core expertise in accounting and finance, we have grown to meet the demands of a changing workforce. Today, our reach spans across sales and marketing, leadership, communication, personal development, and compliance, with a renewed focus on human resources and sales communication.</p>
+                        <p class="mb-4 text-start">We've always felt that the best way to learn is by doing. That's why we take technical or complex subjects and turn them into accessible, hands-on experiences. By weaving behavioral tools like DISC, MBTI, and NLP into our simulations and gamified learning, we help participants truly connect with the material. Whether we are working with a government-linked organization or a team in hospitality, engineering, or education, our goal is to make sure every learner walks away with practical skills they can use immediately.</p>
+                        <p class="mb-0 text-start">Our team of certified trainers is dedicated to more than just ticking boxes. We are here to support the long-term growth of your people and the lasting success of your organization. At CMA Academy Asia, we believe that when you empower a workforce with the right mix of technical knowledge and communication skills, the impact is measurable and profound.</p>
                     </div>
                 </div>
             </div>
@@ -551,24 +832,29 @@
                             <p class="mb-0">Our mission is to provide high-quality, innovative training programs that inspire growth, foster leadership, and enhance skills for both corporates and individuals. We are committed to delivering exceptional learning experiences that transform lives and businesses, ultimately contributing to a more skilled and empowered workforce.</p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="vision-mission-card text-center">
-                            <div class="vm-icon">
+                </div>
+
+                <div class="my-5" aria-hidden="true"></div>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="commitment-card">
+                            <div class="cc-icon">
                                 <i class="fas fa-lightbulb"></i>
                             </div>
                             <h3 class="mb-3">Innovative Training</h3>
-                            <p class="mb-3 text-muted">The focus is on delivering training programs that are high quality and also innovative, ensuring that they are engaging and effective in meeting the learning objectives.</p>
-                            <p class="mb-0 text-muted">This includes case studies discussions, brainstorming and group discussions, practice through presentations, gamified learning and creative experiential learning methods that are guaranteed to make the training fun and effective.</p>
+                            <p class="mb-3">The focus is on delivering training programs that are high quality and also innovative, ensuring that they are engaging and effective in meeting the learning objectives.</p>
+                            <p class="mb-0">This includes case studies discussions, brainstorming and group discussions, practice through presentations, gamified learning and creative experiential learning methods that are guaranteed to make the training fun and effective.</p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="vision-mission-card text-center">
-                            <div class="vm-icon">
+                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.9s">
+                        <div class="commitment-card">
+                            <div class="cc-icon">
                                 <i class="fas fa-chart-line"></i>
                             </div>
                             <h3 class="mb-3">Transform Lives & Business</h3>
-                            <p class="mb-3 text-muted">The ultimate aim is to bring about positive change in the lives of individuals and the success of businesses, through the skills and knowledge gained from the training programs.</p>
-                            <p class="mb-0 text-muted">By providing high-quality training programs, the mission is to contribute to the development of a workforce that is skilled, empowered, and capable of driving innovation and growth in their organizations.</p>
+                            <p class="mb-3">The ultimate aim is to bring about positive change in the lives of individuals and the success of businesses, through the skills and knowledge gained from the training programs.</p>
+                            <p class="mb-0">By providing high-quality training programs, the mission is to contribute to the development of a workforce that is skilled, empowered, and capable of driving innovation and growth in their organizations.</p>
                         </div>
                     </div>
                 </div>
@@ -608,37 +894,84 @@
                     <h1 class="display-4 mb-4">Moments From Our Sessions</h1>
                     <p class="mb-0">A glimpse into our corporate training sessions, workshops and team-building programs.</p>
                 </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="training-gallery-img">
-                            <img src="../assets/img/workshop.jpg" class="w-100" alt="Training Workshop">
+                <!-- Empowered Leadership Training Gallery -->
+                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                        <h3 class="training-gallery-title mb-0">Empowered Leadership Training</h3>
+                        <div class="d-flex gap-2 flex-shrink-0">
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-empowered', -1)" aria-label="Previous Empowered Leadership Training images">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-empowered', 1)" aria-label="Next Empowered Leadership Training images">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="training-gallery-img">
-                            <img src="../assets/img/whiteboard-workshop.jpg" class="w-100" alt="Whiteboard Workshop">
+                    <div class="gallery-swipe" id="gallery-empowered"></div>
+                </div>
+
+                <!-- Team Building Gallery -->
+                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                        <h3 class="training-gallery-title mb-0">Team Building</h3>
+                        <div class="d-flex gap-2 flex-shrink-0">
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-team-building', -1)" aria-label="Previous Team Building images">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-team-building', 1)" aria-label="Next Team Building images">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="training-gallery-img">
-                            <img src="../assets/img/group-discussion.jpg" class="w-100" alt="Group Discussion">
+                    <div class="gallery-swipe" id="gallery-team-building"></div>
+                </div>
+
+                <!-- E-Invoicing Made Easy Training Gallery -->
+                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                        <h3 class="training-gallery-title mb-0">E-Invoicing Made Easy Training</h3>
+                        <div class="d-flex gap-2 flex-shrink-0">
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-e-invoice', -1)" aria-label="Previous E-Invoicing images">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-e-invoice', 1)" aria-label="Next E-Invoicing images">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="training-gallery-img">
-                            <img src="../assets/img/meeting-room.jpg" class="w-100" alt="Meeting Room Session">
+                    <div class="gallery-swipe" id="gallery-e-invoice"></div>
+                </div>
+
+                <!-- Accounting Made Easy Training Gallery -->
+                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                        <h3 class="training-gallery-title mb-0">Accounting Made Easy Training</h3>
+                        <div class="d-flex gap-2 flex-shrink-0">
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-accounting', -1)" aria-label="Previous Accounting images">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-accounting', 1)" aria-label="Next Accounting images">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1s">
-                        <div class="training-gallery-img">
-                            <img src="../assets/img/post-mom-kids-workshop.jpg" class="w-100" alt="Workshop Participants">
+                    <div class="gallery-swipe" id="gallery-accounting"></div>
+                </div>
+
+                <!-- HR Tax Compliance Gallery -->
+                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                        <h3 class="training-gallery-title mb-0">HR Tax Compliance</h3>
+                        <div class="d-flex gap-2 flex-shrink-0">
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-hr-tax', -1)" aria-label="Previous HR Tax Compliance images">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-hr-tax', 1)" aria-label="Next HR Tax Compliance images">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.2s">
-                        <div class="training-gallery-img">
-                            <img src="../assets/img/consultation.jpg" class="w-100" alt="Training Consultation">
-                        </div>
-                    </div>
+                    <div class="gallery-swipe" id="gallery-hr-tax"></div>
                 </div>
             </div>
         </div>
@@ -843,25 +1176,25 @@
                                 <div class="col-md-6 col-lg-3">
                                     <div class="d-flex align-items-start gap-2">
                                         <i class="fas fa-bullseye text-primary mt-1"></i>
-                                        <span class="text-muted">Learning outcomes linked to business KPIs</span>
+                                        <span class="secondary-color">Learning outcomes linked to business KPIs</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-3">
                                     <div class="d-flex align-items-start gap-2">
                                         <i class="fas fa-folder-open text-primary mt-1"></i>
-                                        <span class="text-muted">Case studies / testimonials</span>
+                                        <span class="secondary-color">Case studies / testimonials</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-3">
                                     <div class="d-flex align-items-start gap-2">
                                         <i class="fas fa-clipboard-check text-primary mt-1"></i>
-                                        <span class="text-muted">Post-training application plans</span>
+                                        <span class="secondary-color">Post-training application plans</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-3">
                                     <div class="d-flex align-items-start gap-2">
                                         <i class="fas fa-tasks text-primary mt-1"></i>
-                                        <span class="text-muted">Assessment tools and results tracking</span>
+                                        <span class="secondary-color">Assessment tools and results tracking</span>
                                     </div>
                                 </div>
                             </div>
@@ -881,7 +1214,7 @@
                     <p class="mb-0">Signature courses, financial literacy, business & accounting, soft skills, sales, team building and digital tools — all in one place.</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="training-category-card">
                             <div class="tc-header">
                                 <div class="tc-icon"><i class="fas fa-star"></i></div>
@@ -926,9 +1259,14 @@
                                 <li><i class="fas fa-angle-right"></i>From Bookkeeping To Reporting Of Full Set Of Accounts In The E-Invoicing Era</li>
                                 <li><i class="fas fa-angle-right"></i>Accounting Level 1: From Bookkeeping To Reporting Full Set Of Accounts</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
                         <div class="training-category-card">
                             <div class="tc-header">
                                 <div class="tc-icon"><i class="fas fa-star"></i></div>
@@ -942,9 +1280,14 @@
                                 <li><i class="fas fa-angle-right"></i>HR Documentation and Record Management: Best Practices for Compliance and Efficiency</li>
                                 <li><i class="fas fa-angle-right"></i>Introduction to Emotional Intelligence in the Workplace</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
                         <div class="training-category-card">
                             <div class="tc-header">
                                 <div class="tc-icon"><i class="fas fa-wallet"></i></div>
@@ -960,9 +1303,14 @@
                                 <li><i class="fas fa-angle-right"></i>Wealth Distribution Blueprint: Building your legacy through estate planning</li>
                                 <li><i class="fas fa-angle-right"></i>Women and Wealth: Empowering women through financial literacy</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.8s">
                         <div class="training-category-card">
                             <div class="tc-header">
                                 <div class="tc-icon"><i class="fas fa-briefcase"></i></div>
@@ -976,9 +1324,14 @@
                                 <li><i class="fas fa-angle-right"></i>Business Setup Masterclass: From concept to creation</li>
                                 <li><i class="fas fa-angle-right"></i>Finance For Non-Finance for Professionals/ Executives</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1s">
+                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="1s">
                         <div class="training-category-card">
                             <div class="tc-header">
                                 <div class="tc-icon"><i class="fas fa-comments"></i></div>
@@ -994,9 +1347,14 @@
                                 <li><i class="fas fa-angle-right"></i>Customer Service Success: Essential skills for delivering exceptional service</li>
                                 <li><i class="fas fa-angle-right"></i>Presenting With Impact: Techniques for captivating your audience</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.2s">
+                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="1.2s">
                         <div class="training-category-card">
                             <div class="tc-header">
                                 <div class="tc-icon"><i class="fas fa-bullhorn"></i></div>
@@ -1010,9 +1368,14 @@
                                 <li><i class="fas fa-angle-right"></i>The Digital Marketing Bootcamp: Intensive training for online marketers</li>
                                 <li><i class="fas fa-angle-right"></i>The Power of Personal Branding: Creating influence and impact</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.4s">
+                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="1.4s">
                         <div class="training-category-card">
                             <div class="tc-header">
                                 <div class="tc-icon"><i class="fas fa-users"></i></div>
@@ -1023,9 +1386,14 @@
                                 <li><i class="fas fa-angle-right"></i>Cracking the Workplace Code: Understanding personality differences</li>
                                 <li><i class="fas fa-angle-right"></i>Leadership Excellence: Empowering leaders, empowering teams</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.6s">
+                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="1.6s">
                         <div class="training-category-card">
                             <div class="tc-header">
                                 <div class="tc-icon"><i class="fas fa-laptop"></i></div>
@@ -1037,14 +1405,19 @@
                                 <li><i class="fas fa-angle-right"></i>Microsoft Word (Basic to Advanced)</li>
                                 <li><i class="fas fa-angle-right"></i>Power BI</li>
                             </ul>
+                            <div class="tc-footer">
+                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
+                                    View All <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-center mt-4">
                     <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.8s">
                         <div class="training-note-card">
-                            <i class="fas fa-info-circle"></i>
-                            <p class="mb-0">NOTE: Other training topics will be given based on your training needs analysis.</p>
+                            <div class="note-icon"><i class="fas fa-info-circle"></i></div>
+                            <p class="note-text"><strong>NOTE:</strong> Other training topics will be given based on your training needs analysis.</p>
                         </div>
                     </div>
                 </div>
@@ -1333,6 +1706,158 @@
 
                 window.open('https://wa.me/60129479219?text=' + message, '_blank');
             }
+        </script>
+
+        <!-- Past Training Galleries -->
+        <script>
+            var pastTrainingGalleries = [
+                {
+                    id: 'gallery-empowered',
+                    title: 'Empowered Leadership Training',
+                    folder: 'empowered-leadership-training',
+                    images: [
+                        'IMG_4583.JPG', 'IMG_4584.JPG', 'IMG_4585.JPG', 'IMG_4586.JPG', 'IMG_4587.JPG', 'IMG_4588.JPG', 'IMG_4589.JPG', 'IMG_4590.JPG', 'IMG_4591.JPG',
+                        'IMG_4592.JPG', 'IMG_4593.JPG', 'IMG_4594.JPG', 'IMG_4595.JPG', 'IMG_4596.JPG', 'IMG_4597.JPG', 'IMG_4598.JPG', 'IMG_4599.JPG', 'IMG_4600.JPG',
+                        'IMG_4617.JPG', 'IMG_4618.JPG', 'IMG_4619.JPG', 'IMG_4620.JPG', 'IMG_4621.JPG', 'IMG_4622.JPG', 'IMG_4888.JPG', 'IMG_4889.JPG', 'IMG_4890.JPG',
+                        'IMG_4891.JPG', 'IMG_4892.JPG', 'IMG_4893.JPG', 'IMG_4894.JPG', 'IMG_4895.JPG', 'IMG_4896.JPG', 'IMG_4897.JPG', 'IMG_4898.JPG', 'IMG_4899.JPG',
+                        'IMG_4900.JPG', 'IMG_4901.JPG', 'IMG_4902.JPG', 'IMG_4903.JPG', 'IMG_4904.JPG', 'IMG_4905.JPG', 'IMG_4906.JPG', 'IMG_4907.JPG', 'IMG_4908.JPG',
+                        'IMG_4909.JPG', 'IMG_4910.JPG', 'IMG_4911.JPG', 'IMG_4912.JPG', 'IMG_4913.JPG', 'IMG_4914.JPG', 'IMG_4915.JPG', 'IMG_4916.JPG', 'IMG_4917.JPG'
+                    ]
+                },
+                {
+                    id: 'gallery-team-building',
+                    title: 'Team Building',
+                    folder: 'team-building',
+                    images: [
+                        'WhatsApp Image 2026-04-16 at 12.06.01.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.15 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.16 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.18 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.20 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.21 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.23 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.26 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.28 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.30 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.32 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.34 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.35 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.37 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.39 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.41 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.43 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.45 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.46 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.48 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.50 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.52 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.53 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.55 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.57 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.41.58 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.01 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.03 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.05 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.06 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.08 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.10 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.11 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.13 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.16 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.17 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.19 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.21 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.23 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.24 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.26 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.28 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.30 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.31 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.33 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.35 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.36 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.38 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.40 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.43 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.45 AM.jpeg',
+                        'WhatsApp Image 2026-04-30 at 11.42.47 AM.jpeg'
+                    ]
+                },
+                {
+                    id: 'gallery-e-invoice',
+                    title: 'E-Invoicing Made Easy Training',
+                    folder: 'e-invoice',
+                    images: [
+                        'IMG_20260130_093855.jpg', 'IMG_20260130_093915.jpg', 'IMG_20260130_093936.jpg', 'IMG_20260130_100220.jpg', 'IMG_20260130_100704.jpg', 'IMG_20260130_101009.jpg', 'IMG_20260130_101611.jpg', 'IMG_20260130_101809.jpg', 'IMG_20260130_115537.jpg',
+                        'IMG_20260130_115547.jpg', 'IMG_20260130_115604.jpg', 'IMG_20260130_115623.jpg', 'IMG_20260130_115757.jpg', 'IMG_20260130_121249.jpg', 'IMG_20260130_121659.jpg', 'IMG_20260130_160041.jpg', 'IMG_20260130_160115.jpg', 'IMG-20260130-WA0069.jpg',
+                        'IMG-20260130-WA0070.jpg', 'IMG-20260130-WA0072.jpg', 'IMG-20260130-WA0074.jpg', 'IMG-20260131-WA0000.jpg', 'IMG-20260131-WA0002.jpg', 'IMG-20260131-WA0006.jpg', 'IMG-20260131-WA0008.jpg', 'IMG-20260131-WA0012.jpg', 'IMG-20260131-WA0014.jpg',
+                        'IMG-20260131-WA0017.jpg', 'IMG-20260131-WA0020.jpg', 'IMG-20260131-WA0024.jpg', 'IMG-20260131-WA0040.jpg'
+                    ]
+                },
+                {
+                    id: 'gallery-accounting',
+                    title: 'Accounting Made Easy Training',
+                    folder: 'accounting',
+                    images: [
+                        'IMG_3045.JPG', 'IMG_3046.JPG', 'IMG_3047.JPG', 'IMG_3048.JPG', 'IMG_3049.JPG', 'IMG_3050.JPG', 'IMG_3051.JPG', 'IMG_3052.JPG', 'IMG_3053.JPG',
+                        'IMG_3054.JPG', 'IMG_3055.JPG', 'IMG_3056.JPG', 'IMG_3057.JPG', 'IMG_3058.JPG', 'IMG_3059.JPG', 'IMG_3060.JPG', 'IMG_3061.JPG', 'IMG_3062.JPG',
+                        'IMG_3074.JPG', 'IMG_3075.JPG', 'IMG_3076.JPG', 'IMG_3165.JPG', 'IMG_3166.JPG', 'IMG_3167.JPG', 'IMG_3168.JPG', 'IMG_3169.JPG', 'IMG_3170.JPG',
+                        'IMG_3171.JPG', 'IMG_3172.JPG', 'IMG_3173.JPG', 'IMG_3174.JPG', 'IMG_3175.JPG', 'IMG_3176.JPG', 'IMG_3177.JPG', 'IMG_3178.JPG', 'IMG_3179.JPG'
+                    ]
+                },
+                {
+                    id: 'gallery-hr-tax',
+                    title: 'HR Tax Compliance',
+                    folder: 'hr-tax',
+                    images: [
+                        'IMG_1051.JPG', 'IMG_1052.JPG', 'IMG_1053.JPG', 'IMG_1054.JPG', 'IMG_1055.JPG', 'IMG_1056.JPG', 'IMG_1057.JPG', 'IMG_1058.JPG', 'IMG_1059.JPG',
+                        'IMG_1060.JPG', 'IMG_1061.JPG', 'IMG_1062.JPG', 'IMG_1063.JPG', 'IMG_1064.JPG', 'IMG_1150.JPG', 'IMG_1151.JPG', 'IMG_1152.JPG', 'IMG_1153.JPG',
+                        'IMG_1154.JPG', 'IMG_1155.JPG', 'IMG_1156.JPG', 'IMG_1157.JPG', 'IMG_1158.JPG', 'IMG_1159.JPG', 'IMG_1160.JPG', 'IMG_1161.JPG', 'IMG_1162.JPG'
+                    ]
+                }
+            ];
+
+            function buildTrainingGalleries() {
+                pastTrainingGalleries.forEach(function (g) {
+                    var container = document.getElementById(g.id);
+                    if (!container) return;
+                    var base = '../assets/img/cma-academy/' + g.folder + '/';
+                    var html = '';
+                    for (var i = 0; i < g.images.length; i += 9) {
+                        var chunk = g.images.slice(i, i + 9);
+                        html += '<div class="gallery-slide">';
+                        chunk.forEach(function (img) {
+                            var src = base + encodeURIComponent(img);
+                            html += '<a href="' + src + '" data-lightbox="' + g.id + '" data-title="' + g.title + '">';
+                            html += '<img src="' + src + '" alt="' + g.title + '" loading="lazy">';
+                            html += '</a>';
+                        });
+                        html += '</div>';
+                    }
+                    container.innerHTML = html;
+                });
+            }
+
+            function scrollGallery(id, direction) {
+                var container = document.getElementById(id);
+                if (!container) return;
+                var slide = container.querySelector('.gallery-slide');
+                if (!slide) return;
+                container.scrollBy({ left: direction * slide.offsetWidth, behavior: 'smooth' });
+            }
+
+            function toggleTrainingList(btn) {
+                var card = btn.closest('.training-category-card');
+                card.classList.toggle('expanded');
+                var isExpanded = card.classList.contains('expanded');
+                if (isExpanded) {
+                    btn.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+                } else {
+                    btn.innerHTML = 'View All <i class="fas fa-chevron-down"></i>';
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', buildTrainingGalleries);
         </script>
     </body>
 
