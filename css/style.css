@@ -165,7 +165,7 @@
 }
 
 .nav-bar .navbar-light .navbar-brand img {
-    max-height: 80px;
+    max-height: 100px;
 }
 
 .navbar .navbar-nav .nav-item .nav-link {
@@ -290,6 +290,30 @@
     height: 550px;
 }
 
+@media (max-width: 991px) {
+    .header-carousel .header-carousel-item {
+        height: 500px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header-carousel .header-carousel-item {
+        height: 380px;
+    }
+}
+
+@media (max-width: 575px) {
+    .header-carousel .header-carousel-item {
+        height: 300px;
+    }
+}
+
+@media (max-width: 380px) {
+    .header-carousel .header-carousel-item {
+        height: 240px;
+    }
+}
+
 .header-carousel .owl-nav .owl-prev,
 .header-carousel .owl-nav .owl-next {
     position: absolute;
@@ -339,17 +363,9 @@
     .header-carousel .header-carousel-item .carousel-caption {
         padding-top: 45px;
     }
-
-    .header-carousel .header-carousel-item {
-        height: 1300px;
-    }
 }
 
 @media (max-width: 767px) {
-    .header-carousel .header-carousel-item {
-        height: 950px;
-    }
-
     .header-carousel .owl-nav .owl-prev {
         bottom: -30px;
         left: 50%;
