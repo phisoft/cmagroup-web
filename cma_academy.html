@@ -30,6 +30,107 @@
         <link href="css/style.css" rel="stylesheet">
 
         <style>
+            /*** Academy Page Header ***/
+            .ac-page-header {
+                background: linear-gradient(135deg, #0a2a4a 0%, #0561a5 100%);
+                border-bottom: 1px solid rgba(56, 182, 255, .3);
+                position: relative;
+                overflow: hidden;
+            }
+            .ac-page-header::before {
+                content: '';
+                position: absolute;
+                top: -80px;
+                right: -80px;
+                width: 260px;
+                height: 260px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .08);
+            }
+            .ac-page-header::after {
+                content: '';
+                position: absolute;
+                bottom: -100px;
+                left: -100px;
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .05);
+            }
+            .ac-logo-box {
+                display: inline-block;
+                background: #ffffff;
+                border-radius: 20px;
+                padding: 24px 44px;
+                box-shadow: 0 15px 40px rgba(56, 182, 255, .18);
+                border: 1px solid rgba(56, 182, 255, .2);
+                margin-bottom: 24px;
+                position: relative;
+                z-index: 1;
+                transition: .5s;
+            }
+            .ac-logo-box:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 50px rgba(56, 182, 255, .28);
+                border-color: #38b6ff;
+            }
+            .ac-logo-box img {
+                max-height: 90px;
+                width: auto;
+                object-fit: contain;
+                display: block;
+            }
+            .ac-page-header h1 {
+                color: var(--bs-white);
+                font-weight: 800;
+                position: relative;
+                z-index: 1;
+                margin-bottom: 12px;
+            }
+            .ac-header-underline {
+                width: 70px;
+                height: 4px;
+                border-radius: 4px;
+                background: linear-gradient(90deg, #38b6ff, #7fd4ff);
+                margin: 0 auto 16px;
+                position: relative;
+                z-index: 1;
+            }
+            .ac-page-header p {
+                color: rgba(255, 255, 255, .82);
+                font-size: 16.5px;
+                font-weight: 600;
+                position: relative;
+                z-index: 1;
+                margin: 0;
+            }
+            @media (max-width: 575px) {
+                .ac-logo-box {
+                    padding: 18px 28px;
+                }
+                .ac-logo-box img {
+                    max-height: 70px;
+                }
+                .ac-page-header p {
+                    font-size: 15px;
+                }
+            }
+
+            /*** Button styling to match cma_coworking.html ***/
+            .btn.btn-primary {
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                border: none;
+                color: var(--bs-white);
+                box-shadow: 0 6px 18px rgba(56, 182, 255, .3);
+                transition: .5s;
+            }
+            .btn.btn-primary:hover {
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                transform: translateY(-2px);
+                box-shadow: 0 10px 28px rgba(56, 182, 255, .45);
+            }
+
             .academy-about-img {
                 border-radius: 10px;
                 overflow: hidden;
@@ -782,9 +883,14 @@
 
 
         <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">CMA Academy Asia</h4> 
+        <div class="container-fluid ac-page-header">
+            <div class="container text-center py-5 wow fadeInDown" data-wow-delay="0.1s" style="max-width: 900px;">
+                <div class="ac-logo-box">
+                    <img src="../assets/img/cma-academy/cma-academy-logo.png" alt="CMA Academy Asia Logo">
+                </div>
+                <h1 class="display-4 mb-0">CMA Academy Asia</h1>
+                <div class="ac-header-underline"></div>
+                <p>Training & Development</p>
             </div>
         </div>
         <!-- Header End -->
@@ -1760,7 +1866,7 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="wa-dates" placeholder="Preferred Date(s)">
+                                        <input type="date" class="form-control" id="wa-dates" placeholder="Preferred Date(s)">
                                         <label for="wa-dates">Preferred Date(s) *</label>
                                     </div>
                                 </div>
@@ -1869,20 +1975,21 @@
                     return;
                 }
 
-                var message = '*CMA ACADEMY ASIA - TRAINING INQUIRY*%0A';
-                message += '%0A';
-                message += '*Name / Company:* ' + encodeURIComponent(name) + '%0A';
-                message += '*Contact:* ' + encodeURIComponent(contact) + '%0A';
-                if (email) { message += '*Email:* ' + encodeURIComponent(email) + '%0A'; }
-                message += '*Training Topic:* ' + encodeURIComponent(topic) + '%0A';
-                message += '*Target Audience & Participants:* ' + encodeURIComponent(audience) + '%0A';
-                message += '*Preferred Date(s):* ' + encodeURIComponent(dates) + '%0A';
-                message += '*Duration:* ' + encodeURIComponent(duration) + '%0A';
-                message += '*Format:* ' + encodeURIComponent(format) + '%0A';
-                if (budget) { message += '*Budget Range:* ' + encodeURIComponent(budget) + '%0A'; }
-                message += '*Key Objective:* ' + encodeURIComponent(objective);
+                var rawMessage = '*CMA ACADEMY ASIA - TRAINING INQUIRY*\n';
+                rawMessage += '\n';
+                rawMessage += '*Name / Company:* ' + name + '\n';
+                rawMessage += '*Contact:* ' + contact + '\n';
+                rawMessage += '*Email:* ' + email + '\n';
+                rawMessage += '*Training Topic:* ' + topic + '\n';
+                rawMessage += '*Target Audience & Participants:* ' + audience + '\n';
+                rawMessage += '*Preferred Date(s):* ' + dates + '\n';
+                rawMessage += '*Duration:* ' + duration + '\n';
+                rawMessage += '*Format:* ' + format + '\n';
+                rawMessage += '*Budget Range:* ' + budget + '\n';
+                rawMessage += '*Key Objective:* ' + objective;
 
-                window.open('https://wa.me/60129479219?text=' + message, '_blank');
+                var waUrl = 'https://wa.me/60129479219?text=' + encodeURIComponent(rawMessage);
+                window.open(waUrl, '_blank');
             }
         </script>
 
