@@ -350,6 +350,642 @@
                 }
             }
 
+            /*** Workspace Stacked Carousel (2 photos top & bottom, slide left/right) ***/
+            .osc-viewport {
+                overflow: hidden;
+                width: 100%;
+                border-radius: 10px;
+            }
+            .osc-track {
+                display: flex;
+                transition: transform .5s ease;
+            }
+            .osc-page {
+                flex: 0 0 100%;
+                min-width: 0;
+            }
+            .osc-stack {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+            .osc-stack .osc-item a {
+                display: block;
+                border-radius: 10px;
+                overflow: hidden;
+                position: relative;
+                height: 320px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+                transition: .5s;
+            }
+            .osc-stack .osc-item a:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 18px 40px rgba(56, 182, 255, .3);
+            }
+            .osc-stack .osc-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                transition: .5s;
+            }
+            .osc-stack .osc-item a:hover img {
+                transform: scale(1.08);
+            }
+            .osc-controls {
+                display: flex;
+                justify-content: center;
+                gap: 12px;
+                margin-top: 16px;
+            }
+            .osc-nav {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background: var(--bs-white);
+                border: 1px solid rgba(0, 0, 0, .08);
+                color: var(--bs-primary);
+                font-size: 14px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                transition: .5s;
+                cursor: pointer;
+            }
+            .osc-nav:hover {
+                background: var(--bs-primary);
+                border-color: var(--bs-primary);
+                color: var(--bs-white);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+            }
+            .osc-nav.disabled {
+                opacity: .4;
+                cursor: default;
+                pointer-events: none;
+            }
+            @media (max-width: 575px) {
+                .osc-stack .osc-item a {
+                    height: 220px;
+                }
+            }
+
+            /*** Virtual Office Plan Card ***/
+            .vo-plan-card {
+                background: var(--bs-white);
+                border-radius: 16px;
+                border: 1px solid rgba(0, 0, 0, .06);
+                padding: 40px 30px;
+                height: 100%;
+                text-align: center;
+                transition: .5s;
+                position: relative;
+                overflow: hidden;
+            }
+            .vo-plan-card::before {
+                content: '';
+                position: absolute;
+                top: -60px;
+                right: -60px;
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .1);
+            }
+            .vo-plan-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 18px 45px rgba(56, 182, 255, .25);
+                border-color: #38b6ff;
+            }
+            .vo-plan-card .vo-plan-badge {
+                display: inline-block;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: .5px;
+                text-transform: uppercase;
+                padding: 6px 18px;
+                border-radius: 30px;
+                margin-bottom: 18px;
+                position: relative;
+                z-index: 1;
+                box-shadow: 0 8px 20px rgba(56, 182, 255, .35);
+            }
+            .vo-plan-card .vo-plan-badge-popular {
+                background: linear-gradient(135deg, #ff6a88 0%, #e0315a 100%);
+                box-shadow: 0 8px 20px rgba(224, 49, 90, .3);
+            }
+            .vo-plan-card h3 {
+                color: #0a2a4a;
+                position: relative;
+                z-index: 1;
+                font-weight: 700;
+                font-size: 22px;
+                margin-bottom: 6px;
+            }
+            .vo-plan-card .vo-plan-price {
+                color: #004aad;
+                font-size: 30px;
+                font-weight: 800;
+                margin-bottom: 14px;
+                position: relative;
+                z-index: 1;
+                line-height: 1.2;
+            }
+            .vo-plan-card .vo-plan-price span {
+                font-size: 14px;
+                font-weight: 600;
+                color: #6c757d;
+            }
+            .vo-plan-card p {
+                color: #475569;
+                font-size: 14.5px;
+                position: relative;
+                z-index: 1;
+                margin-bottom: 16px;
+            }
+            .vo-plan-card .vo-plan-features {
+                margin: 0 0 22px;
+                position: relative;
+                z-index: 1;
+            }
+            .vo-plan-card .vo-feature {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                padding: 7px 0;
+                font-size: 14px;
+                color: #475569;
+                border-bottom: 1px dashed rgba(0, 0, 0, .08);
+            }
+            .vo-plan-card .vo-feature:last-child {
+                border-bottom: 0;
+            }
+            .vo-plan-card .vo-feature i {
+                color: #25d366;
+                font-size: 13px;
+                flex-shrink: 0;
+            }
+            .vo-plan-card .btn {
+                position: relative;
+                z-index: 1;
+            }
+            .vo-plan-featured {
+                border-color: #38b6ff;
+                box-shadow: 0 12px 35px rgba(56, 182, 255, .25);
+            }
+
+            /*** Interview Venue Special Banner ***/
+            .iv-special-banner {
+                background: linear-gradient(135deg, #ff6a88 0%, #e0315a 100%);
+                color: var(--bs-white);
+                border-radius: 16px;
+                padding: 24px 36px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 16px;
+                box-shadow: 0 12px 35px rgba(224, 49, 90, .3);
+                font-size: 20px;
+                font-weight: 700;
+                letter-spacing: .5px;
+            }
+            .iv-special-banner i {
+                font-size: 26px;
+            }
+            @media (max-width: 575px) {
+                .iv-special-banner {
+                    font-size: 16px;
+                    padding: 18px 24px;
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 8px;
+                }
+            }
+
+            /*** Halal Note ***/
+            .halal-note {
+                background: linear-gradient(135deg, rgba(37, 211, 102, .14) 0%, rgba(37, 211, 102, .05) 60%, rgba(255, 255, 255, .9) 100%);
+                border: 1px solid rgba(37, 211, 102, .35);
+                border-radius: 20px;
+                padding: 35px 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 24px;
+                text-align: left;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 12px 35px rgba(37, 211, 102, .18);
+            }
+            .halal-note::before {
+                content: '';
+                position: absolute;
+                top: -50px;
+                right: -50px;
+                width: 130px;
+                height: 130px;
+                border-radius: 50%;
+                background: rgba(37, 211, 102, .1);
+            }
+            .halal-note::after {
+                content: '';
+                position: absolute;
+                bottom: -70px;
+                left: -70px;
+                width: 170px;
+                height: 170px;
+                border-radius: 50%;
+                background: rgba(37, 211, 102, .06);
+            }
+            .halal-icon {
+                flex-shrink: 0;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #25d366 0%, #0a9e4a 100%);
+                color: var(--bs-white);
+                box-shadow: 0 10px 28px rgba(37, 211, 102, .4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 32px;
+                position: relative;
+                z-index: 1;
+            }
+            .halal-content {
+                position: relative;
+                z-index: 1;
+            }
+            .halal-content h5 {
+                font-size: 18px;
+                font-weight: 800;
+                color: #0a2a4a;
+                letter-spacing: .5px;
+                margin-bottom: 4px;
+            }
+            .halal-content p {
+                font-size: 15.5px;
+                color: #475569;
+                margin: 0;
+                line-height: 1.7;
+            }
+            @media (max-width: 575px) {
+                .halal-note {
+                    flex-direction: column;
+                    text-align: center;
+                    padding: 28px 24px;
+                    gap: 16px;
+                }
+                .halal-icon {
+                    width: 64px;
+                    height: 64px;
+                    font-size: 26px;
+                }
+            }
+
+            /*** Catering Package Card ***/
+            .cat-card {
+                background: var(--bs-white);
+                border-radius: 16px;
+                border: 1px solid rgba(0, 0, 0, .06);
+                padding: 40px 30px;
+                height: 100%;
+                text-align: center;
+                transition: .5s;
+                position: relative;
+                overflow: hidden;
+            }
+            .cat-card::before {
+                content: '';
+                position: absolute;
+                top: -60px;
+                right: -60px;
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .1);
+            }
+            .cat-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 18px 45px rgba(56, 182, 255, .25);
+                border-color: #38b6ff;
+            }
+            .cat-card .cat-badge {
+                display: inline-block;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: .5px;
+                text-transform: uppercase;
+                padding: 6px 18px;
+                border-radius: 30px;
+                margin-bottom: 18px;
+                position: relative;
+                z-index: 1;
+                box-shadow: 0 8px 20px rgba(56, 182, 255, .35);
+            }
+            .cat-card h3 {
+                color: #0a2a4a;
+                position: relative;
+                z-index: 1;
+                font-weight: 700;
+                font-size: 22px;
+                margin-bottom: 14px;
+            }
+            .cat-card .cat-menu {
+                margin: 0 0 20px;
+                position: relative;
+                z-index: 1;
+            }
+            .cat-card .cat-menu-item {
+                padding: 6px 0;
+                font-size: 14.5px;
+                color: #475569;
+                border-bottom: 1px dashed rgba(0, 0, 0, .08);
+            }
+            .cat-card .cat-menu-item:last-child {
+                border-bottom: 0;
+            }
+            .cat-card .cat-price-table {
+                margin: 0 0 22px;
+                position: relative;
+                z-index: 1;
+                border: 1px solid rgba(0, 0, 0, .06);
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            .cat-card .cat-price-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
+                padding: 10px 14px;
+                font-size: 14px;
+                color: #0a2a4a;
+                border-bottom: 1px dashed rgba(0, 0, 0, .08);
+            }
+            .cat-card .cat-price-row:last-child {
+                border-bottom: 0;
+            }
+            .cat-card .cat-price-row span:last-child {
+                font-weight: 800;
+                color: #004aad;
+                white-space: nowrap;
+            }
+            .cat-featured {
+                border-color: #38b6ff;
+                box-shadow: 0 12px 35px rgba(56, 182, 255, .25);
+            }
+
+            /*** Membership Plan Card ***/
+            .mb-card {
+                background: var(--bs-white);
+                border-radius: 16px;
+                border: 1px solid rgba(0, 0, 0, .06);
+                padding: 40px 30px 35px;
+                height: 100%;
+                text-align: center;
+                transition: .5s;
+                position: relative;
+                overflow: hidden;
+            }
+            .mb-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 5px;
+                background: linear-gradient(90deg, #38b6ff, #0a6fb8);
+            }
+            .mb-card::after {
+                content: '';
+                position: absolute;
+                top: -60px;
+                right: -60px;
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .1);
+            }
+            .mb-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 18px 45px rgba(56, 182, 255, .25);
+                border-color: #38b6ff;
+            }
+            .mb-card .mb-topline {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                position: relative;
+                z-index: 1;
+            }
+            .mb-card .mb-icon {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                box-shadow: 0 10px 25px rgba(56, 182, 255, .4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                position: relative;
+                z-index: 1;
+            }
+            .mb-card .mb-ribbon {
+                position: absolute;
+                top: 18px;
+                right: -34px;
+                background: linear-gradient(135deg, #ff6a88 0%, #e0315a 100%);
+                color: var(--bs-white);
+                font-size: 11px;
+                font-weight: 800;
+                letter-spacing: .5px;
+                text-transform: uppercase;
+                padding: 6px 38px;
+                transform: rotate(45deg);
+                box-shadow: 0 5px 15px rgba(224, 49, 90, .3);
+                z-index: 2;
+            }
+            .mb-card .mb-title {
+                color: #0a2a4a;
+                font-size: 16px;
+                font-weight: 800;
+                letter-spacing: .5px;
+                text-transform: uppercase;
+                margin-bottom: 2px;
+                position: relative;
+                z-index: 1;
+            }
+            .mb-card .mb-duration {
+                font-size: 13px;
+                color: #6c757d;
+                font-weight: 600;
+                margin-bottom: 20px;
+                position: relative;
+                z-index: 1;
+            }
+            .mb-card .mb-price-box {
+                background: linear-gradient(135deg, rgba(56, 182, 255, .1) 0%, rgba(56, 182, 255, .03) 100%);
+                border: 1px solid rgba(56, 182, 255, .15);
+                border-radius: 14px;
+                padding: 18px 16px;
+                margin-bottom: 22px;
+                position: relative;
+                z-index: 1;
+            }
+            .mb-card .mb-price {
+                color: #004aad;
+                font-size: 42px;
+                font-weight: 800;
+                line-height: 1.1;
+                position: relative;
+                z-index: 1;
+            }
+            .mb-card .mb-price span {
+                font-size: 18px;
+                font-weight: 700;
+            }
+            .mb-card .mb-permonth {
+                display: inline-block;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: .5px;
+                padding: 4px 14px;
+                border-radius: 30px;
+                margin-top: 8px;
+                position: relative;
+                z-index: 1;
+            }
+            .mb-card .mb-save-badge {
+                display: inline-block;
+                background: linear-gradient(135deg, #ff6a88 0%, #e0315a 100%);
+                color: var(--bs-white);
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: .5px;
+                padding: 4px 14px;
+                border-radius: 30px;
+                margin-top: 8px;
+                position: relative;
+                z-index: 1;
+                box-shadow: 0 6px 15px rgba(224, 49, 90, .3);
+            }
+            .mb-card .mb-divider {
+                border: 0;
+                border-top: 1px dashed rgba(0, 0, 0, .1);
+                margin: 0 0 18px;
+                position: relative;
+                z-index: 1;
+            }
+            .mb-card .mb-features {
+                margin: 0 0 24px;
+                position: relative;
+                z-index: 1;
+            }
+            .mb-card .mb-feature {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 12px;
+                padding: 8px 4px;
+                font-size: 14px;
+                color: #475569;
+            }
+            .mb-card .mb-feature i {
+                color: #25d366;
+                font-size: 14px;
+                width: 18px;
+                flex-shrink: 0;
+                text-align: center;
+            }
+            .mb-card .btn {
+                position: relative;
+                z-index: 1;
+            }
+            .mb-featured {
+                border-color: #38b6ff;
+                box-shadow: 0 12px 35px rgba(56, 182, 255, .25);
+            }
+            .mb-featured::before {
+                background: linear-gradient(90deg, #ff6a88, #e0315a);
+            }
+
+            /*** Membership CTA ***/
+            .mb-cta {
+                background: var(--bs-white);
+                border: 2px solid #38b6ff;
+                border-radius: 20px;
+                padding: 45px 40px;
+                color: #0a2a4a;
+                box-shadow: 0 15px 40px rgba(56, 182, 255, .15);
+                position: relative;
+                overflow: hidden;
+            }
+            .mb-cta::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 6px;
+                background: linear-gradient(90deg, #38b6ff, #0a6fb8);
+            }
+            .mb-cta::after {
+                content: '';
+                position: absolute;
+                top: -60px;
+                right: -60px;
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .08);
+            }
+            .mb-cta .mb-cta-icon {
+                width: 56px;
+                height: 56px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                box-shadow: 0 10px 25px rgba(56, 182, 255, .35);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                margin-bottom: 14px;
+                position: relative;
+                z-index: 1;
+            }
+            .mb-cta h5 {
+                font-size: 28px;
+                font-weight: 800;
+                letter-spacing: .5px;
+                margin-bottom: 6px;
+                position: relative;
+                z-index: 1;
+                color: #0a2a4a;
+            }
+            .mb-cta p {
+                font-size: 16px;
+                color: #475569;
+                margin: 0 0 22px;
+                position: relative;
+                z-index: 1;
+            }
+            .mb-cta .btn {
+                position: relative;
+                z-index: 1;
+            }
+
             /*** Membership Card ***/
             .membership-card {
                 border-radius: 16px;
@@ -779,19 +1415,577 @@
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="ws-gallery">
-                            <a href="../assets/img/cma-working/privateoffice-1.png" data-lightbox="privateoffice-gallery" data-title="Private Office">
-                                <img src="../assets/img/cma-working/privateoffice-1.png" alt="Private Office" loading="lazy">
-                            </a>
-                            <a href="../assets/img/cma-working/privateoffice-2.png" data-lightbox="privateoffice-gallery" data-title="Private Office">
-                                <img src="../assets/img/cma-working/privateoffice-2.png" alt="Private Office" loading="lazy">
-                            </a>
+                        <div class="osc-carousel">
+                            <div class="osc-viewport" id="office-viewport">
+                                <div class="osc-track">
+                                    <div class="osc-page">
+                                        <div class="osc-stack">
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/privateoffice-1.JPG" data-lightbox="privateoffice-gallery" data-title="Private Office">
+                                                    <img src="../assets/img/cma-working/privateoffice-1.JPG" alt="Private Office" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/privateoffice-2.JPG" data-lightbox="privateoffice-gallery" data-title="Private Office">
+                                                    <img src="../assets/img/cma-working/privateoffice-2.JPG" alt="Private Office" loading="lazy">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="osc-page">
+                                        <div class="osc-stack">
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/privateoffice-2.JPG" data-lightbox="privateoffice-gallery" data-title="Private Office">
+                                                    <img src="../assets/img/cma-working/privateoffice-2.JPG" alt="Private Office" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/privateoffice-3.JPG" data-lightbox="privateoffice-gallery" data-title="Private Office">
+                                                    <img src="../assets/img/cma-working/privateoffice-3.JPG" alt="Private Office" loading="lazy">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="osc-page">
+                                        <div class="osc-stack">
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/privateoffice-3.JPG" data-lightbox="privateoffice-gallery" data-title="Private Office">
+                                                    <img src="../assets/img/cma-working/privateoffice-3.JPG" alt="Private Office" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/privateoffice-4.JPG" data-lightbox="privateoffice-gallery" data-title="Private Office">
+                                                    <img src="../assets/img/cma-working/privateoffice-4.JPG" alt="Private Office" loading="lazy">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="osc-page">
+                                        <div class="osc-stack">
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/privateoffice-4.JPG" data-lightbox="privateoffice-gallery" data-title="Private Office">
+                                                    <img src="../assets/img/cma-working/privateoffice-4.JPG" alt="Private Office" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/privateoffice-5.JPG" data-lightbox="privateoffice-gallery" data-title="Private Office">
+                                                    <img src="../assets/img/cma-working/privateoffice-5.JPG" alt="Private Office" loading="lazy">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="osc-controls">
+                                <button type="button" class="osc-nav" id="office-prev" aria-label="Previous photos">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button type="button" class="osc-nav" id="office-next" aria-label="Next photos">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Private Office Detail End -->
+
+
+        <!-- Training Space Detail Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="ws-gallery">
+                            <a href="../assets/img/cma-working/trainingroom-1.JPG" data-lightbox="trainingspace-gallery" data-title="Training Space">
+                                <img src="../assets/img/cma-working/trainingroom-1.JPG" alt="Training Space" loading="lazy">
+                            </a>
+                            <a href="../assets/img/cma-working/trainingroom-2.JPG" data-lightbox="trainingspace-gallery" data-title="Training Space">
+                                <img src="../assets/img/cma-working/trainingroom-2.JPG" alt="Training Space" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="cw-workspace-info">
+                            <div class="ws-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <h3 class="mb-2">Training Space</h3>
+                            <div class="mb-2" style="position: relative; z-index: 1;">
+                                <span class="capacity-badge"><i class="fas fa-users me-1"></i>20 Pax Classroom Style</span>
+                                <span class="capacity-badge" style="margin-left: 8px;"><i class="fas fa-users me-1"></i>25 Pax Theatre Style</span>
+                                <br>
+                                <span class="special-offer-badge"><i class="fas fa-tags me-1"></i>Special Offer Weekday RM400 / Weekend RM600</span>
+                            </div>
+                            <p class="ws-desc mb-4">A dedicated training room available in classroom and theatre layouts. Ideal for corporate training, workshops, and seminars with flexible seating arrangements.</p>
+                            <ul class="price-list">
+                                <li><span class="price-label"><i class="fas fa-calendar-week"></i>Weekdays (Daily)</span><span class="price-amount">RM400</span></li>
+                                <li><span class="price-label"><i class="fas fa-calendar-alt"></i>Weekend (Daily)</span><span class="price-amount">RM600</span></li>
+                            </ul>
+                            <p class="price-note">Both rates are per day</p>
+                            <div class="amenity-title"><i class="fas fa-check-circle"></i>Inclusive Amenities</div>
+                            <ul class="amenity-list">
+                                <li><i class="fas fa-check"></i>PA System & Microphone</li>
+                                <li><i class="fas fa-check"></i>Usage Of Projector</li>
+                                <li><i class="fas fa-check"></i>Usage Of Whiteboard & Markers</li>
+                                <li><i class="fas fa-check"></i>Pen/Pencils & Papers</li>
+                                <li><i class="fas fa-check"></i>10 Pages Of B&W Printing</li>
+                                <li><i class="fas fa-check"></i>Coway Water Filter</li>
+                                <li><i class="fas fa-check"></i>Daily Usage 8 Hours</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Training Space Detail End -->
+
+
+        <!-- Meeting Room Detail Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="cw-workspace-info">
+                            <div class="ws-icon"><i class="fas fa-comments"></i></div>
+                            <h3 class="mb-2">Meeting Room</h3>
+                            <div class="mb-2" style="position: relative; z-index: 1;">
+                                <span class="capacity-badge"><i class="fas fa-users me-1"></i>8 People Capacity</span>
+                                <span class="special-offer-badge"><i class="fas fa-tags me-1"></i>Special Offer Weekday RM200 / Weekend RM400</span>
+                            </div>
+                            <p class="ws-desc mb-4">A professional meeting room designed for client discussions, team huddles, and board meetings. Equipped with presentation facilities for impactful and productive sessions.</p>
+                            <ul class="price-list">
+                                <li><span class="price-label"><i class="fas fa-calendar-week"></i>Weekdays (Daily)</span><span class="price-amount">RM200</span></li>
+                                <li><span class="price-label"><i class="fas fa-calendar-alt"></i>Weekend (Daily)</span><span class="price-amount">RM400</span></li>
+                            </ul>
+                            <p class="price-note">Both rates are per day</p>
+                            <div class="amenity-title"><i class="fas fa-check-circle"></i>Inclusive Amenities</div>
+                            <ul class="amenity-list">
+                                <li><i class="fas fa-check"></i>PA System & Microphone</li>
+                                <li><i class="fas fa-check"></i>Usage Of Projector</li>
+                                <li><i class="fas fa-check"></i>Usage Of Whiteboard & Marker</li>
+                                <li><i class="fas fa-check"></i>Pen/Pencil & Papers</li>
+                                <li><i class="fas fa-check"></i>10 Pages Of B&W Printing</li>
+                                <li><i class="fas fa-check"></i>Coway Water Filter</li>
+                                <li><i class="fas fa-check"></i>Daily Usage 8 Hours</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="osc-carousel">
+                            <div class="osc-viewport" id="meetingroom-viewport">
+                                <div class="osc-track">
+                                    <div class="osc-page">
+                                        <div class="osc-stack">
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/meetingroom-1.JPG" data-lightbox="meetingroom-gallery" data-title="Meeting Room">
+                                                    <img src="../assets/img/cma-working/meetingroom-1.JPG" alt="Meeting Room" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/meetingroom-2.JPG" data-lightbox="meetingroom-gallery" data-title="Meeting Room">
+                                                    <img src="../assets/img/cma-working/meetingroom-2.JPG" alt="Meeting Room" loading="lazy">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="osc-page">
+                                        <div class="osc-stack">
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/meetingroom-2.JPG" data-lightbox="meetingroom-gallery" data-title="Meeting Room">
+                                                    <img src="../assets/img/cma-working/meetingroom-2.JPG" alt="Meeting Room" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/meetingroom-3.JPG" data-lightbox="meetingroom-gallery" data-title="Meeting Room">
+                                                    <img src="../assets/img/cma-working/meetingroom-3.JPG" alt="Meeting Room" loading="lazy">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="osc-controls">
+                                <button type="button" class="osc-nav" id="meetingroom-prev" aria-label="Previous photos">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button type="button" class="osc-nav" id="meetingroom-next" aria-label="Next photos">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Meeting Room Detail End -->
+
+
+        <!-- Training Open Space Detail Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="osc-carousel">
+                            <div class="osc-viewport" id="trainingopen-viewport">
+                                <div class="osc-track">
+                                    <div class="osc-page">
+                                        <div class="osc-stack">
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/trainingopen_1.jpg" data-lightbox="trainingopen-gallery" data-title="Training Open Space">
+                                                    <img src="../assets/img/cma-working/trainingopen_1.jpg" alt="Training Open Space" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/trainingopen_2.jpg" data-lightbox="trainingopen-gallery" data-title="Training Open Space">
+                                                    <img src="../assets/img/cma-working/trainingopen_2.jpg" alt="Training Open Space" loading="lazy">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="osc-page">
+                                        <div class="osc-stack">
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/trainingopen_2.jpg" data-lightbox="trainingopen-gallery" data-title="Training Open Space">
+                                                    <img src="../assets/img/cma-working/trainingopen_2.jpg" alt="Training Open Space" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/trainingopen_3.jpg" data-lightbox="trainingopen-gallery" data-title="Training Open Space">
+                                                    <img src="../assets/img/cma-working/trainingopen_3.jpg" alt="Training Open Space" loading="lazy">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="osc-controls">
+                                <button type="button" class="osc-nav" id="trainingopen-prev" aria-label="Previous photos">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button type="button" class="osc-nav" id="trainingopen-next" aria-label="Next photos">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="cw-workspace-info">
+                            <div class="ws-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                            <h3 class="mb-2">Training Open Space</h3>
+                            <div class="mb-2" style="position: relative; z-index: 1;">
+                                <span class="capacity-badge"><i class="fas fa-users me-1"></i>15 People Capacity</span>
+                                <span class="special-offer-badge"><i class="fas fa-tags me-1"></i>Special Offer Weekday RM200 / Weekend RM400</span>
+                            </div>
+                            <p class="ws-desc mb-4">A spacious open area designed for larger training sessions, team-building activities, and group workshops. Perfect for interactive and hands-on learning experiences.</p>
+                            <ul class="price-list">
+                                <li><span class="price-label"><i class="fas fa-calendar-week"></i>Weekdays (Daily)</span><span class="price-amount">RM200</span></li>
+                                <li><span class="price-label"><i class="fas fa-calendar-alt"></i>Weekend (Daily)</span><span class="price-amount">RM400</span></li>
+                            </ul>
+                            <p class="price-note">Both rates are per day</p>
+                            <div class="amenity-title"><i class="fas fa-check-circle"></i>Inclusive Amenities</div>
+                            <ul class="amenity-list">
+                                <li><i class="fas fa-check"></i>PA System & Microphone</li>
+                                <li><i class="fas fa-check"></i>Usage Of Projector</li>
+                                <li><i class="fas fa-check"></i>Usage Of Whiteboard & Marker</li>
+                                <li><i class="fas fa-check"></i>Pen/Pencil & Papers</li>
+                                <li><i class="fas fa-check"></i>10 Pages Of B&W Printing</li>
+                                <li><i class="fas fa-check"></i>Coway Water Filter</li>
+                                <li><i class="fas fa-check"></i>Daily Usage 8 Hours</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Training Open Space Detail End -->
+
+
+        <!-- Virtual Office Solutions Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 900px;">
+                    <h4 class="text-primary">Virtual Office Solutions</h4>
+                    <h1 class="display-4 mb-4">Business Address Only</h1>
+                    <p class="mb-4 text-start">A virtual office address provides your company with a professional presence anywhere in the world, without the need to be physically there. We can manage your calls and assist with booking a meeting room or office when you're in town.</p>
+                    <p class="mb-0 text-start">Set up your business at any of our offices, allowing you to work remotely without the expense of a full-time space. Enjoy personalized call answering by our receptionists, so you never miss a message. Use our business address for company registration, following local rules. Visiting for business? Take advantage of our office spaces and meeting rooms to work or meet with clients and your team.</p>
+                </div>
+                <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.3s">
+                    <h2 class="h3 mb-0">Choose Your Virtual Office Plan Now</h2>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-xl-5 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="vo-plan-card">
+                            <span class="vo-plan-badge"><i class="fas fa-building me-1"></i>Package A</span>
+                            <h3>Business Address Only</h3>
+                            <div class="vo-plan-price">From MYR 100 <span>/ month</span></div>
+                            <p>Perfect for businesses aiming to enhance their professionalism or broaden their reach into new cities or international markets.</p>
+                            <div class="vo-plan-features">
+                                <div class="vo-feature"><i class="fas fa-check"></i>Professional Business Address</div>
+                            </div>
+                            <a href="#booking-inquiry" class="btn btn-primary rounded-pill py-3 px-5">Enquire Now</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-5 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="vo-plan-card vo-plan-featured">
+                            <span class="vo-plan-badge vo-plan-badge-popular"><i class="fas fa-star me-1"></i>Most Popular</span>
+                            <h3>Virtual Office</h3>
+                            <div class="vo-plan-price">From MYR 200 <span>/ month</span></div>
+                            <p>Our most popular plan, perfect for those seeking a business address and professional phone service.</p>
+                            <div class="vo-plan-features">
+                                <div class="vo-feature"><i class="fas fa-check"></i>Professional Business Address</div>
+                                <div class="vo-feature"><i class="fas fa-check"></i>Live Receptionist Services</div>
+                            </div>
+                            <a href="#booking-inquiry" class="btn btn-primary rounded-pill py-3 px-5">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Virtual Office Solutions End -->
+
+
+        <!-- Interview Venue Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Interview Venue</h4>
+                    <h1 class="display-4 mb-4">Looking For Interview Venue?</h1>
+                    <p class="mb-0">Conduct professional interviews in a comfortable, private setting. Ideal for HR teams and recruiters who need a neutral venue for candidate sessions.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="osc-carousel">
+                            <div class="osc-viewport" id="interviewvenue-viewport">
+                                <div class="osc-track">
+                                    <div class="osc-page">
+                                        <div class="osc-stack">
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/interview-venue-1.jpg" data-lightbox="interviewvenue-gallery" data-title="Interview Venue">
+                                                    <img src="../assets/img/cma-working/interview-venue-1.jpg" alt="Interview Venue" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/interview-venue-2.jpg" data-lightbox="interviewvenue-gallery" data-title="Interview Venue">
+                                                    <img src="../assets/img/cma-working/interview-venue-2.jpg" alt="Interview Venue" loading="lazy">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="osc-page">
+                                        <div class="osc-stack">
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/interview-venue-2.jpg" data-lightbox="interviewvenue-gallery" data-title="Interview Venue">
+                                                    <img src="../assets/img/cma-working/interview-venue-2.jpg" alt="Interview Venue" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="osc-item">
+                                                <a href="../assets/img/cma-working/interview-venue-3.jpg" data-lightbox="interviewvenue-gallery" data-title="Interview Venue">
+                                                    <img src="../assets/img/cma-working/interview-venue-3.jpg" alt="Interview Venue" loading="lazy">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="osc-controls">
+                                <button type="button" class="osc-nav" id="interviewvenue-prev" aria-label="Previous photos">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button type="button" class="osc-nav" id="interviewvenue-next" aria-label="Next photos">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 justify-content-center mt-4">
+                    <div class="col-md-6 col-xl-5 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="vo-plan-card">
+                            <span class="vo-plan-badge"><i class="fas fa-check-double me-1"></i>Package A</span>
+                            <h3>Training Room + Private Room</h3>
+                            <p class="mb-3">Complete interview venue package with training room and dedicated private interview space.</p>
+                            <div class="vo-plan-features">
+                                <div class="vo-feature"><i class="fas fa-check"></i>Classroom Style: Up To 25 Pax</div>
+                                <div class="vo-feature"><i class="fas fa-check"></i>Theatre Style: Up To 35 Pax</div>
+                                <div class="vo-feature"><i class="fas fa-check"></i>Hot Desk</div>
+                                <div class="vo-feature"><i class="fas fa-check"></i>Private Room: Dedicated Interview Space For Privacy & Focus</div>
+                                <div class="vo-feature"><i class="fas fa-check"></i>Waiting Area For Up To 15 Pax</div>
+                            </div>
+                            <a href="#booking-inquiry" class="btn btn-primary rounded-pill py-3 px-5">Enquire Now</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-5 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="vo-plan-card vo-plan-featured">
+                            <span class="vo-plan-badge"><i class="fas fa-check-double me-1"></i>Package B</span>
+                            <h3>Training Room + Private Room</h3>
+                            <p class="mb-3">Complete interview venue package with training room and dedicated private interview space.</p>
+                            <div class="vo-plan-features">
+                                <div class="vo-feature"><i class="fas fa-check"></i>Classroom Style: Up To 25 Pax</div>
+                                <div class="vo-feature"><i class="fas fa-check"></i>Theatre Style: Up To 35 Pax</div>
+                                <div class="vo-feature"><i class="fas fa-check"></i>Hot Desk</div>
+                                <div class="vo-feature"><i class="fas fa-check"></i>Private Room: Dedicated Interview Space For Privacy & Focus</div>
+                                <div class="vo-feature"><i class="fas fa-check"></i>Waiting Area For Up To 15 Pax</div>
+                            </div>
+                            <a href="#booking-inquiry" class="btn btn-primary rounded-pill py-3 px-5">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="iv-special-banner">
+                        <i class="fas fa-tags"></i>
+                        Starting From MYR 400 / DAILY
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Interview Venue End -->
+
+
+        <!-- Catering Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Catering</h4>
+                    <h1 class="display-4 mb-4">Check Out Our Catering Rates!</h1>
+                    <p class="mb-0">Enhance your event or training session with our catering services. From light refreshments to full meals, we can arrange food for your booking.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="cat-card">
+                            <span class="cat-badge"><i class="fas fa-coffee me-1"></i>Breakfast Set Package</span>
+                            <h3>Breakfast Set</h3>
+                            <div class="cat-menu">
+                                <div class="cat-menu-item">Nasi Lemak / Fried Noodles / Char Kway Teow</div>
+                                <div class="cat-menu-item">Tea / Coffee</div>
+                            </div>
+                            <div class="cat-price-table">
+                                <div class="cat-price-row"><span>Less Than 15 Pax</span><span>RM13.50 / Pax</span></div>
+                                <div class="cat-price-row"><span>15 Pax & Above</span><span>RM12.50 / Pax</span></div>
+                            </div>
+                            <a href="#booking-inquiry" class="btn btn-primary rounded-pill py-3 px-5">Enquire Now</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="cat-card">
+                            <span class="cat-badge"><i class="fas fa-utensils me-1"></i>Lunch Set Package</span>
+                            <h3>Lunch Set</h3>
+                            <div class="cat-menu">
+                                <div class="cat-menu-item">Two Dish</div>
+                                <div class="cat-menu-item">Vegetable</div>
+                                <div class="cat-menu-item">Drink</div>
+                            </div>
+                            <div class="cat-price-table">
+                                <div class="cat-price-row"><span>Less Than 15 Pax</span><span>RM17 / Pax</span></div>
+                                <div class="cat-price-row"><span>15 Pax & Above</span><span>RM15 / Pax</span></div>
+                            </div>
+                            <a href="#booking-inquiry" class="btn btn-primary rounded-pill py-3 px-5">Enquire Now</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="cat-card cat-featured">
+                            <span class="cat-badge"><i class="fas fa-crown me-1"></i>Full Set Package</span>
+                            <h3>Full Set</h3>
+                            <div class="cat-menu">
+                                <div class="cat-menu-item">Breakfast Set Package</div>
+                                <div class="cat-menu-item">Lunch Set Package</div>
+                                <div class="cat-menu-item">Two Tea Break</div>
+                            </div>
+                            <div class="cat-price-table">
+                                <div class="cat-price-row"><span>Less Than 15 Pax</span><span>RM45 / Pax</span></div>
+                                <div class="cat-price-row"><span>15 Pax & Above</span><span>RM43 / Pax</span></div>
+                            </div>
+                            <a href="#booking-inquiry" class="btn btn-primary rounded-pill py-3 px-5">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="halal-note">
+                        <div class="halal-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="halal-content">
+                            <h5>100% Halal Certified</h5>
+                            <p>All our food is 100% halal! We've teamed up with a great local restaurant to bring you variety from Malay favorites and Chinese dishes to other local delicacies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Catering End -->
+
+
+        <!-- Membership Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Membership</h4>
+                    <h1 class="display-4 mb-4">Check Out Our Membership</h1>
+                    <p class="mb-0">Join our coworking community with flexible membership plans. Enjoy exclusive perks, networking events, and more.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-xl-5 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="mb-card">
+                            <div class="mb-topline">
+                                <div class="mb-icon"><i class="fas fa-clock"></i></div>
+                                <div>
+                                    <div class="mb-title">6 Months</div>
+                                    <div class="mb-duration">Flexible Membership</div>
+                                </div>
+                            </div>
+                            <div class="mb-price-box">
+                                <div class="mb-price"><span>MYR</span> 299</div>
+                                <div class="mb-permonth">Per Month RM49.83</div>
+                            </div>
+                            <hr class="mb-divider">
+                            <div class="mb-features">
+                                <div class="mb-feature"><i class="fas fa-check"></i>Special Offer Rental Rate</div>
+                                <div class="mb-feature"><i class="fas fa-check"></i>2 Booking Changes</div>
+                                <div class="mb-feature"><i class="fas fa-check"></i>Private WhatsApp Group</div>
+                                <div class="mb-feature"><i class="fas fa-check"></i>Free 6 Hours Of Hotdesk Usage Per Month</div>
+                                <div class="mb-feature"><i class="fas fa-check"></i>Locker Access</div>
+                                <div class="mb-feature"><i class="fas fa-check"></i>Free Networking Event Hosted By CMA KK Coworking Space</div>
+                            </div>
+                            <a href="#booking-inquiry" class="btn btn-primary rounded-pill py-3 px-5">Enquire Now</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-5 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="mb-card mb-featured">
+                            <div class="mb-ribbon">Best Value</div>
+                            <div class="mb-topline">
+                                <div class="mb-icon"><i class="fas fa-star"></i></div>
+                                <div>
+                                    <div class="mb-title">12 Months</div>
+                                    <div class="mb-duration">Annual Membership</div>
+                                </div>
+                            </div>
+                            <div class="mb-price-box">
+                                <div class="mb-price"><span>MYR</span> 399</div>
+                                <div class="mb-save-badge"><i class="fas fa-tags me-1"></i>Save RM199</div>
+                                <div class="mb-permonth">Per Month RM33.25</div>
+                            </div>
+                            <hr class="mb-divider">
+                            <div class="mb-features">
+                                <div class="mb-feature"><i class="fas fa-check"></i>Special Offer Rental Rate</div>
+                                <div class="mb-feature"><i class="fas fa-check"></i>5 Booking Changes</div>
+                                <div class="mb-feature"><i class="fas fa-check"></i>Private WhatsApp Group</div>
+                                <div class="mb-feature"><i class="fas fa-check"></i>Free 9 Hours Of Hotdesk Usage Per Month</div>
+                                <div class="mb-feature"><i class="fas fa-check"></i>Locker Access</div>
+                                <div class="mb-feature"><i class="fas fa-check"></i>Promote Your Event On Our Social Media</div>
+                                <div class="mb-feature"><i class="fas fa-check"></i>Free Networking Event Hosted By CMA KK Coworking Space</div>
+                            </div>
+                            <a href="#booking-inquiry" class="btn btn-primary rounded-pill py-3 px-5">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="mb-cta">
+                        <div class="mb-cta-icon"><i class="fas fa-piggy-bank"></i></div>
+                        <h5>Start Saving Now</h5>
+                        <p>Enjoy our special offer by becoming a member</p>
+                        <a href="#booking-inquiry" class="btn btn-primary rounded-pill py-3 px-5">Join Membership</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Membership End -->
 
 
         <!-- Why Choose Us Start -->
@@ -1000,7 +2194,7 @@
 
 
         <!-- Booking Inquiry Form Start -->
-        <div class="container-fluid bg-light py-5">
+        <div class="container-fluid bg-light py-5" id="booking-inquiry">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Booking Inquiry</h4>
@@ -1055,7 +2249,7 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="cw-date" placeholder="Date of Booking">
+                                        <input type="date" class="form-control" id="cw-date" placeholder="Date of Booking">
                                         <label for="cw-date">Date of Booking *</label>
                                     </div>
                                 </div>
@@ -1103,7 +2297,46 @@
         <script src="lib/counterup/counterup.min.js"></script>
         <script src="lib/lightbox/js/lightbox.min.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        
+
+        <!-- Workspace Photo Carousels -->
+        <script>
+            $(document).ready(function () {
+                function initOscCarousel(viewportId, prevId, nextId) {
+                    var $track = $(viewportId + ' .osc-track');
+                    var pageCount = $track.find('.osc-page').length;
+                    var currentIndex = 0;
+
+                    function updateSlider() {
+                        var pageWidth = $track.find('.osc-page').first().outerWidth(true);
+                        $track.css('transform', 'translateX(-' + (currentIndex * pageWidth) + 'px)');
+                        $(prevId).toggleClass('disabled', currentIndex === 0);
+                        $(nextId).toggleClass('disabled', currentIndex >= pageCount - 1);
+                    }
+
+                    $(prevId).on('click', function () {
+                        if (currentIndex > 0) {
+                            currentIndex--;
+                            updateSlider();
+                        }
+                    });
+
+                    $(nextId).on('click', function () {
+                        if (currentIndex < pageCount - 1) {
+                            currentIndex++;
+                            updateSlider();
+                        }
+                    });
+
+                    $(window).on('resize', updateSlider);
+                    updateSlider();
+                }
+
+                initOscCarousel('#office-viewport', '#office-prev', '#office-next');
+                initOscCarousel('#meetingroom-viewport', '#meetingroom-prev', '#meetingroom-next');
+                initOscCarousel('#trainingopen-viewport', '#trainingopen-prev', '#trainingopen-next');
+                initOscCarousel('#interviewvenue-viewport', '#interviewvenue-prev', '#interviewvenue-next');
+            });
+        </script>
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>

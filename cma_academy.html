@@ -30,6 +30,21 @@
         <link href="css/style.css" rel="stylesheet">
 
         <style>
+            /*** Button styling to match cma_coworking.html ***/
+            .btn.btn-primary {
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                border: none;
+                color: var(--bs-white);
+                box-shadow: 0 6px 18px rgba(56, 182, 255, .3);
+                transition: .5s;
+            }
+            .btn.btn-primary:hover {
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                transform: translateY(-2px);
+                box-shadow: 0 10px 28px rgba(56, 182, 255, .45);
+            }
+
             .academy-about-img {
                 border-radius: 10px;
                 overflow: hidden;
@@ -1760,7 +1775,7 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="wa-dates" placeholder="Preferred Date(s)">
+                                        <input type="date" class="form-control" id="wa-dates" placeholder="Preferred Date(s)">
                                         <label for="wa-dates">Preferred Date(s) *</label>
                                     </div>
                                 </div>
@@ -1869,20 +1884,21 @@
                     return;
                 }
 
-                var message = '*CMA ACADEMY ASIA - TRAINING INQUIRY*%0A';
-                message += '%0A';
-                message += '*Name / Company:* ' + encodeURIComponent(name) + '%0A';
-                message += '*Contact:* ' + encodeURIComponent(contact) + '%0A';
-                if (email) { message += '*Email:* ' + encodeURIComponent(email) + '%0A'; }
-                message += '*Training Topic:* ' + encodeURIComponent(topic) + '%0A';
-                message += '*Target Audience & Participants:* ' + encodeURIComponent(audience) + '%0A';
-                message += '*Preferred Date(s):* ' + encodeURIComponent(dates) + '%0A';
-                message += '*Duration:* ' + encodeURIComponent(duration) + '%0A';
-                message += '*Format:* ' + encodeURIComponent(format) + '%0A';
-                if (budget) { message += '*Budget Range:* ' + encodeURIComponent(budget) + '%0A'; }
-                message += '*Key Objective:* ' + encodeURIComponent(objective);
+                var rawMessage = '*CMA ACADEMY ASIA - TRAINING INQUIRY*\n';
+                rawMessage += '\n';
+                rawMessage += '*Name / Company:* ' + name + '\n';
+                rawMessage += '*Contact:* ' + contact + '\n';
+                rawMessage += '*Email:* ' + email + '\n';
+                rawMessage += '*Training Topic:* ' + topic + '\n';
+                rawMessage += '*Target Audience & Participants:* ' + audience + '\n';
+                rawMessage += '*Preferred Date(s):* ' + dates + '\n';
+                rawMessage += '*Duration:* ' + duration + '\n';
+                rawMessage += '*Format:* ' + format + '\n';
+                rawMessage += '*Budget Range:* ' + budget + '\n';
+                rawMessage += '*Key Objective:* ' + objective;
 
-                window.open('https://wa.me/60129479219?text=' + message, '_blank');
+                var waUrl = 'https://wa.me/60129479219?text=' + encodeURIComponent(rawMessage);
+                window.open(waUrl, '_blank');
             }
         </script>
 
