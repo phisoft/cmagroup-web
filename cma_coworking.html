@@ -45,6 +45,92 @@
                 box-shadow: 0 10px 28px rgba(56, 182, 255, .45);
             }
 
+            /*** Coworking Page Header ***/
+            .cw-page-header {
+                background: linear-gradient(135deg, #0a2a4a 0%, #0561a5 100%);
+                border-bottom: 1px solid rgba(56, 182, 255, .3);
+                position: relative;
+                overflow: hidden;
+            }
+            .cw-page-header::before {
+                content: '';
+                position: absolute;
+                top: -80px;
+                right: -80px;
+                width: 260px;
+                height: 260px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .08);
+            }
+            .cw-page-header::after {
+                content: '';
+                position: absolute;
+                bottom: -100px;
+                left: -100px;
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .05);
+            }
+            .cw-logo-box {
+                display: inline-block;
+                background: #ffffff;
+                border-radius: 20px;
+                padding: 24px 44px;
+                box-shadow: 0 15px 40px rgba(56, 182, 255, .18);
+                border: 1px solid rgba(56, 182, 255, .2);
+                margin-bottom: 24px;
+                position: relative;
+                z-index: 1;
+                transition: .5s;
+            }
+            .cw-logo-box:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 50px rgba(56, 182, 255, .28);
+                border-color: #38b6ff;
+            }
+            .cw-logo-box img {
+                max-height: 90px;
+                width: auto;
+                object-fit: contain;
+                display: block;
+            }
+            .cw-page-header h1 {
+                color: var(--bs-white);
+                font-weight: 800;
+                position: relative;
+                z-index: 1;
+                margin-bottom: 12px;
+            }
+            .cw-header-underline {
+                width: 70px;
+                height: 4px;
+                border-radius: 4px;
+                background: linear-gradient(90deg, #38b6ff, #7fd4ff);
+                margin: 0 auto 16px;
+                position: relative;
+                z-index: 1;
+            }
+            .cw-page-header p {
+                color: rgba(255, 255, 255, .82);
+                font-size: 16.5px;
+                font-weight: 600;
+                position: relative;
+                z-index: 1;
+                margin: 0;
+            }
+            @media (max-width: 575px) {
+                .cw-logo-box {
+                    padding: 18px 28px;
+                }
+                .cw-logo-box img {
+                    max-height: 70px;
+                }
+                .cw-page-header p {
+                    font-size: 15px;
+                }
+            }
+
             /*** Coworking Hero ***/
             .cw-hero {
                 border-radius: 10px;
@@ -1246,9 +1332,14 @@
 
 
         <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">CMA KK Coworking Space</h4> 
+        <div class="container-fluid cw-page-header">
+            <div class="container text-center py-5 wow fadeInDown" data-wow-delay="0.1s" style="max-width: 900px;">
+                <div class="cw-logo-box">
+                    <img src="../assets/img/cma-working/cma-coworking-logo.png" alt="CMA KK Coworking Space Logo">
+                </div>
+                <h1 class="display-4 mb-0">CMA KK Coworking Space</h1>
+                <div class="cw-header-underline"></div>
+                <p>A Collaborative Workspace in Kota Kinabalu</p>
             </div>
         </div>
         <!-- Header End -->
