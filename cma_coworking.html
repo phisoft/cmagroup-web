@@ -1421,6 +1421,49 @@
                     flex: 0 0 100%;
                 }
             }
+            /*** What's On / Events ***/
+            .event-card {
+                background: var(--bs-white);
+                border-radius: 10px;
+                border: 1px solid rgba(0, 0, 0, .06);
+                overflow: hidden;
+                height: 100%;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+                transition: .5s;
+                position: relative;
+            }
+            .event-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 18px 45px rgba(56, 182, 255, .25);
+                border-color: #38b6ff;
+            }
+            .event-card .event-thumb {
+                display: block;
+                overflow: hidden;
+                position: relative;
+                aspect-ratio: 4 / 5;
+            }
+            .event-card .event-thumb img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                transition: .5s;
+            }
+            .event-card:hover .event-thumb img {
+                transform: scale(1.08);
+            }
+            .event-card .event-body {
+                padding: 20px 22px;
+                text-align: center;
+            }
+            .event-card .event-body h3 {
+                font-size: 20px;
+                font-weight: 700;
+                color: #0a2a4a;
+                margin-bottom: 0;
+            }
+
         </style>
     </head>
 
@@ -1474,6 +1517,51 @@
             </div>
         </div>
         <!-- About CMA KK Coworking End -->
+
+
+        <!-- What's On Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">What's On</h4>
+                    <h1 class="display-4 mb-4">Upcoming Events & Workshops</h1>
+                    <p class="mb-0">Check out the latest programmes and events happening at CMA KK Coworking Space.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="event-card">
+                            <a class="event-thumb" href="../assets/img/events/AI Video Beginner to Pro.png" data-lightbox="events-gallery" data-title="AI Video Beginner to Pro">
+                                <img src="../assets/img/events/AI Video Beginner to Pro.png" alt="AI Video Beginner to Pro" loading="lazy">
+                            </a>
+                            <div class="event-body">
+                                <h3>AI Video Beginner to Pro</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="event-card">
+                            <a class="event-thumb" href="../assets/img/events/AI Video Intermediate.png" data-lightbox="events-gallery" data-title="AI Video Intermediate">
+                                <img src="../assets/img/events/AI Video Intermediate.png" alt="AI Video Intermediate" loading="lazy">
+                            </a>
+                            <div class="event-body">
+                                <h3>AI Video Intermediate</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="event-card">
+                            <a class="event-thumb" href="../assets/img/events/Bead Workshop CMA Weekender.png" data-lightbox="events-gallery" data-title="Bead Workshop CMA Weekender">
+                                <img src="../assets/img/events/Bead Workshop CMA Weekender.png" alt="Bead Workshop CMA Weekender" loading="lazy">
+                            </a>
+                            <div class="event-body">
+                                <h3>Bead Workshop CMA Weekender</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- What's On End -->
 
 
         <!-- Spaces & Services Start -->
