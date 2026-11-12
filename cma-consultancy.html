@@ -464,6 +464,73 @@
                 }
             }
 
+            /*** Future-Pacing CTA ***/
+            .cs-cta {
+                background: linear-gradient(135deg, #0a2a4a 0%, #0561a5 100%);
+                border-top: 1px solid rgba(56, 182, 255, .3);
+                position: relative;
+                overflow: hidden;
+            }
+            .cs-cta::before {
+                content: '';
+                position: absolute;
+                top: -120px;
+                right: -80px;
+                width: 320px;
+                height: 320px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .1);
+            }
+            .cs-cta::after {
+                content: '';
+                position: absolute;
+                bottom: -140px;
+                left: -100px;
+                width: 340px;
+                height: 340px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .06);
+            }
+            .cs-cta-inner {
+                position: relative;
+                z-index: 1;
+                max-width: 880px;
+                margin: 0 auto;
+            }
+            .cs-cta h4 {
+                color: #38b6ff;
+                font-weight: 700;
+                letter-spacing: .05em;
+                text-transform: uppercase;
+                font-size: 13.5px;
+            }
+            .cs-cta h1 {
+                color: var(--bs-white);
+                font-weight: 800;
+                line-height: 1.25;
+            }
+            .cs-cta p {
+                color: rgba(255, 255, 255, .85);
+                font-size: 16.5px;
+                line-height: 1.85;
+                margin-bottom: 20px;
+            }
+            .cs-cta-pledge {
+                color: var(--bs-white);
+                font-size: 21px;
+                font-weight: 800;
+                letter-spacing: .01em;
+                margin: 28px 0 30px;
+            }
+            @media (max-width: 575px) {
+                .cs-cta p {
+                    font-size: 15.5px;
+                }
+                .cs-cta-pledge {
+                    font-size: 18px;
+                }
+            }
+
             /*** Booking Form ***/
             #consultancy-booking {
                 scroll-margin-top: 96px;
@@ -853,6 +920,26 @@
             </div>
         </div>
         <!-- Booking Request End -->
+
+        <!-- Future-Pacing CTA Start -->
+        <div class="cs-cta container-fluid py-5">
+            <div class="container py-5">
+                <div class="cs-cta-inner text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <h4 class="mb-3">Future-Pacing</h4>
+                    <h1 class="display-4 mb-4">Picture Your Organization Six Months From Today.</h1>
+                    <p>Your employees confidently navigate their health benefits through a smart mobile app. Routine medical claims processing themselves through AI without ever crossing an HR desk. Your HR leaders, finally freed from operational delays and manual bottlenecks, dedicating their full energy to talent development and corporate culture.</p>
+                    <p class="mb-0">When you implement an AI-powered, customized risk architecture today, administrative friction disappears, and lasting talent loyalty becomes your enterprise's enduring advantage.</p>
+                    <div class="cs-cta-pledge">Protect your people. Empower your HR.</div>
+                    <a class="btn btn-light rounded-pill py-3 px-5 me-sm-3 mb-2 mb-sm-0" href="#consultancy-booking">
+                        <i class="fas fa-clipboard-check me-2"></i>Request a Digital Benefit Audit
+                    </a>
+                    <a class="btn btn-outline-light rounded-pill py-3 px-5 mb-2 mb-sm-0" href="index.html">
+                        <i class="fas fa-globe me-2"></i>Explore the CMA Group Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Future-Pacing CTA End -->
 
 
         <!-- Footer Start -->
