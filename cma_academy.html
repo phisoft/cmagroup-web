@@ -429,6 +429,86 @@
     border-top: 1px solid rgba(10, 42, 74, .08);
 }
 
+            .ac-bespoke-inner {
+                position: relative;
+                z-index: 1;
+                max-width: 1080px;
+            }
+            .ac-bespoke-lead {
+                color: var(--bs-white);
+                font-size: 30px;
+                font-weight: 800;
+                line-height: 1.45;
+                margin-bottom: 18px;
+            }
+            .ac-bespoke-card {
+                height: 100%;
+                padding: 30px 28px;
+                border-radius: 18px;
+                background: rgba(255, 255, 255, .07);
+                border: 1px solid rgba(255, 255, 255, .16);
+                text-align: left;
+                transition: transform .3s ease, background .3s ease;
+            }
+            .ac-bespoke-card:hover {
+                transform: translateY(-4px);
+                background: rgba(255, 255, 255, .11);
+            }
+            .ac-bespoke-card i {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 52px;
+                height: 52px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .18);
+                color: #38b6ff;
+                font-size: 20px;
+                margin-bottom: 18px;
+            }
+            .ac-bespoke-card h5 {
+                color: var(--bs-white);
+                font-size: 17px;
+                font-weight: 700;
+                line-height: 1.45;
+                margin-bottom: 10px;
+            }
+            .ac-bespoke-card p {
+                color: rgba(255, 255, 255, .82);
+                font-size: 15px;
+                line-height: 1.8;
+                margin-bottom: 0;
+            }
+            .ac-bespoke-punch {
+                color: rgba(255, 255, 255, .9);
+                font-size: 18.5px;
+                font-weight: 600;
+                line-height: 1.7;
+                max-width: 780px;
+                margin: 42px auto 30px;
+            }
+            .ac-bespoke-punch span {
+                color: #38b6ff;
+                font-weight: 800;
+            }
+            @media (max-width: 991px) {
+                .ac-bespoke-lead {
+                    font-size: 24px;
+                }
+                .ac-bespoke-punch {
+                    font-size: 17px;
+                    margin-top: 34px;
+                }
+            }
+            @media (max-width: 575px) {
+                .ac-bespoke-lead {
+                    font-size: 21px;
+                }
+                .ac-bespoke-card {
+                    padding: 24px 20px;
+                }
+            }
+
         /*** Button styling to match cma_coworking.html ***/
             .btn.btn-primary {
                 background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
@@ -1669,6 +1749,46 @@
         </div>
         <!-- Signature Training 3 End -->
 
+        <!-- Bespoke Corporate Training Start -->
+        <div class="container-fluid py-5 ac-empower">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 ac-bespoke-inner wow fadeInUp" data-wow-delay="0.2s">
+                    <span class="ac-empower-tagline">Customizable &amp; Bespoke Corporate Training (Upon Request)</span>
+                    <h2 class="ac-bespoke-lead">Empower your enterprise with tailored learning architectures designed around your exact commercial realities.</h2>
+                    <p class="ac-empower-sub mb-0">Every organization faces distinctive market challenges, workflow structures, and skill gaps. Beyond our standard curriculum, CMA Academy Asia partners directly with corporate HR and executive teams to design bespoke, fully customized corporate programs across:</p>
+                </div>
+                <div class="row g-4 justify-content-center ac-bespoke-inner mx-auto">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="ac-bespoke-card">
+                            <i class="fas fa-industry"></i>
+                            <h5>Industry-Tailored Financial Masterclasses</h5>
+                            <p>Custom modules covering specialized requirements such as national e-invoicing compliance, project cost control, manufacturing overhead accounting, or supply chain financial modeling.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="ac-bespoke-card">
+                            <i class="fas fa-clipboard-check"></i>
+                            <h5>Diagnostics-Driven Curriculum Design</h5>
+                            <p>We conduct pre-training consultations and skills assessments to identify your department’s exact operational bottlenecks, engineering an actionable syllabus that directly solves real-world pain points.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="ac-bespoke-card">
+                            <i class="fas fa-certificate"></i>
+                            <h5>Full HRDCorp Claimability</h5>
+                            <p>All custom corporate programs, whether delivered as single workshops or multi-phase corporate roadmaps, are fully structured for 100% HRDCorp claim approval.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center ac-bespoke-inner mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <p class="ac-bespoke-punch">Give your people the tools to master their roles and elevate those around them. <span>Be empowered to empower.</span></p>
+                    <a class="btn btn-light rounded-pill py-3 px-5 me-sm-3 mb-2 mb-sm-0" href="#training-catalogue">Claim Your HRDCorp Training Grant</a>
+                    <a class="btn btn-outline-light rounded-pill py-3 px-5 mb-2 mb-sm-0" href="#training-inquiry">Request a Tailored Corporate Proposal</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bespoke Corporate Training End -->
+
         <!-- Past Trainings Start -->
         <div class="container-fluid bg-light py-5">
             <div class="container py-5">
@@ -2499,7 +2619,7 @@
         <!-- Past Clients End -->
 
         <!-- Training Inquiry Form Start -->
-        <div class="container-fluid py-5">
+        <div id="training-inquiry" class="container-fluid py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Training Inquiry</h4>
