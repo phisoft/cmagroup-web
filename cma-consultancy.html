@@ -279,6 +279,43 @@
                 }
             }
 
+            /*** Philosophy / Why It Matters ***/
+            .cs-belief {
+                background: rgba(56, 182, 255, .1);
+                border-left: 4px solid var(--bs-primary);
+                border-radius: 10px;
+                padding: 20px 24px;
+                font-size: 17.5px;
+                font-weight: 700;
+                line-height: 1.7;
+                color: #0a6fb8;
+            }
+            .cs-about-text p {
+                font-size: 16px;
+                line-height: 1.85;
+                color: #55606c;
+            }
+            .cs-about-img {
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 15px 40px rgba(10, 42, 74, .15);
+            }
+            .cs-about-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+            @media (max-width: 575px) {
+                .cs-belief {
+                    padding: 16px 18px;
+                    font-size: 16px;
+                }
+                .cs-about-text p {
+                    font-size: 15.5px;
+                }
+            }
+
             /*** Solution Cards ***/
             .cs-solution-card {
                 background: var(--bs-white);
@@ -464,6 +501,31 @@
             </div>
         </div>
         <!-- Hero Band End -->
+
+        <!-- Philosophy Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Why It Matters</h4>
+                    <h1 class="display-4 mb-4">AI-Powered Protection That Empowers HR</h1>
+                </div>
+                <div class="row g-5 align-items-center justify-content-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="cs-about-text">
+                            <p class="mb-4">Your people are the heartbeat of your business, and your HR team is its cultural compass. Yet, in many growing businesses, HR professionals are trapped in a cycle of administrative exhaustion &mdash; managing physical claim forms, chasing insurers for updates, and resolving endless employee benefit disputes. When your HR team is consumed by manual paperwork, they lose the time and energy needed to nurture talent and build a thriving workplace culture.</p>
+                            <p class="cs-belief mb-4">At CMA Consultancy, we believe employee benefits must evolve from a manual chore into a strategic, automated asset.</p>
+                            <p class="mb-0">We partner with corporate decision-makers to design customized risk management structures driven by AI-powered digital benefit platforms. By replacing outdated insurance bureaucracy with smart, automated technology, we remove the friction between your employees and their healthcare. We empower your HR department to step out of the administrative weeds, transforming them from paperwork processors into strategic cultural leaders who can focus on what truly matters: empowering your people.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="cs-about-img">
+                            <img src="assets/img/group-discussion.jpg" alt="CMA Consultancy advisors presenting a risk and benefits strategy to corporate decision-makers">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Philosophy End -->
 
         <!-- Solutions Start -->
         <div class="container-fluid py-5">
