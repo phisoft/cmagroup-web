@@ -131,6 +131,79 @@
                 }
             }
 
+            /*** Coworking Contact Bar ***/
+            .cw-contact-bar {
+                background: #f7fbff;
+                border-bottom: 1px solid rgba(0, 0, 0, .06);
+                position: relative;
+                z-index: 2;
+            }
+            .cw-contact-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                height: 100%;
+                padding: 10px 12px;
+                border-radius: 10px;
+                text-decoration: none;
+                transition: .5s;
+            }
+            .cw-contact-item:hover {
+                background: rgba(56, 182, 255, .07);
+            }
+            .cw-contact-icon {
+                width: 52px;
+                height: 52px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                font-size: 20px;
+                box-shadow: 0 8px 20px rgba(56, 182, 255, .28);
+                transition: .5s;
+            }
+            .cw-contact-item:hover .cw-contact-icon {
+                transform: translateY(-3px);
+            }
+            .cw-contact-text {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+            .cw-contact-text small {
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: .09em;
+                text-transform: uppercase;
+                color: #6c757d;
+            }
+            .cw-contact-text span {
+                font-size: 16px;
+                font-weight: 700;
+                color: #0a2a4a;
+                word-break: break-word;
+            }
+            @media (max-width: 767px) {
+                .cw-contact-item {
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 16px;
+                    padding: 8px 10px;
+                }
+                .cw-contact-icon {
+                    width: 44px;
+                    height: 44px;
+                    font-size: 17px;
+                }
+                .cw-contact-text {
+                    align-items: flex-start;
+                    text-align: left;
+                }
+            }
             /*** Coworking Hero ***/
             .cw-hero {
                 border-radius: 10px;
@@ -1497,6 +1570,42 @@
         </div>
         <!-- Header End -->
 
+
+        <!-- Contact Info Start -->
+        <div class="container-fluid cw-contact-bar py-4">
+            <div class="container">
+                <div class="row g-4 justify-content-center text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-md-4">
+                        <a class="cw-contact-item" href="mailto:kkcoworkingspace@cmagroup.my">
+                            <div class="cw-contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="cw-contact-text">
+                                <small>Email</small>
+                                <span>kkcoworkingspace@cmagroup.my</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="cw-contact-item" href="tel:+6088201542">
+                            <div class="cw-contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="cw-contact-text">
+                                <small>Contact</small>
+                                <span>088 201542</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="cw-contact-item" href="https://wa.me/60129479219" target="_blank" rel="noopener">
+                            <div class="cw-contact-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="cw-contact-text">
+                                <small>WhatsApp</small>
+                                <span>012 947 9219 / 013 870 9219</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Info End -->
 
         <!-- About CMA KK Coworking Start -->
         <div class="container-fluid py-5">
