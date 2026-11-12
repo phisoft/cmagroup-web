@@ -7,7 +7,7 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
-        <link rel="icon" type="image/x-icon" href="img/cma-consultancy-logo.ico">
+        <link rel="icon" type="image/x-icon" href="assets/img/cma-co/logo.ico">
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -116,7 +116,405 @@
                 }
             }
 
-            /*** Button styling to match cma_coworking.html ***/
+            /*** Academy Contact Bar ***/
+            .ac-contact-bar {
+                background: #f7fbff;
+                border-bottom: 1px solid rgba(0, 0, 0, .06);
+                position: relative;
+                z-index: 2;
+            }
+            .ac-contact-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                height: 100%;
+                padding: 10px 12px;
+                border-radius: 10px;
+                transition: .5s;
+            }
+            .ac-contact-item:hover {
+                background: rgba(56, 182, 255, .07);
+            }
+            .ac-contact-icon {
+                width: 52px;
+                height: 52px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                font-size: 20px;
+                box-shadow: 0 8px 20px rgba(56, 182, 255, .28);
+                transition: .5s;
+            }
+            .ac-contact-item:hover .ac-contact-icon {
+                transform: translateY(-3px);
+            }
+            .ac-contact-text {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+            .ac-contact-text small {
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: .09em;
+                text-transform: uppercase;
+                color: #6c757d;
+                margin-bottom: 2px;
+            }
+            .ac-contact-text a {
+                font-size: 15.5px;
+                font-weight: 700;
+                color: #0a2a4a;
+                text-decoration: none;
+                word-break: break-word;
+                transition: .3s;
+            }
+            .ac-contact-text a:hover {
+                color: #0a6fb8;
+                text-decoration: underline;
+            }
+            @media (max-width: 767px) {
+                .ac-contact-item {
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 16px;
+                    padding: 8px 10px;
+                }
+                .ac-contact-icon {
+                    width: 44px;
+                    height: 44px;
+                    font-size: 17px;
+                }
+                .ac-contact-text {
+                    align-items: flex-start;
+                    text-align: left;
+                }
+            }
+            /*** Empower Section ***/
+            .ac-empower {
+                background: linear-gradient(135deg, #0a2a4a 0%, #0561a5 100%);
+                border-top: 1px solid rgba(56, 182, 255, .3);
+                border-bottom: 1px solid rgba(56, 182, 255, .3);
+                position: relative;
+                overflow: hidden;
+            }
+            .ac-empower::before {
+                content: '';
+                position: absolute;
+                top: -90px;
+                right: -90px;
+                width: 280px;
+                height: 280px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .1);
+            }
+            .ac-empower::after {
+                content: '';
+                position: absolute;
+                bottom: -110px;
+                left: -110px;
+                width: 320px;
+                height: 320px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .06);
+            }
+            .ac-empower-inner {
+                position: relative;
+                z-index: 1;
+                max-width: 900px;
+            }
+            .ac-empower-tagline {
+                display: inline-block;
+                padding: 8px 22px;
+                border-radius: 50rem;
+                background: rgba(255, 255, 255, .12);
+                border: 1px solid rgba(255, 255, 255, .28);
+                color: var(--bs-white);
+                font-size: 13.5px;
+                font-weight: 700;
+                letter-spacing: .05em;
+                margin-bottom: 22px;
+            }
+            .ac-empower h1 {
+                color: var(--bs-white);
+                font-weight: 800;
+                line-height: 1.25;
+            }
+            .ac-empower-sub {
+                color: rgba(255, 255, 255, .85);
+                font-size: 17px;
+                line-height: 1.85;
+                max-width: 840px;
+                margin: 0 auto 34px;
+            }
+            @media (max-width: 575px) {
+                .ac-empower-tagline {
+                    font-size: 12px;
+                    padding: 7px 16px;
+                    letter-spacing: .03em;
+                }
+                .ac-empower-sub {
+                    font-size: 15.5px;
+                }
+            }
+    /*** Philosophy & HRDCorp Levy Section ***/
+.ac-philosophy-quote {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.65;
+    color: #0a6fb8;
+    border-left: 4px solid #38b6ff;
+    padding: 4px 0 4px 22px;
+    margin: 0 0 24px;
+}
+.ac-levy-card {
+    background: linear-gradient(135deg, rgba(56, 182, 255, .12) 0%, rgba(56, 182, 255, .04) 100%);
+    border: 1px solid rgba(56, 182, 255, .28);
+    border-radius: 16px;
+    padding: 40px 36px;
+    height: 100%;
+}
+.ac-levy-card h3 {
+    font-weight: 800;
+    color: #0a2a4a;
+}
+.ac-levy-sub {
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: #0a6fb8;
+}
+.ac-levy-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 18px;
+}
+.ac-levy-item:last-child {
+    margin-bottom: 0;
+}
+.ac-levy-item i {
+    color: #0a6fb8;
+    font-size: 18px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+.ac-levy-item p {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #4a5a6a;
+}
+.ac-levy-item strong {
+    color: #0a2a4a;
+}
+@media (max-width: 575px) {
+    .ac-philosophy-quote {
+        font-size: 17.5px;
+        padding-left: 16px;
+    }
+    .ac-levy-card {
+        padding: 28px 22px;
+    }
+}
+
+/*** Signature Training Tabs ***/
+.ac-sig-nav {
+    background: #f4f8fd;
+    border: 1px solid rgba(10, 111, 184, .12);
+    border-radius: 16px;
+    padding: 12px;
+    gap: 4px;
+}
+.ac-sig-nav .nav-link {
+    text-align: left;
+    border-radius: 10px;
+    padding: 14px 16px 14px 48px;
+    position: relative;
+    color: #0a2a4a;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.45;
+    border: 0;
+    background: transparent;
+    transition: all .25s ease;
+}
+.ac-sig-nav .nav-link:hover {
+    background: #ffffff;
+    color: #0a6fb8;
+}
+.ac-sig-nav .ac-sig-num {
+    position: absolute;
+    left: 15px;
+    top: 14px;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    color: #38b6ff;
+}
+.ac-sig-nav .nav-link.active {
+    background: linear-gradient(135deg, #0a6fb8 0%, #0561a5 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(10, 42, 74, .18);
+}
+.ac-sig-nav .nav-link.active .ac-sig-num {
+    color: rgba(255, 255, 255, .75);
+}
+.ac-sig-content {
+    background: #ffffff;
+    border: 1px solid rgba(10, 42, 74, .10);
+    border-radius: 16px;
+    padding: 40px 40px 34px;
+    box-shadow: 0 10px 30px rgba(10, 42, 74, .06);
+}
+.ac-sig-content h3 {
+    font-weight: 800;
+    color: #0a2a4a;
+    margin-bottom: 14px;
+}
+.ac-sig-tagline {
+    font-size: 16.5px;
+    font-weight: 700;
+    line-height: 1.7;
+    color: #0a6fb8;
+    border-left: 4px solid #38b6ff;
+    padding-left: 18px;
+    margin-bottom: 22px;
+}
+.ac-sig-intro {
+    color: #4a5a6a;
+    font-size: 15.5px;
+    line-height: 1.85;
+    margin-bottom: 0;
+}
+.ac-sig-point {
+    margin-top: 22px;
+}
+.ac-sig-point h5 {
+    color: #0a2a4a;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.ac-sig-point h5 i {
+    color: #0a6fb8;
+    font-size: 14px;
+    margin-right: 9px;
+}
+.ac-sig-point p {
+    color: #4a5a6a;
+    font-size: 15.5px;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+@media (max-width: 991px) {
+    .ac-sig-nav {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+    .ac-sig-nav .nav-link {
+        white-space: nowrap;
+        flex: 0 0 auto;
+    }
+    .ac-sig-content {
+        padding: 26px 22px;
+    }
+}
+
+.ac-sig-divider {
+    border-top: 1px solid rgba(10, 42, 74, .08);
+}
+
+            .ac-bespoke-inner {
+                position: relative;
+                z-index: 1;
+                max-width: 1080px;
+            }
+            .ac-bespoke-lead {
+                color: var(--bs-white);
+                font-size: 30px;
+                font-weight: 800;
+                line-height: 1.45;
+                margin-bottom: 18px;
+            }
+            .ac-bespoke-card {
+                height: 100%;
+                padding: 30px 28px;
+                border-radius: 18px;
+                background: rgba(255, 255, 255, .07);
+                border: 1px solid rgba(255, 255, 255, .16);
+                text-align: left;
+                transition: transform .3s ease, background .3s ease;
+            }
+            .ac-bespoke-card:hover {
+                transform: translateY(-4px);
+                background: rgba(255, 255, 255, .11);
+            }
+            .ac-bespoke-card i {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 52px;
+                height: 52px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .18);
+                color: #38b6ff;
+                font-size: 20px;
+                margin-bottom: 18px;
+            }
+            .ac-bespoke-card h5 {
+                color: var(--bs-white);
+                font-size: 17px;
+                font-weight: 700;
+                line-height: 1.45;
+                margin-bottom: 10px;
+            }
+            .ac-bespoke-card p {
+                color: rgba(255, 255, 255, .82);
+                font-size: 15px;
+                line-height: 1.8;
+                margin-bottom: 0;
+            }
+            .ac-bespoke-punch {
+                color: rgba(255, 255, 255, .9);
+                font-size: 18.5px;
+                font-weight: 600;
+                line-height: 1.7;
+                max-width: 780px;
+                margin: 42px auto 30px;
+            }
+            .ac-bespoke-punch span {
+                color: #38b6ff;
+                font-weight: 800;
+            }
+            @media (max-width: 991px) {
+                .ac-bespoke-lead {
+                    font-size: 24px;
+                }
+                .ac-bespoke-punch {
+                    font-size: 17px;
+                    margin-top: 34px;
+                }
+            }
+            @media (max-width: 575px) {
+                .ac-bespoke-lead {
+                    font-size: 21px;
+                }
+                .ac-bespoke-card {
+                    padding: 24px 20px;
+                }
+            }
+
+            #training-catalogue,
+            #training-inquiry {
+                scroll-margin-top: 96px;
+            }
+
+        /*** Button styling to match cma_coworking.html ***/
             .btn.btn-primary {
                 background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
                 border: none;
@@ -896,6 +1294,64 @@
         </div>
         <!-- Header End -->
 
+        <!-- Contact Info Start -->
+        <div class="container-fluid ac-contact-bar py-4">
+            <div class="container">
+                <div class="row g-4 justify-content-center text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-md-4">
+                        <div class="ac-contact-item">
+                            <div class="ac-contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="ac-contact-text">
+                                <small>Email</small>
+                                <a href="mailto:admin@cmagroup.my">admin@cmagroup.my</a>
+                                <a href="mailto:marketing@cmagroup.my">marketing@cmagroup.my</a>
+                                <a href="mailto:training@cmagroup.my">training@cmagroup.my</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="ac-contact-item">
+                            <div class="ac-contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="ac-contact-text">
+                                <small>Contact</small>
+                                <a href="tel:+6088201542">088 201542</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="ac-contact-item">
+                            <div class="ac-contact-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="ac-contact-text">
+                                <small>WhatsApp</small>
+                                <a href="https://wa.me/60129479219" target="_blank" rel="noopener">Admin 012 947 9219</a>
+                                <a href="https://wa.me/60198699219" target="_blank" rel="noopener">Erick 019 869 9219</a>
+                                <a href="https://wa.me/60198829219" target="_blank" rel="noopener">Hisyam 019 882 9219</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Info End -->
+
+        <!-- Empower Start -->
+        <div class="container-fluid ac-empower py-5">
+            <div class="container py-5">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="ac-empower-inner mx-auto">
+                            <span class="ac-empower-tagline">Be Empowered to Empower.</span>
+                            <h1 class="display-4 text-white mb-4">Elevate Talent. Ignite Leadership. Build an Empowered Workforce.</h1>
+                            <p class="ac-empower-sub">True transformation happens when your people have the mastery to lead and the tools to inspire others. CMA Academy Asia is an accredited HRDCorp-registered corporate training provider in Malaysia, delivering 100% claimable learning experiences designed to eliminate the operational delays, manual bottlenecks, and inefficiencies that slow down your business and waste valuable time and energy.</p>
+                            <a class="btn btn-light rounded-pill py-3 px-5 me-sm-3 mb-2 mb-sm-0" href="#training-catalogue">Explore HRDCorp Claimable Programs</a>
+                            <a class="btn btn-outline-light rounded-pill py-3 px-5 mb-2 mb-sm-0" href="#training-inquiry">Partner with CMA Academy Asia</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Empower End -->
+
 
         <!-- About CMA Academy Asia Start -->
         <div class="container-fluid py-5">
@@ -920,8 +1376,7 @@
         </div>
         <!-- About CMA Academy Asia End -->
 
-
-        <!-- Vision & Mission Start -->
+                <!-- Vision & Mission Start -->
         <div class="container-fluid bg-light py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
@@ -977,6 +1432,40 @@
         </div>
         <!-- Vision & Mission End -->
 
+        <!-- Philosophy Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <h4 class="text-primary mb-3">Our Philosophy</h4>
+                        <h1 class="display-4 mb-4">Be Empowered to Empower</h1>
+                        <p class="mb-4">Growth does not happen in a vacuum. When a leader masters their numbers, they empower their managers with clear direction. When a professional masters communication, they empower their team with shared momentum. When a marketer harnesses artificial intelligence, they empower the entire organization to capture new markets.</p>
+                        <p class="ac-philosophy-quote">At CMA Academy Asia, our driving ethos is simple: Be empowered to empower.</p>
+                        <p class="mb-0">We believe corporate training should never be passive theory. It must be an immersive capability transfer that builds internal self-reliance. By arming your executives, managers, and frontline professionals with real-world competence, we create a ripple effect across your organization, empowering your people to lift each other up, innovate autonomously, and drive sustainable business growth.</p>
+                    </div>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                        <div class="ac-levy-card">
+                            <h3 class="mb-2">Maximize Your HRDCorp Levy</h3>
+                            <p class="ac-levy-sub mb-4">Zero-Friction Upskilling for Malaysian Businesses</p>
+                            <p class="mb-4">As a registered Malaysian employer contributing to the Human Resource Development Corporation (HRDCorp), your talent development is already funded. CMA Academy Asia simplifies the entire grant application process so you can reinvest your levy strategically:</p>
+                            <div class="ac-levy-item">
+                                <i class="fas fa-check-circle"></i>
+                                <p class="mb-0"><strong>100% Claimable Programs:</strong> Optimize your training budget without capital strain by fully utilizing your available HRDCorp levy balance.</p>
+                            </div>
+                            <div class="ac-levy-item">
+                                <i class="fas fa-check-circle"></i>
+                                <p class="mb-0"><strong>End-to-End Application Guidance:</strong> Our team assists you with program registrations, training grant documentation, and compliance requirements to ensure a seamless approval process.</p>
+                            </div>
+                            <div class="ac-levy-item">
+                                <i class="fas fa-check-circle"></i>
+                                <p class="mb-0"><strong>Customized In-House &amp; Public Formats:</strong> From hands-on workshops tailored to your industry to open masterclasses, our modules adapt to your company's operational tempo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Philosophy End -->
 
         <!-- Competitive Advantage Start -->
         <div class="container-fluid py-5">
@@ -984,11 +1473,13 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
                         <h4 class="text-primary">Our Competitive Advantage</h4>
-                        <h1 class="display-4 mb-0">Why Choose Us</h1>
+                        <h2 class="mb-0"><strong>THE ACCOUNTANT-LED ADVANTAGE</strong></h2>
                         <hr>
-                        <p><strong>ACCOUNTING, BUSINESS & FINANCIAL LITERACY PROGRAM</strong></p>
-                        <p class="mb-4">CMA Academy Asia stands out due to its team of industry experts who have extensive experience in finance, accounting, and financial planning. Their trainers have theoretical knowledge and also practical experience working in the financial industry. This gives them a unique perspective and allows them to provide real-world examples and case studies that resonate with participants.</p>
-                        <p class="mb-4">Moreover, they go beyond traditional classroom-style training by offering hands-on workshops and simulations. Participants have the opportunity to apply their learning in practical scenarios, such as creating a budget, understanding cashflows and net worth, or designing their own retirement plan. This hands-on approach reinforces learning and also increases participants' confidence in managing their finances effectively. By leveraging their industry expertise, practical approach, and commitment to staying current, CMA Academy Asia provides a learning experience that is engaging, informative, and highly valuable to participants, giving them a competitive edge in the market.</p>
+                        <p class="mb-4">
+                            Most corporate training falls flat because it is delivered from ivory towers by generic theorists who have never balanced a corporate ledger, managed a payroll crisis, or defended an audit.<br><br>
+                            What if we tell you CMA Academy Asia is fundamentally different: We are an accountant-led training institution.<br><br>
+                            Every framework, simulation, and masterclass we deliver is engineered by practicing accounting professionals who live and breathe real-world commercial realities every single day. We bring the rigorous discipline, analytical precision, and statutory exactness of professional accounting directly into the classroom - translating intimidating technical concepts into intuitive, actionable commercial power.
+                        </p>
                     </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
                         <div class="academy-about-img">
@@ -1001,244 +1492,305 @@
         <!-- Competitive Advantage End -->
 
 
-        <!-- Past Trainings Start -->
-        <div class="container-fluid bg-light py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Past Trainings</h4>
-                    <h1 class="display-4 mb-4">Moments From Our Sessions</h1>
-                    <p class="mb-0">A glimpse into our corporate training sessions, workshops and team-building programs.</p>
-                </div>
-                <!-- Empowered Leadership Training Gallery -->
-                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
-                        <h3 class="training-gallery-title mb-0">Empowered Leadership Training</h3>
-                        <div class="d-flex gap-2 flex-shrink-0">
-                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-empowered', -1)" aria-label="Previous Empowered Leadership Training images">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-empowered', 1)" aria-label="Next Empowered Leadership Training images">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="gallery-swipe" id="gallery-empowered"></div>
-                </div>
-
-                <!-- Team Building Gallery -->
-                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
-                        <h3 class="training-gallery-title mb-0">Team Building</h3>
-                        <div class="d-flex gap-2 flex-shrink-0">
-                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-team-building', -1)" aria-label="Previous Team Building images">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-team-building', 1)" aria-label="Next Team Building images">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="gallery-swipe" id="gallery-team-building"></div>
-                </div>
-
-                <!-- E-Invoicing Made Easy Training Gallery -->
-                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
-                        <h3 class="training-gallery-title mb-0">E-Invoicing Made Easy Training</h3>
-                        <div class="d-flex gap-2 flex-shrink-0">
-                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-e-invoice', -1)" aria-label="Previous E-Invoicing images">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-e-invoice', 1)" aria-label="Next E-Invoicing images">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="gallery-swipe" id="gallery-e-invoice"></div>
-                </div>
-
-                <!-- Accounting Made Easy Training Gallery -->
-                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
-                        <h3 class="training-gallery-title mb-0">Accounting Made Easy Training</h3>
-                        <div class="d-flex gap-2 flex-shrink-0">
-                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-accounting', -1)" aria-label="Previous Accounting images">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-accounting', 1)" aria-label="Next Accounting images">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="gallery-swipe" id="gallery-accounting"></div>
-                </div>
-
-                <!-- HR Tax Compliance Gallery -->
-                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
-                        <h3 class="training-gallery-title mb-0">HR Tax Compliance</h3>
-                        <div class="d-flex gap-2 flex-shrink-0">
-                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-hr-tax', -1)" aria-label="Previous HR Tax Compliance images">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-hr-tax', 1)" aria-label="Next HR Tax Compliance images">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="gallery-swipe" id="gallery-hr-tax"></div>
-                </div>
-            </div>
-        </div>
-        <!-- Past Trainings End -->
-
-
-        <!-- Testimonials Start -->
+        <!-- Signature Training Start -->
         <div class="container-fluid py-5">
             <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Testimonials</h4>
-                    <h1 class="display-4 mb-4">What Our Clients Say</h1>
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 860px;">
+                    <h4 class="text-primary">Signature Training #1</h4>
+                    <h2 class="display-4 mb-4">Practical Accounting, Finance &amp; Tax Mastery</h2>
+                    <p class="mb-0">Built on years of technical excellence, led by professional accountants and finance leaders, our signature track translates complex financial and statutory mechanics into intuitive, high-leverage business tools. These signature courses empower professionals at all levels to make decisive, profit-conscious decisions and maintain total statutory compliance.</p>
                 </div>
-                <div class="testimonial-scroll" id="testimonial-scroll">
-                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="testimonial-card">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="nav flex-lg-column flex-nowrap nav-pills ac-sig-nav wow fadeInLeft" role="tablist" aria-orientation="vertical" data-wow-delay="0.2s">
+                            <button class="nav-link active" id="sig-1-tab" data-bs-toggle="pill" data-bs-target="#sig-1" type="button" role="tab" aria-controls="sig-1" aria-selected="true"><span class="ac-sig-num">01</span>Accounting Made Easy</button>
+                            <button class="nav-link" id="sig-2-tab" data-bs-toggle="pill" data-bs-target="#sig-2" type="button" role="tab" aria-controls="sig-2" aria-selected="false"><span class="ac-sig-num">02</span>Financial Literacy for Non-Finance Executives</button>
+                            <button class="nav-link" id="sig-3-tab" data-bs-toggle="pill" data-bs-target="#sig-3" type="button" role="tab" aria-controls="sig-3" aria-selected="false"><span class="ac-sig-num">03</span>Budgeting &amp; Cashflow Management</button>
+                            <button class="nav-link" id="sig-4-tab" data-bs-toggle="pill" data-bs-target="#sig-4" type="button" role="tab" aria-controls="sig-4" aria-selected="false"><span class="ac-sig-num">04</span>Financial Planning Masterclass</button>
+                            <button class="nav-link" id="sig-5-tab" data-bs-toggle="pill" data-bs-target="#sig-5" type="button" role="tab" aria-controls="sig-5" aria-selected="false"><span class="ac-sig-num">05</span>Tax Planning for Corporate Executives</button>
+                            <button class="nav-link" id="sig-6-tab" data-bs-toggle="pill" data-bs-target="#sig-6" type="button" role="tab" aria-controls="sig-6" aria-selected="false"><span class="ac-sig-num">06</span>Malaysian HR Tax Compliance</button>
+                            <button class="nav-link" id="sig-7-tab" data-bs-toggle="pill" data-bs-target="#sig-7" type="button" role="tab" aria-controls="sig-7" aria-selected="false"><span class="ac-sig-num">07</span>AI-Powered Financial Mastery</button>
+                            <button class="nav-link" id="sig-8-tab" data-bs-toggle="pill" data-bs-target="#sig-8" type="button" role="tab" aria-controls="sig-8" aria-selected="false"><span class="ac-sig-num">08</span>Tailored Masterclasses &amp; Bespoke Topics</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 wow fadeInRight" data-wow-delay="0.3s">
+                        <div class="tab-content ac-sig-content">
+                            <div class="tab-pane fade show active" id="sig-1" role="tabpanel" aria-labelledby="sig-1-tab">
+                                <h3>1. Accounting Made Easy</h3>
+                                <p class="ac-sig-tagline">Empower non-accountants to demystify financial mechanics without the jargon headache.</p>
+                                <p class="ac-sig-intro">Strip away the intimidation of dry textbooks, debits, credits, and double-entry conventions. This experiential workshop transforms learning into an engaging, active challenge:</p>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Hands-On Digital Accounting Software Practice</h5>
+                                    <p>Move beyond theory straight into modern cloud accounting platforms. Participants log in, create invoices, record bills, and generate live balance sheets directly within actual digital software - building muscle memory and digital fluency they can apply the very next day at work.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Business Simulation &amp; Gamification</h5>
+                                    <p>Step into interactive board-game mechanics and business simulations where teams compete, manage cash flows, make buying/selling decisions, and see how transactions trigger immediate financial ripple effects in real time.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Practical Real-World Application</h5>
+                                    <p>Demystify how everyday business operations flow into ledgers, empowering non-finance personnel to take ownership of their numbers without administrative hesitation.</p>
+                                </div>
                             </div>
-                            <p class="mb-0">"I understand double entre and financial statement very clear."</p>
-                            <div class="testimonial-author">
-                                <div>
-                                    <h6 class="mb-0">KHALILAH AWANG</h6>
-                                    <small class="text-muted">Koperasi Pelancongan Mukim Batu Puteh Kinabatangan Berhad</small>
+                            <div class="tab-pane fade" id="sig-2" role="tabpanel" aria-labelledby="sig-2-tab">
+                                <h3>2. Business Financial Literacy for Non-Finance Executives</h3>
+                                <p class="ac-sig-tagline">Empower non-finance managers to understand finance, and read financial statements like seasoned strategists.</p>
+                                <p class="ac-sig-intro">Bridge the gap between operational execution and corporate profitability. Participants learn to analyze Profit &amp; Loss statements, Balance Sheets, and Cash Flow statements with speed and confidence - enabling them to spot financial leaks, defend gross margins, and evaluate the true ROI of their departmental projects.</p>
+                            </div>
+                            <div class="tab-pane fade" id="sig-3" role="tabpanel" aria-labelledby="sig-3-tab">
+                                <h3>3. Budgeting &amp; Cashflow Management</h3>
+                                <p class="ac-sig-tagline">Empower your team to protect corporate liquidity and forecast with precision.</p>
+                                <p class="ac-sig-intro">Revenue is vanity; cash flow is reality. This course equips managers and department heads with practical forecasting tools and working capital frameworks. Participants learn to build realistic operating budgets, identify cash bottlenecks before they emerge, and allocate financial resources to ensure perpetual enterprise solvency.</p>
+                            </div>
+                            <div class="tab-pane fade" id="sig-4" role="tabpanel" aria-labelledby="sig-4-tab">
+                                <h3>4. Financial Planning Masterclass for Corporate Executives</h3>
+                                <p class="ac-sig-tagline">Empower corporate executives to build, protect, and strategically grow their personal wealth.</p>
+                                <p class="ac-sig-intro">High-performing executives spend decades building immense value for companies, yet frequently neglect their own personal financial architecture. This masterclass is designed specifically for individual professionals to take total command of their private wealth:</p>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Personal Wealth Accumulation &amp; Cash Allocation</h5>
+                                    <p>Create structured frameworks to manage personal cash flow, transition surplus income into high-yield asset classes, and combat lifestyle inflation.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Retirement Readiness &amp; Lifestyle Preservation</h5>
+                                    <p>Calculate exact financial independence milestones, design diversified passive income portfolios, and secure long-term family solvency well beyond your corporate career.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Executive Risk &amp; Estate Management</h5>
+                                    <p>Navigate asset protection strategies, private trusts, wills, and insurance diversification to safeguard personal net worth from market volatility and unforeseen liabilities.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="sig-5" role="tabpanel" aria-labelledby="sig-5-tab">
+                                <h3>5. Tax Planning for Corporate Executives</h3>
+                                <p class="ac-sig-tagline">Empower executives to legally optimize their personal income tax and maximize net wealth.</p>
+                                <p class="ac-sig-intro">As career progression drives higher remuneration brackets, personal tax exposure under the Inland Revenue Board of Malaysia (LHDN) scales steeply. This course is dedicated to individual tax efficiency - giving corporate executives the knowledge to legally and proactively optimize their tax position:</p>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Maximizing Individual Reliefs, Deductions &amp; Rebates</h5>
+                                    <p>Learn how to strategically utilize every personal statutory tax relief, lifestyle deduction, and rebate under the Income Tax Act 1967.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Tax Optimization on Executive Remuneration</h5>
+                                    <p>Understand the individual tax implications of executive salary structures, director fees, employee share options (ESOS), gratuity, bonuses, and private retirement schemes (PRS).</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Benefits-in-Kind (BIK) from an Individual Viewpoint</h5>
+                                    <p>Demystify how company cars, housing provisions (VOLA), medical perks, and allowances impact your personal Form BE/e-Filing, helping you structure personal packages with optimal take-home value.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Audit-Ready Personal Filing</h5>
+                                    <p>Build confidence in self-assessment filing, maintaining personal documentation, and avoiding costly filing oversights or audit triggers.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="sig-6" role="tabpanel" aria-labelledby="sig-6-tab">
+                                <h3>6. Malaysian HR Tax Compliance</h3>
+                                <p class="ac-sig-tagline">Empower your HR, payroll, and finance teams to navigate LHDN employer obligations with bulletproof accuracy.</p>
+                                <p class="ac-sig-intro">Employer tax compliance under the Inland Revenue Board of Malaysia (LHDN) carries steep penalties for administrative oversight. This targeted course equips payroll administrators, HR managers, and finance officers with end-to-end statutory mastery:</p>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Monthly Tax Deductions (MTD / PCB)</h5>
+                                    <p>Master complex PCB formulas, optional deductions, and dynamic adjustments to eliminate payroll discrepancies and employee tax under/over-deductions.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Benefits-in-Kind (BIK) &amp; Perquisites Valuation</h5>
+                                    <p>Demystify the tax treatment of company cars, accommodation (VOLA), medical benefits, allowances, and gifts under the Income Tax Act 1967.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Statutory Employer Reporting (Form E &amp; Form EA)</h5>
+                                    <p>Streamline annual filing workflows, learn how to audit EA forms accurately, and submit Form E on time without last-minute panic or audit triggers.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Employee Lifecycle Notifications (CP22, CP22A, CP21)</h5>
+                                    <p>Understand legal employer obligations when onboarding new hires, handling employee resignations, and processing tax clearance for expatriates leaving Malaysia.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Cross-Statutory Harmony</h5>
+                                    <p>Align LHDN tax obligations seamlessly with EPF, SOCSO, and EIS deduction rules to ensure your company stays permanently audit-proof.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="sig-7" role="tabpanel" aria-labelledby="sig-7-tab">
+                                <h3>7. AI-Powered Financial Mastery</h3>
+                                <p class="ac-sig-tagline">Empower your finance and accounting teams with intelligent automation, predictive modeling, and rapid financial synthesis.</p>
+                                <p class="ac-sig-intro">Step into the future of modern finance. This breakthrough masterclass bridges core financial principles with modern generative AI and advanced automation tools, transforming finance professionals from manual number-crunchers into high-leverage strategic partners:</p>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>AI-Driven Financial Analysis &amp; Anomaly Detection</h5>
+                                    <p>Deploy AI workflows to scan ledgers, spot irregularities, categorize vast transactional data, and identify cost variances in seconds rather than days.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Predictive Forecasting &amp; Dynamic Scenario Modeling</h5>
+                                    <p>Use AI-augmented prompts and smart spreadsheet integrations to run multi-variable revenue scenarios, stress-test burn rates, and simulate cash positions across volatile markets.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Instant Boardroom-Ready Reporting</h5>
+                                    <p>Learn how to turn complex P&amp;L statements, balance sheets, and raw numbers into concise executive summaries, visual dashboards, and high-impact presentations using AI reporting assistants.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Eliminating Manual Drudgery</h5>
+                                    <p>Automate repetitive spreadsheet formulas, reconciliations, and routine data extraction - freeing up critical mental energy to focus on high-level commercial strategy and business advisory.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="sig-8" role="tabpanel" aria-labelledby="sig-8-tab">
+                                <h3>8. Tailored Financial Masterclasses &amp; Bespoke Topics (Upon Request)</h3>
+                                <p class="ac-sig-tagline">Empower your organization with custom financial learning built around your exact commercial realities.</p>
+                                <p class="ac-sig-intro">Every business faces unique market conditions, industry regulations, and operational structures. Beyond our core syllabus, CMA Academy Asia designs customized corporate training programs tailored to your specific organizational objectives upon request:</p>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Industry-Specific Modules</h5>
+                                    <p>Customized sessions covering specialized domains such as e-invoicing compliance, project cost accounting, manufacturing cost control, supply chain financial analysis, or merger &amp; acquisition financial fundamentals.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Bespoke Corporate Curriculums</h5>
+                                    <p>We assess your internal department’s exact skill gaps and design a structured, multi-day syllabus that solves your team’s real-world pain points - delivered in-house and fully claimable under HRDCorp.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="testimonial-card">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="mb-0">"During the training we are able to discuss your opinion freely."</p>
-                            <div class="testimonial-author">
-                                <div>
-                                    <h6 class="mb-0">PENNY CHIN</h6>
-                                    <small class="text-muted">Belian Juta Sdn Bhd</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="testimonial-card">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="mb-0">"Flow and benefit of the E-Invoicing easy to understand. I hope the trainer will came back again to do more training."</p>
-                            <div class="testimonial-author">
-                                <div>
-                                    <h6 class="mb-0">RAZAIMA PASILLUS</h6>
-                                    <small class="text-muted">United Woodland Sdn Bhd</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="testimonial-card">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="mb-0">"I like the trainer because she explain very well."</p>
-                            <div class="testimonial-author">
-                                <div>
-                                    <h6 class="mb-0">FAZLY GORDAH</h6>
-                                    <small class="text-muted">Nexus Karambunai Resort Sdn Bhd</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="1s">
-                        <div class="testimonial-card">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="mb-0">"During the training, I like the training strategy. I like most the hands out session."</p>
-                            <div class="testimonial-author">
-                                <div>
-                                    <h6 class="mb-0">ELSIE JONIS</h6>
-                                    <small class="text-muted">Beau Villas IBS Sdn Bhd</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="1.2s">
-                        <div class="testimonial-card">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="mb-0">"For me the learning session is fun, easy to understand and can gain knowledge."</p>
-                            <div class="testimonial-author">
-                                <div>
-                                    <h6 class="mb-0">MERTINE BENSON</h6>
-                                    <small class="text-muted">Borneo Best Food Sdn Bhd</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="1.4s">
-                        <div class="testimonial-card">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="mb-0">"This training make me well understand about the E-Invoicing because the trainer give a very good and detail explanation."</p>
-                            <div class="testimonial-author">
-                                <div>
-                                    <h6 class="mb-0">SHUWATIE MAIDIN</h6>
-                                    <small class="text-muted">Phi Software Sdn Bhd</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="1.6s">
-                        <div class="testimonial-card">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="mb-0">"In overall, I like all the activities plan by CMA Academy during the Team Building session. Thank you for chosing APT for the group performance. Combining the Gen Z generation."</p>
-                            <div class="testimonial-author">
-                                <div>
-                                    <h6 class="mb-0">ANGELINE KANG</h6>
-                                    <small class="text-muted">Fullyin Hotel Sdn Bhd</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="1.8s">
-                        <div class="testimonial-card">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="mb-0">"I like the Team Building session plan by CMA Academy. They plan everything from the activities until the night events. For me everything is went well and they did a very good job."</p>
-                            <div class="testimonial-author">
-                                <div>
-                                    <h6 class="mb-0">DIYANA</h6>
-                                    <small class="text-muted">Iklimega Sdn Bhd</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-controls">
-                    <button class="testimonial-nav-btn" onclick="scrollTestimonials(-1)" aria-label="Previous testimonials">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="testimonial-nav-btn" onclick="scrollTestimonials(1)" aria-label="Next testimonials">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
                 </div>
             </div>
         </div>
-        <!-- Testimonials End -->
+        <!-- Signature Training End -->
+
+        <!-- Signature Training 2 Start -->
+        <div class="container-fluid py-5 ac-sig-divider">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 860px;">
+                    <h4 class="text-primary">Signature Training #2</h4>
+                    <h2 class="display-4 mb-0">Human Dynamics, Leadership &amp; Organizational Synergy</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="nav flex-lg-column flex-nowrap nav-pills ac-sig-nav wow fadeInLeft" role="tablist" aria-orientation="vertical" data-wow-delay="0.2s">
+                            <button class="nav-link active" id="sig2-1-tab" data-bs-toggle="pill" data-bs-target="#sig2-1" type="button" role="tab" aria-controls="sig2-1" aria-selected="true"><span class="ac-sig-num">01</span>Transformational Leadership</button>
+                            <button class="nav-link" id="sig2-2-tab" data-bs-toggle="pill" data-bs-target="#sig2-2" type="button" role="tab" aria-controls="sig2-2" aria-selected="false"><span class="ac-sig-num">02</span>Effective Communication Masterclass</button>
+                            <button class="nav-link" id="sig2-3-tab" data-bs-toggle="pill" data-bs-target="#sig2-3" type="button" role="tab" aria-controls="sig2-3" aria-selected="false"><span class="ac-sig-num">03</span>Experiential Team Building</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 wow fadeInRight" data-wow-delay="0.3s">
+                        <div class="tab-content ac-sig-content">
+                            <div class="tab-pane fade show active" id="sig2-1" role="tabpanel" aria-labelledby="sig2-1-tab">
+                                <h3>1. Transformational Leadership</h3>
+                                <p class="ac-sig-tagline">Empower leaders to move beyond transactional supervision and build self-driven, accountable teams.</p>
+                                <p class="ac-sig-intro">Traditional management relies on micro-managing tasks; transformational leadership ignites intrinsic motivation. This high-impact program equips managers and senior leaders to guide organizational evolution:</p>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Visionary Alignment &amp; Influence</h5>
+                                    <p>Learn how to articulate strategic corporate goals in ways that inspire personal ownership and deep emotional buy-in across all organizational tiers.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Cultivating Psychological Safety &amp; Accountability</h5>
+                                    <p>Build high-trust team environments where team members take initiative, voice innovative solutions, and take calculated risks without fear of retribution.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Coaching for High Performance</h5>
+                                    <p>Shift your leadership posture from "problem-solver" to "capability-builder," using targeted questioning and coaching frameworks that empower subordinates to solve complex operational challenges independently.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="sig2-2" role="tabpanel" aria-labelledby="sig2-2-tab">
+                                <h3>2. Effective Communication Masterclass</h3>
+                                <p class="ac-sig-tagline">Empower your workforce to eliminate misunderstandings, resolve friction, and align cross-functional priorities.</p>
+                                <p class="ac-sig-intro">Communication breakdowns are the primary source of operational drag. This practical workshop refines interpersonal communication across every corporate touchpoint:</p>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Assertive &amp; Empathetic Communication</h5>
+                                    <p>Master the balance between firm clarity and emotional intelligence, ensuring expectations are communicated unambiguously while maintaining mutual respect.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Cross-Generational &amp; Cross-Departmental Dialogue</h5>
+                                    <p>Bridge communication divides between creative, technical, and operational departments to ensure projects move forward in complete harmony.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Executive Pitching &amp; Stakeholder Persuasion</h5>
+                                    <p>Equip professionals with structured frameworks to deliver persuasive ideas, negotiate win-win outcomes, and present recommendations with poise.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="sig2-3" role="tabpanel" aria-labelledby="sig2-3-tab">
+                                <h3>3. Experiential Team Building: Breaking Silos &amp; Igniting Collective Momentum</h3>
+                                <p class="ac-sig-tagline">Empower your teams to dismantle operational barriers, rebuild trust, and function as one cohesive unit.</p>
+                                <p class="ac-sig-intro">Far beyond superficial outdoor games, our experiential team building sessions are purposeful, structured interventions designed to address underlying organizational bottlenecks:</p>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Dismantling Silos &amp; Fostering Collaboration</h5>
+                                    <p>Interactive challenges that require cross-functional reliance, highlighting how mutual collaboration drives greater collective results than isolated individual effort.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Strengthening Mutual Accountability</h5>
+                                    <p>Build visceral team trust through shared problem-solving scenarios where open communication and dependability are directly tested and reinforced.</p>
+                                </div>
+                                <div class="ac-sig-point">
+                                    <h5><i class="fas fa-check-circle"></i>Realigning Energy to Shared Goals</h5>
+                                    <p>Channel team dynamics toward a unified corporate mission, re-energizing your workforce and instilling a resilient, forward-moving culture.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Signature Training 2 End -->
+
+        <!-- Signature Training 3 Start -->
+        <div class="container-fluid py-5 ac-sig-divider">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 860px;">
+                    <h4 class="text-primary">Signature Training #3</h4>
+                    <h2 class="display-4 mb-0">AI-Powered Digital Marketing</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-9 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="ac-sig-content">
+                            <h3>AI-Powered Digital Marketing &amp; Growth</h3>
+                            <p class="ac-sig-tagline">Empower your commercial teams with automated intelligence and scalable reach.</p>
+                            <div class="ac-sig-point">
+                                <h5><i class="fas fa-check-circle"></i>AI Content Creation & Campaign Architecture</h5>
+                                <p>Leverage generative AI platforms to produce compelling marketing copy, visuals, and messaging in minutes.</p>
+                            </div>
+                            <div class="ac-sig-point">
+                                <h5><i class="fas fa-check-circle"></i>Predictive Audience Targeting</h5>
+                                <p>Use data-driven AI tools to analyze customer intent, uncover profitable niches, and optimize marketing funnels in real time.</p>
+                            </div>
+                            <div class="ac-sig-point">
+                                <h5><i class="fas fa-check-circle"></i>Automated Lead Nurturing</h5>
+                                <p>Build connected marketing funnels that engage prospects continuously, empowering your sales team to focus on high-value conversations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Signature Training 3 End -->
+
+        <!-- Bespoke Corporate Training Start -->
+        <div class="container-fluid py-5 ac-empower">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 ac-bespoke-inner wow fadeInUp" data-wow-delay="0.2s">
+                    <span class="ac-empower-tagline">Customizable &amp; Bespoke Corporate Training (Upon Request)</span>
+                    <h2 class="ac-bespoke-lead">Empower your enterprise with tailored learning architectures designed around your exact commercial realities.</h2>
+                    <p class="ac-empower-sub mb-0">Every organization faces distinctive market challenges, workflow structures, and skill gaps. Beyond our standard curriculum, CMA Academy Asia partners directly with corporate HR and executive teams to design bespoke, fully customized corporate programs across:</p>
+                </div>
+                <div class="row g-4 justify-content-center ac-bespoke-inner mx-auto">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="ac-bespoke-card">
+                            <i class="fas fa-industry"></i>
+                            <h5>Industry-Tailored Financial Masterclasses</h5>
+                            <p>Custom modules covering specialized requirements such as national e-invoicing compliance, project cost control, manufacturing overhead accounting, or supply chain financial modeling.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="ac-bespoke-card">
+                            <i class="fas fa-clipboard-check"></i>
+                            <h5>Diagnostics-Driven Curriculum Design</h5>
+                            <p>We conduct pre-training consultations and skills assessments to identify your department’s exact operational bottlenecks, engineering an actionable syllabus that directly solves real-world pain points.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="ac-bespoke-card">
+                            <i class="fas fa-certificate"></i>
+                            <h5>Full HRDCorp Claimability</h5>
+                            <p>All custom corporate programs, whether delivered as single workshops or multi-phase corporate roadmaps, are fully structured for 100% HRDCorp claim approval.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center ac-bespoke-inner mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <p class="ac-bespoke-punch">Give your people the tools to master their roles and elevate those around them. <span>Be empowered to empower.</span></p>
+                    <a class="btn btn-light rounded-pill py-3 px-5 me-sm-3 mb-2 mb-sm-0" href="#training-catalogue">Claim Your HRDCorp Training Grant</a>
+                    <a class="btn btn-outline-light rounded-pill py-3 px-5 mb-2 mb-sm-0" href="#training-inquiry">Request a Tailored Corporate Proposal</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bespoke Corporate Training End -->
 
         <!-- L&D Partner Start -->
         <div class="container-fluid py-5">
@@ -1320,8 +1872,8 @@
         </div>
         <!-- L&D Partner End -->
 
-                <!-- Training Listing Catalogue Start -->
-        <div class="container-fluid bg-light py-5">
+        <!-- Training Listing Catalogue Start -->
+        <div id="training-catalogue" class="container-fluid bg-light py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Training Listing</h4>
@@ -1614,6 +2166,243 @@
         </div>
         <!-- Team Building End -->
 
+                <!-- Past Trainings Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Past Trainings</h4>
+                    <h1 class="display-4 mb-4">Moments From Our Sessions</h1>
+                    <p class="mb-0">A glimpse into our corporate training sessions, workshops and team-building programs.</p>
+                </div>
+                <!-- Empowered Leadership Training Gallery -->
+                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                        <h3 class="training-gallery-title mb-0">Empowered Leadership Training</h3>
+                        <div class="d-flex gap-2 flex-shrink-0">
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-empowered', -1)" aria-label="Previous Empowered Leadership Training images">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-empowered', 1)" aria-label="Next Empowered Leadership Training images">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-swipe" id="gallery-empowered"></div>
+                </div>
+
+                <!-- Team Building Gallery -->
+                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                        <h3 class="training-gallery-title mb-0">Team Building</h3>
+                        <div class="d-flex gap-2 flex-shrink-0">
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-team-building', -1)" aria-label="Previous Team Building images">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-team-building', 1)" aria-label="Next Team Building images">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-swipe" id="gallery-team-building"></div>
+                </div>
+
+                <!-- E-Invoicing Made Easy Training Gallery -->
+                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                        <h3 class="training-gallery-title mb-0">E-Invoicing Made Easy Training</h3>
+                        <div class="d-flex gap-2 flex-shrink-0">
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-e-invoice', -1)" aria-label="Previous E-Invoicing images">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-e-invoice', 1)" aria-label="Next E-Invoicing images">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-swipe" id="gallery-e-invoice"></div>
+                </div>
+
+                <!-- Accounting Made Easy Training Gallery -->
+                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                        <h3 class="training-gallery-title mb-0">Accounting Made Easy Training</h3>
+                        <div class="d-flex gap-2 flex-shrink-0">
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-accounting', -1)" aria-label="Previous Accounting images">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-accounting', 1)" aria-label="Next Accounting images">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-swipe" id="gallery-accounting"></div>
+                </div>
+
+                <!-- HR Tax Compliance Gallery -->
+                <div class="training-gallery-block wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+                        <h3 class="training-gallery-title mb-0">HR Tax Compliance</h3>
+                        <div class="d-flex gap-2 flex-shrink-0">
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-hr-tax', -1)" aria-label="Previous HR Tax Compliance images">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="gallery-nav-btn" onclick="scrollGallery('gallery-hr-tax', 1)" aria-label="Next HR Tax Compliance images">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-swipe" id="gallery-hr-tax"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Past Trainings End -->
+
+        <!-- Testimonials Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Testimonials</h4>
+                    <h1 class="display-4 mb-4">What Our Clients Say</h1>
+                </div>
+                <div class="testimonial-scroll" id="testimonial-scroll">
+                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="mb-0">"I understand double entre and financial statement very clear."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <h6 class="mb-0">KHALILAH AWANG</h6>
+                                    <small class="text-muted">Koperasi Pelancongan Mukim Batu Puteh Kinabatangan Berhad</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="mb-0">"During the training we are able to discuss your opinion freely."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <h6 class="mb-0">PENNY CHIN</h6>
+                                    <small class="text-muted">Belian Juta Sdn Bhd</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="mb-0">"Flow and benefit of the E-Invoicing easy to understand. I hope the trainer will came back again to do more training."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <h6 class="mb-0">RAZAIMA PASILLUS</h6>
+                                    <small class="text-muted">United Woodland Sdn Bhd</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="mb-0">"I like the trainer because she explain very well."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <h6 class="mb-0">FAZLY GORDAH</h6>
+                                    <small class="text-muted">Nexus Karambunai Resort Sdn Bhd</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="1s">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="mb-0">"During the training, I like the training strategy. I like most the hands out session."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <h6 class="mb-0">ELSIE JONIS</h6>
+                                    <small class="text-muted">Beau Villas IBS Sdn Bhd</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="1.2s">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="mb-0">"For me the learning session is fun, easy to understand and can gain knowledge."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <h6 class="mb-0">MERTINE BENSON</h6>
+                                    <small class="text-muted">Borneo Best Food Sdn Bhd</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="1.4s">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="mb-0">"This training make me well understand about the E-Invoicing because the trainer give a very good and detail explanation."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <h6 class="mb-0">SHUWATIE MAIDIN</h6>
+                                    <small class="text-muted">Phi Software Sdn Bhd</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="1.6s">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="mb-0">"In overall, I like all the activities plan by CMA Academy during the Team Building session. Thank you for chosing APT for the group performance. Combining the Gen Z generation."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <h6 class="mb-0">ANGELINE KANG</h6>
+                                    <small class="text-muted">Fullyin Hotel Sdn Bhd</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-scroll-item wow fadeInUp" data-wow-delay="1.8s">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="mb-0">"I like the Team Building session plan by CMA Academy. They plan everything from the activities until the night events. For me everything is went well and they did a very good job."</p>
+                            <div class="testimonial-author">
+                                <div>
+                                    <h6 class="mb-0">DIYANA</h6>
+                                    <small class="text-muted">Iklimega Sdn Bhd</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-nav-btn" onclick="scrollTestimonials(-1)" aria-label="Previous testimonials">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="testimonial-nav-btn" onclick="scrollTestimonials(1)" aria-label="Next testimonials">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonials End -->
 
         <!-- Past Clients Start -->
         <div class="container-fluid bg-light py-5">
@@ -1831,7 +2620,7 @@
         <!-- Past Clients End -->
 
         <!-- Training Inquiry Form Start -->
-        <div class="container-fluid py-5">
+        <div id="training-inquiry" class="container-fluid py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Training Inquiry</h4>
