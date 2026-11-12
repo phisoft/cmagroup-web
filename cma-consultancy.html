@@ -532,6 +532,41 @@
             }
 
             /*** Booking Form ***/
+            .cs-hp {
+                position: absolute !important;
+                left: -9999px !important;
+                width: 1px;
+                height: 1px;
+                opacity: 0;
+                pointer-events: none;
+            }
+            .cs-success {
+                text-align: center;
+                padding: 20px 10px;
+            }
+            .cs-success-icon {
+                width: 74px;
+                height: 74px;
+                border-radius: 50%;
+                margin: 0 auto 22px;
+                background: rgba(37, 211, 102, .12);
+                color: #17a34a;
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .cs-success h3 {
+                font-size: 24px;
+                font-weight: 800;
+                color: #0a2a4a;
+                margin-bottom: 14px;
+            }
+            .cs-success p {
+                font-size: 15.5px;
+                line-height: 1.8;
+                color: #55606c;
+            }
             #consultancy-booking {
                 scroll-margin-top: 96px;
             }
@@ -831,34 +866,36 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-10 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="cs-form-card">
-                            <div class="row g-4">
+                            <form id="cs-booking-form" class="row g-4" novalidate>
+                                <input type="text" id="cs-website" name="website" class="cs-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                                <input type="hidden" id="cs-form-start" name="form_start" value="">
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="cs-name" placeholder="Name / Company">
+                                        <input type="text" class="form-control" id="cs-name" name="name_company" placeholder="Name / Company">
                                         <label for="cs-name">Name / Company *</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="tel" class="form-control" id="cs-contact" placeholder="Contact">
+                                        <input type="tel" class="form-control" id="cs-contact" name="contact_number" placeholder="Contact">
                                         <label for="cs-contact">Contact Number *</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="cs-email" placeholder="Email">
+                                        <input type="email" class="form-control" id="cs-email" name="email" placeholder="Email">
                                         <label for="cs-email">Email *</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="cs-designation" placeholder="Designation">
+                                        <input type="text" class="form-control" id="cs-designation" name="designation" placeholder="Designation">
                                         <label for="cs-designation">Designation</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <select class="form-select" id="cs-service" aria-label="Service Required">
+                                        <select class="form-select" id="cs-service" name="service_required" aria-label="Service Required">
                                             <option value="" selected disabled>Select a service</option>
                                             <option value="Digital Employee Benefits Scheme">Digital Employee Benefits Scheme</option>
                                             <option value="Corporate Risk Advisory">Corporate Risk Advisory</option>
@@ -869,32 +906,32 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="cs-headcount" placeholder="No. of Employees">
+                                        <input type="text" class="form-control" id="cs-headcount" name="no_of_employees" placeholder="No. of Employees">
                                         <label for="cs-headcount">No. of Employees</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="date" class="form-control" id="cs-date" placeholder="Preferred Date">
+                                        <input type="date" class="form-control" id="cs-date" name="preferred_date" placeholder="Preferred Date">
                                         <label for="cs-date">Preferred Date *</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="cs-budget" placeholder="Budget Range (optional)">
+                                        <input type="text" class="form-control" id="cs-budget" name="budget_range" placeholder="Budget Range (optional)">
                                         <label for="cs-budget">Budget Range (optional)</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Tell us about your HR and risk priorities" id="cs-objective" style="height: 120px"></textarea>
+                                        <textarea class="form-control" placeholder="Tell us about your HR and risk priorities" id="cs-objective" name="key_challenge" style="height: 120px"></textarea>
                                         <label for="cs-objective">Key Challenge / Expected Outcome *</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="cs-note mb-3">
                                         <i class="fas fa-envelope-open-text"></i>
-                                        <p>Your booking request opens in your email app, addressed to <strong>corporatesolutions@cmagroup.my</strong>. We typically respond within one business day.</p>
+                                        <p>Your booking request is sent straight to <strong>corporatesolutions@cmagroup.my</strong>. We typically respond within one business day.</p>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -904,15 +941,22 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" onclick="sendBookingEmail()">
+                                    <button type="submit" id="cs-email-btn" class="btn btn-primary w-100 py-3">
                                         <i class="fas fa-paper-plane me-2"></i>Send Booking Request via Email
                                     </button>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-outline-primary w-100 py-3" onclick="sendBookingWhatsApp()">
+                                    <button type="button" class="btn btn-outline-primary w-100 py-3" onclick="sendBookingWhatsApp()">
                                         <i class="fab fa-whatsapp me-2"></i>Send Booking Request via WhatsApp
                                     </button>
                                 </div>
+                            </form>
+                            <div id="cs-success" class="cs-success d-none">
+                                <div class="cs-success-icon"><i class="fas fa-check"></i></div>
+                                <h3>Thank You &mdash; Request Received</h3>
+                                <p class="mb-3">Your booking request has been sent to <strong>corporatesolutions@cmagroup.my</strong>. Our corporate solutions team will respond within one business day.</p>
+                                <p class="mb-0">Need it sooner? Message <strong>Admin 012 947 9219</strong> on
+                                    <a href="https://wa.me/60129479219" target="_blank" rel="noopener">WhatsApp</a>.</p>
                             </div>
                         </div>
                     </div>
@@ -990,6 +1034,7 @@
         <script>
             var CONSULTANCY_EMAIL = 'corporatesolutions@cmagroup.my';
             var CONSULTANCY_WA = '60129479219';
+            var BOOKING_ENDPOINT = 'https://send.bah.my/o6b7gnhl';
 
             function getBookingFields() {
                 return {
@@ -1028,16 +1073,65 @@
                 return message;
             }
 
+            /* Email route: POST the request to the form endpoint */
             function sendBookingEmail() {
+                var form = document.getElementById('cs-booking-form');
+                var button = document.getElementById('cs-email-btn');
+
+                if (!form || !button) {
+                    return;
+                }
+
+                // Bot check: the hidden "website" field must stay empty
+                if (form.website && form.website.value !== '') {
+                    return;
+                }
+
+                // Time-to-submit check (3s minimum)
+                var start = parseInt(document.getElementById('cs-form-start').value, 10);
+                if (!isNaN(start) && Date.now() - start < 3000) {
+                    alert('Please take a moment before submitting.');
+                    return;
+                }
+
                 var fields = getBookingFields();
                 if (!validateBookingFields(fields)) {
                     return;
                 }
-                var subject = 'CMA Consultancy - Booking Request - ' + fields.service;
-                var mailto = 'mailto:' + CONSULTANCY_EMAIL
-                    + '?subject=' + encodeURIComponent(subject)
-                    + '&body=' + encodeURIComponent(buildBookingMessage(fields));
-                window.location.href = mailto;
+
+                // Prevent double submit
+                button.disabled = true;
+                button.innerHTML = '<i class="fas fa-circle-notch fa-spin me-2"></i>Sending...';
+
+                var formData = new FormData(form);
+                formData.set('name', fields.name);
+                formData.set('email', fields.email);
+                formData.set('subject', 'CMA Consultancy - Booking Request - ' + fields.service);
+                formData.set('message', buildBookingMessage(fields));
+                formData.set('page', 'cma-consultancy.html');
+
+                fetch(BOOKING_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Accept': 'application/json'
+                    },
+                    body: new URLSearchParams(formData).toString()
+                })
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error('Submission failed: ' + response.status);
+                        }
+                        form.classList.add('d-none');
+                        document.getElementById('cs-success').classList.remove('d-none');
+                        document.getElementById('cs-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                        alert('Sorry, we could not send your request. Please try again, or reach us at ' + CONSULTANCY_EMAIL + ' / WhatsApp Admin 012 947 9219.');
+                        button.disabled = false;
+                        button.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Booking Request via Email';
+                    });
             }
 
             function sendBookingWhatsApp() {
@@ -1048,6 +1142,22 @@
                 var waUrl = 'https://wa.me/' + CONSULTANCY_WA + '?text=' + encodeURIComponent(buildBookingMessage(fields));
                 window.open(waUrl, '_blank');
             }
+
+            /* Wire up the form: record load time, intercept submit and POST it */
+            document.addEventListener('DOMContentLoaded', function () {
+                var form = document.getElementById('cs-booking-form');
+                var startField = document.getElementById('cs-form-start');
+
+                if (startField) {
+                    startField.value = Date.now();
+                }
+                if (form) {
+                    form.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        sendBookingEmail();
+                    });
+                }
+            });
         </script>
     </body>
 
