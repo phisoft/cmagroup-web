@@ -360,6 +360,110 @@
                 margin: 0;
             }
 
+            /*** Core Corporate Solutions ***/
+            .cs-core {
+                background: linear-gradient(180deg, rgba(56, 182, 255, .07) 0%, rgba(255, 255, 255, 0) 100%);
+            }
+            .cs-core-card {
+                background: var(--bs-white);
+                border-radius: 10px;
+                border: 1px solid rgba(0, 0, 0, .06);
+                border-left: 5px solid var(--bs-primary);
+                padding: 34px 34px 30px;
+                height: 100%;
+                transition: .5s;
+            }
+            .cs-core-card:hover {
+                box-shadow: 0 12px 34px rgba(10, 42, 74, .1);
+            }
+            .cs-core-head {
+                display: flex;
+                align-items: flex-start;
+                gap: 16px;
+                margin-bottom: 18px;
+            }
+            .cs-core-num {
+                flex: 0 0 auto;
+                width: 48px;
+                height: 48px;
+                border-radius: 10px;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                font-size: 18px;
+                font-weight: 800;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .cs-core-head h3 {
+                font-size: 21px;
+                font-weight: 800;
+                color: #0a2a4a;
+                margin: 0 0 4px;
+                line-height: 1.4;
+            }
+            .cs-core-head .cs-core-sub {
+                display: block;
+                font-size: 13.5px;
+                font-weight: 700;
+                letter-spacing: .04em;
+                text-transform: uppercase;
+                color: var(--bs-primary);
+            }
+            .cs-core-lead {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 1.75;
+                color: #0a2a4a;
+                margin-bottom: 12px;
+            }
+            .cs-core-card .cs-core-intro {
+                font-size: 15px;
+                line-height: 1.8;
+                color: #55606c;
+                margin-bottom: 20px;
+            }
+            .cs-core-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .cs-core-list li {
+                position: relative;
+                padding-left: 32px;
+                margin-bottom: 16px;
+                font-size: 15px;
+                line-height: 1.8;
+                color: #55606c;
+            }
+            .cs-core-list li:last-child {
+                margin-bottom: 0;
+            }
+            .cs-core-list li i {
+                position: absolute;
+                left: 0;
+                top: 5px;
+                color: var(--bs-primary);
+                font-size: 15px;
+            }
+            .cs-core-list li strong {
+                color: #0a2a4a;
+                font-weight: 700;
+            }
+            @media (max-width: 575px) {
+                .cs-core-card {
+                    padding: 24px 20px;
+                }
+                .cs-core-head h3 {
+                    font-size: 18px;
+                }
+                .cs-core-lead,
+                .cs-core-card .cs-core-intro,
+                .cs-core-list li {
+                    font-size: 14.5px;
+                }
+            }
+
             /*** Booking Form ***/
             #consultancy-booking {
                 scroll-margin-top: 96px;
@@ -561,6 +665,93 @@
             </div>
         </div>
         <!-- Solutions End -->
+
+        <!-- Core Corporate Solutions Start -->
+        <div class="cs-core container-fluid py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Capabilities</h4>
+                    <h1 class="display-4 mb-4">Core Corporate Solutions &amp; AI-Driven Capabilities</h1>
+                    <p class="mb-0">Three pillars of protection, each delivered through the same digital, AI-assisted ecosystem &mdash; so your benefits work as hard as your people do.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-xl-11 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="cs-core-card">
+                            <div class="cs-core-head">
+                                <span class="cs-core-num">01</span>
+                                <div>
+                                    <h3>AI-Powered Customized Group Medical Benefits</h3>
+                                    <span class="cs-core-sub">Inpatient &amp; Outpatient</span>
+                                </div>
+                            </div>
+                            <p class="cs-core-lead">Empower your workforce with comprehensive healthcare, accessed instantly through smart digital mobility.</p>
+                            <p class="cs-core-intro">We design modular healthcare schemes calibrated to your corporate structure, fully integrated into a seamless digital ecosystem:</p>
+                            <ul class="cs-core-list">
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Custom Hospitalisation &amp; Outpatient Care:</strong> Tailor room-and-board options, specialist consultations, and daily clinical care to fit different operational tiers, ensuring every team member is adequately protected.
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Digital E-Medical Cards &amp; Cashless Access:</strong> Say goodbye to physical cards and lost documents. Employees access an intuitive mobile app to display their digital medical card, granting them instant, cashless admission to extensive nationwide panel hospitals and clinics.
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>AI-Enabled Self-Service:</strong> Your staff can instantly locate the nearest panel clinics, check their remaining benefit balances, and submit claims directly from their smartphones using AI-assisted receipt scanning &mdash; eliminating HR from the middle of the claims process.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-11 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="cs-core-card">
+                            <div class="cs-core-head">
+                                <span class="cs-core-num">02</span>
+                                <div>
+                                    <h3>Group Term Life (GTL) &amp; Group Personal Accident (GPA)</h3>
+                                    <span class="cs-core-sub">Life &amp; Accident Protection</span>
+                                </div>
+                            </div>
+                            <p class="cs-core-lead">Empower your team with a dependable safety net managed through zero-friction digital portals.</p>
+                            <p class="cs-core-intro">Unforeseen tragedies should never leave employee families unsupported. We engineer robust corporate life and accident safeguards that are as easy to manage as they are reliable:</p>
+                            <ul class="cs-core-list">
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Group Term Life &amp; Accident Shield:</strong> Provide essential financial security with high-coverage death, total permanent disability (TPD), and personal accident protections covering your employees 24/7.
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Automated Employee Lifecycle Management:</strong> As your workforce scales, our digital portals integrate with your HR workflows. When you onboard a new hire or offboard a departing employee, the AI-powered system automatically updates their life and medical coverage in real time, preventing coverage gaps and premium leakages.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-11 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="cs-core-card">
+                            <div class="cs-core-head">
+                                <span class="cs-core-num">03</span>
+                                <div>
+                                    <h3>Strategic Corporate Risk &amp; Business Continuity Management</h3>
+                                    <span class="cs-core-sub">Business Continuity</span>
+                                </div>
+                            </div>
+                            <p class="cs-core-lead">Empower enterprise continuity and insulate your operational future against sudden disruptions.</p>
+                            <p class="cs-core-intro">Every business relies on key individuals whose sudden absence would destabilize daily operations, client relationships, or workforce morale. We design protective frameworks that secure the human foundation of your business:</p>
+                            <ul class="cs-core-list">
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Keyman Insurance Architectures:</strong> Structure high-impact corporate policies that inject immediate liquidity into your business upon the death or critical disability of an indispensable executive &mdash; cushioning revenue loss and funding the search for a qualified successor without halting operations.
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Shareholder &amp; Partnership Protection:</strong> Prevent messy equity disputes. We implement buy-sell agreements funded by structured corporate policies, ensuring surviving partners have the immediate cash reserves to stabilize the company and protect the remaining employees' livelihoods.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Core Corporate Solutions End -->
 
         <!-- Booking Request Start -->
         <div id="consultancy-booking" class="container-fluid bg-light py-5">
