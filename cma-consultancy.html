@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CMA Consultancy - Corporate Risk Management & AI-Powered Digital Employee Benefits</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="CMA Consultancy, corporate risk management, digital employee benefits, AI HR automation, HR advisory Malaysia, Kota Kinabalu" name="keywords">
+        <meta content="CMA Consultancy is the strategic partner for Malaysian employers, delivering tailored corporate risk management and AI-powered digital employee benefits that elevate retention and remove HR operational friction." name="description">
+        <link rel="icon" type="image/x-icon" href="assets/img/cma-co/logo.ico">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <style>
+            /*** Button styling to match cma_academy.html / cma_coworking.html ***/
+            .btn.btn-primary {
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                border: none;
+                color: var(--bs-white);
+                box-shadow: 0 6px 18px rgba(56, 182, 255, .3);
+                transition: .5s;
+            }
+            .btn.btn-primary:hover {
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                transform: translateY(-2px);
+                box-shadow: 0 10px 28px rgba(56, 182, 255, .45);
+            }
+
+            /*** Consultancy Page Header ***/
+            .cs-page-header {
+                background: linear-gradient(135deg, #0a2a4a 0%, #0561a5 100%);
+                border-bottom: 1px solid rgba(56, 182, 255, .3);
+                position: relative;
+                overflow: hidden;
+            }
+            .cs-page-header::before {
+                content: '';
+                position: absolute;
+                top: -80px;
+                right: -80px;
+                width: 260px;
+                height: 260px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .08);
+            }
+            .cs-page-header::after {
+                content: '';
+                position: absolute;
+                bottom: -100px;
+                left: -100px;
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .05);
+            }
+            .cs-logo-box {
+                display: inline-block;
+                background: #ffffff;
+                border-radius: 20px;
+                padding: 20px 34px;
+                box-shadow: 0 15px 40px rgba(56, 182, 255, .18);
+                border: 1px solid rgba(56, 182, 255, .2);
+                margin-bottom: 24px;
+                position: relative;
+                z-index: 1;
+                transition: .5s;
+            }
+            .cs-logo-box:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 50px rgba(56, 182, 255, .28);
+                border-color: #38b6ff;
+            }
+            .cs-logo-box img {
+                max-height: 140px;
+                width: auto;
+                object-fit: contain;
+                display: block;
+            }
+            .cs-page-header h1 {
+                color: var(--bs-white);
+                font-weight: 800;
+                position: relative;
+                z-index: 1;
+                margin-bottom: 12px;
+            }
+            .cs-header-underline {
+                width: 70px;
+                height: 4px;
+                border-radius: 4px;
+                background: linear-gradient(90deg, #38b6ff, #7fd4ff);
+                margin: 0 auto 16px;
+                position: relative;
+                z-index: 1;
+            }
+            .cs-page-header p {
+                color: rgba(255, 255, 255, .82);
+                font-size: 16.5px;
+                font-weight: 600;
+                position: relative;
+                z-index: 1;
+                margin: 0;
+            }
+            @media (max-width: 575px) {
+                .cs-logo-box {
+                    padding: 14px 22px;
+                }
+                .cs-logo-box img {
+                    max-height: 80px;
+                }
+                .cs-page-header p {
+                    font-size: 15px;
+                }
+            }
+
+            /*** Consultancy Contact Bar ***/
+            .cs-contact-bar {
+                background: #f7fbff;
+                border-bottom: 1px solid rgba(0, 0, 0, .06);
+                position: relative;
+                z-index: 2;
+            }
+            .cs-contact-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                height: 100%;
+                padding: 10px 12px;
+                border-radius: 10px;
+                transition: .5s;
+            }
+            .cs-contact-item:hover {
+                background: rgba(56, 182, 255, .07);
+            }
+            .cs-contact-icon {
+                width: 52px;
+                height: 52px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                font-size: 20px;
+                box-shadow: 0 8px 20px rgba(56, 182, 255, .28);
+                transition: .5s;
+            }
+            .cs-contact-item:hover .cs-contact-icon {
+                transform: translateY(-3px);
+            }
+            .cs-contact-text {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+            .cs-contact-text small {
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: .09em;
+                text-transform: uppercase;
+                color: #6c757d;
+                margin-bottom: 2px;
+            }
+            .cs-contact-text a {
+                font-size: 15.5px;
+                font-weight: 700;
+                color: #0a2a4a;
+                text-decoration: none;
+                word-break: break-word;
+                transition: .3s;
+            }
+            .cs-contact-text a:hover {
+                color: #0a6fb8;
+                text-decoration: underline;
+            }
+            @media (max-width: 767px) {
+                .cs-contact-item {
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 16px;
+                    padding: 8px 10px;
+                }
+                .cs-contact-icon {
+                    width: 44px;
+                    height: 44px;
+                    font-size: 17px;
+                }
+                .cs-contact-text {
+                    align-items: flex-start;
+                    text-align: left;
+                }
+            }
+
+            /*** Consultancy Hero Band ***/
+            .cs-hero {
+                background: linear-gradient(135deg, #0a2a4a 0%, #0561a5 100%);
+                border-top: 1px solid rgba(56, 182, 255, .3);
+                border-bottom: 1px solid rgba(56, 182, 255, .3);
+                position: relative;
+                overflow: hidden;
+            }
+            .cs-hero::before {
+                content: '';
+                position: absolute;
+                top: -90px;
+                right: -90px;
+                width: 280px;
+                height: 280px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .1);
+            }
+            .cs-hero::after {
+                content: '';
+                position: absolute;
+                bottom: -110px;
+                left: -110px;
+                width: 320px;
+                height: 320px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .06);
+            }
+            .cs-hero-inner {
+                position: relative;
+                z-index: 1;
+                max-width: 900px;
+            }
+            .cs-hero-tagline {
+                display: inline-block;
+                padding: 8px 22px;
+                border-radius: 50rem;
+                background: rgba(255, 255, 255, .12);
+                border: 1px solid rgba(255, 255, 255, .28);
+                color: var(--bs-white);
+                font-size: 13.5px;
+                font-weight: 700;
+                letter-spacing: .05em;
+                margin-bottom: 22px;
+            }
+            .cs-hero h1 {
+                color: var(--bs-white);
+                font-weight: 800;
+                line-height: 1.25;
+            }
+            .cs-hero-sub {
+                color: rgba(255, 255, 255, .85);
+                font-size: 17px;
+                line-height: 1.85;
+                max-width: 840px;
+                margin: 0 auto 34px;
+            }
+            @media (max-width: 575px) {
+                .cs-hero-tagline {
+                    font-size: 12px;
+                    padding: 7px 16px;
+                    letter-spacing: .03em;
+                }
+                .cs-hero-sub {
+                    font-size: 15.5px;
+                }
+            }
+
+            /*** Philosophy / Why It Matters ***/
+            .cs-belief {
+                background: rgba(56, 182, 255, .1);
+                border-left: 4px solid var(--bs-primary);
+                border-radius: 10px;
+                padding: 20px 24px;
+                font-size: 17.5px;
+                font-weight: 700;
+                line-height: 1.7;
+                color: #0a6fb8;
+            }
+            .cs-about-text p {
+                font-size: 16px;
+                line-height: 1.85;
+                color: #55606c;
+            }
+            .cs-about-img {
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 15px 40px rgba(10, 42, 74, .15);
+            }
+            .cs-about-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+            @media (max-width: 575px) {
+                .cs-belief {
+                    padding: 16px 18px;
+                    font-size: 16px;
+                }
+                .cs-about-text p {
+                    font-size: 15.5px;
+                }
+            }
+
+            /*** Solution Cards ***/
+            .cs-solution-card {
+                background: var(--bs-white);
+                border-radius: 10px;
+                border: 1px solid rgba(0, 0, 0, .06);
+                padding: 32px 30px;
+                height: 100%;
+                transition: .5s;
+            }
+            .cs-solution-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--bs-primary);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+            }
+            .cs-solution-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 10px;
+                background: rgba(56, 182, 255, .12);
+                color: var(--bs-primary);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                margin-bottom: 20px;
+                transition: .5s;
+            }
+            .cs-solution-card:hover .cs-solution-icon {
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+            }
+            .cs-solution-card h3 {
+                font-size: 20px;
+                font-weight: 800;
+                color: #0a2a4a;
+                margin-bottom: 12px;
+            }
+            .cs-solution-card p {
+                font-size: 15px;
+                line-height: 1.8;
+                color: #55606c;
+                margin: 0;
+            }
+
+            /*** Core Corporate Solutions ***/
+            .cs-core {
+                background: linear-gradient(180deg, rgba(56, 182, 255, .07) 0%, rgba(255, 255, 255, 0) 100%);
+            }
+            .cs-core-card {
+                background: var(--bs-white);
+                border-radius: 10px;
+                border: 1px solid rgba(0, 0, 0, .06);
+                border-left: 5px solid var(--bs-primary);
+                padding: 34px 34px 30px;
+                height: 100%;
+                transition: .5s;
+            }
+            .cs-core-card:hover {
+                box-shadow: 0 12px 34px rgba(10, 42, 74, .1);
+            }
+            .cs-core-head {
+                display: flex;
+                align-items: flex-start;
+                gap: 16px;
+                margin-bottom: 18px;
+            }
+            .cs-core-num {
+                flex: 0 0 auto;
+                width: 48px;
+                height: 48px;
+                border-radius: 10px;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                font-size: 18px;
+                font-weight: 800;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .cs-core-head h3 {
+                font-size: 21px;
+                font-weight: 800;
+                color: #0a2a4a;
+                margin: 0 0 4px;
+                line-height: 1.4;
+            }
+            .cs-core-head .cs-core-sub {
+                display: block;
+                font-size: 13.5px;
+                font-weight: 700;
+                letter-spacing: .04em;
+                text-transform: uppercase;
+                color: var(--bs-primary);
+            }
+            .cs-core-lead {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 1.75;
+                color: #0a2a4a;
+                margin-bottom: 12px;
+            }
+            .cs-core-card .cs-core-intro {
+                font-size: 15px;
+                line-height: 1.8;
+                color: #55606c;
+                margin-bottom: 20px;
+            }
+            .cs-core-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .cs-core-list li {
+                position: relative;
+                padding-left: 32px;
+                margin-bottom: 16px;
+                font-size: 15px;
+                line-height: 1.8;
+                color: #55606c;
+            }
+            .cs-core-list li:last-child {
+                margin-bottom: 0;
+            }
+            .cs-core-list li i {
+                position: absolute;
+                left: 0;
+                top: 5px;
+                color: var(--bs-primary);
+                font-size: 15px;
+            }
+            .cs-core-list li strong {
+                color: #0a2a4a;
+                font-weight: 700;
+            }
+            @media (max-width: 575px) {
+                .cs-core-card {
+                    padding: 24px 20px;
+                }
+                .cs-core-head h3 {
+                    font-size: 18px;
+                }
+                .cs-core-lead,
+                .cs-core-card .cs-core-intro,
+                .cs-core-list li {
+                    font-size: 14.5px;
+                }
+            }
+
+            /*** Future-Pacing CTA ***/
+            .cs-cta {
+                background: linear-gradient(135deg, #0a2a4a 0%, #0561a5 100%);
+                border-top: 1px solid rgba(56, 182, 255, .3);
+                position: relative;
+                overflow: hidden;
+            }
+            .cs-cta::before {
+                content: '';
+                position: absolute;
+                top: -120px;
+                right: -80px;
+                width: 320px;
+                height: 320px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .1);
+            }
+            .cs-cta::after {
+                content: '';
+                position: absolute;
+                bottom: -140px;
+                left: -100px;
+                width: 340px;
+                height: 340px;
+                border-radius: 50%;
+                background: rgba(56, 182, 255, .06);
+            }
+            .cs-cta-inner {
+                position: relative;
+                z-index: 1;
+                max-width: 880px;
+                margin: 0 auto;
+            }
+            .cs-cta h4 {
+                color: #38b6ff;
+                font-weight: 700;
+                letter-spacing: .05em;
+                text-transform: uppercase;
+                font-size: 13.5px;
+            }
+            .cs-cta h1 {
+                color: var(--bs-white);
+                font-weight: 800;
+                line-height: 1.25;
+            }
+            .cs-cta p {
+                color: rgba(255, 255, 255, .85);
+                font-size: 16.5px;
+                line-height: 1.85;
+                margin-bottom: 20px;
+            }
+            .cs-cta-pledge {
+                color: var(--bs-white);
+                font-size: 21px;
+                font-weight: 800;
+                letter-spacing: .01em;
+                margin: 28px 0 30px;
+            }
+            @media (max-width: 575px) {
+                .cs-cta p {
+                    font-size: 15.5px;
+                }
+                .cs-cta-pledge {
+                    font-size: 18px;
+                }
+            }
+
+            /*** Booking Form ***/
+            .cs-hp {
+                position: absolute !important;
+                left: -9999px !important;
+                width: 1px;
+                height: 1px;
+                opacity: 0;
+                pointer-events: none;
+            }
+            .cs-success {
+                text-align: center;
+                padding: 20px 10px;
+            }
+            .cs-success-icon {
+                width: 74px;
+                height: 74px;
+                border-radius: 50%;
+                margin: 0 auto 22px;
+                background: rgba(37, 211, 102, .12);
+                color: #17a34a;
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .cs-success h3 {
+                font-size: 24px;
+                font-weight: 800;
+                color: #0a2a4a;
+                margin-bottom: 14px;
+            }
+            .cs-success p {
+                font-size: 15.5px;
+                line-height: 1.8;
+                color: #55606c;
+            }
+            #consultancy-booking {
+                scroll-margin-top: 96px;
+            }
+            .cs-form-card {
+                background: var(--bs-white);
+                border-radius: 10px;
+                border: 1px solid rgba(0, 0, 0, .06);
+                padding: 40px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+            }
+            .cs-note {
+                background: rgba(56, 182, 255, .1);
+                border: 1px solid rgba(56, 182, 255, .3);
+                border-radius: 10px;
+                padding: 16px 20px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .cs-note i {
+                color: #0a6fb8;
+                font-size: 26px;
+            }
+            .cs-note p {
+                margin: 0;
+                font-size: 14.5px;
+                color: #0a2a4a;
+            }
+            .cs-wa-note {
+                background: rgba(37, 211, 102, .1);
+                border: 1px solid rgba(37, 211, 102, .3);
+                border-radius: 10px;
+                padding: 16px 20px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .cs-wa-note i {
+                color: #25d366;
+                font-size: 28px;
+            }
+            .cs-wa-note p {
+                margin: 0;
+                font-size: 14.5px;
+                color: #0a2a4a;
+            }
+            @media (max-width: 575px) {
+                .cs-form-card {
+                    padding: 24px 20px;
+                }
+                .cs-note,
+                .cs-wa-note {
+                    padding: 14px 16px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Header Start -->
+        <div id="header-container"></div>
+        <!-- Header End -->
+
+        <!-- Consultancy Page Header Start -->
+        <div class="container-fluid cs-page-header">
+            <div class="container text-center py-5 wow fadeInDown" data-wow-delay="0.1s" style="max-width: 900px;">
+                <div class="cs-logo-box">
+                    <img src="img/cma-consultancy-logo.png" alt="CMA Consultancy Group Logo">
+                </div>
+                <h1 class="display-4 mb-0">CMA Consultancy</h1>
+                <p class="pb-2">Strategic Partner of CMA Group</p>
+                <div class="cs-header-underline"></div>
+                <p>Corporate Risk Management &amp; AI-Powered Digital Employee Benefits<br></p>
+            </div>
+        </div>
+        <!-- Consultancy Page Header End -->
+
+        <!-- Contact Info Start -->
+        <div class="container-fluid cs-contact-bar py-4">
+            <div class="container">
+                <div class="row g-4 justify-content-center text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-md-4">
+                        <div class="cs-contact-item">
+                            <div class="cs-contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="cs-contact-text">
+                                <small>Email</small>
+                                <a href="mailto:corporatesolutions@cmagroup.my">corporatesolutions@cmagroup.my</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="cs-contact-item">
+                            <div class="cs-contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="cs-contact-text">
+                                <small>Contact</small>
+                                <a href="tel:+6088201542">088 201542</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="cs-contact-item">
+                            <div class="cs-contact-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="cs-contact-text">
+                                <small>WhatsApp</small>
+                                <a href="https://wa.me/60129479219" target="_blank" rel="noopener">Admin 012 947 9219</a>
+                                <a href="https://wa.me/60138709219" target="_blank" rel="noopener">Admin 013 870 9219</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Info End -->
+
+        <!-- Hero Band Start -->
+        <div class="container-fluid cs-hero py-5">
+            <div class="container py-5">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="cs-hero-inner mx-auto">
+                            <span class="cs-hero-tagline">Strategic Partner</span>
+                            <h1 class="display-4 text-white mb-4">Elevate Your Talent. Automate the Friction. Lead an Empowered Culture.</h1>
+                            <p class="cs-hero-sub">True organizational resilience starts when your talent feels genuinely protected and your HR team is free to lead. CMA Consultancy delivers tailored corporate risk management and AI-powered digital employee benefits, empowering your Human Resources department, elevating workforce retention, and eliminating the operational delays, manual bottlenecks, and inefficiencies that slow down your business and waste valuable time and energy.</p>
+                            <a class="btn btn-light rounded-pill py-3 px-5 me-sm-3 mb-2 mb-sm-0" href="#consultancy-booking" onclick="selectConsultancyService('Digital Employee Benefits Scheme')">Design Your Digital Benefit Scheme</a>
+                            <a class="btn btn-outline-light rounded-pill py-3 px-5 mb-2 mb-sm-0" href="#consultancy-booking" onclick="selectConsultancyService('Corporate Risk Advisory')">Schedule a Risk Advisory Consultation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero Band End -->
+
+        <!-- Philosophy Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Why It Matters</h4>
+                    <h1 class="display-4 mb-4">AI-Powered Protection That Empowers HR</h1>
+                </div>
+                <div class="row g-5 align-items-center justify-content-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="cs-about-text">
+                            <p class="mb-4">Your people are the heartbeat of your business, and your HR team is its cultural compass. Yet, in many growing businesses, HR professionals are trapped in a cycle of administrative exhaustion &mdash; managing physical claim forms, chasing insurers for updates, and resolving endless employee benefit disputes. When your HR team is consumed by manual paperwork, they lose the time and energy needed to nurture talent and build a thriving workplace culture.</p>
+                            <p class="cs-belief mb-4">At CMA Consultancy, we believe employee benefits must evolve from a manual chore into a strategic, automated asset.</p>
+                            <p class="mb-0">We partner with corporate decision-makers to design customized risk management structures driven by AI-powered digital benefit platforms. By replacing outdated insurance bureaucracy with smart, automated technology, we remove the friction between your employees and their healthcare. We empower your HR department to step out of the administrative weeds, transforming them from paperwork processors into strategic cultural leaders who can focus on what truly matters: empowering your people.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="cs-about-img">
+                            <img src="assets/img/group-discussion.jpg" alt="CMA Consultancy advisors presenting a risk and benefits strategy to corporate decision-makers">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Philosophy End -->
+
+        <!-- Solutions Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">What We Deliver</h4>
+                    <h1 class="display-4 mb-4">Consultancy Built Around Your People</h1>
+                    <p class="mb-0">Two disciplines, one outcome: a workforce that feels protected and an HR team with the bandwidth to lead.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="cs-solution-card">
+                            <div class="cs-solution-icon"><i class="fas fa-shield-alt"></i></div>
+                            <h3>Tailored Corporate Risk Management</h3>
+                            <p>Risk programmes built around your actual exposure, not a template. We map, prioritise and close the gaps across your operations so that compliance and resilience never land on your HR team as overtime.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="cs-solution-card">
+                            <div class="cs-solution-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h3>AI-Powered Digital Employee Benefits</h3>
+                            <p>A digital benefit scheme your people can actually use &mdash; paperless, always on and automated. Enrolment, claims and reporting run themselves, so your HR department leads instead of chasing forms.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="cs-solution-card">
+                            <div class="cs-solution-icon"><i class="fas fa-users"></i></div>
+                            <h3>HR Enablement &amp; Retention</h3>
+                            <p>Give your HR team the frameworks, tools and confidence to lead. Fewer manual bottlenecks and faster turnaround times mean a better employee experience &mdash; and a workforce that stays.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Solutions End -->
+
+        <!-- Core Corporate Solutions Start -->
+        <div class="cs-core container-fluid py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Capabilities</h4>
+                    <h1 class="display-4 mb-4">Core Corporate Solutions &amp; AI-Driven Capabilities</h1>
+                    <p class="mb-0">Three pillars of protection, each delivered through the same digital, AI-assisted ecosystem &mdash; so your benefits work as hard as your people do.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-xl-11 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="cs-core-card">
+                            <div class="cs-core-head">
+                                <span class="cs-core-num">01</span>
+                                <div>
+                                    <h3>AI-Powered Customized Group Medical Benefits</h3>
+                                    <span class="cs-core-sub">Inpatient &amp; Outpatient</span>
+                                </div>
+                            </div>
+                            <p class="cs-core-lead">Empower your workforce with comprehensive healthcare, accessed instantly through smart digital mobility.</p>
+                            <p class="cs-core-intro">We design modular healthcare schemes calibrated to your corporate structure, fully integrated into a seamless digital ecosystem:</p>
+                            <ul class="cs-core-list">
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Custom Hospitalisation &amp; Outpatient Care:</strong> Tailor room-and-board options, specialist consultations, and daily clinical care to fit different operational tiers, ensuring every team member is adequately protected.
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Digital E-Medical Cards &amp; Cashless Access:</strong> Say goodbye to physical cards and lost documents. Employees access an intuitive mobile app to display their digital medical card, granting them instant, cashless admission to extensive nationwide panel hospitals and clinics.
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>AI-Enabled Self-Service:</strong> Your staff can instantly locate the nearest panel clinics, check their remaining benefit balances, and submit claims directly from their smartphones using AI-assisted receipt scanning &mdash; eliminating HR from the middle of the claims process.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-11 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="cs-core-card">
+                            <div class="cs-core-head">
+                                <span class="cs-core-num">02</span>
+                                <div>
+                                    <h3>Group Term Life (GTL) &amp; Group Personal Accident (GPA)</h3>
+                                    <span class="cs-core-sub">Life &amp; Accident Protection</span>
+                                </div>
+                            </div>
+                            <p class="cs-core-lead">Empower your team with a dependable safety net managed through zero-friction digital portals.</p>
+                            <p class="cs-core-intro">Unforeseen tragedies should never leave employee families unsupported. We engineer robust corporate life and accident safeguards that are as easy to manage as they are reliable:</p>
+                            <ul class="cs-core-list">
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Group Term Life &amp; Accident Shield:</strong> Provide essential financial security with high-coverage death, total permanent disability (TPD), and personal accident protections covering your employees 24/7.
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Automated Employee Lifecycle Management:</strong> As your workforce scales, our digital portals integrate with your HR workflows. When you onboard a new hire or offboard a departing employee, the AI-powered system automatically updates their life and medical coverage in real time, preventing coverage gaps and premium leakages.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-11 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="cs-core-card">
+                            <div class="cs-core-head">
+                                <span class="cs-core-num">03</span>
+                                <div>
+                                    <h3>Strategic Corporate Risk &amp; Business Continuity Management</h3>
+                                    <span class="cs-core-sub">Business Continuity</span>
+                                </div>
+                            </div>
+                            <p class="cs-core-lead">Empower enterprise continuity and insulate your operational future against sudden disruptions.</p>
+                            <p class="cs-core-intro">Every business relies on key individuals whose sudden absence would destabilize daily operations, client relationships, or workforce morale. We design protective frameworks that secure the human foundation of your business:</p>
+                            <ul class="cs-core-list">
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Keyman Insurance Architectures:</strong> Structure high-impact corporate policies that inject immediate liquidity into your business upon the death or critical disability of an indispensable executive &mdash; cushioning revenue loss and funding the search for a qualified successor without halting operations.
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <strong>Shareholder &amp; Partnership Protection:</strong> Prevent messy equity disputes. We implement buy-sell agreements funded by structured corporate policies, ensuring surviving partners have the immediate cash reserves to stabilize the company and protect the remaining employees' livelihoods.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Core Corporate Solutions End -->
+
+        <!-- Booking Request Start -->
+        <div id="consultancy-booking" class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Booking Request</h4>
+                    <h1 class="display-4 mb-4">Design Your Scheme or Book an Advisory Session</h1>
+                    <p class="mb-0">Complete the form below and send it straight to <a href="mailto:corporatesolutions@cmagroup.my">corporatesolutions@cmagroup.my</a> &mdash; or forward it to our admin team on WhatsApp.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-10 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="cs-form-card">
+                            <form id="cs-booking-form" class="row g-4" novalidate>
+                                <input type="text" id="cs-website" name="website" class="cs-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                                <input type="hidden" id="cs-form-start" name="form_start" value="">
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="cs-name" name="name_company" placeholder="Name / Company">
+                                        <label for="cs-name">Name / Company *</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="cs-contact" name="contact_number" placeholder="Contact">
+                                        <label for="cs-contact">Contact Number *</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="cs-email" name="email" placeholder="Email">
+                                        <label for="cs-email">Email *</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="cs-designation" name="designation" placeholder="Designation">
+                                        <label for="cs-designation">Designation</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="cs-service" name="service_required" aria-label="Service Required">
+                                            <option value="" selected disabled>Select a service</option>
+                                            <option value="Digital Employee Benefits Scheme">Digital Employee Benefits Scheme</option>
+                                            <option value="Corporate Risk Advisory">Corporate Risk Advisory</option>
+                                            <option value="Both - Benefits Scheme &amp; Risk Advisory">Both &mdash; Benefits Scheme &amp; Risk Advisory</option>
+                                        </select>
+                                        <label for="cs-service">Service Required *</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="cs-headcount" name="no_of_employees" placeholder="No. of Employees">
+                                        <label for="cs-headcount">No. of Employees</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="cs-date" name="preferred_date" placeholder="Preferred Date">
+                                        <label for="cs-date">Preferred Date *</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="cs-budget" name="budget_range" placeholder="Budget Range (optional)">
+                                        <label for="cs-budget">Budget Range (optional)</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Tell us about your HR and risk priorities" id="cs-objective" name="key_challenge" style="height: 120px"></textarea>
+                                        <label for="cs-objective">Key Challenge / Expected Outcome *</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="cs-note mb-3">
+                                        <p>Choose how you'd like to send your booking inquiry to our team. We'll get back to you within one business day.</p>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" id="cs-email-btn" class="btn btn-primary w-100 py-3">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Booking Request via Email
+                                    </button>
+                                </div>
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-outline-primary w-100 py-3" onclick="sendBookingWhatsApp()">
+                                        <i class="fab fa-whatsapp me-2"></i>Send Booking Request via WhatsApp
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="cs-success" class="cs-success d-none">
+                                <div class="cs-success-icon"><i class="fas fa-check"></i></div>
+                                <h3>Thank You &mdash; Request Received</h3>
+                                <p class="mb-3">Your booking request has been sent to <strong>corporatesolutions@cmagroup.my</strong>. Our corporate solutions team will be in touch with you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Booking Request End -->
+
+        <!-- Future-Pacing CTA Start -->
+        <div class="cs-cta container-fluid py-5">
+            <div class="container py-5">
+                <div class="cs-cta-inner text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <h4 class="mb-3">Future-Pacing</h4>
+                    <h1 class="display-4 mb-4">Picture Your Organization Six Months From Today.</h1>
+                    <p>Your employees confidently navigate their health benefits through a smart mobile app. Routine medical claims processing themselves through AI without ever crossing an HR desk. Your HR leaders, finally freed from operational delays and manual bottlenecks, dedicating their full energy to talent development and corporate culture.</p>
+                    <p class="mb-0">When you implement an AI-powered, customized risk architecture today, administrative friction disappears, and lasting talent loyalty becomes your enterprise's enduring advantage.</p>
+                    <div class="cs-cta-pledge">Protect your people. Empower your HR.</div>
+                    <a class="btn btn-light rounded-pill py-3 px-5 me-sm-3 mb-2 mb-sm-0" href="#consultancy-booking">
+                        <i class="fas fa-clipboard-check me-2"></i>Request a Digital Benefit Audit
+                    </a>
+                    <a class="btn btn-outline-light rounded-pill py-3 px-5 mb-2 mb-sm-0" href="index.html">
+                        <i class="fas fa-globe me-2"></i>Explore the CMA Group Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Future-Pacing CTA End -->
+
+
+        <!-- Footer Start -->
+        <div id="footer-container"></div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+        <!-- Hero CTA -> pre-select service in the booking form -->
+        <script>
+            function selectConsultancyService(service) {
+                var select = document.getElementById('cs-service');
+                if (!select) {
+                    return;
+                }
+                var wanted = service.toLowerCase();
+                for (var i = 0; i < select.options.length; i++) {
+                    if (select.options[i].value.toLowerCase() === wanted) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+                select.classList.add('border-primary');
+                setTimeout(function () {
+                    select.classList.remove('border-primary');
+                }, 2500);
+            }
+        </script>
+
+        <!-- Booking Request -->
+        <script>
+            var CONSULTANCY_EMAIL = 'corporatesolutions@cmagroup.my';
+            var CONSULTANCY_WA = '60129479219';
+            var BOOKING_ENDPOINT = 'https://send.bah.my/myt9jppj';
+            // o6b7gnhl = rosclaritha@gmail.com
+            // myt9jppj = corporatesolutions@cmagroup.my
+            // u1po3n3f = kkcoworkingspace@cmagroup.my
+            // 9ayh2rgf = admin@cmagroup.my
+
+            function getBookingFields() {
+                return {
+                    name: document.getElementById('cs-name').value.trim(),
+                    contact: document.getElementById('cs-contact').value.trim(),
+                    email: document.getElementById('cs-email').value.trim(),
+                    designation: document.getElementById('cs-designation').value.trim(),
+                    service: document.getElementById('cs-service').value,
+                    headcount: document.getElementById('cs-headcount').value.trim(),
+                    date: document.getElementById('cs-date').value.trim(),
+                    budget: document.getElementById('cs-budget').value.trim(),
+                    objective: document.getElementById('cs-objective').value.trim()
+                };
+            }
+
+            function validateBookingFields(f) {
+                if (!f.name || !f.contact || !f.email || !f.service || !f.date || !f.objective) {
+                    alert('Please fill in all required fields (*) before sending.');
+                    return false;
+                }
+                return true;
+            }
+
+            function buildBookingMessage(f) {
+                var message = 'CMA CONSULTANCY - BOOKING REQUEST\n';
+                message += '\n';
+                message += 'Name / Company: ' + f.name + '\n';
+                message += 'Designation: ' + f.designation + '\n';
+                message += 'Contact Number: ' + f.contact + '\n';
+                message += 'Email: ' + f.email + '\n';
+                message += 'Service Required: ' + f.service + '\n';
+                message += 'No. of Employees: ' + f.headcount + '\n';
+                message += 'Preferred Date: ' + f.date + '\n';
+                message += 'Budget Range: ' + f.budget + '\n';
+                message += 'Key Challenge / Expected Outcome: ' + f.objective;
+                return message;
+            }
+
+            /* Email route: POST the request to the form endpoint */
+            function sendBookingEmail() {
+                var form = document.getElementById('cs-booking-form');
+                var button = document.getElementById('cs-email-btn');
+
+                if (!form || !button) {
+                    return;
+                }
+
+                // Bot check: the hidden "website" field must stay empty
+                if (form.website && form.website.value !== '') {
+                    return;
+                }
+
+                // Time-to-submit check (3s minimum)
+                var start = parseInt(document.getElementById('cs-form-start').value, 10);
+                if (!isNaN(start) && Date.now() - start < 3000) {
+                    alert('Please take a moment before submitting.');
+                    return;
+                }
+
+                var fields = getBookingFields();
+                if (!validateBookingFields(fields)) {
+                    return;
+                }
+
+                // Prevent double submit
+                button.disabled = true;
+                button.innerHTML = '<i class="fas fa-circle-notch fa-spin me-2"></i>Sending...';
+
+                var formData = new FormData(form);
+                formData.set('name', fields.name);
+                formData.set('email', fields.email);
+                formData.set('subject', 'CMA Consultancy - Booking Request - ' + fields.service);
+                formData.set('message', buildBookingMessage(fields));
+                formData.set('page', 'cma-consultancy.html');
+
+                fetch(BOOKING_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Accept': 'application/json'
+                    },
+                    body: new URLSearchParams(formData).toString()
+                })
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error('Submission failed: ' + response.status);
+                        }
+                        form.classList.add('d-none');
+                        document.getElementById('cs-success').classList.remove('d-none');
+                        document.getElementById('cs-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                        alert('Sorry, we could not send your request. Please try again, or reach us at ' + CONSULTANCY_EMAIL + ' / WhatsApp Admin 012 947 9219.');
+                        button.disabled = false;
+                        button.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Booking Request via Email';
+                    });
+            }
+
+            function sendBookingWhatsApp() {
+                var fields = getBookingFields();
+                if (!validateBookingFields(fields)) {
+                    return;
+                }
+                var waUrl = 'https://wa.me/' + CONSULTANCY_WA + '?text=' + encodeURIComponent(buildBookingMessage(fields));
+                window.open(waUrl, '_blank');
+            }
+
+            /* Wire up the form: record load time, intercept submit and POST it */
+            document.addEventListener('DOMContentLoaded', function () {
+                var form = document.getElementById('cs-booking-form');
+                var startField = document.getElementById('cs-form-start');
+
+                if (startField) {
+                    startField.value = Date.now();
+                }
+                if (form) {
+                    form.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        sendBookingEmail();
+                    });
+                }
+            });
+        </script>
+    </body>
+
+</html>

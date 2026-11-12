@@ -1084,6 +1084,54 @@
                 color: #25d366;
                 font-size: 28px;
             }
+            .email-note {
+                background: rgba(13, 110, 253, .07);
+                border: 1px solid rgba(13, 110, 253, .25);
+                border-radius: 10px;
+                padding: 16px 20px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .email-note i {
+                color: var(--bs-primary);
+                font-size: 26px;
+            }
+            .ac-hp {
+                position: absolute !important;
+                left: -9999px !important;
+                width: 1px;
+                height: 1px;
+                opacity: 0;
+                pointer-events: none;
+            }
+            .ac-success {
+                text-align: center;
+                padding: 20px 10px;
+            }
+            .ac-success-icon {
+                width: 74px;
+                height: 74px;
+                border-radius: 50%;
+                margin: 0 auto 22px;
+                background: rgba(37, 211, 102, .12);
+                color: #17a34a;
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .ac-success h3 {
+                font-size: 24px;
+                font-weight: 800;
+                color: #0a2a4a;
+                margin-bottom: 14px;
+            }
+            .ac-success p {
+                font-size: 15.5px;
+                line-height: 1.8;
+                color: #55606c;
+            }
             .ld-partner-card {
                 background: var(--bs-white);
                 border-radius: 10px;
@@ -2625,51 +2673,53 @@
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Training Inquiry</h4>
                     <h1 class="display-4 mb-4">Plan Your Training With Us</h1>
-                    <p class="mb-0">Fill in the form below and we will respond via WhatsApp to discuss your training needs.</p>
+                    <p class="mb-0">Fill in the form below and send it to our team by email or WhatsApp to discuss your training needs.</p>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-xl-10 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="inquiry-form-card">
-                            <div class="row g-4">
+                            <form id="ac-booking-form" class="row g-4" novalidate>
+                                <input type="text" id="ac-website" name="website" class="ac-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                                <input type="hidden" id="ac-form-start" name="form_start" value="">
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="wa-name" placeholder="Name / Company">
+                                        <input type="text" class="form-control" id="wa-name" name="name_company" placeholder="Name / Company">
                                         <label for="wa-name">Name / Company *</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="tel" class="form-control" id="wa-contact" placeholder="Contact">
+                                        <input type="tel" class="form-control" id="wa-contact" name="contact" placeholder="Contact">
                                         <label for="wa-contact">Contact *</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="wa-email" placeholder="Email">
+                                        <input type="email" class="form-control" id="wa-email" name="email" placeholder="Email">
                                         <label for="wa-email">Email</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="wa-topic" placeholder="Training Topic Needed">
+                                        <input type="text" class="form-control" id="wa-topic" name="training_topic" placeholder="Training Topic Needed">
                                         <label for="wa-topic">Training Topic Needed *</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="wa-audience" placeholder="Target Audience & No. of Participants">
+                                        <input type="text" class="form-control" id="wa-audience" name="target_audience" placeholder="Target Audience & No. of Participants">
                                         <label for="wa-audience">Target Audience & No. of Participants *</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="date" class="form-control" id="wa-dates" placeholder="Preferred Date(s)">
+                                        <input type="date" class="form-control" id="wa-dates" name="preferred_dates" placeholder="Preferred Date(s)">
                                         <label for="wa-dates">Preferred Date(s) *</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <select class="form-select" id="wa-duration" aria-label="Duration">
+                                        <select class="form-select" id="wa-duration" name="duration" aria-label="Duration">
                                             <option value="" selected disabled>Select duration</option>
                                             <option value="Half-day (3-4 hours)">Half-day (3-4 hours)</option>
                                             <option value="1 Day">1 Day</option>
@@ -2680,7 +2730,7 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <select class="form-select" id="wa-format" aria-label="Format">
+                                        <select class="form-select" id="wa-format" name="format" aria-label="Format">
                                             <option value="" selected disabled>Select format</option>
                                             <option value="In-person">In-person</option>
                                             <option value="Virtual">Virtual</option>
@@ -2691,27 +2741,36 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="wa-budget" placeholder="Budget Range (optional)">
+                                        <input type="text" class="form-control" id="wa-budget" name="budget_range" placeholder="Budget Range (optional)">
                                         <label for="wa-budget">Budget Range (optional)</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave your training objective here" id="wa-objective" style="height: 120px"></textarea>
+                                        <textarea class="form-control" placeholder="Leave your training objective here" id="wa-objective" name="objective" style="height: 120px"></textarea>
                                         <label for="wa-objective">Key Objective / Expected Outcome *</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="wa-note mb-4">
-                                        <i class="fab fa-whatsapp"></i>
-                                        <p class="mb-0">Your inquiry will be sent directly to our team via WhatsApp. We typically respond within one business day.</p>
+                                    <div class="email-note mb-3">
+                                        <p class="mb-0">Choose how you'd like to send your training inquiry to our team. We typically respond within one business day.</p>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" onclick="sendWhatsAppInquiry()">
+                                    <button type="submit" id="ac-email-btn" class="btn btn-primary w-100 py-3">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Inquiry via Email
+                                    </button>
+                                </div>
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-outline-primary w-100 py-3" onclick="sendWhatsAppInquiry()">
                                         <i class="fab fa-whatsapp me-2"></i>Send Inquiry via WhatsApp
                                     </button>
                                 </div>
+                            </form>
+                            <div id="ac-success" class="ac-success d-none">
+                                <div class="ac-success-icon"><i class="fas fa-check"></i></div>
+                                <h3>Thank You &mdash; Inquiry Received</h3>
+                                <p class="mb-3">Your training inquiry has been sent to <strong id="ac-success-email">training@cmagroup.my</strong>. Our training team will be in touch with you.</p>
                             </div>
                         </div>
                     </div>
@@ -2753,41 +2812,164 @@
             }
         </script>
 
-        <!-- WhatsApp Inquiry -->
+        <!-- Training Inquiry (Email + WhatsApp) -->
         <script>
-            function sendWhatsAppInquiry() {
-                var name = document.getElementById('wa-name').value.trim();
-                var contact = document.getElementById('wa-contact').value.trim();
-                var email = document.getElementById('wa-email').value.trim();
-                var topic = document.getElementById('wa-topic').value.trim();
-                var audience = document.getElementById('wa-audience').value.trim();
-                var dates = document.getElementById('wa-dates').value.trim();
-                var duration = document.getElementById('wa-duration').value;
-                var format = document.getElementById('wa-format').value;
-                var budget = document.getElementById('wa-budget').value.trim();
-                var objective = document.getElementById('wa-objective').value.trim();
+            var ACADEMY_ENDPOINT = 'https://send.bah.my/9ayh2rgf';
+            var ACADEMY_EMAIL = 'admin@cmagroup.my';
+            var ACADEMY_WA = '60129479219';
 
-                if (!name || !contact || !topic || !audience || !dates || !duration || !format || !objective) {
+            // o6b7gnhl = rosclaritha@gmail.com
+            // myt9jppj = corporatesolutions@cmagroup.my
+            // u1po3n3f = kkcoworkingspace@cmagroup.my
+            // 9ayh2rgf = admin@cmagroup.my
+
+            function getTrainingFields() {
+                return {
+                    name: document.getElementById('wa-name').value.trim(),
+                    contact: document.getElementById('wa-contact').value.trim(),
+                    email: document.getElementById('wa-email').value.trim(),
+                    topic: document.getElementById('wa-topic').value.trim(),
+                    audience: document.getElementById('wa-audience').value.trim(),
+                    dates: document.getElementById('wa-dates').value.trim(),
+                    duration: document.getElementById('wa-duration').value,
+                    format: document.getElementById('wa-format').value,
+                    budget: document.getElementById('wa-budget').value.trim(),
+                    objective: document.getElementById('wa-objective').value.trim()
+                };
+            }
+
+            function validateTrainingFields(f) {
+                if (!f.name || !f.contact || !f.topic || !f.audience || !f.dates || !f.duration || !f.format || !f.objective) {
                     alert('Please fill in all required fields (*) before sending.');
+                    return false;
+                }
+                return true;
+            }
+
+            function buildTrainingMessage(f) {
+                var message = 'CMA ACADEMY ASIA - TRAINING INQUIRY\n';
+                message += '\n';
+                message += 'Name / Company: ' + f.name + '\n';
+                message += 'Contact: ' + f.contact + '\n';
+                if (f.email) {
+                    message += 'Email: ' + f.email + '\n';
+                }
+                message += 'Training Topic: ' + f.topic + '\n';
+                message += 'Target Audience & Participants: ' + f.audience + '\n';
+                message += 'Preferred Date(s): ' + f.dates + '\n';
+                message += 'Duration: ' + f.duration + '\n';
+                message += 'Format: ' + f.format;
+                if (f.budget) {
+                    message += '\nBudget Range: ' + f.budget;
+                }
+                if (f.objective) {
+                    message += '\nKey Objective: ' + f.objective;
+                }
+                return message;
+            }
+
+            function sendWhatsAppInquiry() {
+                var fields = getTrainingFields();
+                if (!validateTrainingFields(fields)) {
                     return;
                 }
 
-                var rawMessage = '*CMA ACADEMY ASIA - TRAINING INQUIRY*\n';
-                rawMessage += '\n';
-                rawMessage += '*Name / Company:* ' + name + '\n';
-                rawMessage += '*Contact:* ' + contact + '\n';
-                rawMessage += '*Email:* ' + email + '\n';
-                rawMessage += '*Training Topic:* ' + topic + '\n';
-                rawMessage += '*Target Audience & Participants:* ' + audience + '\n';
-                rawMessage += '*Preferred Date(s):* ' + dates + '\n';
-                rawMessage += '*Duration:* ' + duration + '\n';
-                rawMessage += '*Format:* ' + format + '\n';
-                rawMessage += '*Budget Range:* ' + budget + '\n';
-                rawMessage += '*Key Objective:* ' + objective;
+                var message = '*CMA ACADEMY ASIA - TRAINING INQUIRY*%0A';
+                message += '%0A';
+                message += '*Name / Company:* ' + encodeURIComponent(fields.name) + '%0A';
+                message += '*Contact:* ' + encodeURIComponent(fields.contact) + '%0A';
+                if (fields.email) { message += '*Email:* ' + encodeURIComponent(fields.email) + '%0A'; }
+                message += '*Training Topic:* ' + encodeURIComponent(fields.topic) + '%0A';
+                message += '*Target Audience & Participants:* ' + encodeURIComponent(fields.audience) + '%0A';
+                message += '*Preferred Date(s):* ' + encodeURIComponent(fields.dates) + '%0A';
+                message += '*Duration:* ' + encodeURIComponent(fields.duration) + '%0A';
+                message += '*Format:* ' + encodeURIComponent(fields.format) + '%0A';
+                if (fields.budget) { message += '*Budget Range:* ' + encodeURIComponent(fields.budget) + '%0A'; }
+                if (fields.objective) { message += '*Key Objective:* ' + encodeURIComponent(fields.objective); }
 
-                var waUrl = 'https://wa.me/60129479219?text=' + encodeURIComponent(rawMessage);
-                window.open(waUrl, '_blank');
+                window.open('https://wa.me/' + ACADEMY_WA + '?text=' + message, '_blank');
             }
+
+            /* Email route: POST the inquiry to the form endpoint */
+            function sendTrainingEmail() {
+                var form = document.getElementById('ac-booking-form');
+                var button = document.getElementById('ac-email-btn');
+
+                if (!form || !button) {
+                    return;
+                }
+
+                // Bot check: the hidden "website" field must stay empty
+                if (form.website && form.website.value !== '') {
+                    return;
+                }
+
+                // Time-to-submit check (3s minimum)
+                var start = parseInt(document.getElementById('ac-form-start').value, 10);
+                if (!isNaN(start) && Date.now() - start < 3000) {
+                    alert('Please take a moment before submitting.');
+                    return;
+                }
+
+                var fields = getTrainingFields();
+                if (!validateTrainingFields(fields)) {
+                    return;
+                }
+
+                // Prevent double submit
+                button.disabled = true;
+                button.innerHTML = '<i class="fas fa-circle-notch fa-spin me-2"></i>Sending...';
+
+                var formData = new FormData(form);
+                formData.set('name', fields.name);
+                if (fields.email) {
+                    formData.set('email', fields.email);
+                } else {
+                    formData.delete('email');
+                }
+                formData.set('subject', 'CMA Academy Asia - Training Inquiry - ' + fields.topic);
+                formData.set('message', buildTrainingMessage(fields));
+                formData.set('page', 'cma_academy.html');
+
+                fetch(ACADEMY_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Accept': 'application/json'
+                    },
+                    body: new URLSearchParams(formData).toString()
+                })
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error('Submission failed: ' + response.status);
+                        }
+                        form.classList.add('d-none');
+                        document.getElementById('ac-success').classList.remove('d-none');
+                        document.getElementById('ac-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                        alert('Sorry, we could not send your inquiry. Please try again, or reach us at ' + ACADEMY_EMAIL + ' / WhatsApp Admin 012 947 9219.');
+                        button.disabled = false;
+                        button.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Inquiry via Email';
+                    });
+            }
+
+            /* Wire up the form: record load time, intercept submit and POST it */
+            document.addEventListener('DOMContentLoaded', function () {
+                var form = document.getElementById('ac-booking-form');
+                var startField = document.getElementById('ac-form-start');
+
+                if (startField) {
+                    startField.value = Date.now();
+                }
+                if (form) {
+                    form.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        sendTrainingEmail();
+                    });
+                }
+            });
         </script>
 
         <!-- Past Training Galleries -->
