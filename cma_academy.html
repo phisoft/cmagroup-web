@@ -116,6 +116,85 @@
                 }
             }
 
+            /*** Academy Contact Bar ***/
+            .ac-contact-bar {
+                background: #f7fbff;
+                border-bottom: 1px solid rgba(0, 0, 0, .06);
+                position: relative;
+                z-index: 2;
+            }
+            .ac-contact-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                height: 100%;
+                padding: 10px 12px;
+                border-radius: 10px;
+                transition: .5s;
+            }
+            .ac-contact-item:hover {
+                background: rgba(56, 182, 255, .07);
+            }
+            .ac-contact-icon {
+                width: 52px;
+                height: 52px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                font-size: 20px;
+                box-shadow: 0 8px 20px rgba(56, 182, 255, .28);
+                transition: .5s;
+            }
+            .ac-contact-item:hover .ac-contact-icon {
+                transform: translateY(-3px);
+            }
+            .ac-contact-text {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+            .ac-contact-text small {
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: .09em;
+                text-transform: uppercase;
+                color: #6c757d;
+                margin-bottom: 2px;
+            }
+            .ac-contact-text a {
+                font-size: 15.5px;
+                font-weight: 700;
+                color: #0a2a4a;
+                text-decoration: none;
+                word-break: break-word;
+                transition: .3s;
+            }
+            .ac-contact-text a:hover {
+                color: #0a6fb8;
+                text-decoration: underline;
+            }
+            @media (max-width: 767px) {
+                .ac-contact-item {
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 16px;
+                    padding: 8px 10px;
+                }
+                .ac-contact-icon {
+                    width: 44px;
+                    height: 44px;
+                    font-size: 17px;
+                }
+                .ac-contact-text {
+                    align-items: flex-start;
+                    text-align: left;
+                }
+            }
             /*** Button styling to match cma_coworking.html ***/
             .btn.btn-primary {
                 background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
@@ -895,6 +974,47 @@
             </div>
         </div>
         <!-- Header End -->
+
+
+        <!-- Contact Info Start -->
+        <div class="container-fluid ac-contact-bar py-4">
+            <div class="container">
+                <div class="row g-4 justify-content-center text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-md-4">
+                        <div class="ac-contact-item">
+                            <div class="ac-contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="ac-contact-text">
+                                <small>Email</small>
+                                <a href="mailto:admin@cmagroup.my">admin@cmagroup.my</a>
+                                <a href="mailto:marketing@cmagroup.my">marketing@cmagroup.my</a>
+                                <a href="mailto:training@cmagroup.my">training@cmagroup.my</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="ac-contact-item">
+                            <div class="ac-contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="ac-contact-text">
+                                <small>Contact</small>
+                                <a href="tel:+6088201542">088 201542</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="ac-contact-item">
+                            <div class="ac-contact-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="ac-contact-text">
+                                <small>WhatsApp</small>
+                                <a href="https://wa.me/60129479219" target="_blank" rel="noopener">Admin 012 947 9219</a>
+                                <a href="https://wa.me/60198699219" target="_blank" rel="noopener">Erick 019 869 9219</a>
+                                <a href="https://wa.me/60198829219" target="_blank" rel="noopener">Hisyam 019 882 9219</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Info End -->
 
 
         <!-- About CMA Academy Asia Start -->
