@@ -1339,6 +1339,54 @@
                 color: #25d366;
                 font-size: 28px;
             }
+            .email-note {
+                background: rgba(13, 110, 253, .07);
+                border: 1px solid rgba(13, 110, 253, .25);
+                border-radius: 10px;
+                padding: 16px 20px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .email-note i {
+                color: var(--bs-primary);
+                font-size: 26px;
+            }
+            .cw-hp {
+                position: absolute !important;
+                left: -9999px !important;
+                width: 1px;
+                height: 1px;
+                opacity: 0;
+                pointer-events: none;
+            }
+            .cw-success {
+                text-align: center;
+                padding: 20px 10px;
+            }
+            .cw-success-icon {
+                width: 74px;
+                height: 74px;
+                border-radius: 50%;
+                margin: 0 auto 22px;
+                background: rgba(37, 211, 102, .12);
+                color: #17a34a;
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .cw-success h3 {
+                font-size: 24px;
+                font-weight: 800;
+                color: #0a2a4a;
+                margin-bottom: 14px;
+            }
+            .cw-success p {
+                font-size: 15.5px;
+                line-height: 1.8;
+                color: #55606c;
+            }
 
             /*** Feature highlight strip ***/
             .cw-feature {
@@ -2676,34 +2724,36 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-10 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="inquiry-form-card">
-                            <div class="row g-4">
+                            <form id="cw-booking-form" class="row g-4" novalidate>
+                                <input type="text" id="cw-website" name="website" class="cw-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                                <input type="hidden" id="cw-form-start" name="form_start" value="">
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="cw-name" placeholder="Name / Company">
+                                        <input type="text" class="form-control" id="cw-name" name="name_company" placeholder="Name / Company">
                                         <label for="cw-name">Name / Company *</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="tel" class="form-control" id="cw-contact" placeholder="Contact">
+                                        <input type="tel" class="form-control" id="cw-contact" name="contact" placeholder="Contact">
                                         <label for="cw-contact">Contact *</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="cw-email" placeholder="Email">
+                                        <input type="email" class="form-control" id="cw-email" name="email" placeholder="Email">
                                         <label for="cw-email">Email</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="cw-business" placeholder="Nature of Business">
+                                        <input type="text" class="form-control" id="cw-business" name="nature_of_business" placeholder="Nature of Business">
                                         <label for="cw-business">Nature of Business *</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <select class="form-select" id="cw-purpose" aria-label="Purpose for rent">
+                                        <select class="form-select" id="cw-purpose" name="purpose_for_rent" aria-label="Purpose for rent">
                                             <option value="" selected disabled>Select purpose</option>
                                             <option value="Hot Desk">Hot Desk</option>
                                             <option value="Private Office">Private Office</option>
@@ -2721,14 +2771,20 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="date" class="form-control" id="cw-date" placeholder="Date of Booking">
+                                        <input type="date" class="form-control" id="cw-date" name="date_of_booking" placeholder="Date of Booking">
                                         <label for="cw-date">Date of Booking *</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Additional notes or requirements" id="cw-notes" style="height: 120px"></textarea>
+                                        <textarea class="form-control" placeholder="Additional notes or requirements" id="cw-notes" name="notes" style="height: 120px"></textarea>
                                         <label for="cw-notes">Additional Notes / Requirements</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="email-note mb-3">
+                                        <i class="fas fa-envelope-open-text"></i>
+                                        <p class="mb-0">Send the form straight to our team by email &mdash; or forward the same details on WhatsApp.</p>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -2738,10 +2794,22 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" onclick="sendWhatsAppInquiry()">
+                                    <button type="submit" id="cw-email-btn" class="btn btn-primary w-100 py-3">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Inquiry via Email
+                                    </button>
+                                </div>
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-outline-primary w-100 py-3" onclick="sendWhatsAppInquiry()">
                                         <i class="fab fa-whatsapp me-2"></i>Send Inquiry via WhatsApp
                                     </button>
                                 </div>
+                            </form>
+                            <div id="cw-success" class="cw-success d-none">
+                                <div class="cw-success-icon"><i class="fas fa-check"></i></div>
+                                <h3>Thank You &mdash; Inquiry Received</h3>
+                                <p class="mb-3">Your booking inquiry has been sent to our coworking team. We will respond within one business day to confirm availability and discuss your booking.</p>
+                                <p class="mb-0">Need it sooner? Message <strong>Admin 012 947 9219</strong> on
+                                    <a href="https://wa.me/60129479219" target="_blank" rel="noopener">WhatsApp</a>.</p>
                             </div>
                         </div>
                     </div>
@@ -2823,34 +2891,148 @@
             }
         </script>
 
-        <!-- WhatsApp Inquiry -->
+        <!-- Booking Inquiry: email (POST) + WhatsApp -->
         <script>
-            function sendWhatsAppInquiry() {
-                var name = document.getElementById('cw-name').value.trim();
-                var contact = document.getElementById('cw-contact').value.trim();
-                var email = document.getElementById('cw-email').value.trim();
-                var business = document.getElementById('cw-business').value.trim();
-                var purpose = document.getElementById('cw-purpose').value;
-                var date = document.getElementById('cw-date').value.trim();
-                var notes = document.getElementById('cw-notes').value.trim();
+            var COWORKING_ENDPOINT = 'https://send.bah.my/o6b7gnhl';
+            var COWORKING_EMAIL = 'kkcoworkingspace@cmagroup.my';
+            var COWORKING_WA = '60129479219';
 
-                if (!name || !contact || !business || !purpose || !date) {
+            function getInquiryFields() {
+                return {
+                    name: document.getElementById('cw-name').value.trim(),
+                    contact: document.getElementById('cw-contact').value.trim(),
+                    email: document.getElementById('cw-email').value.trim(),
+                    business: document.getElementById('cw-business').value.trim(),
+                    purpose: document.getElementById('cw-purpose').value,
+                    date: document.getElementById('cw-date').value.trim(),
+                    notes: document.getElementById('cw-notes').value.trim()
+                };
+            }
+
+            function validateInquiryFields(f) {
+                if (!f.name || !f.contact || !f.business || !f.purpose || !f.date) {
                     alert('Please fill in all required fields (*) before sending.');
+                    return false;
+                }
+                return true;
+            }
+
+            function buildInquiryMessage(f) {
+                var message = 'CMA KK COWORKING SPACE - BOOKING INQUIRY\n';
+                message += '\n';
+                message += 'Name / Company: ' + f.name + '\n';
+                message += 'Contact: ' + f.contact + '\n';
+                if (f.email) {
+                    message += 'Email: ' + f.email + '\n';
+                }
+                message += 'Nature of Business: ' + f.business + '\n';
+                message += 'Purpose For Rent: ' + f.purpose + '\n';
+                message += 'Date of Booking: ' + f.date;
+                if (f.notes) {
+                    message += '\nNotes: ' + f.notes;
+                }
+                return message;
+            }
+
+            function sendWhatsAppInquiry() {
+                var fields = getInquiryFields();
+                if (!validateInquiryFields(fields)) {
                     return;
                 }
 
                 var message = '*CMA KK COWORKING SPACE - BOOKING INQUIRY*%0A';
                 message += '%0A';
-                message += '*Name / Company:* ' + encodeURIComponent(name) + '%0A';
-                message += '*Contact:* ' + encodeURIComponent(contact) + '%0A';
-                if (email) { message += '*Email:* ' + encodeURIComponent(email) + '%0A'; }
-                message += '*Nature of Business:* ' + encodeURIComponent(business) + '%0A';
-                message += '*Purpose For Rent:* ' + encodeURIComponent(purpose) + '%0A';
-                message += '*Date of Booking:* ' + encodeURIComponent(date) + '%0A';
-                if (notes) { message += '*Notes:* ' + encodeURIComponent(notes); }
+                message += '*Name / Company:* ' + encodeURIComponent(fields.name) + '%0A';
+                message += '*Contact:* ' + encodeURIComponent(fields.contact) + '%0A';
+                if (fields.email) { message += '*Email:* ' + encodeURIComponent(fields.email) + '%0A'; }
+                message += '*Nature of Business:* ' + encodeURIComponent(fields.business) + '%0A';
+                message += '*Purpose For Rent:* ' + encodeURIComponent(fields.purpose) + '%0A';
+                message += '*Date of Booking:* ' + encodeURIComponent(fields.date) + '%0A';
+                if (fields.notes) { message += '*Notes:* ' + encodeURIComponent(fields.notes); }
 
-                window.open('https://wa.me/60129479219?text=' + message, '_blank');
+                window.open('https://wa.me/' + COWORKING_WA + '?text=' + message, '_blank');
             }
+
+            /* Email route: POST the inquiry to the form endpoint */
+            function sendInquiryEmail() {
+                var form = document.getElementById('cw-booking-form');
+                var button = document.getElementById('cw-email-btn');
+
+                if (!form || !button) {
+                    return;
+                }
+
+                // Bot check: the hidden "website" field must stay empty
+                if (form.website && form.website.value !== '') {
+                    return;
+                }
+
+                // Time-to-submit check (3s minimum)
+                var start = parseInt(document.getElementById('cw-form-start').value, 10);
+                if (!isNaN(start) && Date.now() - start < 3000) {
+                    alert('Please take a moment before submitting.');
+                    return;
+                }
+
+                var fields = getInquiryFields();
+                if (!validateInquiryFields(fields)) {
+                    return;
+                }
+
+                // Prevent double submit
+                button.disabled = true;
+                button.innerHTML = '<i class="fas fa-circle-notch fa-spin me-2"></i>Sending...';
+
+                var formData = new FormData(form);
+                formData.set('name', fields.name);
+                if (fields.email) {
+                    formData.set('email', fields.email);
+                } else {
+                    formData.delete('email');
+                }
+                formData.set('subject', 'CMA KK Coworking - Booking Inquiry - ' + fields.purpose);
+                formData.set('message', buildInquiryMessage(fields));
+                formData.set('page', 'cma_coworking.html');
+
+                fetch(COWORKING_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Accept': 'application/json'
+                    },
+                    body: new URLSearchParams(formData).toString()
+                })
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error('Submission failed: ' + response.status);
+                        }
+                        form.classList.add('d-none');
+                        document.getElementById('cw-success').classList.remove('d-none');
+                        document.getElementById('cw-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                        alert('Sorry, we could not send your inquiry. Please try again, or reach us at ' + COWORKING_EMAIL + ' / WhatsApp Admin 012 947 9219.');
+                        button.disabled = false;
+                        button.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Inquiry via Email';
+                    });
+            }
+
+            /* Wire up the form: record load time, intercept submit and POST it */
+            document.addEventListener('DOMContentLoaded', function () {
+                var form = document.getElementById('cw-booking-form');
+                var startField = document.getElementById('cw-form-start');
+
+                if (startField) {
+                    startField.value = Date.now();
+                }
+                if (form) {
+                    form.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        sendInquiryEmail();
+                    });
+                }
+            });
         </script>
     </body>
 
