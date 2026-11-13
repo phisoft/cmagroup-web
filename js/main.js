@@ -2,7 +2,9 @@
     "use strict";
 
     // Load shared header & footer
-    $('#header-container').load('header.html', function () {
+    // Pages can override the header via <div id="header-container" data-header="...">
+    var headerFile = $('#header-container').data('header') || 'header.html';
+    $('#header-container').load(headerFile, function () {
         setActiveNavLink();
     });
     $('#footer-container').load('footer.html');

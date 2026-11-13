@@ -1,0 +1,196 @@
+<!-- Coworking Topbar Start -->
+<div class="container-fluid topbar cw-topbar px-0 px-lg-4 py-2 d-none d-lg-block">
+    <div class="container">
+        <div class="row gx-0 align-items-center">
+            <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                <div class="d-flex flex-wrap justify-content-center justify-content-lg-start">
+                    <div class="border-end cw-topbar-divider pe-3">
+                        <a href="tel:+6088201542" class="small"><i class="fas fa-phone-alt cw-topbar-icon me-2"></i>088 201542</a>
+                    </div>
+                    <div class="border-end cw-topbar-divider px-3">
+                        <a href="tel:+6088201542" class="small"><i class="fab fa-whatsapp cw-topbar-icon me-2"></i>012 947 9219 / 013 870 9219</a>
+                    </div>
+                    <div class="ps-3">
+                        <a href="mailto:kkcoworkingspace@cmagroup.my" class="small"><i class="fas fa-envelope cw-topbar-icon me-2"></i>kkcoworkingspace@cmagroup.my</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-flex justify-content-center justify-content-lg-end align-items-center">
+                    <a href="index.html" class="small cw-topbar-group-link">CMA & Co. <i class="fas fa-external-link-alt ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Coworking Topbar End -->
+
+<!-- Coworking Navbar Start -->
+<div class="container-fluid nav-bar cw-nav-bar px-0 px-lg-4 py-lg-0">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a href="cma_coworking.html" class="navbar-brand p-0 d-flex align-items-center">
+                <img src="assets/img/cma-working/cma-coworking-logo.png" alt="CMA KK Coworking Space logo" class="me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav mx-0 mx-lg-auto">
+                    <a href="cma_coworking.html" class="nav-item nav-link">Home</a>
+                    <a href="#upcoming-events" class="nav-item nav-link">Events</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                            <span class="dropdown-toggle">Spaces &amp; Services</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#hot-desk" class="dropdown-item">Hot Desk</a>
+                            <a href="#private-office" class="dropdown-item">Private Office</a>
+                            <a href="#training-space" class="dropdown-item">Training Space</a>
+                            <a href="#meeting-room" class="dropdown-item">Meeting Room</a>
+                            <a href="#training-open-space" class="dropdown-item">Training Open Space</a>
+                            <a href="#virtual-office" class="dropdown-item">Virtual Office</a>
+                            <a href="#interview-venue" class="dropdown-item">Interview Venue</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                            <span class="dropdown-toggle">Plans &amp; Catering</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#membership" class="dropdown-item">Membership Plans</a>
+                            <a href="#catering" class="dropdown-item">Catering Rates</a>
+                        </div>
+                    </div>
+                    <a href="#why-choose-us" class="nav-item nav-link cw-nav-wide">Why Choose Us</a>
+                    <a href="#reviews" class="nav-item nav-link cw-nav-wide">Google Reviews</a>
+                    <div class="nav-item nav-btn">
+                        <a href="#booking-inquiry" class="btn btn-primary rounded-pill py-2 px-4">Book a Tour</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Coworking Navbar End -->
+
+<!-- Coworking Header Styles -->
+<style>
+    /* Coworking topbar */
+    .cw-topbar {
+        background: linear-gradient(135deg, #0a2a4a 0%, #0561a5 100%);
+        border-bottom: 1px solid rgba(56, 182, 255, .3);
+    }
+    .cw-topbar a {
+        color: rgba(255, 255, 255, .82);
+        text-decoration: none;
+        transition: .3s;
+    }
+    .cw-topbar a:hover {
+        color: #ffffff;
+    }
+    .cw-topbar .cw-topbar-divider {
+        border-color: rgba(255, 255, 255, .25) !important;
+    }
+    .cw-topbar .cw-topbar-icon {
+        color: #7fd4ff;
+    }
+    .cw-topbar .cw-topbar-group-link {
+        font-weight: 600;
+        letter-spacing: .02em;
+    }
+
+    /* Coworking navbar */
+    .cw-nav-bar {
+        border-bottom: 1px solid rgba(56, 182, 255, .18);
+    }
+    .cw-nav-bar .navbar-light .navbar-brand img {
+        max-height: 58px;
+        width: auto;
+    }
+    .cw-nav-bar .navbar-nav .nav-item.active,
+    .cw-nav-bar .navbar-nav .nav-item.active > .nav-link,
+    .cw-nav-bar .navbar-nav .nav-item.active > .nav-link .dropdown-toggle {
+        color: var(--bs-primary);
+    }
+    .cw-nav-bar .nav-btn .btn {
+        white-space: nowrap;
+    }
+    .cw-nav-bar .navbar-nav .nav-link,
+    .cw-nav-bar .navbar-nav .dropdown-toggle {
+        white-space: nowrap;
+    }
+    /* "Why Choose Us" / "Google Reviews": top level on wide screens, grouped under "More" below 1400px */
+    .cw-nav-bar .navbar-nav .cw-nav-compact,
+    .cw-nav-bar .cw-more-lg {
+        display: none;
+    }
+    @media (min-width: 992px) and (max-width: 1399.98px) {
+        .cw-nav-bar .navbar-nav .cw-nav-wide {
+            display: none !important;
+        }
+        .cw-nav-bar .navbar-nav .cw-nav-compact {
+            display: flex !important;
+        }
+    }
+    /* Below 1200px "CMA Group" also moves into the "More" dropdown so the menu never crowds the logo/CTA */
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        .cw-nav-bar .navbar-nav .cw-nav-lg-only {
+            display: none !important;
+        }
+        .cw-nav-bar .cw-more-lg {
+            display: block;
+        }
+        .cw-nav-bar .navbar-nav .nav-item {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        .cw-nav-bar .navbar-nav .nav-link {
+            font-size: 15px;
+        }
+    }
+    @media (min-width: 992px) {
+        /* Centre the menu links in the navbar; logo and CTA pinned to the sides */
+        .cw-nav-bar .navbar {
+            position: relative;
+        }
+        .cw-nav-bar .navbar-brand {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+        .cw-nav-bar .navbar-collapse {
+            width: 100%;
+        }
+        .cw-nav-bar .navbar-nav {
+            width: 100%;
+            justify-content: center;
+        }
+        .cw-nav-bar .navbar-nav .nav-item {
+            padding-left: 11px;
+            padding-right: 11px;
+        }
+        .cw-nav-bar .navbar-nav .nav-btn {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            z-index: 2;
+        }
+    }
+    @media (max-width: 991px) {
+        .cw-nav-bar .navbar-brand img {
+            max-height: 50px;
+        }
+        .cw-nav-bar .nav-btn {
+            padding: 10px 20px 20px;
+        }
+    }
+</style>
