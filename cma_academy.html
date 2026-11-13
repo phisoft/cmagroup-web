@@ -1310,6 +1310,20 @@
             .training-note-card .note-text strong {
                 color: #0561a5;
             }
+            /* Offset in-page anchors for the academy header */
+            #about,
+            #signature-training,
+            #leadership-training,
+            #digital-marketing,
+            #bespoke-training,
+            #training-catalogue,
+            #team-building,
+            #past-trainings,
+            #testimonials,
+            #past-clients,
+            #training-inquiry {
+                scroll-margin-top: 110px;
+            }
         </style>
     </head>
 
@@ -1324,7 +1338,7 @@
         <!-- Spinner End -->
 
         <!-- Header Start -->
-        <div id="header-container"></div>
+        <div id="header-container" data-header="header-academy.html"></div>
         <!-- Header End -->
 
 
@@ -1332,7 +1346,7 @@
         <div class="container-fluid ac-page-header">
             <div class="container text-center py-5 wow fadeInDown" data-wow-delay="0.1s" style="max-width: 900px;">
                 <div class="ac-logo-box">
-                    <img src="../assets/img/cma-academy/cma-academy-logo.png" alt="CMA Academy Asia Logo">
+                    <img src="assets/img/cma-academy/cma-academy-logo.png" alt="CMA Academy Asia Logo">
                 </div>
                 <h1 class="display-4 mb-0">CMA Academy Asia</h1>
                 <p class="pb-2">(1595001-U)</p>
@@ -1402,7 +1416,7 @@
 
 
         <!-- About CMA Academy Asia Start -->
-        <div class="container-fluid py-5">
+        <div id="about" class="container-fluid py-5">
             <div class="container py-5">
                 <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.2s">
                     <div class="col-xl-10 col-xxl-8 text-center">
@@ -1541,7 +1555,7 @@
 
 
         <!-- Signature Training Start -->
-        <div class="container-fluid py-5">
+        <div id="signature-training" class="container-fluid py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 860px;">
                     <h4 class="text-primary">Signature Training #1</h4>
@@ -1695,7 +1709,7 @@
         <!-- Signature Training End -->
 
         <!-- Signature Training 2 Start -->
-        <div class="container-fluid py-5 ac-sig-divider">
+        <div id="leadership-training" class="container-fluid py-5 ac-sig-divider">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 860px;">
                     <h4 class="text-primary">Signature Training #2</h4>
@@ -1770,7 +1784,7 @@
         <!-- Signature Training 2 End -->
 
         <!-- Signature Training 3 Start -->
-        <div class="container-fluid py-5 ac-sig-divider">
+        <div id="digital-marketing" class="container-fluid py-5 ac-sig-divider">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 860px;">
                     <h4 class="text-primary">Signature Training #3</h4>
@@ -1801,7 +1815,7 @@
         <!-- Signature Training 3 End -->
 
         <!-- Bespoke Corporate Training Start -->
-        <div class="container-fluid py-5 ac-empower">
+        <div id="bespoke-training" class="container-fluid py-5 ac-empower">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 ac-bespoke-inner wow fadeInUp" data-wow-delay="0.2s">
                     <span class="ac-empower-tagline">Customizable &amp; Bespoke Corporate Training (Upon Request)</span>
@@ -2142,7 +2156,7 @@
 
 
         <!-- Team Building Start -->
-        <div class="container-fluid py-5">
+        <div id="team-building" class="container-fluid py-5">
             <div class="container py-5">
                 <div class="row justify-content-center mb-5 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="col-lg-10">
@@ -2215,7 +2229,7 @@
         <!-- Team Building End -->
 
                 <!-- Past Trainings Start -->
-        <div class="container-fluid bg-light py-5">
+        <div id="past-trainings" class="container-fluid bg-light py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Our Past Trainings</h4>
@@ -2306,7 +2320,7 @@
         <!-- Past Trainings End -->
 
         <!-- Testimonials Start -->
-        <div class="container-fluid py-5">
+        <div id="testimonials" class="container-fluid py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Testimonials</h4>
@@ -2453,7 +2467,7 @@
         <!-- Testimonials End -->
 
         <!-- Past Clients Start -->
-        <div class="container-fluid bg-light py-5">
+        <div id="past-clients" class="container-fluid bg-light py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Our Past Clients</h4>
