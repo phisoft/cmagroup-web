@@ -622,6 +622,14 @@
                     padding: 14px 16px;
                 }
             }
+            /* Offset in-page anchors for the consultancy header */
+            #about,
+            #solutions,
+            #capabilities,
+            #consultancy-booking,
+            #contact {
+                scroll-margin-top: 110px;
+            }
         </style>
     </head>
 
@@ -636,7 +644,7 @@
         <!-- Spinner End -->
 
         <!-- Header Start -->
-        <div id="header-container"></div>
+        <div id="header-container" data-header="header-consultancy.html"></div>
         <!-- Header End -->
 
         <!-- Consultancy Page Header Start -->
@@ -709,7 +717,7 @@
         <!-- Hero Band End -->
 
         <!-- Philosophy Start -->
-        <div class="container-fluid py-5">
+        <div id="about" class="container-fluid py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Why It Matters</h4>
@@ -734,7 +742,7 @@
         <!-- Philosophy End -->
 
         <!-- Solutions Start -->
-        <div class="container-fluid py-5">
+        <div id="solutions" class="container-fluid py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">What We Deliver</h4>
@@ -769,7 +777,7 @@
         <!-- Solutions End -->
 
         <!-- Core Corporate Solutions Start -->
-        <div class="cs-core container-fluid py-5">
+        <div id="capabilities" class="cs-core container-fluid py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Our Capabilities</h4>
@@ -957,7 +965,7 @@
         <!-- Booking Request End -->
 
         <!-- Future-Pacing CTA Start -->
-        <div class="cs-cta container-fluid py-5">
+        <div id="contact" class="cs-cta container-fluid py-5">
             <div class="container py-5">
                 <div class="cs-cta-inner text-center wow fadeInUp" data-wow-delay="0.2s">
                     <h4 class="mb-3">Future-Pacing</h4>
