@@ -26,7 +26,7 @@
 <!-- Academy Topbar End -->
 
 <!-- Academy Navbar Start -->
-<div class="container-fluid nav-bar ach-nav-bar px-0 px-lg-4 py-lg-0">
+<div class="container-fluid nav-bar ach-header px-0 px-lg-4">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a href="cma_academy.html" class="navbar-brand p-0 d-flex align-items-center">
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="nav-item nav-btn">
-                        <a href="#training-inquiry" class="btn btn-primary rounded-pill py-2 px-4">Enquire Now</a>
+                        <a href="#training-inquiry" class="ach-cta-btn">Enquire Now</a>
                     </div>
                 </div>
             </div>
@@ -107,87 +107,254 @@
         letter-spacing: .02em;
     }
 
-    /* Academy navbar */
-    .ach-nav-bar {
-        border-bottom: 1px solid rgba(56, 182, 255, .18);
+    /* Academy navbar (matches header-coworking.html) */
+    .ach-header {
+        --ach-nav-ink: #0B2340;
+        --ach-nav-accent: #087C83;
+        background: var(--bs-white);
+        border-bottom: 1px solid rgba(11, 35, 64, .08);
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-family: "DM Sans", sans-serif;
     }
-    .ach-nav-bar .navbar-light .navbar-brand img {
-        max-height: 66px;
+
+    .ach-header .navbar {
+        padding: 4px 0;
+    }
+
+    .ach-header .navbar .navbar-brand {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .ach-header .navbar .navbar-brand img {
+        max-height: 42px;
         width: auto;
+        display: block;
     }
-    .ach-nav-bar .navbar-nav .nav-item.active,
-    .ach-nav-bar .navbar-nav .nav-item.active > .nav-link,
-    .ach-nav-bar .navbar-nav .nav-item.active > .nav-link .dropdown-toggle {
-        color: var(--bs-primary);
+
+    .ach-header .navbar .navbar-nav {
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
     }
-    .ach-nav-bar .nav-btn .btn {
+
+    .ach-header .navbar .navbar-nav .nav-item {
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+
+    .ach-header .navbar .navbar-nav .nav-item.nav-link,
+    .ach-header .navbar .navbar-nav .nav-item > .nav-link {
+        display: inline-block;
+        padding: 10px 0;
+        margin: 0 13px;
+        color: var(--ach-nav-ink);
+        font-size: 14.5px;
+        font-weight: 600;
+        line-height: 1.2;
+        white-space: nowrap;
+        transition: color .25s;
+    }
+
+    .ach-header .navbar .navbar-nav .nav-item:hover,
+    .ach-header .navbar .navbar-nav .nav-item:hover > .nav-link,
+    .ach-header .navbar .navbar-nav .nav-item:hover > .nav-link .dropdown-toggle,
+    .ach-header .navbar .navbar-nav .nav-item.active,
+    .ach-header .navbar .navbar-nav .nav-item.active > .nav-link,
+    .ach-header .navbar .navbar-nav .nav-item.nav-link:hover,
+    .ach-header .navbar .navbar-nav .nav-item.nav-link:focus,
+    .ach-header .navbar .navbar-nav .nav-item.nav-link.active,
+    .ach-header .navbar .navbar-nav .nav-item .nav-link:hover,
+    .ach-header .navbar .navbar-nav .nav-item .nav-link:focus,
+    .ach-header .navbar .navbar-nav .nav-item .nav-link.active {
+        color: var(--ach-nav-accent);
+    }
+    /* Dropdown panels use the same type scale as the navbar */
+    .ach-header .navbar .navbar-nav .nav-item .dropdown-menu {
+        /* grow with the label text so every item shows on one line, never narrower than its toggle */
+        width: max-content;
+        min-width: 100%;
+        max-width: 360px;
+        padding: 8px;
+        border: 1px solid rgba(11, 35, 64, .08);
+        border-radius: 12px;
+    }
+
+    .ach-header .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item {
+        padding: 9px 12px;
+        border-radius: 8px;
+        color: var(--ach-nav-ink);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4;
         white-space: nowrap;
     }
-    .ach-nav-bar .navbar-nav .nav-link,
-    .ach-nav-bar .navbar-nav .dropdown-toggle {
+
+    .ach-header .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item:hover,
+    .ach-header .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item:focus {
+        background: var(--ach-nav-accent);
+        color: var(--bs-white);
+    }
+
+    /* Teal CTA */
+    .ach-header .navbar .navbar-nav .nav-btn {
+        width: auto;
+        margin: 0 0 0 10px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .ach-header .navbar .navbar-nav .nav-btn .ach-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 22px;
+        border-radius: 999px;
+        background: #087C83;
+        color: var(--bs-white);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-decoration: none;
         white-space: nowrap;
+        box-shadow: 0 8px 20px rgba(8, 124, 131, .22);
+        transition: background .25s, box-shadow .25s, transform .25s;
     }
-    /* Team Building / Testimonials / Past Clients: top level on wide screens, grouped under "More" on smaller desktops */
-    .ach-nav-bar .navbar-nav .ach-more {
-        display: none;
+
+    .ach-header .navbar .navbar-nav .nav-btn .ach-cta-btn:hover,
+    .ach-header .navbar .navbar-nav .nav-btn .ach-cta-btn:focus {
+        background: #066a70;
+        color: var(--bs-white);
+        transform: translateY(-1px);
+        box-shadow: 0 12px 26px rgba(8, 124, 131, .3);
     }
-    @media (min-width: 992px) and (max-width: 1199.98px) {
-        .ach-nav-bar .navbar-nav .ach-nav-wide {
+
+    /* Toggler */
+    .ach-header .navbar .navbar-toggler {
+        padding: 8px 14px;
+        border: 1px solid rgba(11, 35, 64, .2);
+        border-radius: 8px;
+        color: var(--ach-nav-ink);
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    .ach-header .navbar .navbar-toggler:focus {
+        box-shadow: none;
+        border-color: var(--ach-nav-accent);
+        color: var(--ach-nav-accent);
+    }
+
+    /* Team Building / Testimonials / Past Clients: top level on wide screens,
+       grouped under "More" between 992px and 1400px so the row never crowds the logo */
+    .ach-header .navbar .navbar-nav .ach-more {
+        display: none !important;
+    }
+
+    @media (min-width: 992px) and (max-width: 1399.98px) {
+        .ach-header .navbar .navbar-nav .ach-nav-wide {
             display: none !important;
         }
-        .ach-nav-bar .navbar-nav .ach-more {
+
+        .ach-header .navbar .navbar-nav .ach-more {
+            display: flex !important;
+        }
+
+        .ach-header .navbar .navbar-nav .nav-item.nav-link,
+        .ach-header .navbar .navbar-nav .nav-item > .nav-link {
+            margin: 0 9px;
+            font-size: 13.5px;
+        }
+
+        .ach-header .navbar .navbar-nav .nav-btn .ach-cta-btn {
+            padding: 11px 18px;
+            font-size: 13px;
+        }
+    }
+
+    /* Collapsed menu (tablet & mobile, same breakpoint as navbar-expand-lg) */
+    @media (max-width: 991.98px) {
+        .ach-header .navbar {
+            padding: 6px 0;
+        }
+
+        .ach-header .navbar .navbar-brand img {
+            max-height: 38px;
+        }
+
+        .ach-header .navbar .navbar-collapse {
+            margin-top: 12px;
+            padding: 8px 0 16px;
+            border-top: 1px solid rgba(11, 35, 64, .08);
+        }
+
+        .ach-header .navbar .navbar-nav {
+            width: 100%;
+            flex-direction: column;
+            align-items: stretch;
+            margin-top: 0;
+            padding-bottom: 0;
+        }
+
+        .ach-header .navbar .navbar-nav .nav-item {
             display: block;
-        }
-        .ach-nav-bar .navbar-nav .nav-item {
-            padding-left: 8px;
-            padding-right: 8px;
-        }
-        .ach-nav-bar .navbar-nav .nav-link {
-            font-size: 15px;
-        }
-    }
-    @media (min-width: 992px) {
-        /* Centre the menu links in the navbar; logo and CTA pinned to the sides */
-        .ach-nav-bar .navbar {
-            position: relative;
-        }
-        .ach-nav-bar .navbar-brand {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 2;
-        }
-        .ach-nav-bar .navbar-collapse {
-            width: 100%;
-        }
-        .ach-nav-bar .navbar-nav {
-            width: 100%;
-            justify-content: center;
-        }
-        .ach-nav-bar .navbar-nav .nav-item {
-            padding-left: 11px;
-            padding-right: 11px;
-        }
-        .ach-nav-bar .navbar-nav .nav-btn {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: auto;
-            margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: flex-end;
-            z-index: 2;
         }
-    }
-    @media (max-width: 991px) {
-        .ach-nav-bar .navbar-brand img {
-            max-height: 54px;
+
+        .ach-header .navbar .navbar-nav .nav-item.nav-link,
+        .ach-header .navbar .navbar-nav .nav-item > .nav-link {
+            display: block;
+            margin: 0;
+            padding: 13px 0;
+            font-size: 15.5px;
+            border-bottom: 1px solid rgba(11, 35, 64, .06);
         }
-        .ach-nav-bar .nav-btn {
-            padding: 10px 20px 20px;
+
+        /* In the collapsed menu every link is listed directly - no "More" */
+        .ach-header .navbar .navbar-nav .ach-nav-wide {
+            display: block !important;
+        }
+
+        .ach-header .navbar .navbar-nav .ach-more {
+            display: none !important;
+        }
+
+        .ach-header .navbar .navbar-nav .nav-item .dropdown-menu {
+            width: auto;
+            min-width: 0;
+            max-width: none;
+            margin-top: 6px;
+            padding: 4px 0 4px 12px;
+            border: 0;
+            background: transparent;
+        }
+
+        .ach-header .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item {
+            padding: 8px 0;
+            background: transparent;
+            white-space: normal;
+        }
+
+        .ach-header .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item:hover,
+        .ach-header .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item:focus {
+            background: transparent;
+            color: var(--ach-nav-accent);
+        }
+
+        .ach-header .navbar .navbar-nav .nav-btn {
+            width: auto;
+            margin: 16px 0 0;
+        }
+
+        .ach-header .navbar .navbar-nav .nav-btn .ach-cta-btn {
+            width: 100%;
+            padding: 14px 22px;
+            font-size: 15px;
         }
     }
 </style>
