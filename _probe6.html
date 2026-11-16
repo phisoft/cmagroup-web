@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html><body><pre id="out">pending</pre>
+<iframe id="a" src="cma_academy.html" style="width:1400px;height:600px;border:0"></iframe>
+<iframe id="b" src="index.html" style="width:1400px;height:600px;border:0"></iframe>
+<script>
+function scan(doc, label) {
+  var out = [];
+  var toggles = [].slice.call(doc.querySelectorAll('.dropdown-toggle'));
+  out.push({ header: label, toggles: toggles.length });
+  toggles.forEach(function (t) {
+    var menu = t.closest('.nav-item').querySelector('.dropdown-menu');
+    if (!menu) return;
+    menu.classList.add('show');
+    menu.style.display = 'block';
+    var mr = menu.getBoundingClientRect();
+    var items = [].slice.call(menu.querySelectorAll('.dropdown-item'));
+    var lineH = parseFloat(getComputedStyle(items[0] || menu).lineHeight) || 20;
+    var maxLines = 0, maxItemW = 0;
+    items.forEach(function (i) {
+      var r = i.getBoundingClientRect();
+      maxLines = Math.max(maxLines, Math.round(r.height / lineH));
+      maxItemW = Math.max(maxItemW, Math.round(r.width));
+    });
+    out.push({
+      header: label,
+      toggle: t.textContent.trim().slice(0, 28),
+      toggleW: Math.round(t.getBoundingClientRect().width),
+      menuW: Math.round(mr.width),
+      menuH: Math.round(mr.height),
+      itemLines: maxLines,
+      maxItemW: maxItemW,
+      menuRight: Math.round(mr.right),
+      viewport: doc.documentElement.clientWidth,
+      position: getComputedStyle(menu).position
+    });
+    menu.style.display = '';
+    menu.classList.remove('show');
+  });
+  return out;
+}
+var tries = 0;
+var timer = setInterval(function () {
+  tries++;
+  var a = document.getElementById('a').contentDocument;
+  var b = document.getElementById('b').contentDocument;
+  var na = a ? a.querySelectorAll('.dropdown-toggle').length : 0;
+  var nb = b ? b.querySelectorAll('.dropdown-toggle').length : 0;
+  if ((na && nb) || tries > 40) {
+    clearInterval(timer);
+    var res = [{tries: tries, na: na, nb: nb}];
+    try { res = res.concat(scan(a, 'ach')); } catch (e) { res.push({err: 'a ' + e}); }
+    try { res = res.concat(scan(b, 'cw')); } catch (e) { res.push({err: 'b ' + e}); }
+    document.getElementById('out').textContent = JSON.stringify(res, null, 2);
+  }
+}, 250);
+</script></body></html>
