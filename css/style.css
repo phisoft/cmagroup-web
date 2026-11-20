@@ -1242,7 +1242,7 @@
     grid-template-columns: 55% 45%;
     grid-template-areas: "copy media";
     min-height: clamp(600px, 75vh, 800px);
-    background: #052F59;
+    background: #0B2340;
     overflow: hidden;
 }
 
