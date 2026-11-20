@@ -30,89 +30,329 @@
         <link href="css/style.css" rel="stylesheet">
 
         <style>
-            /*** Academy Page Header ***/
-            .ac-page-header {
-                background: linear-gradient(135deg, #0a2a4a 0%, #0561a5 100%);
-                border-bottom: 1px solid rgba(56, 182, 255, .3);
-                position: relative;
-                overflow: hidden;
+            /*** Academy Welcome Hero (copied from cma_coworking.html) ***/
+            .cw-welcome-hero {
+                --cw-navy: #0B2340;
+                --cw-teal: #087C83;
+                --cw-content-left: 24px;
+                background: var(--cw-navy);
             }
-            .ac-page-header::before {
-                content: '';
-                position: absolute;
-                top: -80px;
-                right: -80px;
-                width: 260px;
-                height: 260px;
-                border-radius: 50%;
-                background: rgba(56, 182, 255, .08);
+
+            .cw-welcome-panel {
+                display: grid;
+                grid-template-columns: minmax(0, 55%) minmax(0, 45%);
+                min-height: clamp(620px, 78vh, 800px);
             }
-            .ac-page-header::after {
-                content: '';
-                position: absolute;
-                bottom: -100px;
-                left: -100px;
-                width: 300px;
-                height: 300px;
-                border-radius: 50%;
-                background: rgba(56, 182, 255, .05);
+
+            @media (min-width: 576px) {
+                .cw-welcome-hero {
+                    --cw-content-left: calc((100vw - 540px) / 2 + 24px);
+                }
             }
-            .ac-logo-box {
-                display: inline-block;
-                background: #ffffff;
-                border-radius: 20px;
-                padding: 24px 44px;
-                box-shadow: 0 15px 40px rgba(56, 182, 255, .18);
-                border: 1px solid rgba(56, 182, 255, .2);
-                margin-bottom: 24px;
-                position: relative;
-                z-index: 1;
-                transition: .5s;
+
+            @media (min-width: 768px) {
+                .cw-welcome-hero {
+                    --cw-content-left: calc((100vw - 720px) / 2 + 24px);
+                }
             }
-            .ac-logo-box:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 20px 50px rgba(56, 182, 255, .28);
-                border-color: #38b6ff;
+
+            @media (min-width: 992px) {
+                .cw-welcome-hero {
+                    --cw-content-left: calc((100vw - 960px) / 2 + 24px);
+                }
             }
-            .ac-logo-box img {
-                max-height: 90px;
-                width: auto;
-                object-fit: contain;
-                display: block;
+
+            @media (min-width: 1200px) {
+                .cw-welcome-hero {
+                    --cw-content-left: calc((100vw - 1140px) / 2 + 24px);
+                }
             }
-            .ac-page-header h1 {
-                color: var(--bs-white);
-                font-weight: 800;
-                position: relative;
-                z-index: 1;
-                margin-bottom: 12px;
+
+            @media (min-width: 1400px) {
+                .cw-welcome-hero {
+                    --cw-content-left: calc((100vw - 1320px) / 2 + 24px);
+                }
             }
-            .ac-header-underline {
-                width: 70px;
-                height: 4px;
-                border-radius: 4px;
-                background: linear-gradient(90deg, #38b6ff, #7fd4ff);
-                margin: 0 auto 16px;
-                position: relative;
-                z-index: 1;
+
+            .cw-welcome-panel > * {
+                min-width: 0;
             }
-            .ac-page-header p {
-                color: rgba(255, 255, 255, .82);
-                font-size: 16.5px;
-                font-weight: 600;
-                position: relative;
-                z-index: 1;
+
+            .cw-welcome-copy {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 64px 56px 64px var(--cw-content-left);
+            }
+
+            .cw-welcome-location {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin: 0 0 20px;
+                color: #7FD4D9;
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: .14em;
+                text-transform: uppercase;
+            }
+
+            .cw-welcome-location i {
+                font-size: 14px;
+            }
+
+            .cw-welcome-copy h1 {
                 margin: 0;
+                max-width: 620px;
+                color: var(--bs-white);
+                font-size: clamp(34px, 3.6vw, 52px);
+                font-weight: 800;
+                line-height: 1.12;
+                letter-spacing: -.02em;
             }
-            @media (max-width: 575px) {
-                .ac-logo-box {
-                    padding: 18px 28px;
+
+            .cw-welcome-reg {
+                margin: 12px 0 0;
+                color: rgba(255, 255, 255, .62);
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: .04em;
+            }
+
+            .cw-welcome-copy p {
+                margin: 20px 0 0;
+                max-width: 540px;
+                color: rgba(255, 255, 255, .8);
+                font-size: 15.5px;
+                line-height: 1.75;
+            }
+
+            .cw-welcome-copy .cw-welcome-lead {
+                margin-top: 26px;
+            }
+
+            /* Hero image (served as the column background) */
+            .cw-welcome-media {
+                position: relative;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-end;
+                padding: 32px;
+                background-image: url("assets/img/cma-academy/header.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .cw-welcome-media::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(90deg, rgba(11, 35, 64, .35) 0%, rgba(11, 35, 64, 0) 45%);
+                pointer-events: none;
+            }
+
+            /*** Programme Selection Card ***/
+            .cw-workspace-card {
+                position: relative;
+                z-index: 1;
+                width: min(340px, 100%);
+                min-inline-size: 0;
+                margin: 0;
+                padding: 22px;
+                background: var(--bs-white);
+                border: 1px solid rgba(11, 35, 64, .08);
+                border-radius: 16px;
+                box-shadow: 0 20px 45px rgba(11, 35, 64, .22);
+            }
+
+            .cw-workspace-card legend {
+                display: block;
+                width: 100%;
+                padding: 0;
+                margin: 0 0 14px;
+                color: #0B2340;
+                font-size: 17px;
+                font-weight: 800;
+                line-height: 1.3;
+            }
+
+            .cw-workspace-options {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .cw-workspace-option {
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin: 0;
+                padding: 11px 13px;
+                background: var(--bs-white);
+                border: 1px solid #DFE5EC;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: background .2s, border-color .2s, box-shadow .2s;
+            }
+
+            .cw-workspace-option input {
+                flex-shrink: 0;
+                width: 15px;
+                height: 15px;
+                margin: 0;
+                accent-color: #087C83;
+                cursor: pointer;
+            }
+
+            .cw-workspace-text {
+                color: #0B2340;
+                font-size: 13.5px;
+                font-weight: 600;
+                line-height: 1.4;
+                transition: color .2s;
+            }
+
+            .cw-workspace-option:hover {
+                border-color: #087C83;
+                background: #F2FAFA;
+            }
+
+            .cw-workspace-option.is-selected {
+                background: #087C83;
+                border-color: #087C83;
+                box-shadow: 0 6px 16px rgba(8, 124, 131, .25);
+            }
+
+            .cw-workspace-option.is-selected .cw-workspace-text {
+                color: var(--bs-white);
+            }
+
+            .cw-workspace-option.is-selected input {
+                accent-color: var(--bs-white);
+            }
+
+            .cw-workspace-option:focus-within {
+                outline: 2px solid #0B2340;
+                outline-offset: 2px;
+            }
+
+            .cw-workspace-cta {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                margin-top: 12px;
+                padding: 11px 14px;
+                border-radius: 10px;
+                background: #0B2340;
+                color: var(--bs-white);
+                font-size: 13.5px;
+                font-weight: 700;
+                text-decoration: none;
+                transition: background .2s, transform .2s;
+            }
+
+            .cw-workspace-cta:hover {
+                background: #087C83;
+                color: var(--bs-white);
+                transform: translateY(-1px);
+            }
+
+            /*** Academy Benefit Bar ***/
+            .cw-benefit-bar {
+                background: #087C83;
+                color: var(--bs-white);
+            }
+
+            .cw-benefit-row {
+                display: grid;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 18px 28px;
+                padding: 22px 0;
+            }
+
+            .cw-benefit-item {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-size: 14.5px;
+                font-weight: 600;
+                line-height: 1.35;
+            }
+
+            .cw-benefit-item i {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, .14);
+                font-size: 17px;
+            }
+
+            @media (max-width: 1199.98px) {
+                .cw-welcome-panel {
+                    grid-template-columns: minmax(0, 1fr);
+                    min-height: 0;
                 }
-                .ac-logo-box img {
-                    max-height: 70px;
+                .cw-welcome-copy {
+                    padding: 56px var(--cw-content-left) 48px;
                 }
-                .ac-page-header p {
+                .cw-welcome-copy p {
+                    max-width: 680px;
+                }
+                .cw-welcome-media {
+                    min-height: 520px;
+                    padding: 28px;
+                }
+            }
+
+            @media (max-width: 991.98px) {
+                .cw-benefit-row {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    gap: 16px 20px;
+                }
+            }
+
+            @media (max-width: 575.98px) {
+                .cw-welcome-copy {
+                    padding: 40px 20px 36px;
+                }
+                .cw-welcome-copy h1 {
+                    font-size: 30px;
+                }
+                .cw-welcome-copy p {
                     font-size: 15px;
+                }
+                .cw-welcome-media {
+                    min-height: 480px;
+                    padding: 16px;
+                }
+                .cw-workspace-card {
+                    width: 100%;
+                    padding: 18px;
+                }
+                .cw-workspace-card legend {
+                    font-size: 16px;
+                }
+                .cw-benefit-row {
+                    gap: 14px;
+                    padding: 18px 0;
+                }
+                .cw-benefit-item {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 8px;
+                    font-size: 12.5px;
+                }
+                .cw-benefit-item i {
+                    width: 34px;
+                    height: 34px;
+                    font-size: 14px;
                 }
             }
 
@@ -1342,19 +1582,65 @@
         <!-- Header End -->
 
 
-        <!-- Header Start -->
-        <div class="container-fluid ac-page-header">
-            <div class="container text-center py-5 wow fadeInDown" data-wow-delay="0.1s" style="max-width: 900px;">
-                <div class="ac-logo-box">
-                    <img src="assets/img/cma-academy/cma-academy-logo.png" alt="CMA Academy Asia Logo">
+        <!-- Hero Start -->
+        <section class="cw-welcome-hero" aria-labelledby="ac-welcome-heading">
+            <div class="cw-welcome-panel">
+                <div class="cw-welcome-copy">
+                    <p class="cw-welcome-location"><i class="fas fa-map-marker-alt" aria-hidden="true" style="color: #1F7E8D;"></i>Kota Kinabalu, Sabah</p>
+                    <h1 id="ac-welcome-heading">Your Skills. Your Team.<br>Build a Smarter<br>Workforce.</h1>
+                    <p class="cw-welcome-lead">Welcome to CMA Academy. We build training programs to help you upgrade your team skills and remove the knowledge gaps slowing your business down.</p>
+                    <p>Whether you are a business owner, a manager, or a growing professional, we give you practical lessons you apply on day one. Learn modern accounting, HR management, digital tools, and business strategy without confusing theory or wasted time.</p>
                 </div>
-                <h1 class="display-4 mb-0">CMA Academy Asia</h1>
-                <p class="pb-2">(1595001-U)</p>
-                <div class="ac-header-underline"></div>
-                <p>Training & Development<br></p>
+                <div class="cw-welcome-media">
+                    <fieldset class="cw-workspace-card">
+                        <legend>Choose Your Learning Goal</legend>
+                        <div class="cw-workspace-options">
+                            <label class="cw-workspace-option is-selected">
+                                <input type="radio" name="cw-workspace-choice" value="accounting-finance-tax" data-purpose="Train my team on accounting and tax basics" checked>
+                                <span class="cw-workspace-text">Train my team on accounting and tax basics.</span>
+                            </label>
+                            <label class="cw-workspace-option">
+                                <input type="radio" name="cw-workspace-choice" value="leadership" data-purpose="Master digital tools and AI for daily work">
+                                <span class="cw-workspace-text">Master digital tools and AI for daily work.</span>
+                            </label>
+                            <label class="cw-workspace-option">
+                                <input type="radio" name="cw-workspace-choice" value="digital-marketing" data-purpose="Improve our HR and payroll management skills">
+                                <span class="cw-workspace-text">Improve our HR and payroll management skills.</span>
+                            </label>
+                            <label class="cw-workspace-option">
+                                <input type="radio" name="cw-workspace-choice" value="bespoke" data-purpose="Build leadership and financial strategy skills">
+                                <span class="cw-workspace-text">Build leadership and financial strategy skills.</span>
+                            </label>
+                        </div>
+                        <a href="#training-inquiry" class="cw-workspace-cta">Enquire About This Programme <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </fieldset>
+                </div>
             </div>
-        </div>
-        <!-- Header End -->
+
+            <div class="cw-benefit-bar">
+                <div class="container">
+                    <div class="cw-benefit-row">
+                        <div class="cw-benefit-item">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            <span>100% HRDCorp Claimable</span>
+                        </div>
+                        <div class="cw-benefit-item">
+                            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                            <span>Hands-On, Gamified Learning</span>
+                        </div>
+                        <div class="cw-benefit-item">
+                            <i class="fas fa-user-tie" aria-hidden="true"></i>
+                            <span>Industry Practitioner Trainers</span>
+                        </div>
+                        <div class="cw-benefit-item">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                            <span>Bespoke In-House Programmes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Hero End -->
 
         <!-- Contact Info Start -->
         <div class="container-fluid ac-contact-bar py-4">
@@ -2817,6 +3103,35 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <!-- Hero Programme Selector -->
+        <script>
+            $(document).ready(function () {
+                var $programmeOptions = $('.cw-workspace-option');
+                var $topicField = $('#wa-topic');
+                var autoTopic = '';
+
+                function syncProgrammeTopic() {
+                    if (!$topicField.length) {
+                        return;
+                    }
+                    var programme = $programmeOptions.filter('.is-selected').find('input').data('purpose');
+                    var current = $topicField.val();
+                    // Never overwrite a topic the visitor typed themselves
+                    if (!programme || (current !== '' && current !== autoTopic)) {
+                        return;
+                    }
+                    $topicField.val(programme);
+                    autoTopic = programme;
+                }
+
+                $programmeOptions.find('input').on('change', function () {
+                    $programmeOptions.removeClass('is-selected');
+                    $(this).closest('.cw-workspace-option').addClass('is-selected');
+                    syncProgrammeTopic();
+                });
+            });
+        </script>
 
         <!-- Testimonial Scroll -->
         <script>
