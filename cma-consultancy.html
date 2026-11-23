@@ -196,7 +196,9 @@
             @media (max-width: 767px) {
                 .cs-contact-item {
                     flex-direction: row;
-                    justify-content: center;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 100%;
                     gap: 16px;
                     padding: 8px 10px;
                 }
@@ -666,21 +668,25 @@
                         <div class="hero-goal-options">
                             <label class="hero-goal-option">
                                 <input type="radio" name="hero-business-goal" value="profits" checked>
-                                <span class="hero-goal-text">Improve our business finances and cash flow.</span>
+                                <span class="hero-goal-text">Give our employees smart, cashless medical coverage.</span>
                             </label>
                             <label class="hero-goal-option">
                                 <input type="radio" name="hero-business-goal" value="hr-payroll">
-                                <span class="hero-goal-text">Streamline our daily operations and team workflows.</span>
+                                <span class="hero-goal-text">Protect our team and their families with life and accident cover.</span>
                             </label>
                             <label class="hero-goal-option">
                                 <input type="radio" name="hero-business-goal" value="digitalise">
-                                <span class="hero-goal-text">Develop a clear financial roadmap for business growth.</span>
+                                <span class="hero-goal-text">Safeguard our business against losing a key person or partner.</span>
                             </label>
                             <label class="hero-goal-option">
                                 <input type="radio" name="hero-business-goal" value="guidance">
-                                <span class="hero-goal-text">Modernise our accounting, HR, and business systems.</span>
+                                <span class="hero-goal-text">Automate our employee benefits so HR stops chasing paperwork.</span>
                             </label>
                         </div>
+                        <p class="hero-goal-hint">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            Pick a goal and we'll continue the conversation on WhatsApp.
+                        </p>
                     </fieldset>
                 </div>
             </div>
@@ -1053,6 +1059,57 @@
                     select.classList.remove('border-primary');
                 }, 2500);
             }
+        </script>
+
+        <!-- Hero goal picker -> send the chosen sentence to WhatsApp -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var goalInputs = document.querySelectorAll('input[name="hero-business-goal"]');
+                if (!goalInputs.length) {
+                    return;
+                }
+
+                var lastOpened = 0;
+
+                function sendGoalToWhatsApp(input) {
+                    // Debounce: a label click can bubble through the input more than once
+                    var now = Date.now();
+                    if (now - lastOpened < 400) {
+                        return;
+                    }
+                    lastOpened = now;
+
+                    var option = input.closest('.hero-goal-option');
+                    var textEl = option ? option.querySelector('.hero-goal-text') : null;
+                    var goal = textEl ? textEl.textContent.trim() : input.value;
+                    if (!goal) {
+                        return;
+                    }
+
+                    // The legend already says "We want to...", so sentence-case the goal.
+                    var sentence = 'We want to ' + goal.charAt(0).toLowerCase() + goal.slice(1);
+
+                    var number = '60129479219';
+                    if (typeof CONSULTANCY_WA === 'string' && CONSULTANCY_WA) {
+                        number = CONSULTANCY_WA;
+                    }
+
+                    var message = 'Hi CMA Consultancy,\n\n';
+                    message += '"' + sentence + '"\n\n';
+                    message += 'I\'d like to discuss this with your team.';
+                    message += '\n\n(Selected on ' + window.location.href + ')';
+
+                    window.open('https://wa.me/' + number + '?text=' + encodeURIComponent(message), '_blank', 'noopener');
+                }
+
+                goalInputs.forEach(function (input) {
+                    // Click covers mouse, touch, and Space on a focused option; arrow-key
+                    // navigation only changes selection without opening WhatsApp.
+                    input.addEventListener('click', function () {
+                        sendGoalToWhatsApp(input);
+                    });
+                });
+            });
         </script>
 
         <!-- Booking Request -->
