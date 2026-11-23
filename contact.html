@@ -29,6 +29,163 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+        <!-- Contact Page Stylesheet -->
+        <style>
+            /*** Contact Page Start ***/
+            .ct-section {
+                position: relative;
+                overflow: hidden;
+            }
+            .ct-section::before {
+                content: "";
+                position: absolute;
+                top: -180px;
+                right: -160px;
+                width: 460px;
+                height: 460px;
+                background: radial-gradient(circle, rgba(56, 182, 255, .16) 0%, rgba(56, 182, 255, 0) 70%);
+                pointer-events: none;
+            }
+            .ct-section .container {
+                position: relative;
+                z-index: 1;
+            }
+            .ct-card {
+                height: 100%;
+                background: var(--bs-white);
+                border: 1px solid rgba(11, 35, 64, .07);
+                border-radius: 20px;
+                padding: 40px;
+                box-shadow: 0 18px 45px rgba(11, 35, 64, .08);
+            }
+            .ct-brand img {
+                width: 150px;
+                height: auto;
+            }
+            .ct-brand p {
+                max-width: 340px;
+                color: #6b7c93;
+                font-size: 14px;
+                line-height: 1.7;
+            }
+            .ct-info-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 16px;
+                padding: 16px;
+                border-radius: 14px;
+                color: inherit;
+                text-decoration: none;
+                transition: background-color .25s ease, transform .25s ease;
+            }
+            a.ct-info-item:hover {
+                background: rgba(56, 182, 255, .1);
+                transform: translateX(3px);
+            }
+            .ct-info-icon {
+                flex: 0 0 auto;
+                width: 46px;
+                height: 46px;
+                display: grid;
+                place-items: center;
+                border-radius: 12px;
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+                font-size: 16px;
+            }
+            .ct-info-title {
+                display: block;
+                margin-bottom: 2px;
+                font-weight: 700;
+                color: #0a2a4a;
+            }
+            .ct-info-text {
+                display: block;
+                font-size: 14px;
+                line-height: 1.7;
+                color: #5b6b7f;
+            }
+            .ct-form .form-control {
+                background: #f5f9fd;
+                border: 1px solid rgba(11, 35, 64, .08);
+                border-radius: 12px;
+            }
+            .ct-form .form-control:focus {
+                background: var(--bs-white);
+                border-color: #38b6ff;
+                box-shadow: 0 0 0 .2rem rgba(56, 182, 255, .18);
+            }
+            .ct-form textarea.form-control {
+                min-height: 130px;
+            }
+            .ct-form-note {
+                font-size: 13px;
+                color: #6b7c93;
+            }
+            /* Honeypot field: hidden from humans, tempting to bots */
+            .ct-hp {
+                position: absolute !important;
+                left: -9999px !important;
+                width: 1px;
+                height: 1px;
+                opacity: 0;
+                pointer-events: none;
+            }
+            .ct-success {
+                text-align: center;
+                padding: 20px 10px;
+            }
+            .ct-success-icon {
+                width: 74px;
+                height: 74px;
+                border-radius: 50%;
+                margin: 0 auto 22px;
+                background: rgba(37, 211, 102, .12);
+                color: #17a34a;
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .ct-success h3 {
+                font-size: 24px;
+                font-weight: 800;
+                color: #0a2a4a;
+                margin-bottom: 14px;
+            }
+            .ct-success p {
+                font-size: 15.5px;
+                line-height: 1.8;
+                color: #55606c;
+            }
+            .ct-map {
+                background: #eaf1f8;
+                border: 1px solid rgba(11, 35, 64, .07);
+                border-radius: 20px;
+                box-shadow: 0 18px 45px rgba(11, 35, 64, .08);
+                overflow: hidden;
+            }
+            .ct-map iframe {
+                display: block;
+                width: 100%;
+                height: 420px;
+                border: 0;
+            }
+            @media (max-width: 575.98px) {
+                .ct-card {
+                    padding: 26px;
+                    border-radius: 16px;
+                }
+                .ct-map {
+                    border-radius: 16px;
+                }
+                .ct-map iframe {
+                    height: 300px;
+                }
+            }
+            /*** Contact Page End ***/
+        </style>
     </head>
 
     <body>
@@ -46,7 +203,7 @@
         <!-- Header End -->
 
 
-        <!-- Header Start -->
+        <!-- Breadcrumb Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contact Us</h4>
@@ -57,125 +214,112 @@
                 </ol>    
             </div>
         </div>
-        <!-- Header End -->
+        <!-- Breadcrumb End -->
 
 
         <!-- Contact Start -->
-        <div class="container-fluid contact bg-light py-5">
+        <div class="container-fluid bg-light ct-section py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Contact Us</h4>
                     <h1 class="display-4 mb-4">Get In Touch With Us</h1>
                     <p class="mb-0">We'd love to hear from you. Reach out to our team for any inquiries about our accounting, business advisory, training, or coworking services.</p>
                 </div>
-                <div class="row g-5">
-                    <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="contact-img d-flex justify-content-center" >
-                            <div class="contact-img-inner">
-                                <img src="../assets/img/cma-co/logo.png" class="img-fluid w-100" alt="CMA & Co. Logo" style="max-width: 400px;">
+                <div class="row g-4 g-xl-5">
+                    <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="ct-card">
+                            <div class="ct-brand mb-4">
+                                <img src="assets/img/cma-co/logo.png" alt="CMA &amp; Co. logo">
+                                <p class="mb-0 mt-3">Accounting, business advisory, training and coworking services from our office in Kota Kinabalu, Sabah.</p>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <a class="ct-info-item" href="https://www.google.com/maps/search/?api=1&amp;query=Kota+Kinabalu+Times+Square,+Jalan+Coastal,+88000+Kota+Kinabalu,+Sabah" target="_blank" rel="noopener">
+                                    <span class="ct-info-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></span>
+                                    <span>
+                                        <span class="ct-info-title">Visit Us</span>
+                                        <span class="ct-info-text">CMA Group Sdn. Bhd, Unit No. P1/L/69/6 &amp; L70/6, Level 6, Block L, KK Times Square Office, Signature Office, Off Coastal Highway, Kota Kinabalu, Sabah, MY</span>
+                                    </span>
+                                </a>
+                                <a class="ct-info-item" href="mailto:kkcmaconsultancy@gmail.com">
+                                    <span class="ct-info-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                                    <span>
+                                        <span class="ct-info-title">Mail Us</span>
+                                        <span class="ct-info-text">kkcmaconsultancy@gmail.com</span>
+                                    </span>
+                                </a>
+                                <a class="ct-info-item" href="tel:+60129479219">
+                                    <span class="ct-info-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></span>
+                                    <span>
+                                        <span class="ct-info-title">Call Us</span>
+                                        <span class="ct-info-text">+6012 947 9219<br>+6016 878 9219</span>
+                                    </span>
+                                </a>
+                                <a class="ct-info-item" href="https://www.instagram.com/cmaandco.my/" target="_blank" rel="noopener">
+                                    <span class="ct-info-icon"><i class="fab fa-instagram" aria-hidden="true"></i></span>
+                                    <span>
+                                        <span class="ct-info-title">Instagram</span>
+                                        <span class="ct-info-text">@cmaandco.my</span>
+                                    </span>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
-                        <div>
-                            <h4 class="lh-base mb-4">Send us a message and we will get back to you as soon as possible.</h4>
-                            <form>
-                                <div class="row g-3">
-                                    <div class="col-lg-12 col-xl-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control border-0" id="name" placeholder="Your Name">
-                                            <label for="name">Your Name</label>
-                                        </div>
+                    <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="ct-card">
+                            <h4 class="mb-2">Send us a message</h4>
+                            <p class="text-muted mb-4">Tell us a little about what you need and we will get back to you as soon as possible.</p>
+                            <form id="ct-contact-form" class="ct-form row g-3" novalidate>
+                                <input type="text" id="ct-website" name="website" class="ct-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                                <input type="hidden" id="ct-form-start" name="form_start" value="">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="ct-name" name="name" placeholder="Your Name" autocomplete="name" required>
+                                        <label for="ct-name">Your Name</label>
                                     </div>
-                                    <div class="col-lg-12 col-xl-6">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control border-0" id="email" placeholder="Your Email">
-                                            <label for="email">Your Email</label>
-                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="ct-email" name="email" placeholder="Your Email" autocomplete="email" required>
+                                        <label for="ct-email">Your Email</label>
                                     </div>
-                                    <div class="col-lg-12 col-xl-6">
-                                        <div class="form-floating">
-                                            <input type="phone" class="form-control border-0" id="phone" placeholder="Phone">
-                                            <label for="phone">Your Phone</label>
-                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="ct-phone" name="phone" placeholder="Your Phone" autocomplete="tel">
+                                        <label for="ct-phone">Your Phone</label>
                                     </div>
-                                    <div class="col-lg-12 col-xl-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control border-0" id="project" placeholder="Subject">
-                                            <label for="project">Subject</label>
-                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="ct-subject" name="subject" placeholder="Subject">
+                                        <label for="ct-subject">Subject</label>
                                     </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 120px"></textarea>
-                                            <label for="message">Message</label>
-                                        </div>
-
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="ct-message" name="message" placeholder="Leave a message here" required></textarea>
+                                        <label for="ct-message">Message</label>
                                     </div>
-                                    <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3">Send Message</button>
-                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" id="ct-submit-btn" class="btn btn-primary rounded-pill w-100 py-3">Send Message <i class="fas fa-paper-plane ms-2" aria-hidden="true"></i></button>
+                                    <p class="ct-form-note text-center mt-3 mb-0" id="ct-form-status" role="status" aria-live="polite">Prefer email? Write to <a href="mailto:kkcmaconsultancy@gmail.com" class="text-decoration-none">kkcmaconsultancy@gmail.com</a>.</p>
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div>
-                            <div class="row g-4">
-                                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="contact-add-item">
-                                        <div class="contact-icon text-primary mb-4">
-                                            <i class="fas fa-map-marker-alt fa-2x"></i>
-                                        </div>
-                                        <div>
-                                            <h4>Address</h4>
-                                            <p class="mb-0">CMA Group Sdn. Bhd, Unit No. P1/L/69/6 & L70/6, Level 6, Block L, KK Times Square Office, Signature Office, Off Coastal Highway, Kota Kinabalu, Sabah, MY</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="contact-add-item">
-                                        <div class="contact-icon text-primary mb-4">
-                                            <i class="fas fa-envelope fa-2x"></i>
-                                        </div>
-                                        <div>
-                                            <h4>Mail Us</h4>
-                                            <p class="mb-0">kkcmaconsultancy@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
-                                    <div class="contact-add-item">
-                                        <div class="contact-icon text-primary mb-4">
-                                            <i class="fa fa-phone-alt fa-2x"></i>
-                                        </div>
-                                        <div>
-                                            <h4>Call Us</h4>
-                                            <p class="mb-0">+6012 947 9219<br>+6016 878 9219</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.8s">
-                                    <div class="contact-add-item">
-                                        <div class="contact-icon text-primary mb-4">
-                                            <i class="fab fa-instagram fa-2x"></i>
-                                        </div>
-                                        <div>
-                                            <h4>Instagram</h4>
-                                            <p class="mb-0">@cmaandco.my</p>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div id="ct-success" class="ct-success d-none" role="status" aria-live="polite">
+                                <div class="ct-success-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
+                                <h3>Thank You &mdash; Message Sent</h3>
+                                <p class="mb-0">Your message has been sent to <strong>kkcmaconsultancy@gmail.com</strong>.<br>Our team will get back to you as soon as possible.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="rounded">
-                            <iframe class="rounded w-100" 
-                            style="height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.8621362594017!2d116.0653406!3d5.9823898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x323b5e25b2f7a1d1%3A0x6b9e6d6ed329a1b1!2sKota%20Kinabalu%20Times%20Square%2C%20Jalan%20Coastal%2C%2088000%20Kota%20Kinabalu%2C%20Sabah!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" 
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
+                </div>
+                <div class="ct-map wow fadeInUp mt-4 mt-xl-5" data-wow-delay="0.2s">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.8621362594017!2d116.0653406!3d5.9823898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x323b5e25b2f7a1d1%3A0x6b9e6d6ed329a1b1!2sKota%20Kinabalu%20Times%20Square%2C%20Jalan%20Coastal%2C%2088000%20Kota%20Kinabalu%2C%20Sabah!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy"
+                        title="CMA Group office location on Google Maps"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -204,6 +348,136 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <!-- Contact Form: POST to email endpoint -->
+        <script>
+            var CONTACT_ENDPOINT = 'https://send.bah.my/acve9dmc';
+            var CONTACT_EMAIL = 'kkcmaconsultancy@gmail.com';
+
+            // o6b7gnhl = rosclaritha@gmail.com
+            // myt9jppj = corporatesolutions@cmagroup.my
+            // u1po3n3f = kkcoworkingspace@cmagroup.my
+            // 9ayh2rgf = admin@cmagroup.my
+            // acve9dmc = kkcmaconsultancy@gmail.com
+
+            function getContactFields() {
+                return {
+                    name: document.getElementById('ct-name').value.trim(),
+                    email: document.getElementById('ct-email').value.trim(),
+                    phone: document.getElementById('ct-phone').value.trim(),
+                    subject: document.getElementById('ct-subject').value.trim(),
+                    message: document.getElementById('ct-message').value.trim()
+                };
+            }
+
+            function validateContactFields(f) {
+                if (!f.name || !f.email || !f.message) {
+                    alert('Please fill in your name, email and message before sending.');
+                    return false;
+                }
+                return true;
+            }
+
+            function buildContactMessage(f) {
+                var message = 'CMA GROUP - WEBSITE ENQUIRY\n';
+                message += '\n';
+                message += 'Name: ' + f.name + '\n';
+                message += 'Email: ' + f.email + '\n';
+                if (f.phone) {
+                    message += 'Phone: ' + f.phone + '\n';
+                }
+                if (f.subject) {
+                    message += 'Subject: ' + f.subject + '\n';
+                }
+                message += '\nMessage:\n' + f.message;
+                return message;
+            }
+
+            /* Email route: POST the enquiry to the form endpoint */
+            function sendContactEmail() {
+                var form = document.getElementById('ct-contact-form');
+                var button = document.getElementById('ct-submit-btn');
+
+                if (!form || !button) {
+                    return;
+                }
+
+                // Bot check: the hidden "website" field must stay empty
+                if (form.website && form.website.value !== '') {
+                    return;
+                }
+
+                // Time-to-submit check (3s minimum)
+                var start = parseInt(document.getElementById('ct-form-start').value, 10);
+                if (!isNaN(start) && Date.now() - start < 3000) {
+                    alert('Please take a moment before submitting.');
+                    return;
+                }
+
+                var fields = getContactFields();
+                form.classList.add('was-validated');
+                if (!validateContactFields(fields)) {
+                    return;
+                }
+
+                // Prevent double submit
+                button.disabled = true;
+                button.innerHTML = '<i class="fas fa-circle-notch fa-spin me-2"></i>Sending...';
+
+                var formData = new FormData(form);
+                formData.delete('website');
+                formData.delete('form_start');
+                formData.set('name', fields.name);
+                formData.set('email', fields.email);
+                if (fields.phone) {
+                    formData.set('phone', fields.phone);
+                } else {
+                    formData.delete('phone');
+                }
+                formData.set('subject', 'CMA & Co Website Enquiry - ' + (fields.subject || 'General Enquiry'));
+                formData.set('message', buildContactMessage(fields));
+                formData.set('page', 'contact.html');
+
+                fetch(CONTACT_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Accept': 'application/json'
+                    },
+                    body: new URLSearchParams(formData).toString()
+                })
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error('Submission failed: ' + response.status);
+                        }
+                        form.classList.add('d-none');
+                        document.getElementById('ct-success').classList.remove('d-none');
+                        document.getElementById('ct-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                        alert('Sorry, we could not send your message. Please try again, or reach us at ' + CONTACT_EMAIL + ' / WhatsApp Admin 012 947 9219.');
+                        button.disabled = false;
+                        button.innerHTML = 'Send Message <i class="fas fa-paper-plane ms-2"></i>';
+                    });
+            }
+
+            /* Wire up the form: record load time, intercept submit and POST it */
+            document.addEventListener('DOMContentLoaded', function () {
+                var form = document.getElementById('ct-contact-form');
+                var startField = document.getElementById('ct-form-start');
+
+                if (startField) {
+                    startField.value = Date.now();
+                }
+                if (form) {
+                    form.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        sendContactEmail();
+                    });
+                }
+            });
+        </script>
     </body>
 
 </html>
