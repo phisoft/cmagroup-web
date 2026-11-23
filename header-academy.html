@@ -1,8 +1,8 @@
 <!-- Academy Topbar Start -->
-<div class="container-fluid topbar ach-topbar px-0 px-lg-4 py-2 d-none d-lg-block">
+<div class="container-fluid topbar ach-topbar px-0 px-lg-4 py-2">
     <div class="container">
         <div class="row gx-0 align-items-center">
-            <div class="col-lg-9 text-center text-lg-start mb-lg-0">
+            <div class="col-lg-9 d-none d-lg-block text-center text-lg-start mb-lg-0">
                 <div class="d-flex flex-wrap justify-content-center justify-content-lg-start">
                     <div class="border-end ach-topbar-divider pe-3">
                         <a href="tel:+6088201542" class="small"><i class="fas fa-phone-alt ach-topbar-icon me-2"></i>088 201542</a>
@@ -15,8 +15,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 text-center text-lg-end">
-                <div class="d-flex justify-content-center justify-content-lg-end align-items-center">
+            <div class="col-lg-3 text-end">
+                <div class="d-flex justify-content-end align-items-center">
                     <a href="index.html" class="small ach-topbar-group-link">CMA &amp; Co. <i class="fas fa-external-link-alt ms-1"></i></a>
                 </div>
             </div>
@@ -97,6 +97,18 @@
     .ach-topbar .ach-topbar-group-link {
         font-weight: 600;
         letter-spacing: .02em;
+    }
+
+    /* Topbar on small screens: keep the CMA & Co. link, drop the contact row */
+    @media (max-width: 991.98px) {
+        .ach-topbar {
+            padding-top: 6px !important;
+            padding-bottom: 6px !important;
+        }
+
+        .ach-topbar .ach-topbar-group-link {
+            font-size: 13px;
+        }
     }
 
     /* Academy navbar (matches header-coworking.html) */
