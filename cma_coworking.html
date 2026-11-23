@@ -1831,8 +1831,76 @@
                 margin-bottom: 0;
             }
 
+            /*** Instagram Feed ***/
+            .cw-ig-section {
+                position: relative;
+                overflow: hidden;
+            }
+            .cw-ig-section::before {
+                content: "";
+                position: absolute;
+                top: -160px;
+                right: -140px;
+                width: 420px;
+                height: 420px;
+                background: radial-gradient(circle, rgba(56, 182, 255, .18) 0%, rgba(56, 182, 255, 0) 70%);
+                pointer-events: none;
+            }
+            .cw-ig-section .container {
+                position: relative;
+                z-index: 1;
+            }
+            .cw-ig-handle {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 9px 18px;
+                border-radius: 999px;
+                background: rgba(56, 182, 255, .12);
+                color: #0a6fb8;
+                font-size: 14px;
+                font-weight: 700;
+                text-decoration: none;
+                transition: .3s;
+            }
+            .cw-ig-handle:hover {
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+            }
+            .cw-ig-frame {
+                position: relative;
+                width: 100%;
+                margin: 0 auto;
+                background: var(--bs-white);
+                border: 1px solid rgba(11, 35, 64, .08);
+                border-radius: 20px;
+                box-shadow: 0 24px 60px rgba(11, 35, 64, .16);
+                overflow: hidden;
+            }
+            .cw-ig-frame iframe {
+                display: block;
+                width: 100%;
+                height: 600px;
+                border: 0;
+                background: var(--bs-white);
+            }
+            .cw-ig-note a {
+                color: #0a6fb8;
+                font-weight: 600;
+                text-decoration: none;
+            }
+            .cw-ig-note a:hover {
+                text-decoration: underline;
+            }
+            @media (max-width: 575.98px) {
+                .cw-ig-frame {
+                    border-radius: 16px;
+                }
+            }
+
             /*** Anchor offset for sticky navbar ***/
             #upcoming-events,
+            #instagram,
             #spaces-services,
             #hot-desk,
             #private-office,
@@ -2975,49 +3043,45 @@
         </div>
         <!-- Google Reviews End -->
 
-        <!-- What's On Start -->
-        <div class="container-fluid bg-light py-5" id="upcoming-events">
+        <!-- Instagram Start -->
+        <div class="container-fluid py-5 cw-ig-section" id="instagram">
             <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">What's On</h4>
-                    <h1 class="display-4 mb-4">Upcoming Events & Workshops</h1>
-                    <p class="mb-0">Check out the latest programmes and events happening at CMA KK Coworking Space.</p>
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 820px;">
+                    <h4 class="text-primary">Instagram</h4>
+                    <h1 class="display-4 mb-3">See What's Happening At CMA KK</h1>
+                    <p class="mb-4">Step inside our workspace without leaving this page. From member stories and community events to new space updates and behind-the-scenes moments, our latest Instagram posts load here automatically&mdash;straight from <strong>@kkcoworkingspace</strong>.</p>
+                    <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-4">
+                        <a class="cw-ig-handle" href="https://www.instagram.com/kkcoworkingspace/" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>@kkcoworkingspace
+                        </a>
+                        <span class="text-muted small">
+                            <i class="fas fa-sync-alt me-2 text-primary" aria-hidden="true"></i>Updates automatically
+                        </span>
+                    </div>
+                    <a href="https://www.instagram.com/kkcoworkingspace/" target="_blank" rel="noopener" class="btn btn-primary rounded-pill py-3 px-4">
+                        <i class="fab fa-instagram me-2" aria-hidden="true"></i>Follow Us on Instagram
+                    </a>
                 </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="event-card">
-                            <a class="event-thumb" href="../assets/img/events/AI Video Beginner to Pro.png" data-lightbox="events-gallery" data-title="AI Video Beginner to Pro">
-                                <img src="../assets/img/events/AI Video Beginner to Pro.png" alt="AI Video Beginner to Pro" loading="lazy">
-                            </a>
-                            <div class="event-body">
-                                <h3>AI Video Beginner to Pro</h3>
-                            </div>
-                        </div>
+                <div class="wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="cw-ig-frame" data-instagram-embed>
+                        <iframe
+                            src="https://www.instagram.com/kkcoworkingspace/embed/"
+                            title="Latest Instagram posts from @kkcoworkingspace"
+                            height="600"
+                            loading="lazy"
+                            scrolling="no"
+                            frameborder="0"
+                            allowtransparency="true"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="event-card">
-                            <a class="event-thumb" href="../assets/img/events/AI Video Intermediate.png" data-lightbox="events-gallery" data-title="AI Video Intermediate">
-                                <img src="../assets/img/events/AI Video Intermediate.png" alt="AI Video Intermediate" loading="lazy">
-                            </a>
-                            <div class="event-body">
-                                <h3>AI Video Intermediate</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="event-card">
-                            <a class="event-thumb" href="../assets/img/events/Bead Workshop CMA Weekender.png" data-lightbox="events-gallery" data-title="Bead Workshop CMA Weekender">
-                                <img src="../assets/img/events/Bead Workshop CMA Weekender.png" alt="Bead Workshop CMA Weekender" loading="lazy">
-                            </a>
-                            <div class="event-body">
-                                <h3>Bead Workshop CMA Weekender</h3>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="cw-ig-note text-center text-muted small mt-3 mb-0">
+                        <i class="fab fa-instagram me-1" aria-hidden="true"></i>Latest posts from
+                        <a href="https://www.instagram.com/kkcoworkingspace/" target="_blank" rel="noopener">@kkcoworkingspace</a>
+                    </p>
                 </div>
             </div>
         </div>
-        <!-- What's On End -->
+        <!-- Instagram End -->
 
 
         <!-- Booking Inquiry Form Start -->
@@ -3210,6 +3274,38 @@
                 var scrollAmount = container.querySelector('.review-scroll-item').offsetWidth + 24;
                 container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
             }
+        </script>
+
+        <!-- Instagram Embed: keep the iframe height in step with its width -->
+        <script>
+            (function () {
+                var frame = document.querySelector('[data-instagram-embed]');
+                if (!frame) {
+                    return;
+                }
+
+                var iframe = frame.querySelector('iframe');
+                if (!iframe) {
+                    return;
+                }
+
+                function resizeEmbed() {
+                    var width = frame.clientWidth;
+                    if (!width) {
+                        return;
+                    }
+                    // Instagram's profile embed shows two rows of three square
+                    // thumbnails below a fixed-height profile header.
+                    var height = Math.round((width * 2) / 3 + 205);
+                    iframe.style.height = Math.min(height, 1200) + 'px';
+                }
+
+                resizeEmbed();
+                window.addEventListener('resize', resizeEmbed);
+                if (window.ResizeObserver) {
+                    new ResizeObserver(resizeEmbed).observe(frame);
+                }
+            })();
         </script>
 
         <!-- Booking Inquiry: email (POST) + WhatsApp -->
