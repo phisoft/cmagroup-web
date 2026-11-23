@@ -421,7 +421,9 @@
             @media (max-width: 767px) {
                 .ac-contact-item {
                     flex-direction: row;
-                    justify-content: center;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 100%;
                     gap: 16px;
                     padding: 8px 10px;
                 }
@@ -503,6 +505,12 @@
                 }
             }
     /*** Philosophy & HRDCorp Levy Section ***/
+.ac-philosophy-lead {
+    max-width: 840px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.85;
+}
 .ac-philosophy-quote {
     font-size: 20px;
     font-weight: 700;
@@ -516,12 +524,32 @@
     background: linear-gradient(135deg, rgba(56, 182, 255, .12) 0%, rgba(56, 182, 255, .04) 100%);
     border: 1px solid rgba(56, 182, 255, .28);
     border-radius: 16px;
-    padding: 40px 36px;
+    padding: 34px 30px;
     height: 100%;
+    transition: transform .3s, box-shadow .3s;
+}
+.ac-levy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 34px rgba(10, 42, 74, .09);
 }
 .ac-levy-card h3 {
+    font-size: 20px;
+    line-height: 1.4;
     font-weight: 800;
     color: #0a2a4a;
+}
+.ac-levy-icon {
+    width: 52px;
+    height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+    color: var(--bs-white);
+    font-size: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 18px rgba(56, 182, 255, .3);
 }
 .ac-levy-sub {
     font-size: 13.5px;
@@ -530,33 +558,18 @@
     text-transform: uppercase;
     color: #0a6fb8;
 }
-.ac-levy-item {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    margin-bottom: 18px;
-}
-.ac-levy-item:last-child {
-    margin-bottom: 0;
-}
-.ac-levy-item i {
-    color: #0a6fb8;
-    font-size: 18px;
-    margin-top: 3px;
-    flex-shrink: 0;
-}
-.ac-levy-item p {
+.ac-levy-card p {
     font-size: 15.5px;
     line-height: 1.75;
     color: #4a5a6a;
-}
-.ac-levy-item strong {
-    color: #0a2a4a;
 }
 @media (max-width: 575px) {
     .ac-philosophy-quote {
         font-size: 17.5px;
         padding-left: 16px;
+    }
+    .ac-philosophy-lead {
+        font-size: 15.5px;
     }
     .ac-levy-card {
         padding: 28px 22px;
@@ -777,6 +790,17 @@
                 width: 100%;
                 height: 450px;
                 object-fit: cover;
+            }
+            .ac-about-sub {
+                max-width: 840px;
+                margin: 0 auto 34px;
+                font-size: 17px;
+                line-height: 1.85;
+            }
+            @media (max-width: 575px) {
+                .ac-about-sub {
+                    font-size: 15.5px;
+                }
             }
             .academy-team-img {
                 text-align: center;
@@ -1552,6 +1576,8 @@
             }
             /* Offset in-page anchors for the academy header */
             #about,
+            #philosophy,
+            #hrdcorp-levy,
             #signature-training,
             #leadership-training,
             #digital-marketing,
@@ -1588,7 +1614,7 @@
                 <div class="cw-welcome-copy">
                     <p class="cw-welcome-location"><i class="fas fa-map-marker-alt" aria-hidden="true" style="color: #1F7E8D;"></i>Kota Kinabalu, Sabah</p>
                     <h1 id="ac-welcome-heading">Your Skills. Your Team.<br>Build a Smarter<br>Workforce.</h1>
-                    <p class="cw-welcome-lead">Welcome to CMA Academy. We build training programs to help you upgrade your team skills and remove the knowledge gaps slowing your business down.</p>
+                    <p class="cw-welcome-lead">Welcome to CMA Academy Asia. We build training programs to help you upgrade your team skills and remove the knowledge gaps slowing your business down.</p>
                     <p>Whether you are a business owner, a manager, or a growing professional, we give you practical lessons you apply on day one. Learn modern accounting, HR management, digital tools, and business strategy without confusing theory or wasted time.</p>
                 </div>
                 <div class="cw-welcome-media">
@@ -1683,41 +1709,24 @@
         </div>
         <!-- Contact Info End -->
 
-        <!-- Empower Start -->
-        <div class="container-fluid ac-empower py-5">
-            <div class="container py-5">
-                <div class="row justify-content-center text-center">
-                    <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="ac-empower-inner mx-auto">
-                            <span class="ac-empower-tagline">Be Empowered to Empower.</span>
-                            <h1 class="display-4 text-white mb-4">Elevate Talent. Ignite Leadership. Build an Empowered Workforce.</h1>
-                            <p class="ac-empower-sub">True transformation happens when your people have the mastery to lead and the tools to inspire others. CMA Academy Asia is an accredited HRDCorp-registered corporate training provider in Malaysia, delivering 100% claimable learning experiences designed to eliminate the operational delays, manual bottlenecks, and inefficiencies that slow down your business and waste valuable time and energy.</p>
-                            <a class="btn btn-light rounded-pill py-3 px-5 me-sm-3 mb-2 mb-sm-0" href="#training-catalogue">Explore HRDCorp Claimable Programs</a>
-                            <a class="btn btn-outline-light rounded-pill py-3 px-5 mb-2 mb-sm-0" href="#training-inquiry">Partner with CMA Academy Asia</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Empower End -->
-
-
         <!-- About CMA Academy Asia Start -->
         <div id="about" class="container-fluid py-5">
             <div class="container py-5">
-                <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="col-xl-10 col-xxl-8 text-center">
-                        <h4 class="text-primary">About CMA Academy Asia</h4>
-                        <h1 class="display-4 mb-4">Founded 2021, Reimagined 2025</h1>
-                        <p class="mb-4 text-start">Founded in 2021, CMA Academy Asia was built on the belief that corporate training should be as engaging as it is informative. As we transitioned to CMA Academy Asia Sdn. Bhd. in 2025, we took the opportunity to move beyond our traditional roots. While we remain deeply committed to our core expertise in accounting and finance, we have grown to meet the demands of a changing workforce. Today, our reach spans across sales and marketing, leadership, communication, personal development, and compliance, with a renewed focus on human resources and sales communication.</p>
-                        <p class="mb-4 text-start">We've always felt that the best way to learn is by doing. That's why we take technical or complex subjects and turn them into accessible, hands-on experiences. By weaving behavioral tools like DISC, MBTI, and NLP into our simulations and gamified learning, we help participants truly connect with the material. Whether we are working with a government-linked organization or a team in hospitality, engineering, or education, our goal is to make sure every learner walks away with practical skills they can use immediately.</p>
-                        <p class="mb-0 text-start">Our team of certified trainers is dedicated to more than just ticking boxes. We are here to support the long-term growth of your people and the lasting success of your organization. At CMA Academy Asia, we believe that when you empower a workforce with the right mix of technical knowledge and communication skills, the impact is measurable and profound.</p>
-                    </div>
-                </div>
-                <div class="row justify-content-center mt-5 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.4s">
                     <div class="col-xl-10 col-xxl-8">
                         <div class="academy-about-img">
-                            <img src="../assets/img/cma-academy/team-5.JPG" alt="About CMA Academy Asia">
+                            <img src="assets/img/cma-academy/team-5.JPG" alt="CMA Academy Asia team during a corporate training workshop" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-5 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-xl-10 col-xxl-8 text-center">
+                        <h4 class="text-primary">Be Empowered to Empower.</h4>
+                        <h1 class="display-4 mb-4">Elevate Talent. Ignite Leadership. Build an Empowered Workforce.</h1>
+                        <p class="ac-about-sub">True transformation happens when your people have the mastery to lead and the tools to inspire others. CMA Academy Asia is an accredited HRDCorp-registered corporate training provider in Malaysia, delivering 100% claimable learning experiences designed to eliminate the operational delays, manual bottlenecks, and inefficiencies that slow down your business and waste valuable time and energy.</p>
+                        <div class="ac-about-actions">
+                            <a class="btn btn-primary rounded-pill py-3 px-5 me-sm-3 mb-2 mb-sm-0" href="#training-catalogue">Explore HRDCorp Claimable Programs</a>
+                            <a class="btn btn-outline-primary rounded-pill py-3 px-5 mb-2 mb-sm-0" href="#training-inquiry">Partner with CMA Academy Asia</a>
                         </div>
                     </div>
                 </div>
@@ -1725,8 +1734,8 @@
         </div>
         <!-- About CMA Academy Asia End -->
 
-                <!-- Vision & Mission Start -->
-        <div class="container-fluid bg-light py-5">
+        <!-- Vision & Mission Start -->
+        <!-- <div class="container-fluid bg-light py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                     <h4 class="text-primary">Vision & Mission</h4>
@@ -1778,43 +1787,62 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Vision & Mission End -->
 
         <!-- Philosophy Start -->
-        <div class="container-fluid py-5">
+        <div id="philosophy" class="container-fluid py-5">
             <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-                        <h4 class="text-primary mb-3">Our Philosophy</h4>
-                        <h1 class="display-4 mb-4">Be Empowered to Empower</h1>
-                        <p class="mb-4">Growth does not happen in a vacuum. When a leader masters their numbers, they empower their managers with clear direction. When a professional masters communication, they empower their team with shared momentum. When a marketer harnesses artificial intelligence, they empower the entire organization to capture new markets.</p>
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 900px;">
+                    <h4 class="text-primary">Our Philosophy</h4>
+                    <h1 class="display-4 mb-4">Be Empowered to Empower</h1>
+                    <p class="ac-philosophy-lead mb-0">Growth does not happen in a vacuum. When a leader masters their numbers, they empower their managers with clear direction. When a professional masters communication, they empower their team with shared momentum. When a marketer harnesses artificial intelligence, they empower the entire organization to capture new markets.</p>
+                </div>
+                <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="col-xl-10 col-xxl-8">
                         <p class="ac-philosophy-quote">At CMA Academy Asia, our driving ethos is simple: Be empowered to empower.</p>
                         <p class="mb-0">We believe corporate training should never be passive theory. It must be an immersive capability transfer that builds internal self-reliance. By arming your executives, managers, and frontline professionals with real-world competence, we create a ripple effect across your organization, empowering your people to lift each other up, innovate autonomously, and drive sustainable business growth.</p>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-                        <div class="ac-levy-card">
-                            <h3 class="mb-2">Maximize Your HRDCorp Levy</h3>
-                            <p class="ac-levy-sub mb-4">Zero-Friction Upskilling for Malaysian Businesses</p>
-                            <p class="mb-4">As a registered Malaysian employer contributing to the Human Resource Development Corporation (HRDCorp), your talent development is already funded. CMA Academy Asia simplifies the entire grant application process so you can reinvest your levy strategically:</p>
-                            <div class="ac-levy-item">
-                                <i class="fas fa-check-circle"></i>
-                                <p class="mb-0"><strong>100% Claimable Programs:</strong> Optimize your training budget without capital strain by fully utilizing your available HRDCorp levy balance.</p>
-                            </div>
-                            <div class="ac-levy-item">
-                                <i class="fas fa-check-circle"></i>
-                                <p class="mb-0"><strong>End-to-End Application Guidance:</strong> Our team assists you with program registrations, training grant documentation, and compliance requirements to ensure a seamless approval process.</p>
-                            </div>
-                            <div class="ac-levy-item">
-                                <i class="fas fa-check-circle"></i>
-                                <p class="mb-0"><strong>Customized In-House &amp; Public Formats:</strong> From hands-on workshops tailored to your industry to open masterclasses, our modules adapt to your company's operational tempo.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Philosophy End -->
+
+        <!-- HRDCorp Levy Start -->
+        <div id="hrdcorp-levy" class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 860px;">
+                    <h4 class="text-primary">HRDCorp Levy</h4>
+                    <h1 class="display-4 mb-3">Maximize Your HRDCorp Levy</h1>
+                    <p class="ac-levy-sub mb-3">Zero-Friction Upskilling for Malaysian Businesses</p>
+                    <p class="mb-0">As a registered Malaysian employer contributing to the Human Resource Development Corporation (HRDCorp), your talent development is already funded. CMA Academy Asia simplifies the entire grant application process so you can reinvest your levy strategically:</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="ac-levy-card">
+                            <div class="ac-levy-icon"><i class="fas fa-percentage" aria-hidden="true"></i></div>
+                            <h3 class="mb-3">100% Claimable Programs</h3>
+                            <p class="mb-0">Optimize your training budget without capital strain by fully utilizing your available HRDCorp levy balance.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="ac-levy-card">
+                            <div class="ac-levy-icon"><i class="fas fa-file-signature" aria-hidden="true"></i></div>
+                            <h3 class="mb-3">End-to-End Application Guidance</h3>
+                            <p class="mb-0">Our team assists you with program registrations, training grant documentation, and compliance requirements to ensure a seamless approval process.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="ac-levy-card">
+                            <div class="ac-levy-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+                            <h3 class="mb-3">Customized In-House &amp; Public Formats</h3>
+                            <p class="mb-0">From hands-on workshops tailored to your industry to open masterclasses, our modules adapt to your company's operational tempo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- HRDCorp Levy End -->
 
         <!-- Competitive Advantage Start -->
         <div class="container-fluid py-5">
@@ -1832,7 +1860,7 @@
                     </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
                         <div class="academy-about-img">
-                            <img src="../assets/img/cma-academy/why-choose-us.jpg" alt="Why Choose Us">
+                            <img src="assets/img/cma-academy/why-choose-us.JPG" alt="Why Choose CMA Academy Asia" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -2221,227 +2249,6 @@
         </div>
         <!-- L&D Partner End -->
 
-        <!-- Training Listing Catalogue Start -->
-        <div id="training-catalogue" class="container-fluid bg-light py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Training Listing</h4>
-                    <h1 class="display-4 mb-4">Our Complete Programme Catalogue</h1>
-                    <p class="mb-0">Signature courses, financial literacy, business & accounting, soft skills, sales, team building and digital tools — all in one place.</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="training-category-card">
-                            <div class="tc-header">
-                                <div class="tc-icon"><i class="fas fa-star"></i></div>
-                                <h5 class="mb-0">Signature Course — VIBES</h5>
-                            </div>
-                            <ul class="tc-list">
-                                <li><i class="fas fa-angle-right"></i>Communication That Drives Results</li>
-                                <li><i class="fas fa-angle-right"></i>Leadership at Work: with AI Awareness and Empowering The Heart of Administration (LEADWELL)</li>
-                                <li><i class="fas fa-angle-right"></i>E-Invoicing Made Easy</li>
-                                <li><i class="fas fa-angle-right"></i>Corporate Finance Made Easy: Finance For Non-Finance Managers</li>
-                                <li><i class="fas fa-angle-right"></i>Corporate Finance Made Easy: How to build company budget from scratch</li>
-                                <li><i class="fas fa-angle-right"></i>Corporate Finance Made Easy: How to read Financial Statement?</li>
-                                <li><i class="fas fa-angle-right"></i>Corporate Finance Made Easy: How to prepare your account for financial audit?</li>
-                                <li><i class="fas fa-angle-right"></i>Personal Finance Made Easy</li>
-                                <li><i class="fas fa-angle-right"></i>Sellsmart - How To Influence And Win Sales Using NLP Strategies</li>
-                                <li><i class="fas fa-angle-right"></i>Accounting Made Easy: Preparation full sets of accounts</li>
-                                <li><i class="fas fa-angle-right"></i>Accounting Made Easy for entrepreneurs (Non-HRDC)</li>
-                                <li><i class="fas fa-angle-right"></i>Taxation Made Easy for entrepreneurs (Non-HRDC)</li>
-                                <li><i class="fas fa-angle-right"></i>Human Resources: Malaysian Employment Law & Compliance for HR & Business Professionals</li>
-                                <li><i class="fas fa-angle-right"></i>HR For Non HR</li>
-                                <li><i class="fas fa-angle-right"></i>Beyond The Dest: Elevate, Empower & Excel</li>
-                                <li><i class="fas fa-angle-right"></i>Beyond Slides: The Art Of Modern Training</li>
-                                <li><i class="fas fa-angle-right"></i>Beyond Services: Creating Experiences The Extra Mile In Hospitality</li>
-                                <li><i class="fas fa-angle-right"></i>Malaysia Employer HR Tax Compliance - EA Form & MTD Preparatory</li>
-                                <li><i class="fas fa-angle-right"></i>Produce Marketing Videos Using Smartphones</li>
-                                <li><i class="fas fa-angle-right"></i>Produce Marketing Pictures Using Smartphones</li>
-                                <li><i class="fas fa-angle-right"></i>Digital Posters Using Smartphones</li>
-                                <li><i class="fas fa-angle-right"></i>Empowered Leadership</li>
-                                <li><i class="fas fa-angle-right"></i>Accounting Made Easy</li>
-                                <li><i class="fas fa-angle-right"></i>Be A Tax Savvy Employee - Mastering Individual Tax E-Filing In Malaysia</li>
-                                <li><i class="fas fa-angle-right"></i>Tax Planning Made Easy</li>
-                                <li><i class="fas fa-angle-right"></i>Mastering Comprehensive Malaysian HR Tax Compliance & Statutory Obligations</li>
-                                <li><i class="fas fa-angle-right"></i>Tax Savvy Employee & Personal Finance Mastery</li>
-                                <li><i class="fas fa-angle-right"></i>Sound Vibrational Healing by using Singing bowl</li>
-                                <li><i class="fas fa-angle-right"></i>Reiki Energy Healing (Level 1)</li>
-                                <li><i class="fas fa-angle-right"></i>Financial Planning Made Easy</li>
-                                <li><i class="fas fa-angle-right"></i>Internal Administrative Management</li>
-                                <li><i class="fas fa-angle-right"></i>Effective Office Administration</li>
-                                <li><i class="fas fa-angle-right"></i>Customer Experience Made Easy for Service Teams</li>
-                                <li><i class="fas fa-angle-right"></i>Developing a Team Player Mindset</li>
-                                <li><i class="fas fa-angle-right"></i>Effective Procurement Management & Compliance in Malaysia</li>
-                                <li><i class="fas fa-angle-right"></i>From Bookkeeping To Reporting Of Full Set Of Accounts In The E-Invoicing Era</li>
-                                <li><i class="fas fa-angle-right"></i>Accounting Level 1: From Bookkeeping To Reporting Full Set Of Accounts</li>
-                            </ul>
-                            <div class="tc-footer">
-                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
-                                    View All <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="training-category-card">
-                            <div class="tc-header">
-                                <div class="tc-icon"><i class="fas fa-star"></i></div>
-                                <h5 class="mb-0">Signature Course — Accounting & Tax</h5>
-                            </div>
-                            <ul class="tc-list">
-                                <li><i class="fas fa-angle-right"></i>Accounting & Tax Made Easy for Freelancers & Small Businesses</li>
-                                <li><i class="fas fa-angle-right"></i>Financial Planning Masterclass</li>
-                                <li><i class="fas fa-angle-right"></i>Financial Planning Made Easy</li>
-                                <li><i class="fas fa-angle-right"></i>Employee Performance Management – An Introduction</li>
-                                <li><i class="fas fa-angle-right"></i>HR Documentation and Record Management: Best Practices for Compliance and Efficiency</li>
-                                <li><i class="fas fa-angle-right"></i>Introduction to Emotional Intelligence in the Workplace</li>
-                            </ul>
-                            <div class="tc-footer">
-                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
-                                    View All <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="training-category-card">
-                            <div class="tc-header">
-                                <div class="tc-icon"><i class="fas fa-wallet"></i></div>
-                                <h5 class="mb-0">Personal Development — Financial Literacy / Employee Financial Wellness</h5>
-                            </div>
-                            <ul class="tc-list">
-                                <li><i class="fas fa-angle-right"></i>Signature program - CMA Money Mastery Makeover program: A Journey of Financial Mastery and Mindset Shift / Financial Wellness Benefit For Your Employees (1 day / 2 days / 3 days)</li>
-                                <li><i class="fas fa-angle-right"></i>Be Tax Savvy: Maximizing Your Tax Benefits as an Employee</li>
-                                <li><i class="fas fa-angle-right"></i>Cashflow Catalyst: Empowering employees with budgeting & cashflow management</li>
-                                <li><i class="fas fa-angle-right"></i>Golden Years Blueprint: Designing your dream retirement</li>
-                                <li><i class="fas fa-angle-right"></i>Wealth Protection Blueprint: Designing your financial fortress</li>
-                                <li><i class="fas fa-angle-right"></i>Wealth Accumulation Blueprint: Transforming your personal finance through saving and investing</li>
-                                <li><i class="fas fa-angle-right"></i>Wealth Distribution Blueprint: Building your legacy through estate planning</li>
-                                <li><i class="fas fa-angle-right"></i>Women and Wealth: Empowering women through financial literacy</li>
-                            </ul>
-                            <div class="tc-footer">
-                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
-                                    View All <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="training-category-card">
-                            <div class="tc-header">
-                                <div class="tc-icon"><i class="fas fa-briefcase"></i></div>
-                                <h5 class="mb-0">Business & Accounting</h5>
-                            </div>
-                            <ul class="tc-list">
-                                <li><i class="fas fa-angle-right"></i>E-Invoicing Implementation in Malaysia: Understand the workflow & progress</li>
-                                <li><i class="fas fa-angle-right"></i>Accounting Made Easy for SMEs: Practical accounting solutions for SME business owners</li>
-                                <li><i class="fas fa-angle-right"></i>Accounting For Non-Accountants</li>
-                                <li><i class="fas fa-angle-right"></i>Tax Planning Made Easy for SMEs: Practical tax solutions for SME business owners</li>
-                                <li><i class="fas fa-angle-right"></i>Business Setup Masterclass: From concept to creation</li>
-                                <li><i class="fas fa-angle-right"></i>Finance For Non-Finance for Professionals/ Executives</li>
-                            </ul>
-                            <div class="tc-footer">
-                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
-                                    View All <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="1s">
-                        <div class="training-category-card">
-                            <div class="tc-header">
-                                <div class="tc-icon"><i class="fas fa-comments"></i></div>
-                                <h5 class="mb-0">Personal Development — Interpersonal / Soft Skills</h5>
-                            </div>
-                            <ul class="tc-list">
-                                <li><i class="fas fa-angle-right"></i>Effective Communication Unleashed: Mastering effective interaction with NLP</li>
-                                <li><i class="fas fa-angle-right"></i>The Mindset Revolution: Transforming limiting beliefs into empowering thoughts</li>
-                                <li><i class="fas fa-angle-right"></i>Plan Like a Pro: The ultimate project planning game</li>
-                                <li><i class="fas fa-angle-right"></i>The Art of Effective Meetings: Techniques for engaging and results-driven discussions</li>
-                                <li><i class="fas fa-angle-right"></i>The Goal Setting Workshop: Practical technique for setting and achieving goals</li>
-                                <li><i class="fas fa-angle-right"></i>The Art of Personal Grooming: Mastering your look, mastering your life</li>
-                                <li><i class="fas fa-angle-right"></i>Customer Service Success: Essential skills for delivering exceptional service</li>
-                                <li><i class="fas fa-angle-right"></i>Presenting With Impact: Techniques for captivating your audience</li>
-                            </ul>
-                            <div class="tc-footer">
-                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
-                                    View All <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="1.2s">
-                        <div class="training-category-card">
-                            <div class="tc-header">
-                                <div class="tc-icon"><i class="fas fa-bullhorn"></i></div>
-                                <h5 class="mb-0">Sales & Marketing</h5>
-                            </div>
-                            <ul class="tc-list">
-                                <li><i class="fas fa-angle-right"></i>The Art of NLP Communication: Building rapport and trust in sales</li>
-                                <li><i class="fas fa-angle-right"></i>The Art of NLP Sales and Marketing: Mastering persuasion and influence</li>
-                                <li><i class="fas fa-angle-right"></i>The Art of Objection Handling & Closing: NLP techniques for sales professionals</li>
-                                <li><i class="fas fa-angle-right"></i>The Sales and Marketing Blueprint: Building your marketing strategy</li>
-                                <li><i class="fas fa-angle-right"></i>The Digital Marketing Bootcamp: Intensive training for online marketers</li>
-                                <li><i class="fas fa-angle-right"></i>The Power of Personal Branding: Creating influence and impact</li>
-                            </ul>
-                            <div class="tc-footer">
-                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
-                                    View All <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="1.4s">
-                        <div class="training-category-card">
-                            <div class="tc-header">
-                                <div class="tc-icon"><i class="fas fa-users"></i></div>
-                                <h5 class="mb-0">Team Building</h5>
-                            </div>
-                            <ul class="tc-list">
-                                <li><i class="fas fa-angle-right"></i>Building Team Excellence: Unlocking the power of teamwork (1 day / 2 days / 3 days)</li>
-                                <li><i class="fas fa-angle-right"></i>Cracking the Workplace Code: Understanding personality differences</li>
-                                <li><i class="fas fa-angle-right"></i>Leadership Excellence: Empowering leaders, empowering teams</li>
-                            </ul>
-                            <div class="tc-footer">
-                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
-                                    View All <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="1.6s">
-                        <div class="training-category-card">
-                            <div class="tc-header">
-                                <div class="tc-icon"><i class="fas fa-laptop"></i></div>
-                                <h5 class="mb-0">Digital Skills & Business Tools</h5>
-                            </div>
-                            <ul class="tc-list">
-                                <li><i class="fas fa-angle-right"></i>Microsoft Excel (Basic to Advanced)</li>
-                                <li><i class="fas fa-angle-right"></i>Microsoft PowerPoint (Basic to Advanced)</li>
-                                <li><i class="fas fa-angle-right"></i>Microsoft Word (Basic to Advanced)</li>
-                                <li><i class="fas fa-angle-right"></i>Power BI</li>
-                            </ul>
-                            <div class="tc-footer">
-                                <button class="tc-toggle-btn" onclick="toggleTrainingList(this)">
-                                    View All <i class="fas fa-chevron-down"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center mt-4">
-                    <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="training-note-card">
-                            <div class="note-icon"><i class="fas fa-info-circle"></i></div>
-                            <p class="note-text"><strong>NOTE:</strong> Other training topics will be given based on your training needs analysis.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Training Listing Catalogue End -->
-
-
         <!-- Team Building Start -->
         <div id="team-building" class="container-fluid py-5">
             <div class="container py-5">
@@ -2467,7 +2274,7 @@
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-6 col-lg wow fadeInUp" data-wow-delay="0.2s">
                         <div class="tb-card">
-                            <div class="tb-bg" style="background-image: url('../assets/img/cma-academy/team-1.jpg');"></div>
+                            <div class="tb-bg" style="background-image: url('assets/img/cma-academy/team-1.JPG');"></div>
                             <div class="tb-overlay"></div>
                             <div class="tb-num">01</div>
                             <div class="tb-icon"><i class="fas fa-hands-helping"></i></div>
@@ -2476,7 +2283,7 @@
                     </div>
                     <div class="col-md-6 col-lg wow fadeInUp" data-wow-delay="0.4s">
                         <div class="tb-card">
-                            <div class="tb-bg" style="background-image: url('../assets/img/cma-academy/team-2.jpg');"></div>
+                            <div class="tb-bg" style="background-image: url('assets/img/cma-academy/team-2.JPG');"></div>
                             <div class="tb-overlay"></div>
                             <div class="tb-num">02</div>
                             <div class="tb-icon"><i class="fas fa-users-cog"></i></div>
@@ -2485,7 +2292,7 @@
                     </div>
                     <div class="col-md-6 col-lg wow fadeInUp" data-wow-delay="0.6s">
                         <div class="tb-card">
-                            <div class="tb-bg" style="background-image: url('../assets/img/cma-academy/team-3.jpg');"></div>
+                            <div class="tb-bg" style="background-image: url('assets/img/cma-academy/team-3.JPG');"></div>
                             <div class="tb-overlay"></div>
                             <div class="tb-num">03</div>
                             <div class="tb-icon"><i class="fas fa-flag-checkered"></i></div>
@@ -2494,7 +2301,7 @@
                     </div>
                     <div class="col-md-6 col-lg wow fadeInUp" data-wow-delay="0.8s">
                         <div class="tb-card">
-                            <div class="tb-bg" style="background-image: url('../assets/img/cma-academy/team-4.jpg');"></div>
+                            <div class="tb-bg" style="background-image: url('assets/img/cma-academy/team-4.JPG');"></div>
                             <div class="tb-overlay"></div>
                             <div class="tb-num">04</div>
                             <div class="tb-icon"><i class="fas fa-bolt"></i></div>
@@ -2503,7 +2310,7 @@
                     </div>
                     <div class="col-md-6 col-lg wow fadeInUp" data-wow-delay="1s">
                         <div class="tb-card">
-                            <div class="tb-bg" style="background-image: url('../assets/img/cma-academy/team-5.jpg');"></div>
+                            <div class="tb-bg" style="background-image: url('assets/img/cma-academy/team-5.JPG');"></div>
                             <div class="tb-overlay"></div>
                             <div class="tb-num">05</div>
                             <div class="tb-icon"><i class="fas fa-user-tag"></i></div>
@@ -3415,7 +3222,7 @@
                 pastTrainingGalleries.forEach(function (g) {
                     var container = document.getElementById(g.id);
                     if (!container) return;
-                    var base = '../assets/img/cma-academy/' + g.folder + '/';
+                    var base = 'assets/img/cma-academy/' + g.folder + '/';
                     var html = '';
                     for (var i = 0; i < g.images.length; i += 9) {
                         var chunk = g.images.slice(i, i + 9);
