@@ -677,6 +677,12 @@
     font-weight: 700;
 }
 
+/* Lead-in sentence of the section intro, above the statement card */
+.service-intro-lead {
+    color: #0B2340;
+    font-weight: 700;
+}
+
 @media (max-width: 767px) {
     .service-statement {
         padding: 2.25rem 1.5rem 2rem;
@@ -1348,9 +1354,8 @@
 
 .hero-goal-card {
     position: absolute;
-    top: 50%;
-    left: 55%;
-    transform: translate(-50%, -50%);
+    right: 32px;
+    bottom: 32px;
     z-index: 3;
     width: 340px;
     min-width: 0;
@@ -1456,12 +1461,6 @@
     font-size: 13px;
 }
 
-@media (min-width: 1200px) and (max-width: 1399.98px) {
-    .hero-goal-card {
-        left: calc(55% + 80px);
-    }
-}
-
 @media (max-width: 1199.98px) {
     .home-hero-panel {
         min-height: 580px;
@@ -1488,8 +1487,9 @@
     }
 
     .hero-goal-card {
-        left: 56%;
-        width: 280px;
+        right: 24px;
+        bottom: 24px;
+        width: 290px;
         padding: 18px;
     }
 
