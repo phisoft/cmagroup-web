@@ -254,6 +254,38 @@
         color: var(--ach-nav-accent);
     }
 
+    /* Desktop: logo pinned left, menu centred in the bar, CTA pinned right */
+    @media (min-width: 992px) {
+        .ach-header .navbar {
+            position: relative;
+            justify-content: center;
+        }
+
+        .ach-header .navbar .navbar-brand {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .ach-header .navbar .navbar-collapse {
+            flex-grow: 0;
+        }
+
+        .ach-header .navbar .navbar-nav {
+            width: auto;
+            justify-content: center;
+        }
+
+        .ach-header .navbar .navbar-nav .nav-btn {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0;
+        }
+    }
+
     /* Team Building / Testimonials / Past Clients: top level on wide screens,
        grouped under "More" between 992px and 1400px so the row never crowds the logo */
     .ach-header .navbar .navbar-nav .ach-more {
