@@ -1608,3 +1608,205 @@
 
 
 
+
+/*** Page Hero Start ***/
+.page-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 44px 0 48px;
+    background: linear-gradient(120deg, #0a2a4a 0%, #0d4c86 58%, #0561a5 100%);
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    top: -220px;
+    left: -160px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(56, 182, 255, .2) 0%, rgba(56, 182, 255, 0) 70%);
+    pointer-events: none;
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero-row {
+    --bs-gutter-x: 24px;
+    --bs-gutter-y: 28px;
+}
+
+@media (min-width: 992px) {
+    .page-hero-row {
+        --bs-gutter-x: 48px;
+        --bs-gutter-y: 0;
+    }
+}
+
+.page-hero-copy {
+    max-width: 520px;
+}
+
+.page-hero h1 {
+    margin: 0 0 14px;
+    color: #fff;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 700;
+    line-height: 1.16;
+    letter-spacing: -.01em;
+}
+
+.page-hero-accent {
+    color: #7cd0ff;
+}
+
+.page-hero-sub {
+    max-width: 470px;
+    margin: 0 0 24px;
+    color: rgba(255, 255, 255, .82);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.page-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.page-hero-actions .btn {
+    padding: .7rem 1.9rem;
+    font-weight: 600;
+}
+
+.page-hero-actions .btn-outline-light {
+    border-width: 1.5px;
+}
+
+.page-hero-media {
+    overflow: hidden;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 18px;
+    box-shadow: 0 24px 50px rgba(3, 20, 38, .4);
+}
+
+.page-hero-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+/* Full-height media variant (e.g. AI-Enabled Cloud Bookkeeping).
+   On desktop the image fills the whole hero band and bleeds to the right edge,
+   while the copy sits in a container-aligned column. Mobile keeps the card. */
+@media (min-width: 992px) {
+    .page-hero--split-full {
+        display: flex;
+        padding: 0;
+        /* Shorter than .home-hero-panel so service pages sit tighter under the nav */
+        min-height: clamp(520px, 66vh, 700px);
+    }
+
+    .page-hero--split-full .page-hero-container--full {
+        display: flex;
+        width: 100%;
+        max-width: none;
+        padding: 0;
+    }
+
+    .page-hero--split-full .page-hero-row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 0;
+        flex: 1 1 auto;
+        width: 100%;
+        margin: 0;
+        align-items: stretch;
+    }
+
+    .page-hero--split-full .page-hero-copy-col {
+        display: flex;
+        align-items: center;
+        padding: 56px 48px 56px max(24px, calc((100vw - 960px) / 2 + 12px));
+    }
+
+    .page-hero--split-full .page-hero-copy {
+        width: 100%;
+    }
+
+    .page-hero--split-full .page-hero-media-col {
+        display: flex;
+        padding: 0;
+    }
+
+    .page-hero--split-full .page-hero-media--full {
+        position: relative;
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .page-hero--split-full .page-hero-media--full img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .page-hero--split-full .page-hero-copy-col {
+        padding-left: max(24px, calc((100vw - 1140px) / 2 + 12px));
+    }
+}
+
+@media (min-width: 1400px) {
+    .page-hero--split-full .page-hero-copy-col {
+        padding-left: max(24px, calc((100vw - 1320px) / 2 + 12px));
+    }
+}
+
+/* Keep both hero buttons on one line on smaller desktops */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .page-hero-actions .btn {
+        padding: .7rem 1.5rem;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .page-hero {
+        padding: 32px 0 40px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .page-hero {
+        padding: 28px 0 34px;
+    }
+
+    .page-hero-sub {
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
+
+    .page-hero-actions .btn {
+        width: 100%;
+    }
+}
+/*** Page Hero End ***/
+
