@@ -1574,6 +1574,142 @@
             .training-note-card .note-text strong {
                 color: #0561a5;
             }
+            /* Instagram Feed */
+            .ac-ig-section {
+                position: relative;
+                overflow: hidden;
+            }
+            .ac-ig-section::before {
+                content: "";
+                position: absolute;
+                top: -160px;
+                right: -140px;
+                width: 420px;
+                height: 420px;
+                background: radial-gradient(circle, rgba(56, 182, 255, .18) 0%, rgba(56, 182, 255, 0) 70%);
+                pointer-events: none;
+            }
+            .ac-ig-section .container {
+                position: relative;
+                z-index: 1;
+            }
+            .ac-ig-handle {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 9px 18px;
+                border-radius: 999px;
+                background: rgba(56, 182, 255, .12);
+                color: #0a6fb8;
+                font-size: 14px;
+                font-weight: 700;
+                text-decoration: none;
+                transition: .3s;
+            }
+            .ac-ig-handle:hover {
+                background: linear-gradient(135deg, #38b6ff 0%, #0a6fb8 100%);
+                color: var(--bs-white);
+            }
+            .ac-ig-frame {
+                position: relative;
+                width: 100%;
+                margin: 0 auto;
+                background: var(--bs-white);
+                border: 1px solid rgba(11, 35, 64, .08);
+                border-radius: 20px;
+                box-shadow: 0 24px 60px rgba(11, 35, 64, .16);
+                overflow: hidden;
+            }
+            .ac-ig-frame iframe {
+                display: block;
+                width: 100%;
+                height: 600px;
+                border: 0;
+                background: var(--bs-white);
+            }
+            .ac-ig-note a {
+                color: #0a6fb8;
+                font-weight: 600;
+                text-decoration: none;
+            }
+            .ac-ig-note a:hover {
+                text-decoration: underline;
+            }
+            @media (max-width: 575.98px) {
+                .ac-ig-frame {
+                    border-radius: 16px;
+                }
+            }
+
+            /* YouTube Feed */
+            .ac-yt-section {
+                position: relative;
+                overflow: hidden;
+                background: var(--bs-light);
+            }
+            .ac-yt-section::before {
+                content: "";
+                position: absolute;
+                bottom: -160px;
+                left: -140px;
+                width: 420px;
+                height: 420px;
+                background: radial-gradient(circle, rgba(255, 0, 0, .12) 0%, rgba(255, 0, 0, 0) 70%);
+                pointer-events: none;
+            }
+            .ac-yt-section .container {
+                position: relative;
+                z-index: 1;
+            }
+            .ac-yt-handle {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 9px 18px;
+                border-radius: 999px;
+                background: rgba(255, 0, 0, .08);
+                color: #c4302b;
+                font-size: 14px;
+                font-weight: 700;
+                text-decoration: none;
+                transition: .3s;
+            }
+            .ac-yt-handle:hover {
+                background: linear-gradient(135deg, #ff0000 0%, #c4302b 100%);
+                color: var(--bs-white);
+            }
+            .ac-yt-frame {
+                position: relative;
+                width: 100%;
+                max-width: 960px;
+                margin: 0 auto;
+                background: var(--bs-white);
+                border: 1px solid rgba(11, 35, 64, .08);
+                border-radius: 20px;
+                box-shadow: 0 24px 60px rgba(11, 35, 64, .16);
+                overflow: hidden;
+            }
+            .ac-yt-frame iframe {
+                display: block;
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                border: 0;
+                background: #000;
+            }
+            @media (max-width: 575.98px) {
+                .ac-yt-frame {
+                    border-radius: 16px;
+                }
+            }
+            .ac-yt-note a {
+                color: #c4302b;
+                font-weight: 600;
+                text-decoration: none;
+            }
+            .ac-yt-note a:hover {
+                text-decoration: underline;
+            }
+
             /* Offset in-page anchors for the academy header */
             #about,
             #philosophy,
@@ -1587,6 +1723,8 @@
             #past-trainings,
             #testimonials,
             #past-clients,
+            #instagram,
+            #youtube,
             #training-inquiry {
                 scroll-margin-top: 110px;
             }
@@ -2775,6 +2913,88 @@
         </div>
         <!-- Past Clients End -->
 
+        <!-- Instagram Start -->
+        <div class="container-fluid py-5 ac-ig-section" id="instagram">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 820px;">
+                    <h4 class="text-primary">Instagram</h4>
+                    <h1 class="display-4 mb-3">See What's Happening At CMA Academy</h1>
+                    <p class="mb-4">Step inside our training rooms without leaving this page. From programme highlights and participant stories to workshop moments and behind-the-scenes updates, our latest Instagram posts load here automatically&mdash;straight from <strong>@cmaacademy.asia</strong>.</p>
+                    <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-4">
+                        <a class="ac-ig-handle" href="https://www.instagram.com/cmaacademy.asia/" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>@cmaacademy.asia
+                        </a>
+                        <span class="text-muted small">
+                            <i class="fas fa-sync-alt me-2 text-primary" aria-hidden="true"></i>Updates automatically
+                        </span>
+                    </div>
+                    <a href="https://www.instagram.com/cmaacademy.asia/" target="_blank" rel="noopener" class="btn btn-primary rounded-pill py-3 px-4">
+                        <i class="fab fa-instagram me-2" aria-hidden="true"></i>Follow Us on Instagram
+                    </a>
+                </div>
+                <div class="wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="ac-ig-frame" data-instagram-embed>
+                        <iframe
+                            src="https://www.instagram.com/cmaacademy.asia/embed/"
+                            title="Latest Instagram posts from @cmaacademy.asia"
+                            height="600"
+                            loading="lazy"
+                            scrolling="no"
+                            frameborder="0"
+                            allowtransparency="true"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <p class="ac-ig-note text-center text-muted small mt-3 mb-0">
+                        <i class="fab fa-instagram me-1" aria-hidden="true"></i>Latest posts from
+                        <a href="https://www.instagram.com/cmaacademy.asia/" target="_blank" rel="noopener">@cmaacademy.asia</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Instagram End -->
+
+        <!-- YouTube Start -->
+        <div class="container-fluid py-5 ac-yt-section" id="youtube">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 820px;">
+                    <h4 class="text-primary">YouTube</h4>
+                    <h1 class="display-4 mb-3">Watch Our Trainings In Action</h1>
+                    <p class="mb-4">See what a CMA Academy Asia session really feels like. Watch training highlights, participant testimonials and programme recaps from our channel&mdash;loaded here straight from <strong>@CMAAcademyAsia</strong>.</p>
+                    <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-4">
+                        <a class="ac-yt-handle" href="https://www.youtube.com/@CMAAcademyAsia" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>@CMAAcademyAsia
+                        </a>
+                        <span class="text-muted small">
+                            <i class="fas fa-play-circle me-2 text-primary" aria-hidden="true"></i>Latest uploads
+                        </span>
+                    </div>
+                    <a href="https://www.youtube.com/@CMAAcademyAsia?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-primary rounded-pill py-3 px-4">
+                        <i class="fab fa-youtube me-2" aria-hidden="true"></i>Subscribe on YouTube
+                    </a>
+                </div>
+                <div class="wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="ac-yt-frame">
+                        <iframe
+                            src="https://www.youtube.com/embed/videoseries?list=UUvIWKf61BSt7KGmgDrGXibg&amp;rel=0"
+                            title="Latest videos from CMA Academy Asia on YouTube"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <p class="ac-yt-note text-center text-muted small mt-4 mb-0">
+                        <i class="fab fa-youtube me-1" aria-hidden="true"></i>Latest videos from
+                        <a href="https://www.youtube.com/@CMAAcademyAsia" target="_blank" rel="noopener">CMA Academy Asia</a>
+                    </p>
+                    <div class="text-center mt-4">
+                        <a href="https://www.youtube.com/@CMAAcademyAsia/videos" target="_blank" rel="noopener" class="btn btn-outline-primary rounded-pill py-3 px-4">
+                            <i class="fab fa-youtube me-2" aria-hidden="true"></i>View All Videos on YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- YouTube End -->
+
         <!-- Training Inquiry Form Start -->
         <div id="training-inquiry" class="container-fluid py-5">
             <div class="container py-5">
@@ -2947,6 +3167,38 @@
                 var scrollAmount = container.querySelector('.testimonial-scroll-item').offsetWidth + 24;
                 container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
             }
+        </script>
+
+        <!-- Instagram Embed: keep the iframe height in step with its width -->
+        <script>
+            (function () {
+                var frame = document.querySelector('[data-instagram-embed]');
+                if (!frame) {
+                    return;
+                }
+
+                var iframe = frame.querySelector('iframe');
+                if (!iframe) {
+                    return;
+                }
+
+                function resizeEmbed() {
+                    var width = frame.clientWidth;
+                    if (!width) {
+                        return;
+                    }
+                    // Instagram's profile embed shows two rows of three square
+                    // thumbnails below a fixed-height profile header.
+                    var height = Math.round((width * 2) / 3 + 205);
+                    iframe.style.height = Math.min(height, 1200) + 'px';
+                }
+
+                resizeEmbed();
+                window.addEventListener('resize', resizeEmbed);
+                if (window.ResizeObserver) {
+                    new ResizeObserver(resizeEmbed).observe(frame);
+                }
+            })();
         </script>
 
         <!-- Training Inquiry (Email + WhatsApp) -->
