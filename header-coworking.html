@@ -30,11 +30,10 @@
     <div class="container">
         <nav class="navbar navbar-expand-xl navbar-light cw-navbar">
             <a href="cma_coworking.html" class="navbar-brand cw-brand">
-                <img src="assets/img/cma-working/cma-coworking-logo.png" alt="CMA Group logo">
-                <span class="cw-brand-divider" aria-hidden="true"></span>
-                <span class="cw-brand-text">
-                    <strong>CMA KK</strong>
-                    <span>Coworking Space</span>
+                <span class="cw-brand-row">
+                    <img src="assets/img/cma-working/cma-coworking-logo.png" alt="CMA Group logo">
+                    <span class="cw-brand-divider" aria-hidden="true"></span>
+                    <span class="cw-brand-ssm">CMA KK Coworking Space<br>(Managed by CMA Group Sdn. Bhd (1419711-W))</span>
                 </span>
             </a>
             <button class="navbar-toggler cw-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -133,11 +132,15 @@
 
     /* Brand: CMA KK logo + "Coworking Space" */
     .cw-header .cw-brand {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+
+    .cw-header .cw-brand-row {
         display: flex;
         align-items: center;
         gap: 12px;
-        padding: 0;
-        margin: 0;
     }
 
     .cw-header .cw-navbar .cw-brand img {
@@ -173,6 +176,18 @@
         letter-spacing: .13em;
         text-transform: uppercase;
         margin-top: 2px;
+    }
+
+    /* SSM registration line beside the logo */
+    .cw-header .cw-brand .cw-brand-ssm {
+        display: block;
+        margin-top: 4px;
+        color: rgba(11, 35, 64, .62);
+        font-size: 9px;
+        font-weight: 600;
+        line-height: 1.25;
+        letter-spacing: 0;
+        text-transform: none;
     }
 
     /* Navigation links */
